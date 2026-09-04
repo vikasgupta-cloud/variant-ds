@@ -1,0 +1,319 @@
+{
+  "bg": {
+    "canvas": {
+      "$type": "color",
+      "$value": "{neutral.950}",
+      "$description": "App canvas background (dark). Contrast: base for text/primary (≥4.5:1)."
+    },
+    "surface": {
+      "$type": "color",
+      "$value": "{neutral.900}",
+      "$description": "Default surface (dark). Contrast: text/primary (≥4.5:1)."
+    },
+    "surface-raised": {
+      "$type": "color",
+      "$value": "{neutral.800}",
+      "$description": "Raised surface (dark). Contrast: text/primary (≥4.5:1)."
+    },
+    "disabled": {
+      "$type": "color",
+      "$value": "{neutral.800}",
+      "$description": "Disabled control fill (dark). Contrast: with text/disabled."
+    },
+    "tooltip": {
+      "$type": "color",
+      "$value": "{neutral.700}",
+      "$description": "Tooltip surface (dark). Contrast: with text/on-inverse or on-strong (≥4.5:1)."
+    },
+    "neutral": {
+      "strong": {
+        "$type": "color",
+        "$value": "{neutral.50}",
+        "$description": "Strong neutral fill (dark). Contrast: use text/on-strong (≥4.5:1)."
+      },
+      "soft": {
+        "$type": "color",
+        "$value": "{neutral.800}",
+        "$description": "Soft neutral fill (dark). Uses neutral-800 so it stays distinct from bg/surface (neutral-900). Contrast: with text/neutral (≥4.5:1)."
+      },
+      "strong-hover": {
+        "$type": "color",
+        "$value": "{neutral.200}",
+        "$description": "Strong neutral hover (dark). Neutral strong inverts (50), so hover darkens to 200 — not the chromatic 600 step. Contrast: with text/on-strong (≥4.5:1)."
+      },
+      "strong-active": {
+        "$type": "color",
+        "$value": "{neutral.300}",
+        "$description": "Strong neutral active (dark). Neutral strong inverts (50), so active darkens to 300 — not the chromatic 700 step. Contrast: with text/on-strong (≥4.5:1)."
+      }
+    },
+    "info": {
+      "strong": {
+        "$type": "color",
+        "$value": "{ocean.500}",
+        "$description": "Strong info fill (dark). Contrast: use text/on-strong (≥4.5:1)."
+      },
+      "soft": {
+        "$type": "color",
+        "$value": "{ocean.900}",
+        "$description": "Soft info fill (dark). Contrast: with text/info (≥4.5:1)."
+      }
+    },
+    "success": {
+      "strong": {
+        "$type": "color",
+        "$value": "{green.500}",
+        "$description": "Strong success fill (dark). Contrast: use text/on-strong (≥4.5:1)."
+      },
+      "soft": {
+        "$type": "color",
+        "$value": "{green.900}",
+        "$description": "Soft success fill (dark). Contrast: with text/success (≥4.5:1)."
+      }
+    },
+    "warning": {
+      "strong": {
+        "$type": "color",
+        "$value": "{amber.300}",
+        "$description": "Strong warning fill (dark). Contrast: use text/on-strong-warning (≥4.5:1)."
+      },
+      "soft": {
+        "$type": "color",
+        "$value": "{amber.900}",
+        "$description": "Soft warning fill (dark). Contrast: with text/warning (≥4.5:1)."
+      }
+    },
+    "danger": {
+      "strong": {
+        "$type": "color",
+        "$value": "{cherry.500}",
+        "$description": "Strong danger fill (dark). Contrast: use text/on-strong (≥4.5:1)."
+      },
+      "soft": {
+        "$type": "color",
+        "$value": "{cherry.900}",
+        "$description": "Soft danger fill (dark). Contrast: with text/danger (≥4.5:1)."
+      },
+      "strong-hover": {
+        "$type": "color",
+        "$value": "{cherry.600}",
+        "$description": "Strong danger hover (dark). Contrast: with text/on-strong (≥4.5:1)."
+      },
+      "strong-active": {
+        "$type": "color",
+        "$value": "{cherry.700}",
+        "$description": "Strong danger active (dark). Contrast: with text/on-strong (≥4.5:1)."
+      }
+    },
+    "ai": {
+      "strong": {
+        "$type": "color",
+        "$value": "{berry.500}",
+        "$description": "Strong ai fill (dark). Contrast: use text/on-strong (≥4.5:1)."
+      },
+      "soft": {
+        "$type": "color",
+        "$value": "{berry.900}",
+        "$description": "Soft ai fill (dark). Contrast: with text/ai (≥4.5:1)."
+      },
+      "strong-hover": {
+        "$type": "color",
+        "$value": "{berry.600}",
+        "$description": "Strong ai hover (dark). Contrast: with text/on-strong (≥4.5:1)."
+      },
+      "strong-active": {
+        "$type": "color",
+        "$value": "{berry.700}",
+        "$description": "Strong ai active (dark). Contrast: with text/on-strong (≥4.5:1)."
+      }
+    }
+  },
+  "text": {
+    "primary": {
+      "$type": "color",
+      "$value": "{neutral.50}",
+      "$description": "Primary body text (dark). Contrast: ≥4.5:1 on canvas/surface."
+    },
+    "secondary": {
+      "$type": "color",
+      "$value": "{neutral.300}",
+      "$description": "Secondary text (dark). Contrast: ≥4.5:1 on canvas/surface."
+    },
+    "tertiary": {
+      "$type": "color",
+      "$value": "{neutral.400}",
+      "$description": "Tertiary text (dark). Prefer for supporting copy; verify contrast on the actual background rather than assuming AA for small body text."
+    },
+    "disabled": {
+      "$type": "color",
+      "$value": "{neutral.500}",
+      "$description": "Disabled text (dark). Contrast: may be <4.5:1 by design for disabled state."
+    },
+    "on-inverse": {
+      "$type": "color",
+      "$value": "{neutral.950}",
+      "$description": "Text on inverse surfaces (dark). Contrast: ≥4.5:1 on tooltip/inverse fills."
+    },
+    "link": {
+      "$type": "color",
+      "$value": "{ocean.300}",
+      "$description": "Link text (dark). Contrast: ≥4.5:1 on canvas."
+    },
+    "link-hover": {
+      "$type": "color",
+      "$value": "{ocean.200}",
+      "$description": "Link hover text (dark). Contrast: ≥4.5:1 on canvas."
+    },
+    "on-strong": {
+      "$type": "color",
+      "$value": "{neutral.0}",
+      "$description": "Text/icons on strong fills (dark). Contrast: ≥4.5:1 on strong role fills (not warning)."
+    },
+    "on-strong-warning": {
+      "$type": "color",
+      "$value": "{neutral.950}",
+      "$description": "Text on warning strong (dark). Contrast: ≥4.5:1 on amber-300 — white fails; this is required."
+    },
+    "neutral": {
+      "$type": "color",
+      "$value": "{neutral.300}",
+      "$description": "neutral text and status icons (dark). Contrast: ≥4.5:1 on soft neutral / canvas."
+    },
+    "info": {
+      "$type": "color",
+      "$value": "{ocean.300}",
+      "$description": "info text and status icons (dark). Contrast: ≥4.5:1 on soft info / canvas."
+    },
+    "success": {
+      "$type": "color",
+      "$value": "{green.300}",
+      "$description": "success text and status icons (dark). Contrast: ≥4.5:1 on soft success / canvas."
+    },
+    "warning": {
+      "$type": "color",
+      "$value": "{amber.300}",
+      "$description": "warning text and status icons (dark). Contrast: ≥4.5:1 on soft warning / canvas."
+    },
+    "danger": {
+      "$type": "color",
+      "$value": "{cherry.300}",
+      "$description": "danger text and status icons (dark). Contrast: ≥4.5:1 on soft danger / canvas."
+    },
+    "ai": {
+      "$type": "color",
+      "$value": "{berry.300}",
+      "$description": "ai text and status icons (dark). Contrast: ≥4.5:1 on soft ai / canvas."
+    }
+  },
+  "icon": {
+    "primary": {
+      "$type": "color",
+      "$value": "{neutral.50}",
+      "$description": "Primary icon (dark). Contrast: ≥4.5:1 (or ≥3:1 if decorative-adjacent)."
+    },
+    "secondary": {
+      "$type": "color",
+      "$value": "{neutral.300}",
+      "$description": "Secondary icon (dark). Contrast: ≥3:1 non-text."
+    },
+    "tertiary": {
+      "$type": "color",
+      "$value": "{neutral.400}",
+      "$description": "Tertiary icon (dark). Contrast: ≥3:1 non-text."
+    },
+    "disabled": {
+      "$type": "color",
+      "$value": "{neutral.500}",
+      "$description": "Disabled icon (dark). May be reduced contrast by design."
+    },
+    "on-inverse": {
+      "$type": "color",
+      "$value": "{neutral.950}",
+      "$description": "Icon on inverse (dark). Contrast: ≥3:1 / ≥4.5:1 if conveying meaning."
+    }
+  },
+  "border": {
+    "subtle": {
+      "$type": "color",
+      "$value": "{neutral.700}",
+      "$description": "Subtle border (dark). Contrast: ≥3:1 against adjacent background."
+    },
+    "default": {
+      "$type": "color",
+      "$value": "{neutral.500}",
+      "$description": "Default border (dark). Contrast: ≥3:1 against canvas/surface."
+    },
+    "strong": {
+      "$type": "color",
+      "$value": "{neutral.300}",
+      "$description": "Strong border (dark). Contrast: ≥3:1."
+    },
+    "focus": {
+      "$type": "color",
+      "$value": "{neutral.50}",
+      "$description": "Focus ring color (dark). Contrast: ≥3:1 against background."
+    },
+    "neutral": {
+      "$type": "color",
+      "$value": "{neutral.700}",
+      "$description": "neutral border (dark). Contrast: ≥3:1 non-text."
+    },
+    "info": {
+      "$type": "color",
+      "$value": "{ocean.700}",
+      "$description": "info border (dark). Contrast: ≥3:1 non-text."
+    },
+    "success": {
+      "$type": "color",
+      "$value": "{green.700}",
+      "$description": "success border (dark). Contrast: ≥3:1 non-text."
+    },
+    "warning": {
+      "$type": "color",
+      "$value": "{amber.700}",
+      "$description": "warning border (dark). Contrast: ≥3:1 non-text."
+    },
+    "danger": {
+      "$type": "color",
+      "$value": "{cherry.700}",
+      "$description": "danger border (dark). Contrast: ≥3:1 non-text."
+    },
+    "ai": {
+      "$type": "color",
+      "$value": "{berry.700}",
+      "$description": "ai border (dark). Contrast: ≥3:1 non-text."
+    }
+  },
+  "selected": {
+    "bg": {
+      "$type": "color",
+      "$value": "{yellow.accent}",
+      "$description": "Selected fill (dark). Contrast: with selected/text (neutral-950) ≥4.5:1."
+    },
+    "bg-hover": {
+      "$type": "color",
+      "$value": "{yellow.accent-hover}",
+      "$description": "Selected hover fill (dark). Contrast: with selected/text ≥4.5:1."
+    },
+    "text": {
+      "$type": "color",
+      "$value": "{neutral.950}",
+      "$description": "Selected label text (dark). Contrast: ≥4.5:1 on selected/bg."
+    },
+    "edge": {
+      "$type": "color",
+      "$value": "{yellow.accent}",
+      "$description": "Selected edge (dark). Contrast: ≥3:1 non-text."
+    },
+    "indicator": {
+      "$type": "color",
+      "$value": "{yellow.accent}",
+      "$description": "Selected indicator (dark). Contrast: ≥3:1 non-text."
+    },
+    "field-hover": {
+      "$type": "color",
+      "$value": "{yellow.field-shade}",
+      "$description": "Selected field hover wash (dark). Contrast: with selected/text ≥4.5:1."
+    }
+  }
+}

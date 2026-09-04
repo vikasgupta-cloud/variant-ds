@@ -1,0 +1,138 @@
+{
+  "light": {
+    "canvas": {
+      "level-1": {
+        "$type": "color",
+        "$value": "{neutral.100}",
+        "$description": "surface/level-1 on canvas (light). State mapping: hover→level-1, active/selected/disabled→level-2, selected-hover→level-3. Contrast: chrome ≥3:1."
+      },
+      "level-2": {
+        "$type": "color",
+        "$value": "{neutral.200}",
+        "$description": "surface/level-2 on canvas (light). State mapping: hover→level-1, active/selected/disabled→level-2, selected-hover→level-3. Contrast: chrome ≥3:1."
+      },
+      "level-3": {
+        "$type": "color",
+        "$value": "{neutral.300}",
+        "$description": "surface/level-3 on canvas (light). State mapping: hover→level-1, active/selected/disabled→level-2, selected-hover→level-3. Contrast: chrome ≥3:1."
+      },
+      "border": {
+        "$type": "color",
+        "$value": "{neutral.500}",
+        "$description": "Surface border on canvas (light). Contrast: ≥3:1 against the canvas background."
+      }
+    },
+    "surface": {
+      "level-1": {
+        "$type": "color",
+        "$value": "{neutral.50}",
+        "$description": "surface/level-1 on surface (light). State mapping: hover→level-1, active/selected/disabled→level-2, selected-hover→level-3. Contrast: chrome ≥3:1."
+      },
+      "level-2": {
+        "$type": "color",
+        "$value": "{neutral.100}",
+        "$description": "surface/level-2 on surface (light). State mapping: hover→level-1, active/selected/disabled→level-2, selected-hover→level-3. Contrast: chrome ≥3:1."
+      },
+      "level-3": {
+        "$type": "color",
+        "$value": "{neutral.200}",
+        "$description": "surface/level-3 on surface (light). State mapping: hover→level-1, active/selected/disabled→level-2, selected-hover→level-3. Contrast: chrome ≥3:1."
+      },
+      "border": {
+        "$type": "color",
+        "$value": "{neutral.400}",
+        "$description": "Surface border on surface (light). Contrast: ≥3:1 against the surface background."
+      }
+    },
+    "surface-raised": {
+      "level-1": {
+        "$type": "color",
+        "$value": "{neutral.100}",
+        "$description": "surface/level-1 on surface-raised (light). State mapping: hover→level-1, active/selected/disabled→level-2, selected-hover→level-3. Contrast: chrome ≥3:1."
+      },
+      "level-2": {
+        "$type": "color",
+        "$value": "{neutral.200}",
+        "$description": "surface/level-2 on surface-raised (light). State mapping: hover→level-1, active/selected/disabled→level-2, selected-hover→level-3. Contrast: chrome ≥3:1."
+      },
+      "level-3": {
+        "$type": "color",
+        "$value": "{neutral.300}",
+        "$description": "surface/level-3 on surface-raised (light). State mapping: hover→level-1, active/selected/disabled→level-2, selected-hover→level-3. Contrast: chrome ≥3:1."
+      },
+      "border": {
+        "$type": "color",
+        "$value": "{neutral.400}",
+        "$description": "Surface border on surface-raised (light). Contrast: ≥3:1 against the surface-raised background."
+      }
+    }
+  },
+  "dark": {
+    "canvas": {
+      "level-1": {
+        "$type": "color",
+        "$value": "{neutral.900}",
+        "$description": "surface/level-1 on canvas (dark). State mapping: hover→level-1, active/selected/disabled→level-2, selected-hover→level-3. Contrast: chrome ≥3:1."
+      },
+      "level-2": {
+        "$type": "color",
+        "$value": "{neutral.800}",
+        "$description": "surface/level-2 on canvas (dark). State mapping: hover→level-1, active/selected/disabled→level-2, selected-hover→level-3. Contrast: chrome ≥3:1."
+      },
+      "level-3": {
+        "$type": "color",
+        "$value": "{neutral.700}",
+        "$description": "surface/level-3 on canvas (dark). State mapping: hover→level-1, active/selected/disabled→level-2, selected-hover→level-3. Contrast: chrome ≥3:1."
+      },
+      "border": {
+        "$type": "color",
+        "$value": "{neutral.400}",
+        "$description": "Surface border on canvas (dark). Contrast: ≥3:1 against the canvas background."
+      }
+    },
+    "surface": {
+      "level-1": {
+        "$type": "color",
+        "$value": "{neutral.800}",
+        "$description": "surface/level-1 on surface (dark). State mapping: hover→level-1, active/selected/disabled→level-2, selected-hover→level-3. Contrast: chrome ≥3:1."
+      },
+      "level-2": {
+        "$type": "color",
+        "$value": "{neutral.700}",
+        "$description": "surface/level-2 on surface (dark). State mapping: hover→level-1, active/selected/disabled→level-2, selected-hover→level-3. Contrast: chrome ≥3:1."
+      },
+      "level-3": {
+        "$type": "color",
+        "$value": "{neutral.600}",
+        "$description": "surface/level-3 on surface (dark). State mapping: hover→level-1, active/selected/disabled→level-2, selected-hover→level-3. Contrast: chrome ≥3:1."
+      },
+      "border": {
+        "$type": "color",
+        "$value": "{neutral.500}",
+        "$description": "Surface border on surface (dark). Contrast: ≥3:1 against the surface background."
+      }
+    },
+    "surface-raised": {
+      "level-1": {
+        "$type": "color",
+        "$value": "{neutral.700}",
+        "$description": "surface/level-1 on surface-raised (dark). State mapping: hover→level-1, active/selected/disabled→level-2, selected-hover→level-3. Contrast: chrome ≥3:1."
+      },
+      "level-2": {
+        "$type": "color",
+        "$value": "{neutral.600}",
+        "$description": "surface/level-2 on surface-raised (dark). State mapping: hover→level-1, active/selected/disabled→level-2, selected-hover→level-3. Contrast: chrome ≥3:1."
+      },
+      "level-3": {
+        "$type": "color",
+        "$value": "{neutral.500}",
+        "$description": "surface/level-3 on surface-raised (dark). State mapping: hover→level-1, active/selected/disabled→level-2, selected-hover→level-3. Contrast: chrome ≥3:1."
+      },
+      "border": {
+        "$type": "color",
+        "$value": "{neutral.500}",
+        "$description": "Surface border on surface-raised (dark). Contrast: ≥3:1 against the surface-raised background."
+      }
+    }
+  }
+}

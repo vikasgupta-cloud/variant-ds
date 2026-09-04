@@ -1,0 +1,377 @@
+{
+  "dropdown": {
+    "menu-radius": {
+      "$type": "dimension",
+      "$value": "{radius.sm}",
+      "$description": "Dropdown menu corner radius."
+    },
+    "menu-padding-y": {
+      "$type": "dimension",
+      "$value": "{dimension.4}",
+      "$description": "Dropdown menu vertical padding."
+    },
+    "item-padding-x": {
+      "$type": "dimension",
+      "$value": "{dimension.12}",
+      "$description": "Dropdown item horizontal padding."
+    },
+    "item-padding-y": {
+      "$type": "dimension",
+      "$value": "{dimension.6}",
+      "$description": "Dropdown item vertical padding."
+    }
+  },
+  "badge": {
+    "radius": {
+      "$type": "dimension",
+      "$value": "{radius.full}",
+      "$description": "Badge pill radius."
+    },
+    "dot-size": {
+      "sm": {
+        "$type": "dimension",
+        "$value": "{dimension.6}",
+        "$description": "Badge dot size sm."
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{dimension.8}",
+        "$description": "Badge dot size md."
+      }
+    },
+    "count-size": {
+      "sm": {
+        "$type": "dimension",
+        "$value": "{dimension.16}",
+        "$description": "Badge count size sm."
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "18px",
+        "$description": "Badge count size md — 18px component deviation."
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "22px",
+        "$description": "Badge count size lg — 22px component deviation."
+      }
+    },
+    "count-radius": {
+      "$type": "dimension",
+      "$value": "{radius.xs}",
+      "$description": "Badge count corner radius."
+    }
+  },
+  "tag": {
+    "radius": {
+      "$type": "dimension",
+      "$value": "{radius.xs}",
+      "$description": "Tag corner radius."
+    }
+  },
+  "checkbox": {
+    "size": {
+      "sm": {
+        "$type": "dimension",
+        "$value": "{dimension.16}",
+        "$description": "Checkbox size sm."
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{dimension.20}",
+        "$description": "Checkbox size md."
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "{dimension.24}",
+        "$description": "Checkbox size lg."
+      }
+    },
+    "radius": {
+      "$type": "dimension",
+      "$value": "{radius.xs}",
+      "$description": "Checkbox corner radius."
+    }
+  },
+  "radio": {
+    "size": {
+      "sm": {
+        "$type": "dimension",
+        "$value": "{dimension.16}",
+        "$description": "Radio size sm."
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{dimension.20}",
+        "$description": "Radio size md."
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "{dimension.24}",
+        "$description": "Radio size lg."
+      }
+    },
+    "dot-size": {
+      "sm": {
+        "$type": "dimension",
+        "$value": "{dimension.8}",
+        "$description": "Radio dot sm."
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{dimension.10}",
+        "$description": "Radio dot md."
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "{dimension.12}",
+        "$description": "Radio dot lg."
+      }
+    },
+    "radius": {
+      "$type": "dimension",
+      "$value": "{radius.full}",
+      "$description": "Radio circle radius."
+    }
+  },
+  "toggle": {
+    "track-width": {
+      "sm": {
+        "$type": "dimension",
+        "$value": "28px",
+        "$description": "Toggle track width sm."
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "36px",
+        "$description": "Toggle track width md."
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "44px",
+        "$description": "Toggle track width lg."
+      }
+    },
+    "track-height": {
+      "sm": {
+        "$type": "dimension",
+        "$value": "{dimension.16}",
+        "$description": "Toggle track height sm."
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{dimension.20}",
+        "$description": "Toggle track height md."
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "{dimension.24}",
+        "$description": "Toggle track height lg."
+      }
+    },
+    "knob-size": {
+      "sm": {
+        "$type": "dimension",
+        "$value": "{dimension.12}",
+        "$description": "Toggle knob sm."
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{dimension.16}",
+        "$description": "Toggle knob md."
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "{dimension.20}",
+        "$description": "Toggle knob lg."
+      }
+    },
+    "track-padding": {
+      "$type": "dimension",
+      "$value": "{dimension.2}",
+      "$description": "Toggle track inset padding."
+    },
+    "radius": {
+      "$type": "dimension",
+      "$value": "{radius.full}",
+      "$description": "Toggle pill radius."
+    },
+    "track-off-bg": {
+      "light": {
+        "$type": "color",
+        "$value": "{neutral.300}",
+        "$description": "Toggle off track (light). Contrast: ≥3:1 against surface."
+      },
+      "dark": {
+        "$type": "color",
+        "$value": "{neutral.500}",
+        "$description": "Toggle off track (dark). Contrast: ≥3:1 against surface."
+      }
+    },
+    "track-off-bg-hover": {
+      "light": {
+        "$type": "color",
+        "$value": "{neutral.400}",
+        "$description": "Toggle off track hover (light). Contrast: ≥3:1."
+      },
+      "dark": {
+        "$type": "color",
+        "$value": "{neutral.400}",
+        "$description": "Toggle off track hover (dark). Contrast: ≥3:1."
+      }
+    },
+    "knob-bg": {
+      "light": {
+        "$type": "color",
+        "$value": "{neutral.0}",
+        "$description": "Toggle knob fill (light). Contrast: ≥3:1 against track."
+      },
+      "dark": {
+        "$type": "color",
+        "$value": "{neutral.900}",
+        "$description": "Toggle knob fill (dark). Contrast: ≥3:1 against track."
+      }
+    }
+  },
+  "tab": {
+    "item-spacing": {
+      "$type": "dimension",
+      "$value": "{dimension.4}",
+      "$description": "Spacing between tab items."
+    },
+    "content-gap": {
+      "sm": {
+        "$type": "dimension",
+        "$value": "{dimension.4}",
+        "$description": "Tab content gap sm."
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{dimension.6}",
+        "$description": "Tab content gap md."
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "{dimension.8}",
+        "$description": "Tab content gap lg."
+      }
+    },
+    "indicator-weight": {
+      "$type": "dimension",
+      "$value": "{border-width.2}",
+      "$description": "Tab active indicator thickness."
+    },
+    "container-radius": {
+      "$type": "dimension",
+      "$value": "{radius.sm}",
+      "$description": "Tab list container radius."
+    },
+    "container-padding": {
+      "$type": "dimension",
+      "$value": "{dimension.4}",
+      "$description": "Tab list container padding."
+    },
+    "radius": {
+      "$type": "dimension",
+      "$value": "{radius.xs}",
+      "$description": "Individual tab radius."
+    }
+  },
+  "segment": {
+    "radius-outer": {
+      "$type": "dimension",
+      "$value": "{radius.sm}",
+      "$description": "Segmented control outer radius."
+    },
+    "radius-inner": {
+      "$type": "dimension",
+      "$value": "{radius.none}",
+      "$description": "Segmented control inner item radius."
+    }
+  },
+  "progress": {
+    "track-height": {
+      "$type": "dimension",
+      "$value": "{dimension.8}",
+      "$description": "Progress track height."
+    },
+    "radius": {
+      "$type": "dimension",
+      "$value": "{radius.full}",
+      "$description": "Progress track/radius."
+    },
+    "label-gap": {
+      "$type": "dimension",
+      "$value": "{dimension.8}",
+      "$description": "Gap between progress and label."
+    }
+  },
+  "slider": {
+    "thumb-size": {
+      "$type": "dimension",
+      "$value": "{dimension.20}",
+      "$description": "Slider thumb size."
+    },
+    "thumb-border": {
+      "$type": "color",
+      "$value": "{border.strong}",
+      "$description": "Slider thumb border — aliases role border/strong so it tracks mode."
+    }
+  },
+  "modal": {
+    "radius": {
+      "$type": "dimension",
+      "$value": "{radius.md}",
+      "$description": "Modal corner radius."
+    },
+    "padding": {
+      "$type": "dimension",
+      "$value": "{dimension.24}",
+      "$description": "Modal padding."
+    },
+    "max-width": {
+      "$type": "dimension",
+      "$value": "560px",
+      "$description": "Modal max width — 560px component deviation."
+    },
+    "scrim-bg": {
+      "$type": "color",
+      "$value": "{neutral.950}",
+      "$description": "Modal scrim color. Contrast: dims content behind; paired with scrim-opacity."
+    },
+    "scrim-opacity": {
+      "$type": "number",
+      "$value": "{opacity.64}",
+      "$description": "Modal scrim opacity."
+    }
+  },
+  "card": {
+    "radius": {
+      "$type": "dimension",
+      "$value": "{radius.md}",
+      "$description": "Card corner radius."
+    },
+    "padding": {
+      "$type": "dimension",
+      "$value": "{layout.card}",
+      "$description": "Card padding — aliases layout/card."
+    }
+  },
+  "alert": {
+    "radius": {
+      "$type": "dimension",
+      "$value": "{radius.sm}",
+      "$description": "Alert corner radius."
+    },
+    "padding": {
+      "$type": "dimension",
+      "$value": "{dimension.12}",
+      "$description": "Alert padding."
+    },
+    "icon-gap": {
+      "$type": "dimension",
+      "$value": "{dimension.12}",
+      "$description": "Gap between alert icon and content."
+    }
+  }
+}

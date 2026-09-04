@@ -1,0 +1,533 @@
+{
+  "neutral": {
+    "0": {
+      "$type": "color",
+      "$value": "#ffffff",
+      "$description": "Pure white. Contrast: use for text/on-strong and surfaces that need maximum lift (≥4.5:1 with neutral-950)."
+    },
+    "50": {
+      "$type": "color",
+      "$value": "#f6f3ed",
+      "$description": "Warm off-white canvas. Contrast: default light canvas; pair with text/primary (≥4.5:1)."
+    },
+    "100": {
+      "$type": "color",
+      "$value": "#e5e0d6",
+      "$description": "Light neutral wash. Contrast: soft fills; keep body text off this at small sizes (≥4.5:1)."
+    },
+    "200": {
+      "$type": "color",
+      "$value": "#dbd6cb",
+      "$description": "Subtle border / wash. Contrast: non-text UI ≥3:1 against canvas."
+    },
+    "300": {
+      "$type": "color",
+      "$value": "#b2ada1",
+      "$description": "Muted neutral. Contrast: large text or icons ≥3:1."
+    },
+    "400": {
+      "$type": "color",
+      "$value": "#989388",
+      "$description": "Disabled / tertiary candidate. Contrast: do not use for small body text on canvas (<4.5:1 risk)."
+    },
+    "500": {
+      "$type": "color",
+      "$value": "#79756b",
+      "$description": "Mid neutral. Contrast: borders and secondary chrome ≥3:1."
+    },
+    "600": {
+      "$type": "color",
+      "$value": "#5f5c53",
+      "$description": "Secondary text (light). Contrast: ≥4.5:1 on canvas/surface."
+    },
+    "700": {
+      "$type": "color",
+      "$value": "#4f4d44",
+      "$description": "Strong secondary / status text (light). Contrast: ≥4.5:1 on soft fills."
+    },
+    "800": {
+      "$type": "color",
+      "$value": "#3c3932",
+      "$description": "Dark surface candidate. Contrast: pair with light text (≥4.5:1)."
+    },
+    "900": {
+      "$type": "color",
+      "$value": "#2b2923",
+      "$description": "Dark elevated surface. Contrast: pair with light text (≥4.5:1)."
+    },
+    "950": {
+      "$type": "color",
+      "$value": "#1b1913",
+      "$description": "Near-black ink. Contrast: primary text on light surfaces (≥4.5:1); strong fills with text/on-strong."
+    }
+  },
+  "cherry": {
+    "100": {
+      "$type": "color",
+      "$value": "#ffe2dc",
+      "$description": "Danger soft fill (light). Contrast: pair with text/danger (≥4.5:1)."
+    },
+    "200": {
+      "$type": "color",
+      "$value": "#ffcabe",
+      "$description": "Danger border (light). Contrast: non-text ≥3:1."
+    },
+    "300": {
+      "$type": "color",
+      "$value": "#fb937d",
+      "$description": "Danger mid. Contrast: large text/icons only unless verified."
+    },
+    "400": {
+      "$type": "color",
+      "$value": "#f4603f",
+      "$description": "Danger bright. Contrast: verify ≥4.5:1 before text use."
+    },
+    "500": {
+      "$type": "color",
+      "$value": "#de2d02",
+      "$description": "Danger strong (dark mode). Contrast: with text/on-strong (≥4.5:1)."
+    },
+    "600": {
+      "$type": "color",
+      "$value": "#b72200",
+      "$description": "Danger strong (light). Contrast: with text/on-strong (≥4.5:1)."
+    },
+    "700": {
+      "$type": "color",
+      "$value": "#92230d",
+      "$description": "Danger text (light) / strong-hover. Contrast: ≥4.5:1 on soft danger."
+    },
+    "800": {
+      "$type": "color",
+      "$value": "#6f1c0a",
+      "$description": "Danger strong-active (light). Contrast: with text/on-strong."
+    },
+    "900": {
+      "$type": "color",
+      "$value": "#4f150a",
+      "$description": "Danger soft fill (dark). Contrast: pair with text/danger (≥4.5:1)."
+    }
+  },
+  "amber": {
+    "100": {
+      "$type": "color",
+      "$value": "#ffe4c8",
+      "$description": "Warning soft fill (light). Contrast: pair with text/warning (≥4.5:1)."
+    },
+    "200": {
+      "$type": "color",
+      "$value": "#f5c896",
+      "$description": "Warning border (light). Contrast: non-text ≥3:1."
+    },
+    "300": {
+      "$type": "color",
+      "$value": "#e7a04c",
+      "$description": "Warning strong (both modes — deliberate). Contrast: MUST use text/on-strong-warning (neutral-950), not white."
+    },
+    "400": {
+      "$type": "color",
+      "$value": "#c78321",
+      "$description": "Warning mid. Contrast: verify before text use."
+    },
+    "500": {
+      "$type": "color",
+      "$value": "#a76700",
+      "$description": "Warning mid-dark. Contrast: verify ≥4.5:1."
+    },
+    "600": {
+      "$type": "color",
+      "$value": "#8b5500",
+      "$description": "Warning deep. Contrast: with light text if used as fill."
+    },
+    "700": {
+      "$type": "color",
+      "$value": "#6f4300",
+      "$description": "Warning text (light). Contrast: ≥4.5:1 on soft warning."
+    },
+    "800": {
+      "$type": "color",
+      "$value": "#563400",
+      "$description": "Warning deep dark. Contrast: with light text."
+    },
+    "900": {
+      "$type": "color",
+      "$value": "#3e2300",
+      "$description": "Warning soft fill (dark). Contrast: pair with text/warning (≥4.5:1)."
+    }
+  },
+  "green": {
+    "100": {
+      "$type": "color",
+      "$value": "#caf2dd",
+      "$description": "Success soft fill (light). Contrast: pair with text/success (≥4.5:1)."
+    },
+    "200": {
+      "$type": "color",
+      "$value": "#a4e4c3",
+      "$description": "Success border (light). Contrast: non-text ≥3:1."
+    },
+    "300": {
+      "$type": "color",
+      "$value": "#07c787",
+      "$description": "Success mid. Contrast: large text/icons unless verified."
+    },
+    "400": {
+      "$type": "color",
+      "$value": "#03a673",
+      "$description": "Success bright. Contrast: verify ≥4.5:1 before text use."
+    },
+    "500": {
+      "$type": "color",
+      "$value": "#00865b",
+      "$description": "Success strong (dark). Contrast: with text/on-strong (≥4.5:1)."
+    },
+    "600": {
+      "$type": "color",
+      "$value": "#006f4b",
+      "$description": "Success strong (light). Contrast: with text/on-strong (≥4.5:1)."
+    },
+    "700": {
+      "$type": "color",
+      "$value": "#00583a",
+      "$description": "Success text (light). Contrast: ≥4.5:1 on soft success."
+    },
+    "800": {
+      "$type": "color",
+      "$value": "#00442a",
+      "$description": "Success deep. Contrast: with light text."
+    },
+    "900": {
+      "$type": "color",
+      "$value": "#00301e",
+      "$description": "Success soft fill (dark). Contrast: pair with text/success (≥4.5:1)."
+    }
+  },
+  "ocean": {
+    "100": {
+      "$type": "color",
+      "$value": "#dee9ff",
+      "$description": "Info soft fill (light). Contrast: pair with text/info (≥4.5:1)."
+    },
+    "200": {
+      "$type": "color",
+      "$value": "#c4d7ff",
+      "$description": "Info border (light). Contrast: non-text ≥3:1."
+    },
+    "300": {
+      "$type": "color",
+      "$value": "#8badff",
+      "$description": "Info / link (dark). Contrast: links ≥4.5:1 on dark canvas."
+    },
+    "400": {
+      "$type": "color",
+      "$value": "#6389f9",
+      "$description": "Info bright. Contrast: verify before small text."
+    },
+    "500": {
+      "$type": "color",
+      "$value": "#406bed",
+      "$description": "Info strong (dark). Contrast: with text/on-strong (≥4.5:1)."
+    },
+    "600": {
+      "$type": "color",
+      "$value": "#2f54cb",
+      "$description": "Info strong (light) / link. Contrast: links ≥4.5:1 on light canvas."
+    },
+    "700": {
+      "$type": "color",
+      "$value": "#2846a0",
+      "$description": "Info text (light) / link-hover. Contrast: ≥4.5:1."
+    },
+    "800": {
+      "$type": "color",
+      "$value": "#1d3578",
+      "$description": "Info deep. Contrast: with light text."
+    },
+    "900": {
+      "$type": "color",
+      "$value": "#152656",
+      "$description": "Info soft fill (dark). Contrast: pair with text/info (≥4.5:1)."
+    }
+  },
+  "berry": {
+    "100": {
+      "$type": "color",
+      "$value": "#ffe0f4",
+      "$description": "AI soft fill (light). Contrast: pair with text/ai (≥4.5:1)."
+    },
+    "200": {
+      "$type": "color",
+      "$value": "#ffc6ea",
+      "$description": "AI border (light). Contrast: non-text ≥3:1."
+    },
+    "300": {
+      "$type": "color",
+      "$value": "#f87fd8",
+      "$description": "AI mid. Contrast: large text/icons unless verified."
+    },
+    "400": {
+      "$type": "color",
+      "$value": "#e155bd",
+      "$description": "AI bright. Contrast: verify ≥4.5:1 before text use."
+    },
+    "500": {
+      "$type": "color",
+      "$value": "#cb37a4",
+      "$description": "AI strong (dark). Contrast: with text/on-strong (≥4.5:1)."
+    },
+    "600": {
+      "$type": "color",
+      "$value": "#a72686",
+      "$description": "AI strong (light). Contrast: with text/on-strong (≥4.5:1)."
+    },
+    "700": {
+      "$type": "color",
+      "$value": "#84266c",
+      "$description": "AI text (light) / strong-hover. Contrast: ≥4.5:1 on soft AI."
+    },
+    "800": {
+      "$type": "color",
+      "$value": "#661e53",
+      "$description": "AI strong-active (light). Contrast: with text/on-strong."
+    },
+    "900": {
+      "$type": "color",
+      "$value": "#48163a",
+      "$description": "AI soft fill (dark). Contrast: pair with text/ai (≥4.5:1)."
+    }
+  },
+  "yellow": {
+    "tint": {
+      "$type": "color",
+      "$value": "#f1f9c7",
+      "$description": "Selected field hover (light). Contrast: with selected/text (neutral-950) ≥4.5:1."
+    },
+    "accent": {
+      "$type": "color",
+      "$value": "#eeff6d",
+      "$description": "Selected / wayfinding fill. Contrast: with selected/text (neutral-950) ≥4.5:1. Not for primary buttons."
+    },
+    "accent-hover": {
+      "$type": "color",
+      "$value": "#e5f669",
+      "$description": "Selected hover fill. Contrast: with selected/text (neutral-950) ≥4.5:1."
+    },
+    "deep": {
+      "$type": "color",
+      "$value": "#727b00",
+      "$description": "Selected indicator (light). Contrast: ≥3:1 as non-text chrome."
+    },
+    "field-shade": {
+      "$type": "color",
+      "$value": "#333718",
+      "$description": "Selected field hover (dark). Contrast: with selected/text ≥4.5:1."
+    }
+  },
+  "dimension": {
+    "0": {
+      "$type": "dimension",
+      "$value": "0px",
+      "$description": "Spacing/sizing step 0px. The name is the value — use dimension/0, never a t-shirt alias."
+    },
+    "2": {
+      "$type": "dimension",
+      "$value": "2px",
+      "$description": "Spacing/sizing step 2px. The name is the value — use dimension/2, never a t-shirt alias."
+    },
+    "4": {
+      "$type": "dimension",
+      "$value": "4px",
+      "$description": "Spacing/sizing step 4px. The name is the value — use dimension/4, never a t-shirt alias."
+    },
+    "6": {
+      "$type": "dimension",
+      "$value": "6px",
+      "$description": "Spacing/sizing step 6px. The name is the value — use dimension/6, never a t-shirt alias."
+    },
+    "8": {
+      "$type": "dimension",
+      "$value": "8px",
+      "$description": "Spacing/sizing step 8px. The name is the value — use dimension/8, never a t-shirt alias."
+    },
+    "10": {
+      "$type": "dimension",
+      "$value": "10px",
+      "$description": "Spacing/sizing step 10px. The name is the value — use dimension/10, never a t-shirt alias."
+    },
+    "12": {
+      "$type": "dimension",
+      "$value": "12px",
+      "$description": "Spacing/sizing step 12px. The name is the value — use dimension/12, never a t-shirt alias."
+    },
+    "14": {
+      "$type": "dimension",
+      "$value": "14px",
+      "$description": "Spacing/sizing step 14px. The name is the value — use dimension/14, never a t-shirt alias."
+    },
+    "16": {
+      "$type": "dimension",
+      "$value": "16px",
+      "$description": "Spacing/sizing step 16px. The name is the value — use dimension/16, never a t-shirt alias."
+    },
+    "20": {
+      "$type": "dimension",
+      "$value": "20px",
+      "$description": "Spacing/sizing step 20px. The name is the value — use dimension/20, never a t-shirt alias."
+    },
+    "24": {
+      "$type": "dimension",
+      "$value": "24px",
+      "$description": "Spacing/sizing step 24px. The name is the value — use dimension/24, never a t-shirt alias."
+    },
+    "28": {
+      "$type": "dimension",
+      "$value": "28px",
+      "$description": "Spacing/sizing step 28px. The name is the value — use dimension/28, never a t-shirt alias."
+    },
+    "32": {
+      "$type": "dimension",
+      "$value": "32px",
+      "$description": "Spacing/sizing step 32px. The name is the value — use dimension/32, never a t-shirt alias."
+    },
+    "40": {
+      "$type": "dimension",
+      "$value": "40px",
+      "$description": "Spacing/sizing step 40px. The name is the value — use dimension/40, never a t-shirt alias."
+    },
+    "48": {
+      "$type": "dimension",
+      "$value": "48px",
+      "$description": "Spacing/sizing step 48px. The name is the value — use dimension/48, never a t-shirt alias."
+    },
+    "64": {
+      "$type": "dimension",
+      "$value": "64px",
+      "$description": "Spacing/sizing step 64px. The name is the value — use dimension/64, never a t-shirt alias."
+    },
+    "80": {
+      "$type": "dimension",
+      "$value": "80px",
+      "$description": "Spacing/sizing step 80px. The name is the value — use dimension/80, never a t-shirt alias."
+    },
+    "96": {
+      "$type": "dimension",
+      "$value": "96px",
+      "$description": "Spacing/sizing step 96px. The name is the value — use dimension/96, never a t-shirt alias."
+    },
+    "128": {
+      "$type": "dimension",
+      "$value": "128px",
+      "$description": "Spacing/sizing step 128px. The name is the value — use dimension/128, never a t-shirt alias."
+    }
+  },
+  "radius": {
+    "none": {
+      "$type": "dimension",
+      "$value": "0px",
+      "$description": "No rounding."
+    },
+    "xs": {
+      "$type": "dimension",
+      "$value": "2px",
+      "$description": "Extra-small radius — controls, tags, checkboxes."
+    },
+    "sm": {
+      "$type": "dimension",
+      "$value": "4px",
+      "$description": "Small radius — chips, alerts, tab containers."
+    },
+    "md": {
+      "$type": "dimension",
+      "$value": "8px",
+      "$description": "Medium radius — cards, modals."
+    },
+    "lg": {
+      "$type": "dimension",
+      "$value": "16px",
+      "$description": "Large radius — prominent containers."
+    },
+    "full": {
+      "$type": "dimension",
+      "$value": "999px",
+      "$description": "Pill / circular radius — badges, toggles, radios."
+    }
+  },
+  "border-width": {
+    "1": {
+      "$type": "dimension",
+      "$value": "1px",
+      "$description": "Hairline border width."
+    },
+    "2": {
+      "$type": "dimension",
+      "$value": "2px",
+      "$description": "Default strong border / focus ring width."
+    },
+    "3": {
+      "$type": "dimension",
+      "$value": "3px",
+      "$description": "Heavy border width."
+    },
+    "1.5": {
+      "$type": "dimension",
+      "$value": "1.5px",
+      "$description": "Emphasized hairline."
+    }
+  },
+  "opacity": {
+    "8": {
+      "$type": "number",
+      "$value": 0.08,
+      "$description": "Opacity 8% — faint overlays."
+    },
+    "16": {
+      "$type": "number",
+      "$value": 0.16,
+      "$description": "Opacity 16% — light scrims."
+    },
+    "40": {
+      "$type": "number",
+      "$value": 0.4,
+      "$description": "Opacity 40% — medium overlays."
+    },
+    "64": {
+      "$type": "number",
+      "$value": 0.64,
+      "$description": "Opacity 64% — modal scrim."
+    },
+    "80": {
+      "$type": "number",
+      "$value": 0.8,
+      "$description": "Opacity 80% — heavy overlays."
+    }
+  },
+  "duration": {
+    "fast": {
+      "$type": "duration",
+      "$value": "120ms",
+      "$description": "Fast motion — 120ms. Respect prefers-reduced-motion."
+    },
+    "normal": {
+      "$type": "duration",
+      "$value": "200ms",
+      "$description": "Normal motion — 200ms. Respect prefers-reduced-motion."
+    },
+    "slow": {
+      "$type": "duration",
+      "$value": "320ms",
+      "$description": "Slow motion — 320ms. Respect prefers-reduced-motion."
+    }
+  },
+  "easing": {
+    "standard": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.2,
+        0,
+        0.2,
+        1
+      ],
+      "$description": "Standard easing curve for UI motion."
+    }
+  }
+}

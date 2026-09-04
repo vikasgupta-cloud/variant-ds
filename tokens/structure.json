@@ -1,0 +1,228 @@
+{
+  "control": {
+    "padding-x": {
+      "xs": {
+        "$type": "dimension",
+        "$value": "{dimension.6}",
+        "$description": "control/padding-x/xs → dimension/6. Shared control sizing."
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": "{dimension.8}",
+        "$description": "control/padding-x/sm → dimension/8. Shared control sizing."
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{dimension.12}",
+        "$description": "control/padding-x/md → dimension/12. Shared control sizing."
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "{dimension.16}",
+        "$description": "control/padding-x/lg → dimension/16. Shared control sizing."
+      }
+    },
+    "padding-y": {
+      "xs": {
+        "$type": "dimension",
+        "$value": "{dimension.4}",
+        "$description": "control/padding-y/xs → dimension/4. Shared control sizing."
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": "{dimension.6}",
+        "$description": "control/padding-y/sm → dimension/6. Shared control sizing."
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{dimension.10}",
+        "$description": "control/padding-y/md → dimension/10. Shared control sizing."
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "{dimension.12}",
+        "$description": "control/padding-y/lg → dimension/12. Shared control sizing."
+      }
+    },
+    "gap": {
+      "xs": {
+        "$type": "dimension",
+        "$value": "{dimension.2}",
+        "$description": "control/gap/xs → dimension/2. Shared control sizing."
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": "{dimension.4}",
+        "$description": "control/gap/sm → dimension/4. Shared control sizing."
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{dimension.6}",
+        "$description": "control/gap/md → dimension/6. Shared control sizing."
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "{dimension.8}",
+        "$description": "control/gap/lg → dimension/8. Shared control sizing."
+      }
+    },
+    "icon-padding": {
+      "xs": {
+        "$type": "dimension",
+        "$value": "{dimension.6}",
+        "$description": "control/icon-padding/xs → dimension/6. Shared control sizing."
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": "{dimension.8}",
+        "$description": "control/icon-padding/sm → dimension/8. Shared control sizing."
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{dimension.10}",
+        "$description": "control/icon-padding/md → dimension/10. Shared control sizing."
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "{dimension.14}",
+        "$description": "control/icon-padding/lg → dimension/14. Shared control sizing."
+      }
+    },
+    "radius": {
+      "$type": "dimension",
+      "$value": "{radius.xs}",
+      "$description": "Shared control corner radius."
+    },
+    "label-gap": {
+      "$type": "dimension",
+      "$value": "{dimension.8}",
+      "$description": "Gap between control and its label."
+    },
+    "content-gap": {
+      "$type": "dimension",
+      "$value": "{dimension.8}",
+      "$description": "Gap between control content slots."
+    }
+  },
+  "chip": {
+    "padding-x": {
+      "sm": {
+        "$type": "dimension",
+        "$value": "{dimension.6}",
+        "$description": "chip/padding-x/sm."
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{dimension.8}",
+        "$description": "chip/padding-x/md."
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "{dimension.12}",
+        "$description": "chip/padding-x/lg."
+      }
+    },
+    "padding-y": {
+      "sm": {
+        "$type": "dimension",
+        "$value": "1px",
+        "$description": "chip/padding-y/sm — 1px (structure exception; not on the dimension scale)."
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "3px",
+        "$description": "chip/padding-y/md — 3px (structure exception; not on the dimension scale)."
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "{dimension.4}",
+        "$description": "chip/padding-y/lg."
+      }
+    },
+    "gap": {
+      "sm": {
+        "$type": "dimension",
+        "$value": "{dimension.2}",
+        "$description": "chip/gap/sm."
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{dimension.4}",
+        "$description": "chip/gap/md."
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "{dimension.6}",
+        "$description": "chip/gap/lg."
+      }
+    }
+  },
+  "icon": {
+    "size": {
+      "xs": {
+        "$type": "dimension",
+        "$value": "{dimension.12}",
+        "$description": "Icon size xs."
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": "{dimension.14}",
+        "$description": "Icon size sm → dimension/14."
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{dimension.16}",
+        "$description": "Icon size md."
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "{dimension.20}",
+        "$description": "Icon size lg."
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": "{dimension.24}",
+        "$description": "Icon size xl."
+      }
+    }
+  },
+  "focus": {
+    "ring-width": {
+      "$type": "dimension",
+      "$value": "{border-width.2}",
+      "$description": "Focus ring width."
+    },
+    "ring-offset": {
+      "$type": "dimension",
+      "$value": "{dimension.2}",
+      "$description": "Focus ring offset."
+    }
+  },
+  "layout": {
+    "card": {
+      "$type": "dimension",
+      "$value": "{dimension.16}",
+      "$description": "Default card padding."
+    },
+    "section": {
+      "$type": "dimension",
+      "$value": "{dimension.32}",
+      "$description": "Section spacing."
+    },
+    "stack-tight": {
+      "$type": "dimension",
+      "$value": "{dimension.4}",
+      "$description": "Tight vertical stack gap."
+    },
+    "stack": {
+      "$type": "dimension",
+      "$value": "{dimension.8}",
+      "$description": "Default vertical stack gap."
+    },
+    "stack-loose": {
+      "$type": "dimension",
+      "$value": "{dimension.16}",
+      "$description": "Loose vertical stack gap."
+    }
+  }
+}
