@@ -92,6 +92,106 @@ function validate(layers) {
   }
 }
 
+/** Resolve `{neutral.500}` → hex using primitive (and nested refs one level). */
+function resolveColorRef(value, primitive) {
+  if (typeof value !== "string") return value;
+  if (value.startsWith("#")) return value;
+  const m = value.match(/^\{([a-z0-9-]+)\.([a-z0-9.-]+)\}$/i);
+  if (!m) throw new Error(`Cannot resolve color ref: ${value}`);
+  const [, family, step] = m;
+  const token = primitive[family]?.[step];
+  if (!token) throw new Error(`Missing primitive ${family}.${step}`);
+  const next = token.$value ?? token.value;
+  if (typeof next === "string" && next.startsWith("{")) {
+    return resolveColorRef(next, primitive);
+  }
+  return next;
+}
+
+function hexToRgb(hex) {
+  const h = hex.replace("#", "");
+  const full =
+    h.length === 3
+      ? h
+          .split("")
+          .map((c) => c + c)
+          .join("")
+      : h;
+  return {
+    r: parseInt(full.slice(0, 2), 16),
+    g: parseInt(full.slice(2, 4), 16),
+    b: parseInt(full.slice(4, 6), 16),
+  };
+}
+
+function relativeLuminance({ r, g, b }) {
+  const lin = [r, g, b].map((c) => {
+    const s = c / 255;
+    return s <= 0.04045 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4;
+  });
+  return 0.2126 * lin[0] + 0.7152 * lin[1] + 0.0722 * lin[2];
+}
+
+function contrastRatio(hexA, hexB) {
+  const l1 = relativeLuminance(hexToRgb(hexA));
+  const l2 = relativeLuminance(hexToRgb(hexB));
+  const lighter = Math.max(l1, l2);
+  const darker = Math.min(l1, l2);
+  return (lighter + 0.05) / (darker + 0.05);
+}
+
+/**
+ * Fail the build if surface/control or surface/border is below 3:1
+ * against the role background for that mode × context (6 combinations).
+ */
+function assertSurfaceLineFillContrast(primitive, roleLight, roleDark, surface) {
+  const roleByMode = { light: roleLight, dark: roleDark };
+  const contexts = ["canvas", "surface", "surface-raised"];
+  const tokens = ["control", "border"];
+  const errors = [];
+  const rows = [];
+
+  for (const mode of ["light", "dark"]) {
+    for (const context of contexts) {
+      const bgRef = roleByMode[mode].bg[context].$value;
+      const bgHex = resolveColorRef(bgRef, primitive);
+      for (const name of tokens) {
+        const fgRef = surface[mode][context][name].$value;
+        const fgHex = resolveColorRef(fgRef, primitive);
+        const ratio = contrastRatio(fgHex, bgHex);
+        rows.push({
+          mode,
+          context,
+          name,
+          fg: fgRef,
+          bg: bgRef,
+          ratio: ratio.toFixed(2),
+        });
+        if (ratio < 3) {
+          errors.push(
+            `surface/${name} ${mode}/${context}: ${fgRef} on ${bgRef} = ${ratio.toFixed(2)}:1 (need ≥3:1)`,
+          );
+        }
+      }
+    }
+  }
+
+  console.log("\nSurface control/border contrast (≥3:1 vs context bg):");
+  for (const r of rows) {
+    const mark = Number(r.ratio) >= 3 ? "✓" : "✗";
+    console.log(
+      `  ${mark} ${r.mode.padEnd(5)} ${r.context.padEnd(14)} ${r.name.padEnd(7)} ${r.ratio}:1  (${r.fg} on ${r.bg})`,
+    );
+  }
+
+  if (errors.length) {
+    console.error(
+      "\nSurface contrast check failed:\n" + errors.map((e) => `  • ${e}`).join("\n"),
+    );
+    process.exit(1);
+  }
+}
+
 /**
  * Build one CSS file from source (+ includes for reference resolution).
  * Only tokens from `sourceFile` are emitted; includes resolve aliases.
@@ -265,6 +365,8 @@ async function main() {
     }
   }
 
+  assertSurfaceLineFillContrast(primitive, roleLight, roleDark, surface);
+
   // ——— primitive.css ———
   writeFileSync(
     join(outDir, "primitive.css"),
@@ -314,25 +416,28 @@ async function main() {
   const surfaceChunks = [];
   for (const mode of ["light", "dark"]) {
     for (const context of ["canvas", "surface", "surface-raised"]) {
-      const slice = {
-        surface: {
-          "level-1": surface[mode][context]["level-1"],
-          "level-2": surface[mode][context]["level-2"],
-          "level-3": surface[mode][context]["level-3"],
-          border: surface[mode][context].border,
-        },
-      };
+      // Emit every key on the context (level-*, border, field, field-hover, …)
+      const slice = { surface: { ...surface[mode][context] } };
       surfaceChunks.push(
         await buildCss({
           tokens: slice,
           includes: [FILES.primitive],
           destination: `_surface_${mode}_${context}.css`,
-          selector: `[data-mode="${mode}"][data-context="${context}"]`,
+          // Descendant form for nested context under root mode; compound for same-element.
+          selector: `[data-mode="${mode}"] [data-context="${context}"], [data-mode="${mode}"][data-context="${context}"]`,
         }),
       );
     }
   }
   writeFileSync(join(outDir, "surface.css"), header("surface") + surfaceChunks.join("\n\n") + "\n");
+
+  // Flat surface refs so component aliases like {surface.border} resolve to var(--surface-border).
+  // Runtime values still come from surface.css selectors (mode × context).
+  const surfaceRefsFile = "_surface_refs.json";
+  writeFileSync(
+    join(tokensDir, surfaceRefsFile),
+    JSON.stringify({ surface: { ...surface.light.canvas } }, null, 2),
+  );
 
   // ——— component.css ———
   const { root: componentRoot, light: componentLight, dark: componentDark } =
@@ -340,7 +445,7 @@ async function main() {
   const componentParts = [
     await buildCss({
       tokens: componentRoot,
-      includes: [FILES.primitive, FILES.structure, FILES.roleLight],
+      includes: [FILES.primitive, FILES.structure, FILES.roleLight, surfaceRefsFile],
       destination: "_component_root.css",
       selector: ":root",
     }),
@@ -349,7 +454,7 @@ async function main() {
     componentParts.push(
       await buildCss({
         tokens: componentLight,
-        includes: [FILES.primitive],
+        includes: [FILES.primitive, surfaceRefsFile],
         destination: "_component_light.css",
         selector: '[data-mode="light"]',
       }),
@@ -359,7 +464,7 @@ async function main() {
     componentParts.push(
       await buildCss({
         tokens: componentDark,
-        includes: [FILES.primitive],
+        includes: [FILES.primitive, surfaceRefsFile],
         destination: "_component_dark.css",
         selector: '[data-mode="dark"]',
       }),
@@ -369,34 +474,45 @@ async function main() {
     join(outDir, "component.css"),
     header("component") + componentParts.join("\n\n") + "\n",
   );
+  rmSync(join(tokensDir, surfaceRefsFile), { force: true });
 
   // ——— tokens.json (token browser later) ———
-  const sdJson = new StyleDictionary({
-    usesDtcg: true,
-    source: [
-      join(tokensDir, FILES.primitive),
-      join(tokensDir, FILES.roleLight),
-      join(tokensDir, FILES.structure),
-      join(tokensDir, FILES.component),
-    ],
-    log: { verbosity: "silent", errors: { brokenReferences: "throw" } },
-    hooks: { transforms: { "name/variant-path": nameTransform } },
-    platforms: {
-      json: {
-        transforms: [transforms.attributeCti, "name/variant-path"],
-        buildPath: `${outDir}/`,
-        files: [
-          {
-            destination: "tokens.json",
-            format: formats.json,
-            options: { outputReferences: true },
-          },
-        ],
+  // Keep surface stub so {surface.border} / {surface.field} in component.json resolve.
+  writeFileSync(
+    join(tokensDir, surfaceRefsFile),
+    JSON.stringify({ surface: { ...surface.light.canvas } }, null, 2),
+  );
+  try {
+    const sdJson = new StyleDictionary({
+      usesDtcg: true,
+      source: [
+        join(tokensDir, FILES.primitive),
+        join(tokensDir, FILES.roleLight),
+        join(tokensDir, FILES.structure),
+        join(tokensDir, surfaceRefsFile),
+        join(tokensDir, FILES.component),
+      ],
+      log: { verbosity: "silent", errors: { brokenReferences: "throw" } },
+      hooks: { transforms: { "name/variant-path": nameTransform } },
+      platforms: {
+        json: {
+          transforms: [transforms.attributeCti, "name/variant-path"],
+          buildPath: `${outDir}/`,
+          files: [
+            {
+              destination: "tokens.json",
+              format: formats.json,
+              options: { outputReferences: true },
+            },
+          ],
+        },
       },
-    },
-  });
-  await sdJson.hasInitialized;
-  await sdJson.buildAllPlatforms();
+    });
+    await sdJson.hasInitialized;
+    await sdJson.buildAllPlatforms();
+  } finally {
+    rmSync(join(tokensDir, surfaceRefsFile), { force: true });
+  }
 
   // ——— hard gate: references must survive ———
   const roleOut = readFileSync(join(outDir, "role.css"), "utf8");

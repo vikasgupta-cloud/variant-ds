@@ -1,15 +1,26 @@
-// Purpose: empty scaffold story so Storybook has something to open (Task 1).
-// No design-system components yet — replaced as real components land.
+/**
+ * Scaffold story — verifies Mode/Context toolbars change token-driven background.
+ */
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
 function EmptyScaffold() {
   return (
-    <div className="p-8 text-base">
-      <p className="font-sans">Variant DS — Storybook scaffold is running.</p>
-      <p className="mt-2 opacity-70">
-        Tailwind v4 is active (utility classes above). Tokens and components come
-        next.
+    <div className="max-w-md space-y-4">
+      <p className="text-text-primary text-base">
+        Variant DS — Mode / Context toolbar check
       </p>
+      <p className="text-text-secondary text-sm">
+        Toggle <strong className="text-text-primary">Mode</strong> in the toolbar.
+        The frame background uses{" "}
+        <code className="text-text-tertiary">bg-bg-canvas</code> (or surface /
+        surface-raised via Context) and should flip with light / dark.
+      </p>
+      <div className="rounded-md border border-border-default bg-bg-surface p-4">
+        <p className="text-text-primary text-sm">Surface sample</p>
+        <p className="text-text-tertiary text-sm">
+          Nested surface fill + border for a quick token smoke test.
+        </p>
+      </div>
     </div>
   );
 }
@@ -17,6 +28,9 @@ function EmptyScaffold() {
 const meta = {
   title: "Scaffold/Empty",
   component: EmptyScaffold,
+  parameters: {
+    layout: "fullscreen",
+  },
 } satisfies Meta<typeof EmptyScaffold>;
 
 export default meta;

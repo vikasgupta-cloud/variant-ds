@@ -197,28 +197,14 @@
       "$description": "Toggle pill radius."
     },
     "track-off-bg": {
-      "light": {
-        "$type": "color",
-        "$value": "{neutral.300}",
-        "$description": "Toggle off track (light). Contrast: ≥3:1 against surface."
-      },
-      "dark": {
-        "$type": "color",
-        "$value": "{neutral.500}",
-        "$description": "Toggle off track (dark). Contrast: ≥3:1 against surface."
-      }
+      "$type": "color",
+      "$value": "{surface.control}",
+      "$description": "Toggle off track — aliases surface/control (≥3:1 filled state chrome per context)."
     },
     "track-off-bg-hover": {
-      "light": {
-        "$type": "color",
-        "$value": "{neutral.400}",
-        "$description": "Toggle off track hover (light). Contrast: ≥3:1."
-      },
-      "dark": {
-        "$type": "color",
-        "$value": "{neutral.400}",
-        "$description": "Toggle off track hover (dark). Contrast: ≥3:1."
-      }
+      "$type": "color",
+      "$value": "{surface.control}",
+      "$description": "Toggle off track hover — surface/control family (≥3:1). Hover may stack opacity in the component."
     },
     "knob-bg": {
       "light": {
@@ -304,6 +290,11 @@
       "$type": "dimension",
       "$value": "{dimension.8}",
       "$description": "Gap between progress and label."
+    },
+    "track-bg": {
+      "$type": "color",
+      "$value": "{surface.control}",
+      "$description": "Progress track fill — aliases surface/control (≥3:1 filled state chrome per context)."
     }
   },
   "slider": {
@@ -316,6 +307,11 @@
       "$type": "color",
       "$value": "{border.strong}",
       "$description": "Slider thumb border — aliases role border/strong so it tracks mode."
+    },
+    "track-bg": {
+      "$type": "color",
+      "$value": "{surface.control}",
+      "$description": "Slider track fill — aliases surface/control (≥3:1 filled state chrome per context)."
     }
   },
   "modal": {

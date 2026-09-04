@@ -4,66 +4,111 @@
       "level-1": {
         "$type": "color",
         "$value": "{neutral.100}",
-        "$description": "surface/level-1 on canvas (light). State mapping: hover→level-1, active/selected/disabled→level-2, selected-hover→level-3. Contrast: chrome ≥3:1."
+        "$description": "surface/level-1 on canvas (light). Raised decorative fills: tertiary/ghost buttons, badges, tags, containers, hover/active/selected/disabled chrome. Contrast: decorative chrome; not for state-conveying fills that need ≥3:1."
       },
       "level-2": {
         "$type": "color",
         "$value": "{neutral.200}",
-        "$description": "surface/level-2 on canvas (light). State mapping: hover→level-1, active/selected/disabled→level-2, selected-hover→level-3. Contrast: chrome ≥3:1."
+        "$description": "surface/level-2 on canvas (light). Raised decorative fills: tertiary/ghost buttons, badges, tags, containers, hover/active/selected/disabled chrome. Contrast: decorative chrome; not for state-conveying fills that need ≥3:1."
       },
       "level-3": {
         "$type": "color",
         "$value": "{neutral.300}",
-        "$description": "surface/level-3 on canvas (light). State mapping: hover→level-1, active/selected/disabled→level-2, selected-hover→level-3. Contrast: chrome ≥3:1."
+        "$description": "surface/level-3 on canvas (light). Raised decorative fills: tertiary/ghost buttons, badges, tags, containers, hover/active/selected/disabled chrome. Contrast: decorative chrome; not for state-conveying fills that need ≥3:1."
       },
       "border": {
         "$type": "color",
         "$value": "{neutral.500}",
-        "$description": "Surface border on canvas (light). Contrast: ≥3:1 against the canvas background."
+        "$description": "surface/border on canvas (light). 1px lines only (dividers, outlines). Keep separate from surface/control even when values match. Contrast: ≥3:1 against the context background."
+      },
+      "field": {
+        "$type": "color",
+        "$value": "{neutral.0}",
+        "$description": "surface/field on canvas (light). Recessed field fill (brighter/deeper well, opposite of level). Bind Input, unchecked Checkbox, and unchecked Radio. Contrast: with text/primary (≥4.5:1)."
+      },
+      "field-hover": {
+        "$type": "color",
+        "$value": "{neutral.50}",
+        "$description": "surface/field-hover on canvas (light). Field hover wash. Contrast: with text/primary (≥4.5:1)."
+      },
+      "control": {
+        "$type": "color",
+        "$value": "{neutral.500}",
+        "$description": "surface/control on canvas (light). Filled shapes that convey state and need ≥3:1 — toggle off-track, progress track, slider track. Separate from surface/border (lines) so fills can diverge later."
       }
     },
     "surface": {
       "level-1": {
         "$type": "color",
         "$value": "{neutral.50}",
-        "$description": "surface/level-1 on surface (light). State mapping: hover→level-1, active/selected/disabled→level-2, selected-hover→level-3. Contrast: chrome ≥3:1."
+        "$description": "surface/level-1 on surface (light). Raised decorative fills: tertiary/ghost buttons, badges, tags, containers, hover/active/selected/disabled chrome. Contrast: decorative chrome; not for state-conveying fills that need ≥3:1."
       },
       "level-2": {
         "$type": "color",
         "$value": "{neutral.100}",
-        "$description": "surface/level-2 on surface (light). State mapping: hover→level-1, active/selected/disabled→level-2, selected-hover→level-3. Contrast: chrome ≥3:1."
+        "$description": "surface/level-2 on surface (light). Raised decorative fills: tertiary/ghost buttons, badges, tags, containers, hover/active/selected/disabled chrome. Contrast: decorative chrome; not for state-conveying fills that need ≥3:1."
       },
       "level-3": {
         "$type": "color",
         "$value": "{neutral.200}",
-        "$description": "surface/level-3 on surface (light). State mapping: hover→level-1, active/selected/disabled→level-2, selected-hover→level-3. Contrast: chrome ≥3:1."
+        "$description": "surface/level-3 on surface (light). Raised decorative fills: tertiary/ghost buttons, badges, tags, containers, hover/active/selected/disabled chrome. Contrast: decorative chrome; not for state-conveying fills that need ≥3:1."
       },
       "border": {
         "$type": "color",
-        "$value": "{neutral.400}",
-        "$description": "Surface border on surface (light). Contrast: ≥3:1 against the surface background."
+        "$value": "{neutral.500}",
+        "$description": "surface/border on surface (light). 1px lines only (dividers, outlines). Keep separate from surface/control even when values match. Contrast: ≥3:1 against the context background (bumped from 400 for headroom)."
+      },
+      "field": {
+        "$type": "color",
+        "$value": "{neutral.0}",
+        "$description": "surface/field on surface (light). Recessed field fill (brighter/deeper well, opposite of level). Bind Input, unchecked Checkbox, and unchecked Radio. Contrast: with text/primary (≥4.5:1)."
+      },
+      "field-hover": {
+        "$type": "color",
+        "$value": "{neutral.50}",
+        "$description": "surface/field-hover on surface (light). Field hover wash. Contrast: with text/primary (≥4.5:1)."
+      },
+      "control": {
+        "$type": "color",
+        "$value": "{neutral.500}",
+        "$description": "surface/control on surface (light). Filled shapes that convey state and need ≥3:1 — toggle off-track, progress track, slider track. Separate from surface/border (lines) so fills can diverge later."
       }
     },
     "surface-raised": {
       "level-1": {
         "$type": "color",
         "$value": "{neutral.100}",
-        "$description": "surface/level-1 on surface-raised (light). State mapping: hover→level-1, active/selected/disabled→level-2, selected-hover→level-3. Contrast: chrome ≥3:1."
+        "$description": "surface/level-1 on surface-raised (light). Raised decorative fills: tertiary/ghost buttons, badges, tags, containers, hover/active/selected/disabled chrome. Contrast: decorative chrome; not for state-conveying fills that need ≥3:1."
       },
       "level-2": {
         "$type": "color",
         "$value": "{neutral.200}",
-        "$description": "surface/level-2 on surface-raised (light). State mapping: hover→level-1, active/selected/disabled→level-2, selected-hover→level-3. Contrast: chrome ≥3:1."
+        "$description": "surface/level-2 on surface-raised (light). Raised decorative fills: tertiary/ghost buttons, badges, tags, containers, hover/active/selected/disabled chrome. Contrast: decorative chrome; not for state-conveying fills that need ≥3:1."
       },
       "level-3": {
         "$type": "color",
         "$value": "{neutral.300}",
-        "$description": "surface/level-3 on surface-raised (light). State mapping: hover→level-1, active/selected/disabled→level-2, selected-hover→level-3. Contrast: chrome ≥3:1."
+        "$description": "surface/level-3 on surface-raised (light). Raised decorative fills: tertiary/ghost buttons, badges, tags, containers, hover/active/selected/disabled chrome. Contrast: decorative chrome; not for state-conveying fills that need ≥3:1."
       },
       "border": {
         "$type": "color",
         "$value": "{neutral.400}",
-        "$description": "Surface border on surface-raised (light). Contrast: ≥3:1 against the surface-raised background."
+        "$description": "surface/border on surface-raised (light). 1px lines only (dividers, outlines). Keep separate from surface/control even when values match. Contrast: ≥3:1 against the context background."
+      },
+      "field": {
+        "$type": "color",
+        "$value": "{neutral.0}",
+        "$description": "surface/field on surface-raised (light). Recessed field fill (brighter/deeper well, opposite of level). Bind Input, unchecked Checkbox, and unchecked Radio. Contrast: with text/primary (≥4.5:1)."
+      },
+      "field-hover": {
+        "$type": "color",
+        "$value": "{neutral.50}",
+        "$description": "surface/field-hover on surface-raised (light). Field hover wash. Contrast: with text/primary (≥4.5:1)."
+      },
+      "control": {
+        "$type": "color",
+        "$value": "{neutral.400}",
+        "$description": "surface/control on surface-raised (light). Filled shapes that convey state and need ≥3:1 — toggle off-track, progress track, slider track. Separate from surface/border (lines) so fills can diverge later."
       }
     }
   },
@@ -72,66 +117,111 @@
       "level-1": {
         "$type": "color",
         "$value": "{neutral.900}",
-        "$description": "surface/level-1 on canvas (dark). State mapping: hover→level-1, active/selected/disabled→level-2, selected-hover→level-3. Contrast: chrome ≥3:1."
+        "$description": "surface/level-1 on canvas (dark). Raised decorative fills: tertiary/ghost buttons, badges, tags, containers, hover/active/selected/disabled chrome. Contrast: decorative chrome; not for state-conveying fills that need ≥3:1."
       },
       "level-2": {
         "$type": "color",
         "$value": "{neutral.800}",
-        "$description": "surface/level-2 on canvas (dark). State mapping: hover→level-1, active/selected/disabled→level-2, selected-hover→level-3. Contrast: chrome ≥3:1."
+        "$description": "surface/level-2 on canvas (dark). Raised decorative fills: tertiary/ghost buttons, badges, tags, containers, hover/active/selected/disabled chrome. Contrast: decorative chrome; not for state-conveying fills that need ≥3:1."
       },
       "level-3": {
         "$type": "color",
         "$value": "{neutral.700}",
-        "$description": "surface/level-3 on canvas (dark). State mapping: hover→level-1, active/selected/disabled→level-2, selected-hover→level-3. Contrast: chrome ≥3:1."
+        "$description": "surface/level-3 on canvas (dark). Raised decorative fills: tertiary/ghost buttons, badges, tags, containers, hover/active/selected/disabled chrome. Contrast: decorative chrome; not for state-conveying fills that need ≥3:1."
       },
       "border": {
         "$type": "color",
         "$value": "{neutral.400}",
-        "$description": "Surface border on canvas (dark). Contrast: ≥3:1 against the canvas background."
+        "$description": "surface/border on canvas (dark). 1px lines only (dividers, outlines). Keep separate from surface/control even when values match. Contrast: ≥3:1 against the context background."
+      },
+      "field": {
+        "$type": "color",
+        "$value": "{neutral.900}",
+        "$description": "surface/field on canvas (dark). Recessed well that is brighter than canvas (neutral-900 on 950) — same direction as light. Bind Input, unchecked Checkbox/Radio. Contrast: with text/primary (≥4.5:1)."
+      },
+      "field-hover": {
+        "$type": "color",
+        "$value": "{neutral.800}",
+        "$description": "surface/field-hover on canvas (dark). Brightens further from field (neutral-900 → 800) to increase separation — same direction as light, not toward ambient bg. Contrast: with text/primary (≥4.5:1)."
+      },
+      "control": {
+        "$type": "color",
+        "$value": "{neutral.400}",
+        "$description": "surface/control on canvas (dark). Filled shapes that convey state and need ≥3:1 — toggle off-track, progress track, slider track. Separate from surface/border (lines) so fills can diverge later."
       }
     },
     "surface": {
       "level-1": {
         "$type": "color",
         "$value": "{neutral.800}",
-        "$description": "surface/level-1 on surface (dark). State mapping: hover→level-1, active/selected/disabled→level-2, selected-hover→level-3. Contrast: chrome ≥3:1."
+        "$description": "surface/level-1 on surface (dark). Raised decorative fills: tertiary/ghost buttons, badges, tags, containers, hover/active/selected/disabled chrome. Contrast: decorative chrome; not for state-conveying fills that need ≥3:1."
       },
       "level-2": {
         "$type": "color",
         "$value": "{neutral.700}",
-        "$description": "surface/level-2 on surface (dark). State mapping: hover→level-1, active/selected/disabled→level-2, selected-hover→level-3. Contrast: chrome ≥3:1."
+        "$description": "surface/level-2 on surface (dark). Raised decorative fills: tertiary/ghost buttons, badges, tags, containers, hover/active/selected/disabled chrome. Contrast: decorative chrome; not for state-conveying fills that need ≥3:1."
       },
       "level-3": {
         "$type": "color",
         "$value": "{neutral.600}",
-        "$description": "surface/level-3 on surface (dark). State mapping: hover→level-1, active/selected/disabled→level-2, selected-hover→level-3. Contrast: chrome ≥3:1."
+        "$description": "surface/level-3 on surface (dark). Raised decorative fills: tertiary/ghost buttons, badges, tags, containers, hover/active/selected/disabled chrome. Contrast: decorative chrome; not for state-conveying fills that need ≥3:1."
       },
       "border": {
         "$type": "color",
         "$value": "{neutral.500}",
-        "$description": "Surface border on surface (dark). Contrast: ≥3:1 against the surface background."
+        "$description": "surface/border on surface (dark). 1px lines only (dividers, outlines). Keep separate from surface/control even when values match. Contrast: ≥3:1 against the context background."
+      },
+      "field": {
+        "$type": "color",
+        "$value": "{neutral.800}",
+        "$description": "surface/field on surface (dark). Brighter recessed well than surface (800 on 900). Bind Input, unchecked Checkbox/Radio. Contrast: with text/primary (≥4.5:1)."
+      },
+      "field-hover": {
+        "$type": "color",
+        "$value": "{neutral.700}",
+        "$description": "surface/field-hover on surface (dark). Brightens further from field (neutral-800 → 700) to increase separation — same direction as light, not toward ambient bg. Contrast: with text/primary (≥4.5:1)."
+      },
+      "control": {
+        "$type": "color",
+        "$value": "{neutral.500}",
+        "$description": "surface/control on surface (dark). Filled shapes that convey state and need ≥3:1 — toggle off-track, progress track, slider track. Separate from surface/border (lines) so fills can diverge later."
       }
     },
     "surface-raised": {
       "level-1": {
         "$type": "color",
         "$value": "{neutral.700}",
-        "$description": "surface/level-1 on surface-raised (dark). State mapping: hover→level-1, active/selected/disabled→level-2, selected-hover→level-3. Contrast: chrome ≥3:1."
+        "$description": "surface/level-1 on surface-raised (dark). Raised decorative fills: tertiary/ghost buttons, badges, tags, containers, hover/active/selected/disabled chrome. Contrast: decorative chrome; not for state-conveying fills that need ≥3:1."
       },
       "level-2": {
         "$type": "color",
         "$value": "{neutral.600}",
-        "$description": "surface/level-2 on surface-raised (dark). State mapping: hover→level-1, active/selected/disabled→level-2, selected-hover→level-3. Contrast: chrome ≥3:1."
+        "$description": "surface/level-2 on surface-raised (dark). Raised decorative fills: tertiary/ghost buttons, badges, tags, containers, hover/active/selected/disabled chrome. Contrast: decorative chrome; not for state-conveying fills that need ≥3:1."
       },
       "level-3": {
         "$type": "color",
         "$value": "{neutral.500}",
-        "$description": "surface/level-3 on surface-raised (dark). State mapping: hover→level-1, active/selected/disabled→level-2, selected-hover→level-3. Contrast: chrome ≥3:1."
+        "$description": "surface/level-3 on surface-raised (dark). Raised decorative fills: tertiary/ghost buttons, badges, tags, containers, hover/active/selected/disabled chrome. Contrast: decorative chrome; not for state-conveying fills that need ≥3:1."
       },
       "border": {
         "$type": "color",
-        "$value": "{neutral.500}",
-        "$description": "Surface border on surface-raised (dark). Contrast: ≥3:1 against the surface-raised background."
+        "$value": "{neutral.400}",
+        "$description": "surface/border on surface-raised (dark). 1px lines only (dividers, outlines). Keep separate from surface/control even when values match. Contrast: ≥3:1 against the context background (was 500 @ 2.51:1 on raised)."
+      },
+      "field": {
+        "$type": "color",
+        "$value": "{neutral.700}",
+        "$description": "surface/field on surface-raised (dark). Brighter recessed well than raised (700 on 800). Bind Input, unchecked Checkbox/Radio. Contrast: with text/primary (≥4.5:1)."
+      },
+      "field-hover": {
+        "$type": "color",
+        "$value": "{neutral.600}",
+        "$description": "surface/field-hover on surface-raised (dark). Brightens further from field (neutral-700 → 600) to increase separation — same direction as light, not toward ambient bg. Contrast: with text/primary (≥4.5:1)."
+      },
+      "control": {
+        "$type": "color",
+        "$value": "{neutral.400}",
+        "$description": "surface/control on surface-raised (dark). Filled shapes that convey state and need ≥3:1 — toggle off-track, progress track, slider track. Separate from surface/border (lines) so fills can diverge later."
       }
     }
   }
