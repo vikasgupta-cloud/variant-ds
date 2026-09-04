@@ -1,0 +1,3 @@
+/* Purpose: minimal Tailwind v4 entry for Storybook (Task 1 scaffold).
+   Token imports and @theme mapping arrive in Task 2–3. No tailwind.config.js. */
+@import "tailwindcss";

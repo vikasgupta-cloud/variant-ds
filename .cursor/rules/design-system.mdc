@@ -1,0 +1,56 @@
+---
+description: Non-negotiable constraints for the VWO Variant design system
+alwaysApply: true
+---
+
+# Design system constraints
+
+The full specification is in `docs/DESIGN-SYSTEM-SPEC.md`. Read it before any token or component work. These rules apply to every change in this repo.
+
+## Token pipeline
+
+- Style Dictionary MUST run with `outputReferences: true`. CSS output must contain `var()` references, not flattened hex values. `--bg-neutral-strong: var(--neutral-950)` is correct; `--bg-neutral-strong: #1b1913` is a bug that breaks live token editing.
+- Every CSS custom property name is GENERATED from its token path. Never hand-write a variable name. `color.neutral.950` → `--neutral-950`. `dimension.16` → `--dimension-16`.
+- The name is the value for dimensions. `dimension/16` is 16px everywhere, in Figma and in code. Never introduce an ordinal or t-shirt alias for a numeric scale.
+- `src/styles/tokens/` is generated output. Never edit it. Edit `tokens/*.json`.
+- Every token requires a `description`. Colour tokens must state their contrast requirement. The build fails without it.
+
+## Layer discipline
+
+References flow one way only:
+
+```
+Component → Structure → Surface → Role → Primitive
+```
+
+- A component file must never reference a primitive directly. Use Role or Structure tokens.
+- No hex codes anywhere outside `tokens/`.
+- No raw `px` values in component files. Use `dimension/*` or a Structure token.
+- Tailwind's default colour and spacing scales are purged with `--color-*: initial` and `--spacing-*: initial`. Do not re-enable them. If `bg-blue-500` works, someone will use it.
+
+## Three deliberate exceptions — do not "fix" these
+
+1. `bg/warning/strong` is amber-300 in BOTH modes, paired with `text/on-strong-warning` (neutral-950). White on amber fails contrast. This is intentional.
+2. `bg/neutral/strong` inverts fully (neutral-950 → neutral-50) instead of following the 600→500 pattern used by other roles.
+3. `success`, `info` and `warning` have NO `-hover` or `-active` variants. They are not interactive. Do not add them.
+
+## Design decisions that live in code
+
+- Primary buttons use `bg/neutral/strong` (near-black), NOT brand yellow. Yellow is reserved for wayfinding and selection. There is deliberately no `action/primary/bg` intent token — the decision lives in the Button variant map.
+- Status icons have no tokens of their own. An icon in a danger banner uses `text/danger`; on a strong banner it uses `text/on-strong`.
+- Neutral icons DO keep their own family (`icon/primary` etc.) because tertiary and disabled diverge from text.
+
+## Components
+
+- Use Radix primitives, unstyled. All visual styling from tokens.
+- Use `cva` for variant maps. The variant map is where design decisions live.
+- Button and Input must own ZERO component tokens. If they need one, the Role or Structure layer has a gap — stop and flag it rather than adding a component token.
+- Every interactive component must be fully keyboard operable with a visible focus ring.
+- Respect `prefers-reduced-motion`.
+
+## Verification
+
+Before saying a step is done:
+- Render in light AND dark, across all three contexts (canvas, surface, surface-raised).
+- `addon-a11y` must pass. Violations fail the build.
+- Confirm no hardcoded values were introduced.

@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Builds
+dist/
+storybook-static/
+
+# Generated token CSS — JSON in tokens/ is the source of truth
+src/styles/tokens/*
+!src/styles/tokens/.gitkeep
+
+# Env / local
+.env
+.env.*
+!.env.example
+
+# Editors / OS
+.DS_Store
+*.log
+debug-storybook.log
+.vite/
+.turbo/
+.cache/
+
+# Test / coverage
+coverage/
