@@ -329,16 +329,6 @@
       "$type": "dimension",
       "$value": "560px",
       "$description": "Modal max width — 560px component deviation."
-    },
-    "scrim-bg": {
-      "$type": "color",
-      "$value": "{neutral.950}",
-      "$description": "Modal scrim color. Contrast: dims content behind; paired with scrim-opacity."
-    },
-    "scrim-opacity": {
-      "$type": "number",
-      "$value": "{opacity.64}",
-      "$description": "Modal scrim opacity."
     }
   },
   "card": {

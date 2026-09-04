@@ -224,5 +224,11 @@
       "$value": "{dimension.16}",
       "$description": "Loose vertical stack gap."
     }
+  },
+  "shadow": {
+    "sm": {
+      "$value": "0 1px 2px 0 color-mix(in srgb, var(--neutral-950) calc(100% * var(--opacity-8)), transparent)",
+      "$description": "Small elevation shadow for cards and light raised surfaces. Mode-locked; pairs with border/subtle on Card so fill + shadow carry the boundary."
+    }
   }
 }

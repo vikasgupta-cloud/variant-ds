@@ -7,6 +7,7 @@
 @import "./tokens/role.css";
 @import "./tokens/surface.css";
 @import "./tokens/structure.css";
+@import "./tokens/overlay.css";
 @import "./tokens/component.css";
 
 /* Map Role + Surface + Dimension tokens onto Tailwind utilities.
@@ -83,6 +84,10 @@
   --color-surface-level-1: var(--surface-level-1);
   --color-surface-level-2: var(--surface-level-2);
   --color-surface-level-3: var(--surface-level-3);
+  --color-overlay-scrim: var(--overlay-scrim);
+
+  /* Elevation */
+  --shadow-sm: var(--shadow-sm);
 
   /* Dimension scale — name is the value (p-16 → 16px) */
   --spacing-0: var(--dimension-0);

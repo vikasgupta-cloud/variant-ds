@@ -1,0 +1,14 @@
+{
+  "overlay": {
+    "scrim": {
+      "$type": "color",
+      "$value": "{neutral.950}",
+      "$description": "Modal / drawer scrim colour. Mode-locked (identical in light and dark). Pair with overlay/scrim-opacity; dims content behind without replacing it."
+    },
+    "scrim-opacity": {
+      "$type": "number",
+      "$value": "{opacity.64}",
+      "$description": "Modal / drawer scrim opacity. Mode-locked (identical in light and dark). Applied with overlay/scrim."
+    }
+  }
+}

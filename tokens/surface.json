@@ -19,7 +19,7 @@
       "border": {
         "$type": "color",
         "$value": "{neutral.500}",
-        "$description": "surface/border on canvas (light). 1px lines only (dividers, outlines). Keep separate from surface/control even when values match. Contrast: ≥3:1 against the context background."
+        "$description": "surface/border on canvas (light). 1px structural lines (section rules, list separators that must meet ≥3:1). Keep separate from surface/control even when values match. Contrast: ≥3:1 against the context background."
       },
       "field": {
         "$type": "color",
@@ -56,7 +56,7 @@
       "border": {
         "$type": "color",
         "$value": "{neutral.500}",
-        "$description": "surface/border on surface (light). 1px lines only (dividers, outlines). Keep separate from surface/control even when values match. Contrast: ≥3:1 against the context background (bumped from 400 for headroom)."
+        "$description": "surface/border on surface (light). 1px structural lines (section rules, list separators that must meet ≥3:1). Keep separate from surface/control even when values match. Contrast: ≥3:1 against the context background (bumped from 400 for headroom)."
       },
       "field": {
         "$type": "color",
@@ -93,7 +93,7 @@
       "border": {
         "$type": "color",
         "$value": "{neutral.400}",
-        "$description": "surface/border on surface-raised (light). 1px lines only (dividers, outlines). Keep separate from surface/control even when values match. Contrast: ≥3:1 against the context background."
+        "$description": "surface/border on surface-raised (light). 1px structural lines (section rules, list separators that must meet ≥3:1). Keep separate from surface/control even when values match. Contrast: ≥3:1 against the context background."
       },
       "field": {
         "$type": "color",
@@ -132,7 +132,7 @@
       "border": {
         "$type": "color",
         "$value": "{neutral.400}",
-        "$description": "surface/border on canvas (dark). 1px lines only (dividers, outlines). Keep separate from surface/control even when values match. Contrast: ≥3:1 against the context background."
+        "$description": "surface/border on canvas (dark). 1px structural lines (section rules, list separators that must meet ≥3:1). Keep separate from surface/control even when values match. Contrast: ≥3:1 against the context background."
       },
       "field": {
         "$type": "color",
@@ -169,7 +169,7 @@
       "border": {
         "$type": "color",
         "$value": "{neutral.500}",
-        "$description": "surface/border on surface (dark). 1px lines only (dividers, outlines). Keep separate from surface/control even when values match. Contrast: ≥3:1 against the context background."
+        "$description": "surface/border on surface (dark). 1px structural lines (section rules, list separators that must meet ≥3:1). Keep separate from surface/control even when values match. Contrast: ≥3:1 against the context background."
       },
       "field": {
         "$type": "color",
@@ -206,7 +206,7 @@
       "border": {
         "$type": "color",
         "$value": "{neutral.400}",
-        "$description": "surface/border on surface-raised (dark). 1px lines only (dividers, outlines). Keep separate from surface/control even when values match. Contrast: ≥3:1 against the context background (was 500 @ 2.51:1 on raised)."
+        "$description": "surface/border on surface-raised (dark). 1px structural lines (section rules, list separators that must meet ≥3:1). Keep separate from surface/control even when values match. Contrast: ≥3:1 against the context background (was 500 @ 2.51:1 on raised)."
       },
       "field": {
         "$type": "color",

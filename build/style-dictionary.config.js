@@ -21,6 +21,7 @@ const FILES = {
   roleDark: "role.dark.json",
   surface: "surface.json",
   structure: "structure.json",
+  overlay: "overlay.json",
   component: "component.json",
 };
 
@@ -56,6 +57,7 @@ function collectLeaves(node, file, prefix = [], out = []) {
       file,
       description: node.$description ?? node.description ?? node.comment,
       value: node.$value ?? node.value,
+      type: node.$type ?? node.type,
     });
     return out;
   }
@@ -64,6 +66,194 @@ function collectLeaves(node, file, prefix = [], out = []) {
     collectLeaves(child, file, [...prefix, key], out);
   }
   return out;
+}
+
+/** `{neutral.950}` → `neutral-950`; non-refs return null. */
+function aliasFromValue(value) {
+  if (typeof value !== "string") return null;
+  const m = value.match(/^\{([a-z0-9.-]+)\}$/i);
+  if (!m) return null;
+  return m[1].replace(/\./g, "-");
+}
+
+function leafType(value, explicit) {
+  if (explicit) return explicit;
+  if (typeof value === "string" && (value.startsWith("#") || value.startsWith("{"))) {
+    return "color";
+  }
+  if (typeof value === "number") return "dimension";
+  if (typeof value === "string" && /px|rem|em|ms|s|%$/.test(value)) return "dimension";
+  return "other";
+}
+
+/**
+ * Flat catalog consumed by TokenBrowser / editor (spec §5, §8).
+ * One entry per CSS custom property name. Mode/context variants carry valueByMode / valueByContext.
+ */
+function buildTokenCatalog({
+  primitive,
+  roleLight,
+  roleDark,
+  surface,
+  structure,
+  overlay,
+  component,
+}) {
+  const catalog = [];
+
+  function push({ name, path, layer, type, description, value, valueByMode, valueByContext }) {
+    const alias = aliasFromValue(
+      valueByMode?.light ?? valueByMode?.dark ?? valueByContext?.["light/canvas"] ?? value,
+    );
+    catalog.push({
+      name,
+      path,
+      cssVar: `--${name}`,
+      layer,
+      type: leafType(value ?? valueByMode?.light ?? Object.values(valueByContext ?? {})[0], type),
+      description: description ?? "",
+      value: value ?? null,
+      valueByMode: valueByMode ?? null,
+      valueByContext: valueByContext ?? null,
+      alias,
+    });
+  }
+
+  for (const leaf of collectLeaves(primitive, FILES.primitive)) {
+    push({
+      name: leaf.path.replace(/\./g, "-"),
+      path: leaf.path.split("."),
+      layer: "primitive",
+      type: leaf.type,
+      description: leaf.description,
+      value: leaf.value,
+    });
+  }
+
+  const darkByPath = new Map(
+    collectLeaves(roleDark, FILES.roleDark).map((l) => [l.path, l]),
+  );
+  for (const leaf of collectLeaves(roleLight, FILES.roleLight)) {
+    const dark = darkByPath.get(leaf.path);
+    push({
+      name: leaf.path.replace(/\./g, "-"),
+      path: leaf.path.split("."),
+      layer: "role",
+      type: "color",
+      description: leaf.description,
+      valueByMode: {
+        light: leaf.value,
+        dark: dark?.value ?? leaf.value,
+      },
+    });
+  }
+
+  // Surface CSS vars are `--surface-*`; values vary by mode × context.
+  const surfaceKeys = Object.keys(surface.light.canvas);
+  for (const key of surfaceKeys) {
+    const valueByContext = {};
+    let description = surface.light.canvas[key].$description;
+    for (const mode of ["light", "dark"]) {
+      for (const context of ["canvas", "surface", "surface-raised"]) {
+        const token = surface[mode][context][key];
+        valueByContext[`${mode}/${context}`] = token.$value;
+        if (mode === "light" && context === "canvas") description = token.$description;
+      }
+    }
+    push({
+      name: `surface-${key}`,
+      path: ["surface", key],
+      layer: "surface",
+      type: "color",
+      description,
+      valueByContext,
+    });
+  }
+
+  for (const leaf of collectLeaves(structure, FILES.structure)) {
+    push({
+      name: leaf.path.replace(/\./g, "-"),
+      path: leaf.path.split("."),
+      layer: "structure",
+      type: leaf.type,
+      description: leaf.description,
+      value: leaf.value,
+    });
+  }
+
+  for (const leaf of collectLeaves(overlay, FILES.overlay)) {
+    push({
+      name: leaf.path.replace(/\./g, "-"),
+      path: leaf.path.split("."),
+      layer: "overlay",
+      type: leaf.type,
+      description: leaf.description,
+      value: leaf.value,
+    });
+  }
+
+  // Component: collapse .light/.dark path suffixes into valueByMode on the CSS name.
+  const componentByCss = new Map();
+  for (const leaf of collectLeaves(component, FILES.component)) {
+    const parts = leaf.path.split(".");
+    let mode = null;
+    if (parts[parts.length - 1] === "light" || parts[parts.length - 1] === "dark") {
+      mode = parts.pop();
+    }
+    const cssPath = parts.join(".");
+    const name = cssPath.replace(/\./g, "-");
+    if (!componentByCss.has(name)) {
+      componentByCss.set(name, {
+        name,
+        path: parts,
+        type: leaf.type,
+        description: leaf.description,
+        value: null,
+        valueByMode: null,
+      });
+    }
+    const entry = componentByCss.get(name);
+    if (mode) {
+      entry.valueByMode = entry.valueByMode ?? {};
+      entry.valueByMode[mode] = leaf.value;
+      if (mode === "light") entry.description = leaf.description;
+    } else {
+      entry.value = leaf.value;
+      entry.description = leaf.description;
+    }
+  }
+  for (const entry of componentByCss.values()) {
+    push({
+      name: entry.name,
+      path: entry.path,
+      layer: "component",
+      type: entry.type,
+      description: entry.description,
+      value: entry.value,
+      valueByMode: entry.valueByMode,
+    });
+  }
+
+  catalog.sort((a, b) => {
+    const layerOrder = {
+      primitive: 0,
+      role: 1,
+      surface: 2,
+      structure: 3,
+      overlay: 4,
+      component: 5,
+    };
+    const la = layerOrder[a.layer] ?? 9;
+    const lb = layerOrder[b.layer] ?? 9;
+    if (la !== lb) return la - lb;
+    return a.name.localeCompare(b.name);
+  });
+
+  return {
+    $schema: "variant-ds/token-catalog",
+    generated: true,
+    tokens: catalog,
+  };
 }
 
 function validate(layers) {
@@ -302,6 +492,7 @@ async function main() {
   const roleDark = await loadJson(FILES.roleDark);
   const surface = await loadJson(FILES.surface);
   const structure = await loadJson(FILES.structure);
+  const overlay = await loadJson(FILES.overlay);
   const component = await loadJson(FILES.component);
 
   // ——— validate descriptions + duplicate CSS paths ———
@@ -332,6 +523,13 @@ async function main() {
     {
       file: FILES.structure,
       leaves: collectLeaves(structure, FILES.structure).map((t) => ({
+        ...t,
+        cssPath: t.path,
+      })),
+    },
+    {
+      file: FILES.overlay,
+      leaves: collectLeaves(overlay, FILES.overlay).map((t) => ({
         ...t,
         cssPath: t.path,
       })),
@@ -412,6 +610,19 @@ async function main() {
       "\n",
   );
 
+  // ——— overlay.css (mode-locked) ———
+  writeFileSync(
+    join(outDir, "overlay.css"),
+    header("overlay") +
+      (await buildCss({
+        sourceFile: FILES.overlay,
+        includes: [FILES.primitive],
+        destination: "overlay.css",
+        selector: ":root",
+      })) +
+      "\n",
+  );
+
   // ——— surface.css (mode × context) ———
   const surfaceChunks = [];
   for (const mode of ["light", "dark"]) {
@@ -476,43 +687,24 @@ async function main() {
   );
   rmSync(join(tokensDir, surfaceRefsFile), { force: true });
 
-  // ——— tokens.json (token browser later) ———
-  // Keep surface stub so {surface.border} / {surface.field} in component.json resolve.
+  // ——— tokens.json (flat catalog for TokenBrowser + runtime editor) ———
   writeFileSync(
-    join(tokensDir, surfaceRefsFile),
-    JSON.stringify({ surface: { ...surface.light.canvas } }, null, 2),
+    join(outDir, "tokens.json"),
+    JSON.stringify(
+      buildTokenCatalog({
+        primitive,
+        roleLight,
+        roleDark,
+        surface,
+        structure,
+        overlay,
+        component,
+      }),
+      null,
+      2,
+    ) +
+      "\n",
   );
-  try {
-    const sdJson = new StyleDictionary({
-      usesDtcg: true,
-      source: [
-        join(tokensDir, FILES.primitive),
-        join(tokensDir, FILES.roleLight),
-        join(tokensDir, FILES.structure),
-        join(tokensDir, surfaceRefsFile),
-        join(tokensDir, FILES.component),
-      ],
-      log: { verbosity: "silent", errors: { brokenReferences: "throw" } },
-      hooks: { transforms: { "name/variant-path": nameTransform } },
-      platforms: {
-        json: {
-          transforms: [transforms.attributeCti, "name/variant-path"],
-          buildPath: `${outDir}/`,
-          files: [
-            {
-              destination: "tokens.json",
-              format: formats.json,
-              options: { outputReferences: true },
-            },
-          ],
-        },
-      },
-    });
-    await sdJson.hasInitialized;
-    await sdJson.buildAllPlatforms();
-  } finally {
-    rmSync(join(tokensDir, surfaceRefsFile), { force: true });
-  }
 
   // ——— hard gate: references must survive ———
   const roleOut = readFileSync(join(outDir, "role.css"), "utf8");
