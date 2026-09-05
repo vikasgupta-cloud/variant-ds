@@ -1,0 +1,133 @@
+{
+  "id": "checkbox",
+  "name": "Checkbox",
+  "storyTitle": "Components/Checkbox",
+  "overview": "Binary or indeterminate multi-select control built on Radix Checkbox.",
+  "whenToUse": [
+    "Multi-select lists",
+    "Settings toggles that are not immediate on/off (prefer Toggle for that)",
+    "Select-all with indeterminate"
+  ],
+  "variants": {
+    "size": [
+      "sm",
+      "md",
+      "lg"
+    ],
+    "state": [
+      "default",
+      "unchecked",
+      "checked",
+      "indeterminate",
+      "disabled",
+      "focused",
+      "error"
+    ]
+  },
+  "anatomy": [
+    "Root",
+    "Indicator (check / dash)",
+    "Label",
+    "Description"
+  ],
+  "tokens": {
+    "role": [
+      {
+        "path": "bg/neutral/strong",
+        "cssVar": "--bg-neutral-strong"
+      },
+      {
+        "path": "bg/disabled",
+        "cssVar": "--bg-disabled"
+      },
+      {
+        "path": "text/on-inverse",
+        "cssVar": "--text-on-inverse"
+      },
+      {
+        "path": "text/primary",
+        "cssVar": "--text-primary"
+      },
+      {
+        "path": "text/secondary",
+        "cssVar": "--text-secondary"
+      },
+      {
+        "path": "text/disabled",
+        "cssVar": "--text-disabled"
+      },
+      {
+        "path": "border/default",
+        "cssVar": "--border-default"
+      },
+      {
+        "path": "border/focus",
+        "cssVar": "--border-focus"
+      },
+      {
+        "path": "border/danger",
+        "cssVar": "--border-danger"
+      }
+    ],
+    "surface": [
+      {
+        "path": "surface/field",
+        "cssVar": "--surface-field"
+      }
+    ],
+    "structure": [
+      {
+        "path": "control/label-gap",
+        "cssVar": "--control-label-gap"
+      },
+      {
+        "path": "focus/ring-width",
+        "cssVar": "--focus-ring-width"
+      },
+      {
+        "path": "focus/ring-offset",
+        "cssVar": "--focus-ring-offset"
+      }
+    ],
+    "component": [
+      {
+        "path": "checkbox/size",
+        "cssVar": "--checkbox-size"
+      },
+      {
+        "path": "checkbox/radius",
+        "cssVar": "--checkbox-radius"
+      }
+    ]
+  },
+  "props": [
+    {
+      "name": "size",
+      "type": "sm | md | lg",
+      "default": "md",
+      "description": "Box size."
+    },
+    {
+      "name": "checked",
+      "type": "boolean | 'indeterminate'",
+      "description": "Controlled checked state."
+    },
+    {
+      "name": "state",
+      "type": "design-review states",
+      "default": "default",
+      "description": "Design-review only."
+    }
+  ],
+  "accessibility": [
+    "Radix provides checkbox role and keyboard support",
+    "Label clicks toggle the control",
+    "error sets aria-invalid"
+  ],
+  "do": [
+    "Use indeterminate for partial selection"
+  ],
+  "dont": [
+    "Don't use Checkbox for exclusive choices — use Radio"
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "id": "slider",
+  "name": "Slider",
+  "storyTitle": "Components/Slider",
+  "overview": "Single or range slider (Radix). Thumb uses Structure/component sizing; track uses surface/control.",
+  "whenToUse": [
+    "Numeric ranges",
+    "Opacity/volume style continuous input"
+  ],
+  "variants": {
+    "mode": [
+      "single",
+      "range"
+    ],
+    "state": [
+      "default",
+      "hover",
+      "dragging",
+      "disabled"
+    ]
+  },
+  "anatomy": [
+    "Root",
+    "Track",
+    "Range",
+    "Thumb(s)",
+    "Optional label"
+  ],
+  "tokens": {
+    "role": [
+      {
+        "path": "bg/neutral/strong",
+        "cssVar": "--bg-neutral-strong"
+      },
+      {
+        "path": "bg/surface",
+        "cssVar": "--bg-surface"
+      },
+      {
+        "path": "border/strong",
+        "cssVar": "--border-strong"
+      },
+      {
+        "path": "border/focus",
+        "cssVar": "--border-focus"
+      },
+      {
+        "path": "text/primary",
+        "cssVar": "--text-primary"
+      },
+      {
+        "path": "text/secondary",
+        "cssVar": "--text-secondary"
+      }
+    ],
+    "component": [
+      {
+        "path": "slider/thumb-size",
+        "cssVar": "--slider-thumb-size"
+      },
+      {
+        "path": "slider/thumb-border",
+        "cssVar": "--slider-thumb-border"
+      },
+      {
+        "path": "slider/track-bg",
+        "cssVar": "--slider-track-bg"
+      }
+    ],
+    "structure": [
+      {
+        "path": "focus/ring-width",
+        "cssVar": "--focus-ring-width"
+      },
+      {
+        "path": "focus/ring-offset",
+        "cssVar": "--focus-ring-offset"
+      }
+    ]
+  },
+  "props": [
+    {
+      "name": "value",
+      "type": "number | [number, number]",
+      "description": "Single or range value."
+    },
+    {
+      "name": "state",
+      "type": "default | hover | dragging | disabled",
+      "default": "default",
+      "description": "Design-review only."
+    }
+  ],
+  "accessibility": [
+    "slider role",
+    "Arrow keys adjust value",
+    "Thumbs are keyboard focusable"
+  ],
+  "do": [
+    "Provide a text field nearby for precise entry when needed"
+  ],
+  "dont": [
+    "Don't use Slider for binary on/off — use Toggle"
+  ]
+}

@@ -1,0 +1,316 @@
+{
+  "id": "button",
+  "name": "Button",
+  "storyTitle": "Components/Button",
+  "overview": "Primary interactive control. Hierarchy and colour are independent axes with type-safe allowed pairs. Primary uses bg/neutral/strong — not brand yellow (yellow is for wayfinding/selection).",
+  "whenToUse": [
+    "Trigger actions (submit, confirm, navigate)",
+    "Use hierarchy to express emphasis; colour for semantic meaning (destructive, AI, status on secondary/ghost/link)",
+    "Prefer link hierarchy for inline textual actions"
+  ],
+  "variants": {
+    "hierarchy": [
+      "primary",
+      "secondary",
+      "tertiary",
+      "ghost",
+      "link"
+    ],
+    "color": [
+      "default",
+      "destructive",
+      "warning",
+      "success",
+      "info",
+      "ai"
+    ],
+    "size": [
+      "xs",
+      "sm",
+      "md",
+      "lg"
+    ],
+    "icon": [
+      "none",
+      "leading",
+      "trailing",
+      "only"
+    ],
+    "state": [
+      "default",
+      "hover",
+      "active",
+      "focused",
+      "disabled"
+    ]
+  },
+  "anatomy": [
+    "Root (button)",
+    "Leading/trailing icon",
+    "Label",
+    "Loading spinner"
+  ],
+  "tokens": {
+    "role": [
+      {
+        "path": "bg/neutral/strong",
+        "cssVar": "--bg-neutral-strong"
+      },
+      {
+        "path": "bg/neutral/strong-hover",
+        "cssVar": "--bg-neutral-strong-hover"
+      },
+      {
+        "path": "bg/neutral/strong-active",
+        "cssVar": "--bg-neutral-strong-active"
+      },
+      {
+        "path": "bg/danger/strong",
+        "cssVar": "--bg-danger-strong"
+      },
+      {
+        "path": "bg/danger/strong-hover",
+        "cssVar": "--bg-danger-strong-hover"
+      },
+      {
+        "path": "bg/danger/strong-active",
+        "cssVar": "--bg-danger-strong-active"
+      },
+      {
+        "path": "bg/ai/strong",
+        "cssVar": "--bg-ai-strong"
+      },
+      {
+        "path": "bg/ai/strong-hover",
+        "cssVar": "--bg-ai-strong-hover"
+      },
+      {
+        "path": "bg/ai/strong-active",
+        "cssVar": "--bg-ai-strong-active"
+      },
+      {
+        "path": "bg/surface",
+        "cssVar": "--bg-surface"
+      },
+      {
+        "path": "bg/disabled",
+        "cssVar": "--bg-disabled"
+      },
+      {
+        "path": "bg/danger/soft",
+        "cssVar": "--bg-danger-soft"
+      },
+      {
+        "path": "bg/warning/soft",
+        "cssVar": "--bg-warning-soft"
+      },
+      {
+        "path": "bg/success/soft",
+        "cssVar": "--bg-success-soft"
+      },
+      {
+        "path": "bg/info/soft",
+        "cssVar": "--bg-info-soft"
+      },
+      {
+        "path": "bg/ai/soft",
+        "cssVar": "--bg-ai-soft"
+      },
+      {
+        "path": "text/primary",
+        "cssVar": "--text-primary"
+      },
+      {
+        "path": "text/on-inverse",
+        "cssVar": "--text-on-inverse"
+      },
+      {
+        "path": "text/on-strong",
+        "cssVar": "--text-on-strong"
+      },
+      {
+        "path": "text/disabled",
+        "cssVar": "--text-disabled"
+      },
+      {
+        "path": "text/link",
+        "cssVar": "--text-link"
+      },
+      {
+        "path": "text/link-hover",
+        "cssVar": "--text-link-hover"
+      },
+      {
+        "path": "text/danger",
+        "cssVar": "--text-danger"
+      },
+      {
+        "path": "text/danger-hover",
+        "cssVar": "--text-danger-hover"
+      },
+      {
+        "path": "text/warning",
+        "cssVar": "--text-warning"
+      },
+      {
+        "path": "text/warning-hover",
+        "cssVar": "--text-warning-hover"
+      },
+      {
+        "path": "text/success",
+        "cssVar": "--text-success"
+      },
+      {
+        "path": "text/success-hover",
+        "cssVar": "--text-success-hover"
+      },
+      {
+        "path": "text/info",
+        "cssVar": "--text-info"
+      },
+      {
+        "path": "text/info-hover",
+        "cssVar": "--text-info-hover"
+      },
+      {
+        "path": "text/ai",
+        "cssVar": "--text-ai"
+      },
+      {
+        "path": "text/ai-hover",
+        "cssVar": "--text-ai-hover"
+      },
+      {
+        "path": "border/focus",
+        "cssVar": "--border-focus"
+      },
+      {
+        "path": "border/danger",
+        "cssVar": "--border-danger"
+      },
+      {
+        "path": "border/warning",
+        "cssVar": "--border-warning"
+      },
+      {
+        "path": "border/success",
+        "cssVar": "--border-success"
+      },
+      {
+        "path": "border/info",
+        "cssVar": "--border-info"
+      },
+      {
+        "path": "border/ai",
+        "cssVar": "--border-ai"
+      }
+    ],
+    "surface": [
+      {
+        "path": "surface/border",
+        "cssVar": "--surface-border"
+      },
+      {
+        "path": "surface/level-1",
+        "cssVar": "--surface-level-1"
+      },
+      {
+        "path": "surface/level-2",
+        "cssVar": "--surface-level-2"
+      },
+      {
+        "path": "surface/level-3",
+        "cssVar": "--surface-level-3"
+      }
+    ],
+    "structure": [
+      {
+        "path": "control/padding-x",
+        "cssVar": "--control-padding-x"
+      },
+      {
+        "path": "control/padding-y",
+        "cssVar": "--control-padding-y"
+      },
+      {
+        "path": "control/gap",
+        "cssVar": "--control-gap"
+      },
+      {
+        "path": "control/icon-padding",
+        "cssVar": "--control-icon-padding"
+      },
+      {
+        "path": "control/radius",
+        "cssVar": "--control-radius"
+      },
+      {
+        "path": "icon/size",
+        "cssVar": "--icon-size"
+      },
+      {
+        "path": "focus/ring-width",
+        "cssVar": "--focus-ring-width"
+      },
+      {
+        "path": "focus/ring-offset",
+        "cssVar": "--focus-ring-offset"
+      }
+    ]
+  },
+  "props": [
+    {
+      "name": "hierarchy",
+      "type": "primary | secondary | tertiary | ghost | link",
+      "default": "primary",
+      "description": "Visual weight / chrome style."
+    },
+    {
+      "name": "color",
+      "type": "depends on hierarchy (type-safe)",
+      "default": "default",
+      "description": "Semantic colour. Primary only allows default | destructive | ai."
+    },
+    {
+      "name": "size",
+      "type": "xs | sm | md | lg",
+      "default": "md",
+      "description": "Control sizing from Structure."
+    },
+    {
+      "name": "icon",
+      "type": "none | leading | trailing | only",
+      "default": "none",
+      "description": "Icon placement axis."
+    },
+    {
+      "name": "state",
+      "type": "default | hover | active | focused | disabled",
+      "default": "default",
+      "description": "Design-review only — not for production."
+    },
+    {
+      "name": "loading",
+      "type": "boolean",
+      "default": "false",
+      "description": "Shows spinner and sets aria-busy."
+    }
+  ],
+  "accessibility": [
+    "Native button semantics; fully keyboard operable",
+    "Visible focus ring via focus-visible + border/focus",
+    "loading sets aria-busy; disabled via disabled / aria-disabled",
+    "icon-only requires aria-label",
+    "Respects prefers-reduced-motion on transitions/spinner"
+  ],
+  "do": [
+    "Use primary default for the main action on a view",
+    "Pair Alert actions as ghost + secondary coloured by role",
+    "Leave state at default in product code"
+  ],
+  "dont": [
+    "Don't use primary + warning/success/info (blocked at the type level)",
+    "Don't put a primary default button inside a coloured Alert",
+    "Don't use brand yellow as a primary button fill"
+  ]
+}

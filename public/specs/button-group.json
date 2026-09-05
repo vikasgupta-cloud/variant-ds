@@ -1,0 +1,121 @@
+{
+  "id": "button-group",
+  "name": "ButtonGroup",
+  "storyTitle": "Components/ButtonGroup",
+  "overview": "Segmented control for single or multi select. Selected items use yellow selected tokens (wayfinding), not primary button chrome.",
+  "whenToUse": [
+    "View switchers",
+    "Compact mutually exclusive or multi options"
+  ],
+  "variants": {
+    "size": [
+      "sm",
+      "md",
+      "lg"
+    ],
+    "type": [
+      "single",
+      "multiple"
+    ],
+    "state": [
+      "default",
+      "hover",
+      "disabled"
+    ]
+  },
+  "anatomy": [
+    "Group root",
+    "Item(s)",
+    "Optional icon"
+  ],
+  "tokens": {
+    "role": [
+      {
+        "path": "selected/bg",
+        "cssVar": "--selected-bg"
+      },
+      {
+        "path": "selected/text",
+        "cssVar": "--selected-text"
+      },
+      {
+        "path": "text/primary",
+        "cssVar": "--text-primary"
+      },
+      {
+        "path": "border/subtle",
+        "cssVar": "--border-subtle"
+      },
+      {
+        "path": "bg/surface",
+        "cssVar": "--bg-surface"
+      },
+      {
+        "path": "border/focus",
+        "cssVar": "--border-focus"
+      }
+    ],
+    "surface": [
+      {
+        "path": "surface/level-1",
+        "cssVar": "--surface-level-1"
+      }
+    ],
+    "structure": [
+      {
+        "path": "control/padding-x",
+        "cssVar": "--control-padding-x"
+      },
+      {
+        "path": "control/padding-y",
+        "cssVar": "--control-padding-y"
+      },
+      {
+        "path": "control/gap",
+        "cssVar": "--control-gap"
+      },
+      {
+        "path": "icon/size",
+        "cssVar": "--icon-size"
+      },
+      {
+        "path": "focus/ring-width",
+        "cssVar": "--focus-ring-width"
+      }
+    ],
+    "component": [
+      {
+        "path": "segment/radius-outer",
+        "cssVar": "--segment-radius-outer"
+      },
+      {
+        "path": "segment/radius-inner",
+        "cssVar": "--segment-radius-inner"
+      }
+    ]
+  },
+  "props": [
+    {
+      "name": "type",
+      "type": "single | multiple",
+      "default": "single",
+      "description": "Selection mode."
+    },
+    {
+      "name": "size",
+      "type": "sm | md | lg",
+      "default": "md",
+      "description": "Item size."
+    }
+  ],
+  "accessibility": [
+    "toggle group / toggle roles from Radix",
+    "Selected state exposed to AT"
+  ],
+  "do": [
+    "Use selected yellow for the active segment"
+  ],
+  "dont": [
+    "Don't style selected segments as primary black buttons"
+  ]
+}

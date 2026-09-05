@@ -1,0 +1,180 @@
+{
+  "id": "input",
+  "name": "Input",
+  "storyTitle": "Components/Input",
+  "overview": "Text field with label, helper, and error. Uses Surface field fills so the well stays correct in every context.",
+  "whenToUse": [
+    "Single-line text entry",
+    "Pair with Button in form rows",
+    "Use errorMessage for validation copy (sets aria-invalid)"
+  ],
+  "variants": {
+    "size": [
+      "sm",
+      "md",
+      "lg"
+    ],
+    "state": [
+      "default",
+      "hover",
+      "focused",
+      "disabled",
+      "read-only",
+      "error"
+    ]
+  },
+  "anatomy": [
+    "Label",
+    "Field",
+    "Prefix/suffix icon",
+    "Clear control",
+    "Helper / error"
+  ],
+  "tokens": {
+    "role": [
+      {
+        "path": "text/primary",
+        "cssVar": "--text-primary"
+      },
+      {
+        "path": "text/secondary",
+        "cssVar": "--text-secondary"
+      },
+      {
+        "path": "text/tertiary",
+        "cssVar": "--text-tertiary"
+      },
+      {
+        "path": "text/disabled",
+        "cssVar": "--text-disabled"
+      },
+      {
+        "path": "text/danger",
+        "cssVar": "--text-danger"
+      },
+      {
+        "path": "border/default",
+        "cssVar": "--border-default"
+      },
+      {
+        "path": "border/focus",
+        "cssVar": "--border-focus"
+      },
+      {
+        "path": "border/subtle",
+        "cssVar": "--border-subtle"
+      },
+      {
+        "path": "border/danger",
+        "cssVar": "--border-danger"
+      },
+      {
+        "path": "bg/disabled",
+        "cssVar": "--bg-disabled"
+      },
+      {
+        "path": "icon/secondary",
+        "cssVar": "--icon-secondary"
+      },
+      {
+        "path": "icon/tertiary",
+        "cssVar": "--icon-tertiary"
+      },
+      {
+        "path": "icon/primary",
+        "cssVar": "--icon-primary"
+      }
+    ],
+    "surface": [
+      {
+        "path": "surface/field",
+        "cssVar": "--surface-field"
+      },
+      {
+        "path": "surface/field-hover",
+        "cssVar": "--surface-field-hover"
+      },
+      {
+        "path": "surface/level-1",
+        "cssVar": "--surface-level-1"
+      }
+    ],
+    "structure": [
+      {
+        "path": "control/padding-x",
+        "cssVar": "--control-padding-x"
+      },
+      {
+        "path": "control/padding-y",
+        "cssVar": "--control-padding-y"
+      },
+      {
+        "path": "control/gap",
+        "cssVar": "--control-gap"
+      },
+      {
+        "path": "control/radius",
+        "cssVar": "--control-radius"
+      },
+      {
+        "path": "control/label-gap",
+        "cssVar": "--control-label-gap"
+      },
+      {
+        "path": "icon/size",
+        "cssVar": "--icon-size"
+      },
+      {
+        "path": "focus/ring-width",
+        "cssVar": "--focus-ring-width"
+      },
+      {
+        "path": "focus/ring-offset",
+        "cssVar": "--focus-ring-offset"
+      }
+    ]
+  },
+  "props": [
+    {
+      "name": "size",
+      "type": "sm | md | lg",
+      "default": "md",
+      "description": "Field size."
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "description": "Visible label."
+    },
+    {
+      "name": "helperText",
+      "type": "string",
+      "description": "Supporting copy."
+    },
+    {
+      "name": "errorMessage",
+      "type": "string",
+      "description": "Validation message; marks invalid."
+    },
+    {
+      "name": "state",
+      "type": "default | hover | focused | disabled | read-only | error",
+      "default": "default",
+      "description": "Design-review only."
+    }
+  ],
+  "accessibility": [
+    "Label associated via htmlFor / id",
+    "Helper and error wired through aria-describedby",
+    "error / aria-invalid expose invalid state",
+    "Clear control has accessible name"
+  ],
+  "do": [
+    "Always provide a visible label for persistent fields",
+    "Prefer errorMessage over colour alone"
+  ],
+  "dont": [
+    "Don't rely on placeholder as the only label",
+    "Don't use state≠default in production"
+  ]
+}

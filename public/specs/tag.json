@@ -1,0 +1,113 @@
+{
+  "id": "tag",
+  "name": "Tag",
+  "storyTitle": "Components/Tag",
+  "overview": "Filterable or removable chip for selected values and facets.",
+  "whenToUse": [
+    "Selected filters",
+    "Removable keywords",
+    "Compact labeled values"
+  ],
+  "variants": {
+    "size": [
+      "sm",
+      "md",
+      "lg"
+    ],
+    "state": [
+      "default",
+      "hover",
+      "disabled"
+    ]
+  },
+  "anatomy": [
+    "Root",
+    "Optional icon",
+    "Label",
+    "Optional remove control"
+  ],
+  "tokens": {
+    "role": [
+      {
+        "path": "text/primary",
+        "cssVar": "--text-primary"
+      },
+      {
+        "path": "text/disabled",
+        "cssVar": "--text-disabled"
+      },
+      {
+        "path": "border/subtle",
+        "cssVar": "--border-subtle"
+      },
+      {
+        "path": "icon/secondary",
+        "cssVar": "--icon-secondary"
+      }
+    ],
+    "surface": [
+      {
+        "path": "surface/level-1",
+        "cssVar": "--surface-level-1"
+      },
+      {
+        "path": "surface/level-2",
+        "cssVar": "--surface-level-2"
+      }
+    ],
+    "structure": [
+      {
+        "path": "chip/padding-x",
+        "cssVar": "--chip-padding-x"
+      },
+      {
+        "path": "chip/padding-y",
+        "cssVar": "--chip-padding-y"
+      },
+      {
+        "path": "chip/gap",
+        "cssVar": "--chip-gap"
+      },
+      {
+        "path": "icon/size",
+        "cssVar": "--icon-size"
+      }
+    ],
+    "component": [
+      {
+        "path": "tag/radius",
+        "cssVar": "--tag-radius"
+      }
+    ]
+  },
+  "props": [
+    {
+      "name": "size",
+      "type": "sm | md | lg",
+      "default": "md",
+      "description": "Chip size."
+    },
+    {
+      "name": "removable",
+      "type": "boolean",
+      "default": "false",
+      "description": "Shows remove Button."
+    },
+    {
+      "name": "state",
+      "type": "default | hover | disabled",
+      "default": "default",
+      "description": "Design-review only."
+    }
+  ],
+  "accessibility": [
+    "Remove control is a Button with accessible name",
+    "Disabled tags are not focusable for remove"
+  ],
+  "do": [
+    "Use removable for dismissible selections"
+  ],
+  "dont": [
+    "Don't use Tag for status — use Badge"
+  ]
+}

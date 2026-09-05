@@ -529,5 +529,235 @@
       ],
       "$description": "Standard easing curve for UI motion."
     }
+  },
+  "typography": {
+    "display": {
+      "2xl": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "Ergon, \"DM Sans\", sans-serif",
+          "fontSize": "60px",
+          "fontWeight": 700,
+          "lineHeight": "68px",
+          "letterSpacing": "-0.02em"
+        },
+        "$description": "Display 2xl — Ergon Bold 60/68, tracking -2%. Falls back to DM Sans when Ergon is unavailable."
+      },
+      "xl": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "Ergon, \"DM Sans\", sans-serif",
+          "fontSize": "48px",
+          "fontWeight": 700,
+          "lineHeight": "56px",
+          "letterSpacing": "-0.02em"
+        },
+        "$description": "Display xl — Ergon Bold 48/56, tracking -2%. Falls back to DM Sans when Ergon is unavailable."
+      },
+      "lg": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "Ergon, \"DM Sans\", sans-serif",
+          "fontSize": "36px",
+          "fontWeight": 700,
+          "lineHeight": "44px",
+          "letterSpacing": "-0.02em"
+        },
+        "$description": "Display lg — Ergon Bold 36/44, tracking -2%. Falls back to DM Sans when Ergon is unavailable."
+      }
+    },
+    "heading": {
+      "xl": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "Ergon, \"DM Sans\", sans-serif",
+          "fontSize": "30px",
+          "fontWeight": 700,
+          "lineHeight": "40px",
+          "letterSpacing": "-0.01em"
+        },
+        "$description": "Heading xl — Ergon Bold 30/40, tracking -1%. Falls back to DM Sans when Ergon is unavailable."
+      },
+      "lg": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "Ergon, \"DM Sans\", sans-serif",
+          "fontSize": "24px",
+          "fontWeight": 700,
+          "lineHeight": "32px",
+          "letterSpacing": "-0.01em"
+        },
+        "$description": "Heading lg — Ergon Bold 24/32, tracking -1%. Falls back to DM Sans when Ergon is unavailable."
+      },
+      "md": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "\"DM Sans\", sans-serif",
+          "fontSize": "20px",
+          "fontWeight": 700,
+          "lineHeight": "28px",
+          "letterSpacing": "-0.01em"
+        },
+        "$description": "Heading md — DM Sans Bold 20/28, tracking -1%."
+      },
+      "sm": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "\"DM Sans\", sans-serif",
+          "fontSize": "18px",
+          "fontWeight": 600,
+          "lineHeight": "24px",
+          "letterSpacing": "0"
+        },
+        "$description": "Heading sm — DM Sans SemiBold 18/24."
+      }
+    },
+    "body": {
+      "lg": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "\"DM Sans\", sans-serif",
+          "fontSize": "16px",
+          "fontWeight": 400,
+          "lineHeight": "24px",
+          "letterSpacing": "0"
+        },
+        "$description": "Body lg — DM Sans Regular 16/24."
+      },
+      "lg-medium": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "\"DM Sans\", sans-serif",
+          "fontSize": "16px",
+          "fontWeight": 500,
+          "lineHeight": "24px",
+          "letterSpacing": "0"
+        },
+        "$description": "Body lg medium — DM Sans Medium 16/24."
+      },
+      "lg-semibold": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "\"DM Sans\", sans-serif",
+          "fontSize": "16px",
+          "fontWeight": 600,
+          "lineHeight": "24px",
+          "letterSpacing": "0"
+        },
+        "$description": "Body lg semibold — DM Sans SemiBold 16/24."
+      },
+      "md": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "\"DM Sans\", sans-serif",
+          "fontSize": "14px",
+          "fontWeight": 400,
+          "lineHeight": "20px",
+          "letterSpacing": "0"
+        },
+        "$description": "Body md — DM Sans Regular 14/20."
+      },
+      "md-medium": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "\"DM Sans\", sans-serif",
+          "fontSize": "14px",
+          "fontWeight": 500,
+          "lineHeight": "20px",
+          "letterSpacing": "0"
+        },
+        "$description": "Body md medium — DM Sans Medium 14/20."
+      },
+      "md-semibold": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "\"DM Sans\", sans-serif",
+          "fontSize": "14px",
+          "fontWeight": 600,
+          "lineHeight": "20px",
+          "letterSpacing": "0"
+        },
+        "$description": "Body md semibold — DM Sans SemiBold 14/20."
+      },
+      "sm": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "\"DM Sans\", sans-serif",
+          "fontSize": "12px",
+          "fontWeight": 400,
+          "lineHeight": "18px",
+          "letterSpacing": "0"
+        },
+        "$description": "Body sm — DM Sans Regular 12/18."
+      },
+      "sm-medium": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "\"DM Sans\", sans-serif",
+          "fontSize": "12px",
+          "fontWeight": 500,
+          "lineHeight": "18px",
+          "letterSpacing": "0"
+        },
+        "$description": "Body sm medium — DM Sans Medium 12/18."
+      },
+      "sm-semibold": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "\"DM Sans\", sans-serif",
+          "fontSize": "12px",
+          "fontWeight": 600,
+          "lineHeight": "18px",
+          "letterSpacing": "0"
+        },
+        "$description": "Body sm semibold — DM Sans SemiBold 12/18."
+      },
+      "sm-caps": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "\"DM Sans\", sans-serif",
+          "fontSize": "12px",
+          "fontWeight": 500,
+          "lineHeight": "18px",
+          "letterSpacing": "0.06em"
+        },
+        "$description": "Body sm caps — DM Sans Medium 12/18, tracking 0.06em, uppercase. Product eyebrow / overline labels (settings sections, docs headers, card kicker)."
+      }
+    },
+    "numeric": {
+      "lg": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "\"DM Mono\", ui-monospace, monospace",
+          "fontSize": "20px",
+          "fontWeight": 500,
+          "lineHeight": "28px",
+          "letterSpacing": "0"
+        },
+        "$description": "Numeric lg — DM Mono Medium 20/28."
+      },
+      "md": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "\"DM Mono\", ui-monospace, monospace",
+          "fontSize": "14px",
+          "fontWeight": 400,
+          "lineHeight": "20px",
+          "letterSpacing": "0"
+        },
+        "$description": "Numeric md — DM Mono Regular 14/20."
+      },
+      "sm": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "\"DM Mono\", ui-monospace, monospace",
+          "fontSize": "12px",
+          "fontWeight": 400,
+          "lineHeight": "16px",
+          "letterSpacing": "0"
+        },
+        "$description": "Numeric sm — DM Mono Regular 12/16."
+      }
+    }
   }
 }

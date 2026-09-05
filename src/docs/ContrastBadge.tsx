@@ -1,5 +1,5 @@
 /**
- * ContrastBadge — pass / fail / exempt chip for live WCAG ratios (spec §5).
+ * ContrastBadge — pass / tight / fail / exempt using Role fills + type tokens.
  */
 import { contrastLevel } from "./contrast";
 import type { ContrastCheck } from "./contrast-pairing";
@@ -48,11 +48,13 @@ export function ContrastBadge({
 
   return (
     <span
-      className={`inline-flex items-center gap-2 rounded-sm border px-2 py-1 text-xs ${styles[verdict]}`}
+      className={`inline-flex items-center gap-8 rounded-sm border px-chip-padding-x-sm py-chip-padding-y-sm type-body-sm ${styles[verdict]}`}
       title={titleParts.length ? titleParts.join(" · ") : undefined}
     >
-      <span className="font-medium uppercase tracking-wide">{labels[verdict]}</span>
-      <span className="tabular-nums">{text}</span>
+      <span className="type-body-sm-caps">
+        {labels[verdict]}
+      </span>
+      <span className="font-mono type-numeric-sm tabular-nums">{text}</span>
     </span>
   );
 }

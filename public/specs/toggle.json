@@ -1,0 +1,137 @@
+{
+  "id": "toggle",
+  "name": "Toggle",
+  "storyTitle": "Components/Toggle",
+  "overview": "Immediate on/off switch (Radix Switch). Prefer over Checkbox when the change applies instantly.",
+  "whenToUse": [
+    "Settings that apply immediately",
+    "Feature flags in UI"
+  ],
+  "variants": {
+    "size": [
+      "sm",
+      "md",
+      "lg"
+    ],
+    "state": [
+      "default",
+      "off",
+      "on",
+      "disabled",
+      "focused"
+    ],
+    "labelPosition": [
+      "start",
+      "end"
+    ]
+  },
+  "anatomy": [
+    "Root (switch)",
+    "Thumb",
+    "Label",
+    "Description"
+  ],
+  "tokens": {
+    "role": [
+      {
+        "path": "bg/neutral/strong",
+        "cssVar": "--bg-neutral-strong"
+      },
+      {
+        "path": "text/primary",
+        "cssVar": "--text-primary"
+      },
+      {
+        "path": "text/secondary",
+        "cssVar": "--text-secondary"
+      },
+      {
+        "path": "text/disabled",
+        "cssVar": "--text-disabled"
+      },
+      {
+        "path": "border/focus",
+        "cssVar": "--border-focus"
+      }
+    ],
+    "structure": [
+      {
+        "path": "control/label-gap",
+        "cssVar": "--control-label-gap"
+      },
+      {
+        "path": "focus/ring-width",
+        "cssVar": "--focus-ring-width"
+      },
+      {
+        "path": "focus/ring-offset",
+        "cssVar": "--focus-ring-offset"
+      }
+    ],
+    "component": [
+      {
+        "path": "toggle/track-width",
+        "cssVar": "--toggle-track-width"
+      },
+      {
+        "path": "toggle/track-height",
+        "cssVar": "--toggle-track-height"
+      },
+      {
+        "path": "toggle/knob-size",
+        "cssVar": "--toggle-knob-size"
+      },
+      {
+        "path": "toggle/track-padding",
+        "cssVar": "--toggle-track-padding"
+      },
+      {
+        "path": "toggle/radius",
+        "cssVar": "--toggle-radius"
+      },
+      {
+        "path": "toggle/track-off-bg",
+        "cssVar": "--toggle-track-off-bg"
+      },
+      {
+        "path": "toggle/track-off-bg-hover",
+        "cssVar": "--toggle-track-off-bg-hover"
+      },
+      {
+        "path": "toggle/knob-bg",
+        "cssVar": "--toggle-knob-bg"
+      }
+    ]
+  },
+  "props": [
+    {
+      "name": "size",
+      "type": "sm | md | lg",
+      "default": "md",
+      "description": "Switch size."
+    },
+    {
+      "name": "labelPosition",
+      "type": "start | end",
+      "default": "end",
+      "description": "Label placement."
+    },
+    {
+      "name": "state",
+      "type": "default | off | on | disabled | focused",
+      "default": "default",
+      "description": "Design-review only."
+    }
+  ],
+  "accessibility": [
+    "switch role from Radix",
+    "Space toggles",
+    "Label is associated"
+  ],
+  "do": [
+    "Use for immediate binary settings"
+  ],
+  "dont": [
+    "Don't use for multi-select — use Checkbox"
+  ]
+}

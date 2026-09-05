@@ -179,30 +179,60 @@
       "$value": "{neutral.700}",
       "$description": "neutral text and status icons (light). Contrast: ≥4.5:1 on soft neutral / canvas."
     },
+    "neutral-hover": {
+      "$type": "color",
+      "$value": "{neutral.800}",
+      "$description": "Hover state for status-coloured text and link buttons. Contrast: ≥4.5:1 on canvas/surface."
+    },
     "info": {
       "$type": "color",
       "$value": "{ocean.700}",
       "$description": "info text and status icons (light). Contrast: ≥4.5:1 on soft info / canvas."
+    },
+    "info-hover": {
+      "$type": "color",
+      "$value": "{ocean.800}",
+      "$description": "Hover state for status-coloured text and link buttons. Contrast: ≥4.5:1 on canvas/surface."
     },
     "success": {
       "$type": "color",
       "$value": "{green.700}",
       "$description": "success text and status icons (light). Contrast: ≥4.5:1 on soft success / canvas."
     },
+    "success-hover": {
+      "$type": "color",
+      "$value": "{green.800}",
+      "$description": "Hover state for status-coloured text and link buttons. Contrast: ≥4.5:1 on canvas/surface."
+    },
     "warning": {
       "$type": "color",
       "$value": "{amber.700}",
       "$description": "warning text and status icons (light). Contrast: ≥4.5:1 on soft warning / canvas."
+    },
+    "warning-hover": {
+      "$type": "color",
+      "$value": "{amber.800}",
+      "$description": "Hover state for status-coloured text and link buttons. Contrast: ≥4.5:1 on canvas/surface."
     },
     "danger": {
       "$type": "color",
       "$value": "{cherry.700}",
       "$description": "danger text and status icons (light). Contrast: ≥4.5:1 on soft danger / canvas."
     },
+    "danger-hover": {
+      "$type": "color",
+      "$value": "{cherry.800}",
+      "$description": "Hover state for status-coloured text and link buttons. Contrast: ≥4.5:1 on canvas/surface."
+    },
     "ai": {
       "$type": "color",
       "$value": "{berry.700}",
       "$description": "ai text and status icons (light). Contrast: ≥4.5:1 on soft ai / canvas."
+    },
+    "ai-hover": {
+      "$type": "color",
+      "$value": "{berry.800}",
+      "$description": "Hover state for status-coloured text and link buttons. Contrast: ≥4.5:1 on canvas/surface."
     }
   },
   "icon": {

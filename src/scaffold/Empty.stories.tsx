@@ -27,6 +27,7 @@ function EmptyScaffold() {
 
 const meta = {
   title: "Scaffold/Empty",
+  tags: ["!dev"],
   component: EmptyScaffold,
   parameters: {
     layout: "fullscreen",

@@ -1,0 +1,165 @@
+{
+  "id": "modal",
+  "name": "Modal",
+  "storyTitle": "Components/Modal",
+  "overview": "Dialog with Overlay scrim and z/modal stacking. Panel is surface-raised so nested Cards resolve correctly.",
+  "whenToUse": [
+    "Confirmations",
+    "Focused forms",
+    "Destructive confirms"
+  ],
+  "variants": {
+    "size": [
+      "sm",
+      "md",
+      "lg"
+    ],
+    "state": [
+      "default"
+    ]
+  },
+  "anatomy": [
+    "Trigger",
+    "Overlay (scrim)",
+    "Content panel",
+    "Title",
+    "Description",
+    "Body",
+    "Footer",
+    "Close"
+  ],
+  "tokens": {
+    "role": [
+      {
+        "path": "bg/surface-raised",
+        "cssVar": "--bg-surface-raised"
+      },
+      {
+        "path": "text/primary",
+        "cssVar": "--text-primary"
+      },
+      {
+        "path": "text/secondary",
+        "cssVar": "--text-secondary"
+      },
+      {
+        "path": "border/subtle",
+        "cssVar": "--border-subtle"
+      },
+      {
+        "path": "border/focus",
+        "cssVar": "--border-focus"
+      },
+      {
+        "path": "icon/secondary",
+        "cssVar": "--icon-secondary"
+      },
+      {
+        "path": "icon/primary",
+        "cssVar": "--icon-primary"
+      }
+    ],
+    "surface": [
+      {
+        "path": "surface/level-1",
+        "cssVar": "--surface-level-1"
+      }
+    ],
+    "structure": [
+      {
+        "path": "shadow/sm",
+        "cssVar": "--shadow-sm"
+      },
+      {
+        "path": "layout/stack",
+        "cssVar": "--layout-stack"
+      },
+      {
+        "path": "layout/stack-tight",
+        "cssVar": "--layout-stack-tight"
+      },
+      {
+        "path": "z/modal",
+        "cssVar": "--z-modal"
+      },
+      {
+        "path": "focus/ring-width",
+        "cssVar": "--focus-ring-width"
+      }
+    ],
+    "overlay": [
+      {
+        "path": "overlay/scrim",
+        "cssVar": "--overlay-scrim"
+      },
+      {
+        "path": "overlay/scrim-opacity",
+        "cssVar": "--overlay-scrim-opacity"
+      }
+    ],
+    "component": [
+      {
+        "path": "modal/radius",
+        "cssVar": "--modal-radius"
+      },
+      {
+        "path": "modal/padding",
+        "cssVar": "--modal-padding"
+      },
+      {
+        "path": "modal/max-width-sm",
+        "cssVar": "--modal-max-width-sm"
+      },
+      {
+        "path": "modal/max-width",
+        "cssVar": "--modal-max-width"
+      },
+      {
+        "path": "modal/max-width-lg",
+        "cssVar": "--modal-max-width-lg"
+      }
+    ]
+  },
+  "props": [
+    {
+      "name": "size",
+      "type": "sm | md | lg",
+      "default": "md",
+      "description": "Max width token."
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "description": "Dialog title (required)."
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "description": "Controlled open state."
+    },
+    {
+      "name": "trigger",
+      "type": "ReactNode",
+      "description": "Element that opens the dialog."
+    },
+    {
+      "name": "footer",
+      "type": "ReactNode",
+      "description": "Action row."
+    }
+  ],
+  "accessibility": [
+    "dialog role from Radix",
+    "Focus trapped while open",
+    "Escape closes",
+    "Title required for accessible name"
+  ],
+  "do": [
+    "Put destructive confirms in the footer with primary destructive",
+    "Nest Card inside for complex content"
+  ],
+  "dont": [
+    "Don't skip the title",
+    "Don't use Modal for non-blocking inline messages — use Alert"
+  ]
+}

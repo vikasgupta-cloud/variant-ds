@@ -111,6 +111,8 @@ bg/{role}/strong-hover    700 → 600     neutral, danger, ai ONLY
 bg/{role}/strong-active   800 → 700     neutral, danger, ai ONLY
 bg/{role}/soft            100 → 900
 text/{role}               700 → 300     used for text AND icons
+text/{role}-hover         800 → 200     danger, warning, success, info, ai, neutral
+                                        Hover state for status-coloured text and link buttons
 border/{role}             200 → 700
 ```
 
@@ -282,13 +284,20 @@ Fifteen. Each is a real, accessible, production-quality React component — not 
 Every component must expose every combination as a Storybook story. Include an "All variants" story per component showing the full grid at once.
 
 ```
-Button      variant: primary | secondary | tertiary | ghost | destructive | ai | ai-secondary
+Button      hierarchy: primary | secondary | tertiary | ghost | link
+            color:    (allowed pairs only — invalid combinations are a TypeScript error)
+                        primary    default | destructive | ai
+                        secondary  default | destructive | warning | success | info | ai
+                        tertiary   default | destructive
+                        ghost      default | destructive | warning | success | info | ai
+                        link       default | destructive | warning | success | info | ai
             size:    xs | sm | md | lg
-            state:   rest | hover | active | focus | disabled | loading
-            plus:    iconLeft, iconRight, iconOnly, fullWidth
+            icon:    none | leading | trailing | only
+            state:   default | hover | active | focused | disabled   ← design-review only
+            plus:    loading, fullWidth, iconNode
 
 Input       size:    sm | md | lg
-            state:   rest | hover | focus | disabled | read-only | error
+            state:   default | hover | focused | disabled | read-only | error   ← design-review only
             plus:    label, helper text, error message, prefix/suffix icon, clearable
 
 Dropdown    Select and Menu variants
@@ -335,10 +344,15 @@ Card        variant: default | raised | interactive
 Alert       role:    info | success | warning | danger | ai
             emphasis: soft | strong
             plus:    with title, with action, dismissible
+            actions: optional pair — ghost “Dismiss” + secondary primary-action,
+                     both inherit the Alert role as Button color (danger → destructive).
+                     Never a primary default button inside a coloured alert.
 
 Modal       size:    sm | md | lg
             plus:    with footer actions, scrolling body, nested content, destructive confirm
 ```
+
+**`state` prop (design-review affordance):** Button, Input, and every subsequent component expose a `state` prop that mirrors Figma’s State dropdown. The default value is `default`, which uses real CSS `:hover` / `:active` / `:focus-visible` — normal runtime behaviour. Any other value forces that state’s styling by applying the same classes the pseudo-selector would, so designers can pick “hover” in Storybook without hovering. **Not for production use** — real applications leave `state` at `default` and let CSS handle interaction.
 
 Use `cva` (class-variance-authority) for variant maps. **The variant map is where design decisions live** — e.g. primary buttons using `bg/neutral/strong` rather than brand yellow. There is deliberately no intent-token layer; the component carries the decision and the docs explain the reasoning.
 

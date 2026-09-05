@@ -78,12 +78,52 @@ function aliasFromValue(value) {
 
 function leafType(value, explicit) {
   if (explicit) return explicit;
+  if (
+    value &&
+    typeof value === "object" &&
+    !Array.isArray(value) &&
+    ("fontFamily" in value || "fontSize" in value)
+  ) {
+    return "typography";
+  }
   if (typeof value === "string" && (value.startsWith("#") || value.startsWith("{"))) {
     return "color";
   }
   if (typeof value === "number") return "dimension";
   if (typeof value === "string" && /px|rem|em|ms|s|%$/.test(value)) return "dimension";
   return "other";
+}
+
+/** Expand typography composites into per-axis CSS custom properties. */
+function emitTypographyCss(typography) {
+  const lines = [];
+  function walk(node, prefix) {
+    if (!node || typeof node !== "object") return;
+    if ("$value" in node) {
+      const v = node.$value;
+      const name = prefix.join("-");
+      lines.push(`  --${name}-font-family: ${v.fontFamily};`);
+      lines.push(`  --${name}-font-size: ${v.fontSize};`);
+      lines.push(`  --${name}-font-weight: ${v.fontWeight};`);
+      lines.push(`  --${name}-line-height: ${v.lineHeight};`);
+      lines.push(`  --${name}-letter-spacing: ${v.letterSpacing};`);
+      return;
+    }
+    for (const [key, child] of Object.entries(node)) {
+      if (key.startsWith("$")) continue;
+      walk(child, [...prefix, key]);
+    }
+  }
+  walk(typography, ["typography"]);
+  if (!lines.length) return "";
+  return `:root {\n${lines.join("\n")}\n}\n`;
+}
+
+/** Clone primitive without typography — SD cssVariables cannot emit object composites. */
+function primitiveWithoutTypography(primitive) {
+  const clone = structuredClone(primitive);
+  delete clone.typography;
+  return clone;
 }
 
 /**
@@ -566,14 +606,17 @@ async function main() {
   assertSurfaceLineFillContrast(primitive, roleLight, roleDark, surface);
 
   // ——— primitive.css ———
+  const primitiveForSd = primitiveWithoutTypography(primitive);
   writeFileSync(
     join(outDir, "primitive.css"),
     header("primitive") +
       (await buildCss({
-        sourceFile: FILES.primitive,
+        tokens: primitiveForSd,
         destination: "primitive.css",
         selector: ":root",
       })) +
+      "\n" +
+      emitTypographyCss(primitive.typography) +
       "\n",
   );
 

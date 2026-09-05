@@ -1,0 +1,109 @@
+{
+  "id": "progress",
+  "name": "Progress",
+  "storyTitle": "Components/Progress",
+  "overview": "Determinate or indeterminate progress bar with role colour on the indicator.",
+  "whenToUse": [
+    "Upload/download progress",
+    "Step completion",
+    "Indeterminate loading when duration is unknown"
+  ],
+  "variants": {
+    "variant": [
+      "neutral",
+      "success",
+      "danger"
+    ],
+    "mode": [
+      "determinate",
+      "indeterminate"
+    ],
+    "state": [
+      "default"
+    ]
+  },
+  "anatomy": [
+    "Root",
+    "Track",
+    "Indicator",
+    "Optional label / value"
+  ],
+  "tokens": {
+    "role": [
+      {
+        "path": "bg/neutral/strong",
+        "cssVar": "--bg-neutral-strong"
+      },
+      {
+        "path": "bg/success/strong",
+        "cssVar": "--bg-success-strong"
+      },
+      {
+        "path": "bg/danger/strong",
+        "cssVar": "--bg-danger-strong"
+      },
+      {
+        "path": "text/primary",
+        "cssVar": "--text-primary"
+      },
+      {
+        "path": "text/secondary",
+        "cssVar": "--text-secondary"
+      }
+    ],
+    "component": [
+      {
+        "path": "progress/track-height",
+        "cssVar": "--progress-track-height"
+      },
+      {
+        "path": "progress/radius",
+        "cssVar": "--progress-radius"
+      },
+      {
+        "path": "progress/label-gap",
+        "cssVar": "--progress-label-gap"
+      },
+      {
+        "path": "progress/track-bg",
+        "cssVar": "--progress-track-bg"
+      }
+    ]
+  },
+  "props": [
+    {
+      "name": "variant",
+      "type": "neutral | success | danger",
+      "default": "neutral",
+      "description": "Indicator colour."
+    },
+    {
+      "name": "value",
+      "type": "number | null",
+      "description": "0–100; null = indeterminate."
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "description": "Visible label."
+    },
+    {
+      "name": "showValue",
+      "type": "boolean",
+      "default": "false",
+      "description": "Show numeric value."
+    }
+  ],
+  "accessibility": [
+    "progressbar role",
+    "aria-valuenow when determinate",
+    "Indeterminate omits valuemin/max as appropriate"
+  ],
+  "do": [
+    "Prefer determinate when you know progress",
+    "Respect reduced motion on indeterminate"
+  ],
+  "dont": [
+    "Don't use danger variant for ordinary loading"
+  ]
+}

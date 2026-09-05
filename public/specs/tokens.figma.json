@@ -1,0 +1,2584 @@
+{
+  "$schema": "https://wingify.local/variant-ds/figma-variables-import",
+  "generated": true,
+  "note": "Import-shaped export for Figma variables tooling. Colour modes: light / dark when present.",
+  "variables": [
+    {
+      "name": "amber/100",
+      "cssVar": "--amber-100",
+      "resolvedType": "COLOR",
+      "description": "Warning soft fill (light). Contrast: pair with text/warning (≥4.5:1).",
+      "valuesByMode": {
+        "default": "#ffe4c8"
+      }
+    },
+    {
+      "name": "amber/200",
+      "cssVar": "--amber-200",
+      "resolvedType": "COLOR",
+      "description": "Warning border (light). Contrast: non-text ≥3:1.",
+      "valuesByMode": {
+        "default": "#f5c896"
+      }
+    },
+    {
+      "name": "amber/300",
+      "cssVar": "--amber-300",
+      "resolvedType": "COLOR",
+      "description": "Warning strong (both modes — deliberate). Contrast: MUST use text/on-strong-warning (neutral-950), not white.",
+      "valuesByMode": {
+        "default": "#e7a04c"
+      }
+    },
+    {
+      "name": "amber/400",
+      "cssVar": "--amber-400",
+      "resolvedType": "COLOR",
+      "description": "Warning mid. Contrast: verify before text use.",
+      "valuesByMode": {
+        "default": "#c78321"
+      }
+    },
+    {
+      "name": "amber/500",
+      "cssVar": "--amber-500",
+      "resolvedType": "COLOR",
+      "description": "Warning mid-dark. Contrast: verify ≥4.5:1.",
+      "valuesByMode": {
+        "default": "#a76700"
+      }
+    },
+    {
+      "name": "amber/600",
+      "cssVar": "--amber-600",
+      "resolvedType": "COLOR",
+      "description": "Warning deep. Contrast: with light text if used as fill.",
+      "valuesByMode": {
+        "default": "#8b5500"
+      }
+    },
+    {
+      "name": "amber/700",
+      "cssVar": "--amber-700",
+      "resolvedType": "COLOR",
+      "description": "Warning text (light). Contrast: ≥4.5:1 on soft warning.",
+      "valuesByMode": {
+        "default": "#6f4300"
+      }
+    },
+    {
+      "name": "amber/800",
+      "cssVar": "--amber-800",
+      "resolvedType": "COLOR",
+      "description": "Warning deep dark. Contrast: with light text.",
+      "valuesByMode": {
+        "default": "#563400"
+      }
+    },
+    {
+      "name": "amber/900",
+      "cssVar": "--amber-900",
+      "resolvedType": "COLOR",
+      "description": "Warning soft fill (dark). Contrast: pair with text/warning (≥4.5:1).",
+      "valuesByMode": {
+        "default": "#3e2300"
+      }
+    },
+    {
+      "name": "berry/100",
+      "cssVar": "--berry-100",
+      "resolvedType": "COLOR",
+      "description": "AI soft fill (light). Contrast: pair with text/ai (≥4.5:1).",
+      "valuesByMode": {
+        "default": "#ffe0f4"
+      }
+    },
+    {
+      "name": "berry/200",
+      "cssVar": "--berry-200",
+      "resolvedType": "COLOR",
+      "description": "AI border (light). Contrast: non-text ≥3:1.",
+      "valuesByMode": {
+        "default": "#ffc6ea"
+      }
+    },
+    {
+      "name": "berry/300",
+      "cssVar": "--berry-300",
+      "resolvedType": "COLOR",
+      "description": "AI mid. Contrast: large text/icons unless verified.",
+      "valuesByMode": {
+        "default": "#f87fd8"
+      }
+    },
+    {
+      "name": "berry/400",
+      "cssVar": "--berry-400",
+      "resolvedType": "COLOR",
+      "description": "AI bright. Contrast: verify ≥4.5:1 before text use.",
+      "valuesByMode": {
+        "default": "#e155bd"
+      }
+    },
+    {
+      "name": "berry/500",
+      "cssVar": "--berry-500",
+      "resolvedType": "COLOR",
+      "description": "AI strong (dark). Contrast: with text/on-strong (≥4.5:1).",
+      "valuesByMode": {
+        "default": "#cb37a4"
+      }
+    },
+    {
+      "name": "berry/600",
+      "cssVar": "--berry-600",
+      "resolvedType": "COLOR",
+      "description": "AI strong (light). Contrast: with text/on-strong (≥4.5:1).",
+      "valuesByMode": {
+        "default": "#a72686"
+      }
+    },
+    {
+      "name": "berry/700",
+      "cssVar": "--berry-700",
+      "resolvedType": "COLOR",
+      "description": "AI text (light) / strong-hover. Contrast: ≥4.5:1 on soft AI.",
+      "valuesByMode": {
+        "default": "#84266c"
+      }
+    },
+    {
+      "name": "berry/800",
+      "cssVar": "--berry-800",
+      "resolvedType": "COLOR",
+      "description": "AI strong-active (light). Contrast: with text/on-strong.",
+      "valuesByMode": {
+        "default": "#661e53"
+      }
+    },
+    {
+      "name": "berry/900",
+      "cssVar": "--berry-900",
+      "resolvedType": "COLOR",
+      "description": "AI soft fill (dark). Contrast: pair with text/ai (≥4.5:1).",
+      "valuesByMode": {
+        "default": "#48163a"
+      }
+    },
+    {
+      "name": "border-width/1",
+      "cssVar": "--border-width-1",
+      "resolvedType": "FLOAT",
+      "description": "Hairline border width.",
+      "valuesByMode": {
+        "default": "1px"
+      }
+    },
+    {
+      "name": "border-width/1/5",
+      "cssVar": "--border-width-1-5",
+      "resolvedType": "FLOAT",
+      "description": "Emphasized hairline.",
+      "valuesByMode": {
+        "default": "1.5px"
+      }
+    },
+    {
+      "name": "border-width/2",
+      "cssVar": "--border-width-2",
+      "resolvedType": "FLOAT",
+      "description": "Default strong border / focus ring width.",
+      "valuesByMode": {
+        "default": "2px"
+      }
+    },
+    {
+      "name": "border-width/3",
+      "cssVar": "--border-width-3",
+      "resolvedType": "FLOAT",
+      "description": "Heavy border width.",
+      "valuesByMode": {
+        "default": "3px"
+      }
+    },
+    {
+      "name": "cherry/100",
+      "cssVar": "--cherry-100",
+      "resolvedType": "COLOR",
+      "description": "Danger soft fill (light). Contrast: pair with text/danger (≥4.5:1).",
+      "valuesByMode": {
+        "default": "#ffe2dc"
+      }
+    },
+    {
+      "name": "cherry/200",
+      "cssVar": "--cherry-200",
+      "resolvedType": "COLOR",
+      "description": "Danger border (light). Contrast: non-text ≥3:1.",
+      "valuesByMode": {
+        "default": "#ffcabe"
+      }
+    },
+    {
+      "name": "cherry/300",
+      "cssVar": "--cherry-300",
+      "resolvedType": "COLOR",
+      "description": "Danger mid. Contrast: large text/icons only unless verified.",
+      "valuesByMode": {
+        "default": "#fb937d"
+      }
+    },
+    {
+      "name": "cherry/400",
+      "cssVar": "--cherry-400",
+      "resolvedType": "COLOR",
+      "description": "Danger bright. Contrast: verify ≥4.5:1 before text use.",
+      "valuesByMode": {
+        "default": "#f4603f"
+      }
+    },
+    {
+      "name": "cherry/500",
+      "cssVar": "--cherry-500",
+      "resolvedType": "COLOR",
+      "description": "Danger strong (dark mode). Contrast: with text/on-strong (≥4.5:1).",
+      "valuesByMode": {
+        "default": "#de2d02"
+      }
+    },
+    {
+      "name": "cherry/600",
+      "cssVar": "--cherry-600",
+      "resolvedType": "COLOR",
+      "description": "Danger strong (light). Contrast: with text/on-strong (≥4.5:1).",
+      "valuesByMode": {
+        "default": "#b72200"
+      }
+    },
+    {
+      "name": "cherry/700",
+      "cssVar": "--cherry-700",
+      "resolvedType": "COLOR",
+      "description": "Danger text (light) / strong-hover. Contrast: ≥4.5:1 on soft danger.",
+      "valuesByMode": {
+        "default": "#92230d"
+      }
+    },
+    {
+      "name": "cherry/800",
+      "cssVar": "--cherry-800",
+      "resolvedType": "COLOR",
+      "description": "Danger strong-active (light). Contrast: with text/on-strong.",
+      "valuesByMode": {
+        "default": "#6f1c0a"
+      }
+    },
+    {
+      "name": "cherry/900",
+      "cssVar": "--cherry-900",
+      "resolvedType": "COLOR",
+      "description": "Danger soft fill (dark). Contrast: pair with text/danger (≥4.5:1).",
+      "valuesByMode": {
+        "default": "#4f150a"
+      }
+    },
+    {
+      "name": "dimension/0",
+      "cssVar": "--dimension-0",
+      "resolvedType": "FLOAT",
+      "description": "Spacing/sizing step 0px. The name is the value — use dimension/0, never a t-shirt alias.",
+      "valuesByMode": {
+        "default": "0px"
+      }
+    },
+    {
+      "name": "dimension/10",
+      "cssVar": "--dimension-10",
+      "resolvedType": "FLOAT",
+      "description": "Spacing/sizing step 10px. The name is the value — use dimension/10, never a t-shirt alias.",
+      "valuesByMode": {
+        "default": "10px"
+      }
+    },
+    {
+      "name": "dimension/12",
+      "cssVar": "--dimension-12",
+      "resolvedType": "FLOAT",
+      "description": "Spacing/sizing step 12px. The name is the value — use dimension/12, never a t-shirt alias.",
+      "valuesByMode": {
+        "default": "12px"
+      }
+    },
+    {
+      "name": "dimension/128",
+      "cssVar": "--dimension-128",
+      "resolvedType": "FLOAT",
+      "description": "Spacing/sizing step 128px. The name is the value — use dimension/128, never a t-shirt alias.",
+      "valuesByMode": {
+        "default": "128px"
+      }
+    },
+    {
+      "name": "dimension/14",
+      "cssVar": "--dimension-14",
+      "resolvedType": "FLOAT",
+      "description": "Spacing/sizing step 14px. The name is the value — use dimension/14, never a t-shirt alias.",
+      "valuesByMode": {
+        "default": "14px"
+      }
+    },
+    {
+      "name": "dimension/16",
+      "cssVar": "--dimension-16",
+      "resolvedType": "FLOAT",
+      "description": "Spacing/sizing step 16px. The name is the value — use dimension/16, never a t-shirt alias.",
+      "valuesByMode": {
+        "default": "16px"
+      }
+    },
+    {
+      "name": "dimension/2",
+      "cssVar": "--dimension-2",
+      "resolvedType": "FLOAT",
+      "description": "Spacing/sizing step 2px. The name is the value — use dimension/2, never a t-shirt alias.",
+      "valuesByMode": {
+        "default": "2px"
+      }
+    },
+    {
+      "name": "dimension/20",
+      "cssVar": "--dimension-20",
+      "resolvedType": "FLOAT",
+      "description": "Spacing/sizing step 20px. The name is the value — use dimension/20, never a t-shirt alias.",
+      "valuesByMode": {
+        "default": "20px"
+      }
+    },
+    {
+      "name": "dimension/24",
+      "cssVar": "--dimension-24",
+      "resolvedType": "FLOAT",
+      "description": "Spacing/sizing step 24px. The name is the value — use dimension/24, never a t-shirt alias.",
+      "valuesByMode": {
+        "default": "24px"
+      }
+    },
+    {
+      "name": "dimension/28",
+      "cssVar": "--dimension-28",
+      "resolvedType": "FLOAT",
+      "description": "Spacing/sizing step 28px. The name is the value — use dimension/28, never a t-shirt alias.",
+      "valuesByMode": {
+        "default": "28px"
+      }
+    },
+    {
+      "name": "dimension/32",
+      "cssVar": "--dimension-32",
+      "resolvedType": "FLOAT",
+      "description": "Spacing/sizing step 32px. The name is the value — use dimension/32, never a t-shirt alias.",
+      "valuesByMode": {
+        "default": "32px"
+      }
+    },
+    {
+      "name": "dimension/4",
+      "cssVar": "--dimension-4",
+      "resolvedType": "FLOAT",
+      "description": "Spacing/sizing step 4px. The name is the value — use dimension/4, never a t-shirt alias.",
+      "valuesByMode": {
+        "default": "4px"
+      }
+    },
+    {
+      "name": "dimension/40",
+      "cssVar": "--dimension-40",
+      "resolvedType": "FLOAT",
+      "description": "Spacing/sizing step 40px. The name is the value — use dimension/40, never a t-shirt alias.",
+      "valuesByMode": {
+        "default": "40px"
+      }
+    },
+    {
+      "name": "dimension/48",
+      "cssVar": "--dimension-48",
+      "resolvedType": "FLOAT",
+      "description": "Spacing/sizing step 48px. The name is the value — use dimension/48, never a t-shirt alias.",
+      "valuesByMode": {
+        "default": "48px"
+      }
+    },
+    {
+      "name": "dimension/6",
+      "cssVar": "--dimension-6",
+      "resolvedType": "FLOAT",
+      "description": "Spacing/sizing step 6px. The name is the value — use dimension/6, never a t-shirt alias.",
+      "valuesByMode": {
+        "default": "6px"
+      }
+    },
+    {
+      "name": "dimension/64",
+      "cssVar": "--dimension-64",
+      "resolvedType": "FLOAT",
+      "description": "Spacing/sizing step 64px. The name is the value — use dimension/64, never a t-shirt alias.",
+      "valuesByMode": {
+        "default": "64px"
+      }
+    },
+    {
+      "name": "dimension/8",
+      "cssVar": "--dimension-8",
+      "resolvedType": "FLOAT",
+      "description": "Spacing/sizing step 8px. The name is the value — use dimension/8, never a t-shirt alias.",
+      "valuesByMode": {
+        "default": "8px"
+      }
+    },
+    {
+      "name": "dimension/80",
+      "cssVar": "--dimension-80",
+      "resolvedType": "FLOAT",
+      "description": "Spacing/sizing step 80px. The name is the value — use dimension/80, never a t-shirt alias.",
+      "valuesByMode": {
+        "default": "80px"
+      }
+    },
+    {
+      "name": "dimension/96",
+      "cssVar": "--dimension-96",
+      "resolvedType": "FLOAT",
+      "description": "Spacing/sizing step 96px. The name is the value — use dimension/96, never a t-shirt alias.",
+      "valuesByMode": {
+        "default": "96px"
+      }
+    },
+    {
+      "name": "duration/fast",
+      "cssVar": "--duration-fast",
+      "resolvedType": "STRING",
+      "description": "Fast motion — 120ms. Respect prefers-reduced-motion.",
+      "valuesByMode": {
+        "default": "120ms"
+      }
+    },
+    {
+      "name": "duration/normal",
+      "cssVar": "--duration-normal",
+      "resolvedType": "STRING",
+      "description": "Normal motion — 200ms. Respect prefers-reduced-motion.",
+      "valuesByMode": {
+        "default": "200ms"
+      }
+    },
+    {
+      "name": "duration/slow",
+      "cssVar": "--duration-slow",
+      "resolvedType": "STRING",
+      "description": "Slow motion — 320ms. Respect prefers-reduced-motion.",
+      "valuesByMode": {
+        "default": "320ms"
+      }
+    },
+    {
+      "name": "easing/standard",
+      "cssVar": "--easing-standard",
+      "resolvedType": "STRING",
+      "description": "Standard easing curve for UI motion.",
+      "valuesByMode": {
+        "default": [
+          0.2,
+          0,
+          0.2,
+          1
+        ]
+      }
+    },
+    {
+      "name": "green/100",
+      "cssVar": "--green-100",
+      "resolvedType": "COLOR",
+      "description": "Success soft fill (light). Contrast: pair with text/success (≥4.5:1).",
+      "valuesByMode": {
+        "default": "#caf2dd"
+      }
+    },
+    {
+      "name": "green/200",
+      "cssVar": "--green-200",
+      "resolvedType": "COLOR",
+      "description": "Success border (light). Contrast: non-text ≥3:1.",
+      "valuesByMode": {
+        "default": "#a4e4c3"
+      }
+    },
+    {
+      "name": "green/300",
+      "cssVar": "--green-300",
+      "resolvedType": "COLOR",
+      "description": "Success mid. Contrast: large text/icons unless verified.",
+      "valuesByMode": {
+        "default": "#07c787"
+      }
+    },
+    {
+      "name": "green/400",
+      "cssVar": "--green-400",
+      "resolvedType": "COLOR",
+      "description": "Success bright. Contrast: verify ≥4.5:1 before text use.",
+      "valuesByMode": {
+        "default": "#03a673"
+      }
+    },
+    {
+      "name": "green/500",
+      "cssVar": "--green-500",
+      "resolvedType": "COLOR",
+      "description": "Success strong (dark). Contrast: with text/on-strong (≥4.5:1).",
+      "valuesByMode": {
+        "default": "#00865b"
+      }
+    },
+    {
+      "name": "green/600",
+      "cssVar": "--green-600",
+      "resolvedType": "COLOR",
+      "description": "Success strong (light). Contrast: with text/on-strong (≥4.5:1).",
+      "valuesByMode": {
+        "default": "#006f4b"
+      }
+    },
+    {
+      "name": "green/700",
+      "cssVar": "--green-700",
+      "resolvedType": "COLOR",
+      "description": "Success text (light). Contrast: ≥4.5:1 on soft success.",
+      "valuesByMode": {
+        "default": "#00583a"
+      }
+    },
+    {
+      "name": "green/800",
+      "cssVar": "--green-800",
+      "resolvedType": "COLOR",
+      "description": "Success deep. Contrast: with light text.",
+      "valuesByMode": {
+        "default": "#00442a"
+      }
+    },
+    {
+      "name": "green/900",
+      "cssVar": "--green-900",
+      "resolvedType": "COLOR",
+      "description": "Success soft fill (dark). Contrast: pair with text/success (≥4.5:1).",
+      "valuesByMode": {
+        "default": "#00301e"
+      }
+    },
+    {
+      "name": "neutral/0",
+      "cssVar": "--neutral-0",
+      "resolvedType": "COLOR",
+      "description": "Pure white. Contrast: use for text/on-strong and surfaces that need maximum lift (≥4.5:1 with neutral-950).",
+      "valuesByMode": {
+        "default": "#ffffff"
+      }
+    },
+    {
+      "name": "neutral/100",
+      "cssVar": "--neutral-100",
+      "resolvedType": "COLOR",
+      "description": "Light neutral wash. Contrast: soft fills; keep body text off this at small sizes (≥4.5:1).",
+      "valuesByMode": {
+        "default": "#e5e0d6"
+      }
+    },
+    {
+      "name": "neutral/200",
+      "cssVar": "--neutral-200",
+      "resolvedType": "COLOR",
+      "description": "Subtle border / wash. Contrast: non-text UI ≥3:1 against canvas.",
+      "valuesByMode": {
+        "default": "#dbd6cb"
+      }
+    },
+    {
+      "name": "neutral/300",
+      "cssVar": "--neutral-300",
+      "resolvedType": "COLOR",
+      "description": "Muted neutral. Contrast: large text or icons ≥3:1.",
+      "valuesByMode": {
+        "default": "#b2ada1"
+      }
+    },
+    {
+      "name": "neutral/400",
+      "cssVar": "--neutral-400",
+      "resolvedType": "COLOR",
+      "description": "Disabled / tertiary candidate. Contrast: do not use for small body text on canvas (<4.5:1 risk).",
+      "valuesByMode": {
+        "default": "#989388"
+      }
+    },
+    {
+      "name": "neutral/50",
+      "cssVar": "--neutral-50",
+      "resolvedType": "COLOR",
+      "description": "Warm off-white canvas. Contrast: default light canvas; pair with text/primary (≥4.5:1).",
+      "valuesByMode": {
+        "default": "#f6f3ed"
+      }
+    },
+    {
+      "name": "neutral/500",
+      "cssVar": "--neutral-500",
+      "resolvedType": "COLOR",
+      "description": "Mid neutral. Contrast: borders and secondary chrome ≥3:1.",
+      "valuesByMode": {
+        "default": "#79756b"
+      }
+    },
+    {
+      "name": "neutral/600",
+      "cssVar": "--neutral-600",
+      "resolvedType": "COLOR",
+      "description": "Secondary text (light). Contrast: ≥4.5:1 on canvas/surface.",
+      "valuesByMode": {
+        "default": "#5f5c53"
+      }
+    },
+    {
+      "name": "neutral/700",
+      "cssVar": "--neutral-700",
+      "resolvedType": "COLOR",
+      "description": "Strong secondary / status text (light). Contrast: ≥4.5:1 on soft fills.",
+      "valuesByMode": {
+        "default": "#4f4d44"
+      }
+    },
+    {
+      "name": "neutral/800",
+      "cssVar": "--neutral-800",
+      "resolvedType": "COLOR",
+      "description": "Dark surface candidate. Contrast: pair with light text (≥4.5:1).",
+      "valuesByMode": {
+        "default": "#3c3932"
+      }
+    },
+    {
+      "name": "neutral/900",
+      "cssVar": "--neutral-900",
+      "resolvedType": "COLOR",
+      "description": "Dark elevated surface. Contrast: pair with light text (≥4.5:1).",
+      "valuesByMode": {
+        "default": "#2b2923"
+      }
+    },
+    {
+      "name": "neutral/950",
+      "cssVar": "--neutral-950",
+      "resolvedType": "COLOR",
+      "description": "Near-black ink. Contrast: primary text on light surfaces (≥4.5:1); strong fills with text/on-strong.",
+      "valuesByMode": {
+        "default": "#1b1913"
+      }
+    },
+    {
+      "name": "ocean/100",
+      "cssVar": "--ocean-100",
+      "resolvedType": "COLOR",
+      "description": "Info soft fill (light). Contrast: pair with text/info (≥4.5:1).",
+      "valuesByMode": {
+        "default": "#dee9ff"
+      }
+    },
+    {
+      "name": "ocean/200",
+      "cssVar": "--ocean-200",
+      "resolvedType": "COLOR",
+      "description": "Info border (light). Contrast: non-text ≥3:1.",
+      "valuesByMode": {
+        "default": "#c4d7ff"
+      }
+    },
+    {
+      "name": "ocean/300",
+      "cssVar": "--ocean-300",
+      "resolvedType": "COLOR",
+      "description": "Info / link (dark). Contrast: links ≥4.5:1 on dark canvas.",
+      "valuesByMode": {
+        "default": "#8badff"
+      }
+    },
+    {
+      "name": "ocean/400",
+      "cssVar": "--ocean-400",
+      "resolvedType": "COLOR",
+      "description": "Info bright. Contrast: verify before small text.",
+      "valuesByMode": {
+        "default": "#6389f9"
+      }
+    },
+    {
+      "name": "ocean/500",
+      "cssVar": "--ocean-500",
+      "resolvedType": "COLOR",
+      "description": "Info strong (dark). Contrast: with text/on-strong (≥4.5:1).",
+      "valuesByMode": {
+        "default": "#406bed"
+      }
+    },
+    {
+      "name": "ocean/600",
+      "cssVar": "--ocean-600",
+      "resolvedType": "COLOR",
+      "description": "Info strong (light) / link. Contrast: links ≥4.5:1 on light canvas.",
+      "valuesByMode": {
+        "default": "#2f54cb"
+      }
+    },
+    {
+      "name": "ocean/700",
+      "cssVar": "--ocean-700",
+      "resolvedType": "COLOR",
+      "description": "Info text (light) / link-hover. Contrast: ≥4.5:1.",
+      "valuesByMode": {
+        "default": "#2846a0"
+      }
+    },
+    {
+      "name": "ocean/800",
+      "cssVar": "--ocean-800",
+      "resolvedType": "COLOR",
+      "description": "Info deep. Contrast: with light text.",
+      "valuesByMode": {
+        "default": "#1d3578"
+      }
+    },
+    {
+      "name": "ocean/900",
+      "cssVar": "--ocean-900",
+      "resolvedType": "COLOR",
+      "description": "Info soft fill (dark). Contrast: pair with text/info (≥4.5:1).",
+      "valuesByMode": {
+        "default": "#152656"
+      }
+    },
+    {
+      "name": "opacity/16",
+      "cssVar": "--opacity-16",
+      "resolvedType": "FLOAT",
+      "description": "Opacity 16% — light scrims.",
+      "valuesByMode": {
+        "default": 0.16
+      }
+    },
+    {
+      "name": "opacity/40",
+      "cssVar": "--opacity-40",
+      "resolvedType": "FLOAT",
+      "description": "Opacity 40% — medium overlays.",
+      "valuesByMode": {
+        "default": 0.4
+      }
+    },
+    {
+      "name": "opacity/64",
+      "cssVar": "--opacity-64",
+      "resolvedType": "FLOAT",
+      "description": "Opacity 64% — modal scrim.",
+      "valuesByMode": {
+        "default": 0.64
+      }
+    },
+    {
+      "name": "opacity/8",
+      "cssVar": "--opacity-8",
+      "resolvedType": "FLOAT",
+      "description": "Opacity 8% — faint overlays.",
+      "valuesByMode": {
+        "default": 0.08
+      }
+    },
+    {
+      "name": "opacity/80",
+      "cssVar": "--opacity-80",
+      "resolvedType": "FLOAT",
+      "description": "Opacity 80% — heavy overlays.",
+      "valuesByMode": {
+        "default": 0.8
+      }
+    },
+    {
+      "name": "radius/full",
+      "cssVar": "--radius-full",
+      "resolvedType": "FLOAT",
+      "description": "Pill / circular radius — badges, toggles, radios.",
+      "valuesByMode": {
+        "default": "999px"
+      }
+    },
+    {
+      "name": "radius/lg",
+      "cssVar": "--radius-lg",
+      "resolvedType": "FLOAT",
+      "description": "Large radius — prominent containers.",
+      "valuesByMode": {
+        "default": "16px"
+      }
+    },
+    {
+      "name": "radius/md",
+      "cssVar": "--radius-md",
+      "resolvedType": "FLOAT",
+      "description": "Medium radius — cards, modals.",
+      "valuesByMode": {
+        "default": "8px"
+      }
+    },
+    {
+      "name": "radius/none",
+      "cssVar": "--radius-none",
+      "resolvedType": "FLOAT",
+      "description": "No rounding.",
+      "valuesByMode": {
+        "default": "0px"
+      }
+    },
+    {
+      "name": "radius/sm",
+      "cssVar": "--radius-sm",
+      "resolvedType": "FLOAT",
+      "description": "Small radius — chips, alerts, tab containers.",
+      "valuesByMode": {
+        "default": "4px"
+      }
+    },
+    {
+      "name": "radius/xs",
+      "cssVar": "--radius-xs",
+      "resolvedType": "FLOAT",
+      "description": "Extra-small radius — controls, tags, checkboxes.",
+      "valuesByMode": {
+        "default": "2px"
+      }
+    },
+    {
+      "name": "yellow/accent",
+      "cssVar": "--yellow-accent",
+      "resolvedType": "COLOR",
+      "description": "Selected / wayfinding fill. Contrast: with selected/text (neutral-950) ≥4.5:1. Not for primary buttons.",
+      "valuesByMode": {
+        "default": "#eeff6d"
+      }
+    },
+    {
+      "name": "yellow/accent-hover",
+      "cssVar": "--yellow-accent-hover",
+      "resolvedType": "COLOR",
+      "description": "Selected hover fill. Contrast: with selected/text (neutral-950) ≥4.5:1.",
+      "valuesByMode": {
+        "default": "#e5f669"
+      }
+    },
+    {
+      "name": "yellow/deep",
+      "cssVar": "--yellow-deep",
+      "resolvedType": "COLOR",
+      "description": "Selected indicator (light). Contrast: ≥3:1 as non-text chrome.",
+      "valuesByMode": {
+        "default": "#727b00"
+      }
+    },
+    {
+      "name": "yellow/field-shade",
+      "cssVar": "--yellow-field-shade",
+      "resolvedType": "COLOR",
+      "description": "Selected field hover (dark). Contrast: with selected/text ≥4.5:1.",
+      "valuesByMode": {
+        "default": "#333718"
+      }
+    },
+    {
+      "name": "yellow/tint",
+      "cssVar": "--yellow-tint",
+      "resolvedType": "COLOR",
+      "description": "Selected field hover (light). Contrast: with selected/text (neutral-950) ≥4.5:1.",
+      "valuesByMode": {
+        "default": "#f1f9c7"
+      }
+    },
+    {
+      "name": "bg/ai/soft",
+      "cssVar": "--bg-ai-soft",
+      "resolvedType": "COLOR",
+      "description": "Soft ai fill (light). Contrast: with text/ai (≥4.5:1).",
+      "valuesByMode": {
+        "light": "{berry.100}",
+        "dark": "{berry.900}"
+      }
+    },
+    {
+      "name": "bg/ai/strong",
+      "cssVar": "--bg-ai-strong",
+      "resolvedType": "COLOR",
+      "description": "Strong ai fill (light). Contrast: use text/on-strong (≥4.5:1).",
+      "valuesByMode": {
+        "light": "{berry.600}",
+        "dark": "{berry.500}"
+      }
+    },
+    {
+      "name": "bg/ai/strong-active",
+      "cssVar": "--bg-ai-strong-active",
+      "resolvedType": "COLOR",
+      "description": "Strong ai active (light). Contrast: with text/on-strong (≥4.5:1).",
+      "valuesByMode": {
+        "light": "{berry.800}",
+        "dark": "{berry.700}"
+      }
+    },
+    {
+      "name": "bg/ai/strong-hover",
+      "cssVar": "--bg-ai-strong-hover",
+      "resolvedType": "COLOR",
+      "description": "Strong ai hover (light). Contrast: with text/on-strong (≥4.5:1).",
+      "valuesByMode": {
+        "light": "{berry.700}",
+        "dark": "{berry.600}"
+      }
+    },
+    {
+      "name": "bg/canvas",
+      "cssVar": "--bg-canvas",
+      "resolvedType": "COLOR",
+      "description": "App canvas background (light). Contrast: base for text/primary (≥4.5:1).",
+      "valuesByMode": {
+        "light": "{neutral.50}",
+        "dark": "{neutral.950}"
+      }
+    },
+    {
+      "name": "bg/danger/soft",
+      "cssVar": "--bg-danger-soft",
+      "resolvedType": "COLOR",
+      "description": "Soft danger fill (light). Contrast: with text/danger (≥4.5:1).",
+      "valuesByMode": {
+        "light": "{cherry.100}",
+        "dark": "{cherry.900}"
+      }
+    },
+    {
+      "name": "bg/danger/strong",
+      "cssVar": "--bg-danger-strong",
+      "resolvedType": "COLOR",
+      "description": "Strong danger fill (light). Contrast: use text/on-strong (≥4.5:1).",
+      "valuesByMode": {
+        "light": "{cherry.600}",
+        "dark": "{cherry.500}"
+      }
+    },
+    {
+      "name": "bg/danger/strong-active",
+      "cssVar": "--bg-danger-strong-active",
+      "resolvedType": "COLOR",
+      "description": "Strong danger active (light). Contrast: with text/on-strong (≥4.5:1).",
+      "valuesByMode": {
+        "light": "{cherry.800}",
+        "dark": "{cherry.700}"
+      }
+    },
+    {
+      "name": "bg/danger/strong-hover",
+      "cssVar": "--bg-danger-strong-hover",
+      "resolvedType": "COLOR",
+      "description": "Strong danger hover (light). Contrast: with text/on-strong (≥4.5:1).",
+      "valuesByMode": {
+        "light": "{cherry.700}",
+        "dark": "{cherry.600}"
+      }
+    },
+    {
+      "name": "bg/disabled",
+      "cssVar": "--bg-disabled",
+      "resolvedType": "COLOR",
+      "description": "Disabled control fill (light). Contrast: with text/disabled.",
+      "valuesByMode": {
+        "light": "{neutral.100}",
+        "dark": "{neutral.800}"
+      }
+    },
+    {
+      "name": "bg/info/soft",
+      "cssVar": "--bg-info-soft",
+      "resolvedType": "COLOR",
+      "description": "Soft info fill (light). Contrast: with text/info (≥4.5:1).",
+      "valuesByMode": {
+        "light": "{ocean.100}",
+        "dark": "{ocean.900}"
+      }
+    },
+    {
+      "name": "bg/info/strong",
+      "cssVar": "--bg-info-strong",
+      "resolvedType": "COLOR",
+      "description": "Strong info fill (light). Contrast: use text/on-strong (≥4.5:1).",
+      "valuesByMode": {
+        "light": "{ocean.600}",
+        "dark": "{ocean.500}"
+      }
+    },
+    {
+      "name": "bg/neutral/soft",
+      "cssVar": "--bg-neutral-soft",
+      "resolvedType": "COLOR",
+      "description": "Soft neutral fill (light). Contrast: with text/neutral (≥4.5:1).",
+      "valuesByMode": {
+        "light": "{neutral.100}",
+        "dark": "{neutral.800}"
+      }
+    },
+    {
+      "name": "bg/neutral/strong",
+      "cssVar": "--bg-neutral-strong",
+      "resolvedType": "COLOR",
+      "description": "Strong neutral fill (light). Contrast: use text/on-strong (≥4.5:1).",
+      "valuesByMode": {
+        "light": "{neutral.950}",
+        "dark": "{neutral.50}"
+      }
+    },
+    {
+      "name": "bg/neutral/strong-active",
+      "cssVar": "--bg-neutral-strong-active",
+      "resolvedType": "COLOR",
+      "description": "Strong neutral active (light). Neutral strong inverts (950), so active lightens to 700 — not the chromatic 800 step. Contrast: with text/on-strong (≥4.5:1).",
+      "valuesByMode": {
+        "light": "{neutral.700}",
+        "dark": "{neutral.300}"
+      }
+    },
+    {
+      "name": "bg/neutral/strong-hover",
+      "cssVar": "--bg-neutral-strong-hover",
+      "resolvedType": "COLOR",
+      "description": "Strong neutral hover (light). Neutral strong inverts (950), so hover lightens to 800 — not the chromatic 700 step. Contrast: with text/on-strong (≥4.5:1).",
+      "valuesByMode": {
+        "light": "{neutral.800}",
+        "dark": "{neutral.200}"
+      }
+    },
+    {
+      "name": "bg/success/soft",
+      "cssVar": "--bg-success-soft",
+      "resolvedType": "COLOR",
+      "description": "Soft success fill (light). Contrast: with text/success (≥4.5:1).",
+      "valuesByMode": {
+        "light": "{green.100}",
+        "dark": "{green.900}"
+      }
+    },
+    {
+      "name": "bg/success/strong",
+      "cssVar": "--bg-success-strong",
+      "resolvedType": "COLOR",
+      "description": "Strong success fill (light). Contrast: use text/on-strong (≥4.5:1).",
+      "valuesByMode": {
+        "light": "{green.600}",
+        "dark": "{green.500}"
+      }
+    },
+    {
+      "name": "bg/surface",
+      "cssVar": "--bg-surface",
+      "resolvedType": "COLOR",
+      "description": "Default surface (light). Contrast: text/primary (≥4.5:1).",
+      "valuesByMode": {
+        "light": "{neutral.0}",
+        "dark": "{neutral.900}"
+      }
+    },
+    {
+      "name": "bg/surface-raised",
+      "cssVar": "--bg-surface-raised",
+      "resolvedType": "COLOR",
+      "description": "Raised surface (light). Contrast: text/primary (≥4.5:1).",
+      "valuesByMode": {
+        "light": "{neutral.0}",
+        "dark": "{neutral.800}"
+      }
+    },
+    {
+      "name": "bg/tooltip",
+      "cssVar": "--bg-tooltip",
+      "resolvedType": "COLOR",
+      "description": "Tooltip surface (light). Contrast: with text/on-inverse or on-strong (≥4.5:1).",
+      "valuesByMode": {
+        "light": "{neutral.950}",
+        "dark": "{neutral.700}"
+      }
+    },
+    {
+      "name": "bg/warning/soft",
+      "cssVar": "--bg-warning-soft",
+      "resolvedType": "COLOR",
+      "description": "Soft warning fill (light). Contrast: with text/warning (≥4.5:1).",
+      "valuesByMode": {
+        "light": "{amber.100}",
+        "dark": "{amber.900}"
+      }
+    },
+    {
+      "name": "bg/warning/strong",
+      "cssVar": "--bg-warning-strong",
+      "resolvedType": "COLOR",
+      "description": "Strong warning fill (light). Contrast: use text/on-strong-warning (≥4.5:1).",
+      "valuesByMode": {
+        "light": "{amber.300}",
+        "dark": "{amber.300}"
+      }
+    },
+    {
+      "name": "border/ai",
+      "cssVar": "--border-ai",
+      "resolvedType": "COLOR",
+      "description": "ai border (light). Contrast: ≥3:1 non-text.",
+      "valuesByMode": {
+        "light": "{berry.200}",
+        "dark": "{berry.700}"
+      }
+    },
+    {
+      "name": "border/danger",
+      "cssVar": "--border-danger",
+      "resolvedType": "COLOR",
+      "description": "danger border (light). Contrast: ≥3:1 non-text.",
+      "valuesByMode": {
+        "light": "{cherry.200}",
+        "dark": "{cherry.700}"
+      }
+    },
+    {
+      "name": "border/default",
+      "cssVar": "--border-default",
+      "resolvedType": "COLOR",
+      "description": "Default border (light). Contrast: ≥3:1 against canvas/surface.",
+      "valuesByMode": {
+        "light": "{neutral.500}",
+        "dark": "{neutral.500}"
+      }
+    },
+    {
+      "name": "border/focus",
+      "cssVar": "--border-focus",
+      "resolvedType": "COLOR",
+      "description": "Focus ring color (light). Contrast: ≥3:1 against background.",
+      "valuesByMode": {
+        "light": "{neutral.950}",
+        "dark": "{neutral.50}"
+      }
+    },
+    {
+      "name": "border/info",
+      "cssVar": "--border-info",
+      "resolvedType": "COLOR",
+      "description": "info border (light). Contrast: ≥3:1 non-text.",
+      "valuesByMode": {
+        "light": "{ocean.200}",
+        "dark": "{ocean.700}"
+      }
+    },
+    {
+      "name": "border/neutral",
+      "cssVar": "--border-neutral",
+      "resolvedType": "COLOR",
+      "description": "neutral border (light). Contrast: ≥3:1 non-text.",
+      "valuesByMode": {
+        "light": "{neutral.200}",
+        "dark": "{neutral.700}"
+      }
+    },
+    {
+      "name": "border/strong",
+      "cssVar": "--border-strong",
+      "resolvedType": "COLOR",
+      "description": "Strong border (light). Contrast: ≥3:1.",
+      "valuesByMode": {
+        "light": "{neutral.600}",
+        "dark": "{neutral.300}"
+      }
+    },
+    {
+      "name": "border/subtle",
+      "cssVar": "--border-subtle",
+      "resolvedType": "COLOR",
+      "description": "Decorative trim. The card's fill contrast and shadow carry the container boundary; the outline is not load-bearing. Also table dividers and menu separators. Contrast: exempt from 3:1.",
+      "valuesByMode": {
+        "light": "{neutral.200}",
+        "dark": "{neutral.700}"
+      }
+    },
+    {
+      "name": "border/success",
+      "cssVar": "--border-success",
+      "resolvedType": "COLOR",
+      "description": "success border (light). Contrast: ≥3:1 non-text.",
+      "valuesByMode": {
+        "light": "{green.200}",
+        "dark": "{green.700}"
+      }
+    },
+    {
+      "name": "border/warning",
+      "cssVar": "--border-warning",
+      "resolvedType": "COLOR",
+      "description": "warning border (light). Contrast: ≥3:1 non-text.",
+      "valuesByMode": {
+        "light": "{amber.200}",
+        "dark": "{amber.700}"
+      }
+    },
+    {
+      "name": "icon/disabled",
+      "cssVar": "--icon-disabled",
+      "resolvedType": "COLOR",
+      "description": "Disabled icon (light). May be reduced contrast by design.",
+      "valuesByMode": {
+        "light": "{neutral.400}",
+        "dark": "{neutral.500}"
+      }
+    },
+    {
+      "name": "icon/on-inverse",
+      "cssVar": "--icon-on-inverse",
+      "resolvedType": "COLOR",
+      "description": "Icon on inverse (light). Contrast: ≥3:1 / ≥4.5:1 if conveying meaning.",
+      "valuesByMode": {
+        "light": "{neutral.0}",
+        "dark": "{neutral.950}"
+      }
+    },
+    {
+      "name": "icon/primary",
+      "cssVar": "--icon-primary",
+      "resolvedType": "COLOR",
+      "description": "Primary icon (light). Contrast: ≥4.5:1 (or ≥3:1 if decorative-adjacent).",
+      "valuesByMode": {
+        "light": "{neutral.950}",
+        "dark": "{neutral.50}"
+      }
+    },
+    {
+      "name": "icon/secondary",
+      "cssVar": "--icon-secondary",
+      "resolvedType": "COLOR",
+      "description": "Secondary icon (light). Contrast: ≥3:1 non-text.",
+      "valuesByMode": {
+        "light": "{neutral.600}",
+        "dark": "{neutral.300}"
+      }
+    },
+    {
+      "name": "icon/tertiary",
+      "cssVar": "--icon-tertiary",
+      "resolvedType": "COLOR",
+      "description": "Tertiary icon (light). Contrast: ≥3:1 non-text.",
+      "valuesByMode": {
+        "light": "{neutral.500}",
+        "dark": "{neutral.400}"
+      }
+    },
+    {
+      "name": "selected/bg",
+      "cssVar": "--selected-bg",
+      "resolvedType": "COLOR",
+      "description": "Selected fill (light). Contrast: with selected/text (neutral-950) ≥4.5:1.",
+      "valuesByMode": {
+        "light": "{yellow.accent}",
+        "dark": "{yellow.accent}"
+      }
+    },
+    {
+      "name": "selected/bg-hover",
+      "cssVar": "--selected-bg-hover",
+      "resolvedType": "COLOR",
+      "description": "Selected hover fill (light). Contrast: with selected/text ≥4.5:1.",
+      "valuesByMode": {
+        "light": "{yellow.accent-hover}",
+        "dark": "{yellow.accent-hover}"
+      }
+    },
+    {
+      "name": "selected/edge",
+      "cssVar": "--selected-edge",
+      "resolvedType": "COLOR",
+      "description": "Selected edge (light). Contrast: ≥3:1 non-text.",
+      "valuesByMode": {
+        "light": "{neutral.950}",
+        "dark": "{yellow.accent}"
+      }
+    },
+    {
+      "name": "selected/field-hover",
+      "cssVar": "--selected-field-hover",
+      "resolvedType": "COLOR",
+      "description": "Selected field hover wash (light). Contrast: with selected/text ≥4.5:1.",
+      "valuesByMode": {
+        "light": "{yellow.tint}",
+        "dark": "{yellow.field-shade}"
+      }
+    },
+    {
+      "name": "selected/indicator",
+      "cssVar": "--selected-indicator",
+      "resolvedType": "COLOR",
+      "description": "Selected indicator (light). Contrast: ≥3:1 non-text.",
+      "valuesByMode": {
+        "light": "{yellow.deep}",
+        "dark": "{yellow.accent}"
+      }
+    },
+    {
+      "name": "selected/text",
+      "cssVar": "--selected-text",
+      "resolvedType": "COLOR",
+      "description": "Selected label text (light). Contrast: ≥4.5:1 on selected/bg.",
+      "valuesByMode": {
+        "light": "{neutral.950}",
+        "dark": "{neutral.950}"
+      }
+    },
+    {
+      "name": "text/ai",
+      "cssVar": "--text-ai",
+      "resolvedType": "COLOR",
+      "description": "ai text and status icons (light). Contrast: ≥4.5:1 on soft ai / canvas.",
+      "valuesByMode": {
+        "light": "{berry.700}",
+        "dark": "{berry.300}"
+      }
+    },
+    {
+      "name": "text/ai-hover",
+      "cssVar": "--text-ai-hover",
+      "resolvedType": "COLOR",
+      "description": "Hover state for status-coloured text and link buttons. Contrast: ≥4.5:1 on canvas/surface.",
+      "valuesByMode": {
+        "light": "{berry.800}",
+        "dark": "{berry.200}"
+      }
+    },
+    {
+      "name": "text/danger",
+      "cssVar": "--text-danger",
+      "resolvedType": "COLOR",
+      "description": "danger text and status icons (light). Contrast: ≥4.5:1 on soft danger / canvas.",
+      "valuesByMode": {
+        "light": "{cherry.700}",
+        "dark": "{cherry.300}"
+      }
+    },
+    {
+      "name": "text/danger-hover",
+      "cssVar": "--text-danger-hover",
+      "resolvedType": "COLOR",
+      "description": "Hover state for status-coloured text and link buttons. Contrast: ≥4.5:1 on canvas/surface.",
+      "valuesByMode": {
+        "light": "{cherry.800}",
+        "dark": "{cherry.200}"
+      }
+    },
+    {
+      "name": "text/disabled",
+      "cssVar": "--text-disabled",
+      "resolvedType": "COLOR",
+      "description": "Disabled text (light). Contrast: may be <4.5:1 by design for disabled state.",
+      "valuesByMode": {
+        "light": "{neutral.400}",
+        "dark": "{neutral.500}"
+      }
+    },
+    {
+      "name": "text/info",
+      "cssVar": "--text-info",
+      "resolvedType": "COLOR",
+      "description": "info text and status icons (light). Contrast: ≥4.5:1 on soft info / canvas.",
+      "valuesByMode": {
+        "light": "{ocean.700}",
+        "dark": "{ocean.300}"
+      }
+    },
+    {
+      "name": "text/info-hover",
+      "cssVar": "--text-info-hover",
+      "resolvedType": "COLOR",
+      "description": "Hover state for status-coloured text and link buttons. Contrast: ≥4.5:1 on canvas/surface.",
+      "valuesByMode": {
+        "light": "{ocean.800}",
+        "dark": "{ocean.200}"
+      }
+    },
+    {
+      "name": "text/link",
+      "cssVar": "--text-link",
+      "resolvedType": "COLOR",
+      "description": "Link text (light). Contrast: ≥4.5:1 on canvas.",
+      "valuesByMode": {
+        "light": "{ocean.600}",
+        "dark": "{ocean.300}"
+      }
+    },
+    {
+      "name": "text/link-hover",
+      "cssVar": "--text-link-hover",
+      "resolvedType": "COLOR",
+      "description": "Link hover text (light). Contrast: ≥4.5:1 on canvas.",
+      "valuesByMode": {
+        "light": "{ocean.700}",
+        "dark": "{ocean.200}"
+      }
+    },
+    {
+      "name": "text/neutral",
+      "cssVar": "--text-neutral",
+      "resolvedType": "COLOR",
+      "description": "neutral text and status icons (light). Contrast: ≥4.5:1 on soft neutral / canvas.",
+      "valuesByMode": {
+        "light": "{neutral.700}",
+        "dark": "{neutral.300}"
+      }
+    },
+    {
+      "name": "text/neutral-hover",
+      "cssVar": "--text-neutral-hover",
+      "resolvedType": "COLOR",
+      "description": "Hover state for status-coloured text and link buttons. Contrast: ≥4.5:1 on canvas/surface.",
+      "valuesByMode": {
+        "light": "{neutral.800}",
+        "dark": "{neutral.200}"
+      }
+    },
+    {
+      "name": "text/on-inverse",
+      "cssVar": "--text-on-inverse",
+      "resolvedType": "COLOR",
+      "description": "Text on inverse surfaces (light). Contrast: ≥4.5:1 on tooltip/inverse fills.",
+      "valuesByMode": {
+        "light": "{neutral.50}",
+        "dark": "{neutral.950}"
+      }
+    },
+    {
+      "name": "text/on-strong",
+      "cssVar": "--text-on-strong",
+      "resolvedType": "COLOR",
+      "description": "Text/icons on strong fills (light). Contrast: ≥4.5:1 on strong role fills (not warning).",
+      "valuesByMode": {
+        "light": "{neutral.0}",
+        "dark": "{neutral.0}"
+      }
+    },
+    {
+      "name": "text/on-strong-warning",
+      "cssVar": "--text-on-strong-warning",
+      "resolvedType": "COLOR",
+      "description": "Text on warning strong (light). Contrast: ≥4.5:1 on amber-300 — white fails; this is required.",
+      "valuesByMode": {
+        "light": "{neutral.950}",
+        "dark": "{neutral.950}"
+      }
+    },
+    {
+      "name": "text/primary",
+      "cssVar": "--text-primary",
+      "resolvedType": "COLOR",
+      "description": "Primary body text (light). Contrast: ≥4.5:1 on canvas/surface.",
+      "valuesByMode": {
+        "light": "{neutral.950}",
+        "dark": "{neutral.50}"
+      }
+    },
+    {
+      "name": "text/secondary",
+      "cssVar": "--text-secondary",
+      "resolvedType": "COLOR",
+      "description": "Secondary text (light). Contrast: ≥4.5:1 on canvas/surface.",
+      "valuesByMode": {
+        "light": "{neutral.600}",
+        "dark": "{neutral.300}"
+      }
+    },
+    {
+      "name": "text/success",
+      "cssVar": "--text-success",
+      "resolvedType": "COLOR",
+      "description": "success text and status icons (light). Contrast: ≥4.5:1 on soft success / canvas.",
+      "valuesByMode": {
+        "light": "{green.700}",
+        "dark": "{green.300}"
+      }
+    },
+    {
+      "name": "text/success-hover",
+      "cssVar": "--text-success-hover",
+      "resolvedType": "COLOR",
+      "description": "Hover state for status-coloured text and link buttons. Contrast: ≥4.5:1 on canvas/surface.",
+      "valuesByMode": {
+        "light": "{green.800}",
+        "dark": "{green.200}"
+      }
+    },
+    {
+      "name": "text/tertiary",
+      "cssVar": "--text-tertiary",
+      "resolvedType": "COLOR",
+      "description": "Tertiary text (light). Contrast: ~4.33:1 on bg/canvas (neutral-50) — below AA for small text; use for non-essential copy or large type only, not primary readable body.",
+      "valuesByMode": {
+        "light": "{neutral.500}",
+        "dark": "{neutral.400}"
+      }
+    },
+    {
+      "name": "text/warning",
+      "cssVar": "--text-warning",
+      "resolvedType": "COLOR",
+      "description": "warning text and status icons (light). Contrast: ≥4.5:1 on soft warning / canvas.",
+      "valuesByMode": {
+        "light": "{amber.700}",
+        "dark": "{amber.300}"
+      }
+    },
+    {
+      "name": "text/warning-hover",
+      "cssVar": "--text-warning-hover",
+      "resolvedType": "COLOR",
+      "description": "Hover state for status-coloured text and link buttons. Contrast: ≥4.5:1 on canvas/surface.",
+      "valuesByMode": {
+        "light": "{amber.800}",
+        "dark": "{amber.200}"
+      }
+    },
+    {
+      "name": "surface/border",
+      "cssVar": "--surface-border",
+      "resolvedType": "COLOR",
+      "description": "surface/border on canvas (light). 1px structural lines (section rules, list separators that must meet ≥3:1). Keep separate from surface/control even when values match. Contrast: ≥3:1 against the context background.",
+      "valuesByMode": {}
+    },
+    {
+      "name": "surface/control",
+      "cssVar": "--surface-control",
+      "resolvedType": "COLOR",
+      "description": "surface/control on canvas (light). Filled shapes that convey state and need ≥3:1 — toggle off-track, progress track, slider track. Separate from surface/border (lines) so fills can diverge later.",
+      "valuesByMode": {}
+    },
+    {
+      "name": "surface/field",
+      "cssVar": "--surface-field",
+      "resolvedType": "COLOR",
+      "description": "surface/field on canvas (light). Recessed field fill (brighter/deeper well, opposite of level). Bind Input, unchecked Checkbox, and unchecked Radio. Contrast: with text/primary (≥4.5:1).",
+      "valuesByMode": {}
+    },
+    {
+      "name": "surface/field-hover",
+      "cssVar": "--surface-field-hover",
+      "resolvedType": "COLOR",
+      "description": "surface/field-hover on canvas (light). Field hover wash. Contrast: with text/primary (≥4.5:1).",
+      "valuesByMode": {}
+    },
+    {
+      "name": "surface/level-1",
+      "cssVar": "--surface-level-1",
+      "resolvedType": "COLOR",
+      "description": "surface/level-1 on canvas (light). Raised decorative fills: tertiary/ghost buttons, badges, tags, containers, hover/active/selected/disabled chrome. Contrast: decorative chrome; not for state-conveying fills that need ≥3:1.",
+      "valuesByMode": {}
+    },
+    {
+      "name": "surface/level-2",
+      "cssVar": "--surface-level-2",
+      "resolvedType": "COLOR",
+      "description": "surface/level-2 on canvas (light). Raised decorative fills: tertiary/ghost buttons, badges, tags, containers, hover/active/selected/disabled chrome. Contrast: decorative chrome; not for state-conveying fills that need ≥3:1.",
+      "valuesByMode": {}
+    },
+    {
+      "name": "surface/level-3",
+      "cssVar": "--surface-level-3",
+      "resolvedType": "COLOR",
+      "description": "surface/level-3 on canvas (light). Raised decorative fills: tertiary/ghost buttons, badges, tags, containers, hover/active/selected/disabled chrome. Contrast: decorative chrome; not for state-conveying fills that need ≥3:1.",
+      "valuesByMode": {}
+    },
+    {
+      "name": "chip/gap/lg",
+      "cssVar": "--chip-gap-lg",
+      "resolvedType": "FLOAT",
+      "description": "chip/gap/lg.",
+      "valuesByMode": {
+        "default": "{dimension.6}"
+      }
+    },
+    {
+      "name": "chip/gap/md",
+      "cssVar": "--chip-gap-md",
+      "resolvedType": "FLOAT",
+      "description": "chip/gap/md.",
+      "valuesByMode": {
+        "default": "{dimension.4}"
+      }
+    },
+    {
+      "name": "chip/gap/sm",
+      "cssVar": "--chip-gap-sm",
+      "resolvedType": "FLOAT",
+      "description": "chip/gap/sm.",
+      "valuesByMode": {
+        "default": "{dimension.2}"
+      }
+    },
+    {
+      "name": "chip/padding-x/lg",
+      "cssVar": "--chip-padding-x-lg",
+      "resolvedType": "FLOAT",
+      "description": "chip/padding-x/lg.",
+      "valuesByMode": {
+        "default": "{dimension.12}"
+      }
+    },
+    {
+      "name": "chip/padding-x/md",
+      "cssVar": "--chip-padding-x-md",
+      "resolvedType": "FLOAT",
+      "description": "chip/padding-x/md.",
+      "valuesByMode": {
+        "default": "{dimension.8}"
+      }
+    },
+    {
+      "name": "chip/padding-x/sm",
+      "cssVar": "--chip-padding-x-sm",
+      "resolvedType": "FLOAT",
+      "description": "chip/padding-x/sm.",
+      "valuesByMode": {
+        "default": "{dimension.6}"
+      }
+    },
+    {
+      "name": "chip/padding-y/lg",
+      "cssVar": "--chip-padding-y-lg",
+      "resolvedType": "FLOAT",
+      "description": "chip/padding-y/lg.",
+      "valuesByMode": {
+        "default": "{dimension.4}"
+      }
+    },
+    {
+      "name": "chip/padding-y/md",
+      "cssVar": "--chip-padding-y-md",
+      "resolvedType": "FLOAT",
+      "description": "chip/padding-y/md — 3px (structure exception; not on the dimension scale).",
+      "valuesByMode": {
+        "default": "3px"
+      }
+    },
+    {
+      "name": "chip/padding-y/sm",
+      "cssVar": "--chip-padding-y-sm",
+      "resolvedType": "FLOAT",
+      "description": "chip/padding-y/sm — 1px (structure exception; not on the dimension scale).",
+      "valuesByMode": {
+        "default": "1px"
+      }
+    },
+    {
+      "name": "control/content-gap",
+      "cssVar": "--control-content-gap",
+      "resolvedType": "FLOAT",
+      "description": "Gap between control content slots.",
+      "valuesByMode": {
+        "default": "{dimension.8}"
+      }
+    },
+    {
+      "name": "control/gap/lg",
+      "cssVar": "--control-gap-lg",
+      "resolvedType": "FLOAT",
+      "description": "control/gap/lg → dimension/8. Shared control sizing.",
+      "valuesByMode": {
+        "default": "{dimension.8}"
+      }
+    },
+    {
+      "name": "control/gap/md",
+      "cssVar": "--control-gap-md",
+      "resolvedType": "FLOAT",
+      "description": "control/gap/md → dimension/6. Shared control sizing.",
+      "valuesByMode": {
+        "default": "{dimension.6}"
+      }
+    },
+    {
+      "name": "control/gap/sm",
+      "cssVar": "--control-gap-sm",
+      "resolvedType": "FLOAT",
+      "description": "control/gap/sm → dimension/4. Shared control sizing.",
+      "valuesByMode": {
+        "default": "{dimension.4}"
+      }
+    },
+    {
+      "name": "control/gap/xs",
+      "cssVar": "--control-gap-xs",
+      "resolvedType": "FLOAT",
+      "description": "control/gap/xs → dimension/2. Shared control sizing.",
+      "valuesByMode": {
+        "default": "{dimension.2}"
+      }
+    },
+    {
+      "name": "control/icon-padding/lg",
+      "cssVar": "--control-icon-padding-lg",
+      "resolvedType": "FLOAT",
+      "description": "control/icon-padding/lg → dimension/14. Shared control sizing.",
+      "valuesByMode": {
+        "default": "{dimension.14}"
+      }
+    },
+    {
+      "name": "control/icon-padding/md",
+      "cssVar": "--control-icon-padding-md",
+      "resolvedType": "FLOAT",
+      "description": "control/icon-padding/md → dimension/10. Shared control sizing.",
+      "valuesByMode": {
+        "default": "{dimension.10}"
+      }
+    },
+    {
+      "name": "control/icon-padding/sm",
+      "cssVar": "--control-icon-padding-sm",
+      "resolvedType": "FLOAT",
+      "description": "control/icon-padding/sm → dimension/8. Shared control sizing.",
+      "valuesByMode": {
+        "default": "{dimension.8}"
+      }
+    },
+    {
+      "name": "control/icon-padding/xs",
+      "cssVar": "--control-icon-padding-xs",
+      "resolvedType": "FLOAT",
+      "description": "control/icon-padding/xs → dimension/6. Shared control sizing.",
+      "valuesByMode": {
+        "default": "{dimension.6}"
+      }
+    },
+    {
+      "name": "control/label-gap",
+      "cssVar": "--control-label-gap",
+      "resolvedType": "FLOAT",
+      "description": "Gap between control and its label.",
+      "valuesByMode": {
+        "default": "{dimension.8}"
+      }
+    },
+    {
+      "name": "control/padding-x/lg",
+      "cssVar": "--control-padding-x-lg",
+      "resolvedType": "FLOAT",
+      "description": "control/padding-x/lg → dimension/16. Shared control sizing.",
+      "valuesByMode": {
+        "default": "{dimension.16}"
+      }
+    },
+    {
+      "name": "control/padding-x/md",
+      "cssVar": "--control-padding-x-md",
+      "resolvedType": "FLOAT",
+      "description": "control/padding-x/md → dimension/12. Shared control sizing.",
+      "valuesByMode": {
+        "default": "{dimension.12}"
+      }
+    },
+    {
+      "name": "control/padding-x/sm",
+      "cssVar": "--control-padding-x-sm",
+      "resolvedType": "FLOAT",
+      "description": "control/padding-x/sm → dimension/8. Shared control sizing.",
+      "valuesByMode": {
+        "default": "{dimension.8}"
+      }
+    },
+    {
+      "name": "control/padding-x/xs",
+      "cssVar": "--control-padding-x-xs",
+      "resolvedType": "FLOAT",
+      "description": "control/padding-x/xs → dimension/6. Shared control sizing.",
+      "valuesByMode": {
+        "default": "{dimension.6}"
+      }
+    },
+    {
+      "name": "control/padding-y/lg",
+      "cssVar": "--control-padding-y-lg",
+      "resolvedType": "FLOAT",
+      "description": "control/padding-y/lg → dimension/12. Shared control sizing.",
+      "valuesByMode": {
+        "default": "{dimension.12}"
+      }
+    },
+    {
+      "name": "control/padding-y/md",
+      "cssVar": "--control-padding-y-md",
+      "resolvedType": "FLOAT",
+      "description": "control/padding-y/md → dimension/10. Shared control sizing.",
+      "valuesByMode": {
+        "default": "{dimension.10}"
+      }
+    },
+    {
+      "name": "control/padding-y/sm",
+      "cssVar": "--control-padding-y-sm",
+      "resolvedType": "FLOAT",
+      "description": "control/padding-y/sm → dimension/6. Shared control sizing.",
+      "valuesByMode": {
+        "default": "{dimension.6}"
+      }
+    },
+    {
+      "name": "control/padding-y/xs",
+      "cssVar": "--control-padding-y-xs",
+      "resolvedType": "FLOAT",
+      "description": "control/padding-y/xs → dimension/4. Shared control sizing.",
+      "valuesByMode": {
+        "default": "{dimension.4}"
+      }
+    },
+    {
+      "name": "control/radius",
+      "cssVar": "--control-radius",
+      "resolvedType": "FLOAT",
+      "description": "Shared control corner radius.",
+      "valuesByMode": {
+        "default": "{radius.xs}"
+      }
+    },
+    {
+      "name": "focus/ring-offset",
+      "cssVar": "--focus-ring-offset",
+      "resolvedType": "FLOAT",
+      "description": "Focus ring offset.",
+      "valuesByMode": {
+        "default": "{dimension.2}"
+      }
+    },
+    {
+      "name": "focus/ring-width",
+      "cssVar": "--focus-ring-width",
+      "resolvedType": "FLOAT",
+      "description": "Focus ring width.",
+      "valuesByMode": {
+        "default": "{border-width.2}"
+      }
+    },
+    {
+      "name": "icon/size/lg",
+      "cssVar": "--icon-size-lg",
+      "resolvedType": "FLOAT",
+      "description": "Icon size lg.",
+      "valuesByMode": {
+        "default": "{dimension.20}"
+      }
+    },
+    {
+      "name": "icon/size/md",
+      "cssVar": "--icon-size-md",
+      "resolvedType": "FLOAT",
+      "description": "Icon size md.",
+      "valuesByMode": {
+        "default": "{dimension.16}"
+      }
+    },
+    {
+      "name": "icon/size/sm",
+      "cssVar": "--icon-size-sm",
+      "resolvedType": "FLOAT",
+      "description": "Icon size sm → dimension/14.",
+      "valuesByMode": {
+        "default": "{dimension.14}"
+      }
+    },
+    {
+      "name": "icon/size/xl",
+      "cssVar": "--icon-size-xl",
+      "resolvedType": "FLOAT",
+      "description": "Icon size xl.",
+      "valuesByMode": {
+        "default": "{dimension.24}"
+      }
+    },
+    {
+      "name": "icon/size/xs",
+      "cssVar": "--icon-size-xs",
+      "resolvedType": "FLOAT",
+      "description": "Icon size xs.",
+      "valuesByMode": {
+        "default": "{dimension.12}"
+      }
+    },
+    {
+      "name": "layout/card",
+      "cssVar": "--layout-card",
+      "resolvedType": "FLOAT",
+      "description": "Default card padding.",
+      "valuesByMode": {
+        "default": "{dimension.16}"
+      }
+    },
+    {
+      "name": "layout/section",
+      "cssVar": "--layout-section",
+      "resolvedType": "FLOAT",
+      "description": "Section spacing.",
+      "valuesByMode": {
+        "default": "{dimension.32}"
+      }
+    },
+    {
+      "name": "layout/stack",
+      "cssVar": "--layout-stack",
+      "resolvedType": "FLOAT",
+      "description": "Default vertical stack gap.",
+      "valuesByMode": {
+        "default": "{dimension.8}"
+      }
+    },
+    {
+      "name": "layout/stack-loose",
+      "cssVar": "--layout-stack-loose",
+      "resolvedType": "FLOAT",
+      "description": "Loose vertical stack gap.",
+      "valuesByMode": {
+        "default": "{dimension.16}"
+      }
+    },
+    {
+      "name": "layout/stack-tight",
+      "cssVar": "--layout-stack-tight",
+      "resolvedType": "FLOAT",
+      "description": "Tight vertical stack gap.",
+      "valuesByMode": {
+        "default": "{dimension.4}"
+      }
+    },
+    {
+      "name": "shadow/sm",
+      "cssVar": "--shadow-sm",
+      "resolvedType": "FLOAT",
+      "description": "Small elevation shadow for cards and light raised surfaces. Mode-locked; pairs with border/subtle on Card so fill + shadow carry the boundary.",
+      "valuesByMode": {
+        "default": "0 1px 2px 0 color-mix(in srgb, var(--neutral-950) calc(100% * var(--opacity-8)), transparent)"
+      }
+    },
+    {
+      "name": "z/modal",
+      "cssVar": "--z-modal",
+      "resolvedType": "FLOAT",
+      "description": "Stacking order for modal dialogs and their scrim. Above page content; tooltips/toasts sit higher if added later.",
+      "valuesByMode": {
+        "default": 50
+      }
+    },
+    {
+      "name": "overlay/scrim",
+      "cssVar": "--overlay-scrim",
+      "resolvedType": "COLOR",
+      "description": "Modal / drawer scrim colour. Mode-locked (identical in light and dark). Pair with overlay/scrim-opacity; dims content behind without replacing it.",
+      "valuesByMode": {
+        "default": "{neutral.950}"
+      }
+    },
+    {
+      "name": "overlay/scrim-opacity",
+      "cssVar": "--overlay-scrim-opacity",
+      "resolvedType": "FLOAT",
+      "description": "Modal / drawer scrim opacity. Mode-locked (identical in light and dark). Applied with overlay/scrim.",
+      "valuesByMode": {
+        "default": "{opacity.64}"
+      }
+    },
+    {
+      "name": "alert/icon-gap",
+      "cssVar": "--alert-icon-gap",
+      "resolvedType": "FLOAT",
+      "description": "Gap between alert icon and content.",
+      "valuesByMode": {
+        "default": "{dimension.12}"
+      }
+    },
+    {
+      "name": "alert/padding",
+      "cssVar": "--alert-padding",
+      "resolvedType": "FLOAT",
+      "description": "Alert padding.",
+      "valuesByMode": {
+        "default": "{dimension.12}"
+      }
+    },
+    {
+      "name": "alert/radius",
+      "cssVar": "--alert-radius",
+      "resolvedType": "FLOAT",
+      "description": "Alert corner radius.",
+      "valuesByMode": {
+        "default": "{radius.sm}"
+      }
+    },
+    {
+      "name": "badge/count-radius",
+      "cssVar": "--badge-count-radius",
+      "resolvedType": "FLOAT",
+      "description": "Badge count corner radius.",
+      "valuesByMode": {
+        "default": "{radius.xs}"
+      }
+    },
+    {
+      "name": "badge/count-size/lg",
+      "cssVar": "--badge-count-size-lg",
+      "resolvedType": "FLOAT",
+      "description": "Badge count size lg — 22px component deviation.",
+      "valuesByMode": {
+        "default": "22px"
+      }
+    },
+    {
+      "name": "badge/count-size/md",
+      "cssVar": "--badge-count-size-md",
+      "resolvedType": "FLOAT",
+      "description": "Badge count size md — 18px component deviation.",
+      "valuesByMode": {
+        "default": "18px"
+      }
+    },
+    {
+      "name": "badge/count-size/sm",
+      "cssVar": "--badge-count-size-sm",
+      "resolvedType": "FLOAT",
+      "description": "Badge count size sm.",
+      "valuesByMode": {
+        "default": "{dimension.16}"
+      }
+    },
+    {
+      "name": "badge/dot-size/md",
+      "cssVar": "--badge-dot-size-md",
+      "resolvedType": "FLOAT",
+      "description": "Badge dot size md.",
+      "valuesByMode": {
+        "default": "{dimension.8}"
+      }
+    },
+    {
+      "name": "badge/dot-size/sm",
+      "cssVar": "--badge-dot-size-sm",
+      "resolvedType": "FLOAT",
+      "description": "Badge dot size sm.",
+      "valuesByMode": {
+        "default": "{dimension.6}"
+      }
+    },
+    {
+      "name": "badge/radius",
+      "cssVar": "--badge-radius",
+      "resolvedType": "FLOAT",
+      "description": "Badge pill radius.",
+      "valuesByMode": {
+        "default": "{radius.full}"
+      }
+    },
+    {
+      "name": "card/padding",
+      "cssVar": "--card-padding",
+      "resolvedType": "FLOAT",
+      "description": "Card padding — aliases layout/card.",
+      "valuesByMode": {
+        "default": "{layout.card}"
+      }
+    },
+    {
+      "name": "card/radius",
+      "cssVar": "--card-radius",
+      "resolvedType": "FLOAT",
+      "description": "Card corner radius.",
+      "valuesByMode": {
+        "default": "{radius.md}"
+      }
+    },
+    {
+      "name": "checkbox/radius",
+      "cssVar": "--checkbox-radius",
+      "resolvedType": "FLOAT",
+      "description": "Checkbox corner radius.",
+      "valuesByMode": {
+        "default": "{radius.xs}"
+      }
+    },
+    {
+      "name": "checkbox/size/lg",
+      "cssVar": "--checkbox-size-lg",
+      "resolvedType": "FLOAT",
+      "description": "Checkbox size lg.",
+      "valuesByMode": {
+        "default": "{dimension.24}"
+      }
+    },
+    {
+      "name": "checkbox/size/md",
+      "cssVar": "--checkbox-size-md",
+      "resolvedType": "FLOAT",
+      "description": "Checkbox size md.",
+      "valuesByMode": {
+        "default": "{dimension.20}"
+      }
+    },
+    {
+      "name": "checkbox/size/sm",
+      "cssVar": "--checkbox-size-sm",
+      "resolvedType": "FLOAT",
+      "description": "Checkbox size sm.",
+      "valuesByMode": {
+        "default": "{dimension.16}"
+      }
+    },
+    {
+      "name": "dropdown/item-padding-x",
+      "cssVar": "--dropdown-item-padding-x",
+      "resolvedType": "FLOAT",
+      "description": "Dropdown item horizontal padding.",
+      "valuesByMode": {
+        "default": "{dimension.12}"
+      }
+    },
+    {
+      "name": "dropdown/item-padding-y",
+      "cssVar": "--dropdown-item-padding-y",
+      "resolvedType": "FLOAT",
+      "description": "Dropdown item vertical padding.",
+      "valuesByMode": {
+        "default": "{dimension.6}"
+      }
+    },
+    {
+      "name": "dropdown/menu-padding-y",
+      "cssVar": "--dropdown-menu-padding-y",
+      "resolvedType": "FLOAT",
+      "description": "Dropdown menu vertical padding.",
+      "valuesByMode": {
+        "default": "{dimension.4}"
+      }
+    },
+    {
+      "name": "dropdown/menu-radius",
+      "cssVar": "--dropdown-menu-radius",
+      "resolvedType": "FLOAT",
+      "description": "Dropdown menu corner radius.",
+      "valuesByMode": {
+        "default": "{radius.sm}"
+      }
+    },
+    {
+      "name": "modal/max-width",
+      "cssVar": "--modal-max-width",
+      "resolvedType": "FLOAT",
+      "description": "Modal max width — md size (560px component deviation).",
+      "valuesByMode": {
+        "default": "560px"
+      }
+    },
+    {
+      "name": "modal/max-width-lg",
+      "cssVar": "--modal-max-width-lg",
+      "resolvedType": "FLOAT",
+      "description": "Modal max width — lg size.",
+      "valuesByMode": {
+        "default": "720px"
+      }
+    },
+    {
+      "name": "modal/max-width-sm",
+      "cssVar": "--modal-max-width-sm",
+      "resolvedType": "FLOAT",
+      "description": "Modal max width — sm size.",
+      "valuesByMode": {
+        "default": "400px"
+      }
+    },
+    {
+      "name": "modal/padding",
+      "cssVar": "--modal-padding",
+      "resolvedType": "FLOAT",
+      "description": "Modal padding.",
+      "valuesByMode": {
+        "default": "{dimension.24}"
+      }
+    },
+    {
+      "name": "modal/radius",
+      "cssVar": "--modal-radius",
+      "resolvedType": "FLOAT",
+      "description": "Modal corner radius.",
+      "valuesByMode": {
+        "default": "{radius.md}"
+      }
+    },
+    {
+      "name": "progress/label-gap",
+      "cssVar": "--progress-label-gap",
+      "resolvedType": "FLOAT",
+      "description": "Gap between progress and label.",
+      "valuesByMode": {
+        "default": "{dimension.8}"
+      }
+    },
+    {
+      "name": "progress/radius",
+      "cssVar": "--progress-radius",
+      "resolvedType": "FLOAT",
+      "description": "Progress track/radius.",
+      "valuesByMode": {
+        "default": "{radius.full}"
+      }
+    },
+    {
+      "name": "progress/track-bg",
+      "cssVar": "--progress-track-bg",
+      "resolvedType": "COLOR",
+      "description": "Progress track fill — aliases surface/control (≥3:1 filled state chrome per context).",
+      "valuesByMode": {
+        "default": "{surface.control}"
+      }
+    },
+    {
+      "name": "progress/track-height",
+      "cssVar": "--progress-track-height",
+      "resolvedType": "FLOAT",
+      "description": "Progress track height.",
+      "valuesByMode": {
+        "default": "{dimension.8}"
+      }
+    },
+    {
+      "name": "radio/dot-size/lg",
+      "cssVar": "--radio-dot-size-lg",
+      "resolvedType": "FLOAT",
+      "description": "Radio dot lg.",
+      "valuesByMode": {
+        "default": "{dimension.12}"
+      }
+    },
+    {
+      "name": "radio/dot-size/md",
+      "cssVar": "--radio-dot-size-md",
+      "resolvedType": "FLOAT",
+      "description": "Radio dot md.",
+      "valuesByMode": {
+        "default": "{dimension.10}"
+      }
+    },
+    {
+      "name": "radio/dot-size/sm",
+      "cssVar": "--radio-dot-size-sm",
+      "resolvedType": "FLOAT",
+      "description": "Radio dot sm.",
+      "valuesByMode": {
+        "default": "{dimension.8}"
+      }
+    },
+    {
+      "name": "radio/radius",
+      "cssVar": "--radio-radius",
+      "resolvedType": "FLOAT",
+      "description": "Radio circle radius.",
+      "valuesByMode": {
+        "default": "{radius.full}"
+      }
+    },
+    {
+      "name": "radio/size/lg",
+      "cssVar": "--radio-size-lg",
+      "resolvedType": "FLOAT",
+      "description": "Radio size lg.",
+      "valuesByMode": {
+        "default": "{dimension.24}"
+      }
+    },
+    {
+      "name": "radio/size/md",
+      "cssVar": "--radio-size-md",
+      "resolvedType": "FLOAT",
+      "description": "Radio size md.",
+      "valuesByMode": {
+        "default": "{dimension.20}"
+      }
+    },
+    {
+      "name": "radio/size/sm",
+      "cssVar": "--radio-size-sm",
+      "resolvedType": "FLOAT",
+      "description": "Radio size sm.",
+      "valuesByMode": {
+        "default": "{dimension.16}"
+      }
+    },
+    {
+      "name": "segment/radius-inner",
+      "cssVar": "--segment-radius-inner",
+      "resolvedType": "FLOAT",
+      "description": "Segmented control inner item radius.",
+      "valuesByMode": {
+        "default": "{radius.none}"
+      }
+    },
+    {
+      "name": "segment/radius-outer",
+      "cssVar": "--segment-radius-outer",
+      "resolvedType": "FLOAT",
+      "description": "Segmented control outer radius.",
+      "valuesByMode": {
+        "default": "{radius.sm}"
+      }
+    },
+    {
+      "name": "slider/thumb-border",
+      "cssVar": "--slider-thumb-border",
+      "resolvedType": "COLOR",
+      "description": "Slider thumb border — aliases role border/strong so it tracks mode.",
+      "valuesByMode": {
+        "default": "{border.strong}"
+      }
+    },
+    {
+      "name": "slider/thumb-size",
+      "cssVar": "--slider-thumb-size",
+      "resolvedType": "FLOAT",
+      "description": "Slider thumb size.",
+      "valuesByMode": {
+        "default": "{dimension.20}"
+      }
+    },
+    {
+      "name": "slider/track-bg",
+      "cssVar": "--slider-track-bg",
+      "resolvedType": "COLOR",
+      "description": "Slider track fill — aliases surface/control (≥3:1 filled state chrome per context).",
+      "valuesByMode": {
+        "default": "{surface.control}"
+      }
+    },
+    {
+      "name": "tab/container-padding",
+      "cssVar": "--tab-container-padding",
+      "resolvedType": "FLOAT",
+      "description": "Tab list container padding.",
+      "valuesByMode": {
+        "default": "{dimension.4}"
+      }
+    },
+    {
+      "name": "tab/container-radius",
+      "cssVar": "--tab-container-radius",
+      "resolvedType": "FLOAT",
+      "description": "Tab list container radius.",
+      "valuesByMode": {
+        "default": "{radius.sm}"
+      }
+    },
+    {
+      "name": "tab/content-gap/lg",
+      "cssVar": "--tab-content-gap-lg",
+      "resolvedType": "FLOAT",
+      "description": "Tab content gap lg.",
+      "valuesByMode": {
+        "default": "{dimension.8}"
+      }
+    },
+    {
+      "name": "tab/content-gap/md",
+      "cssVar": "--tab-content-gap-md",
+      "resolvedType": "FLOAT",
+      "description": "Tab content gap md.",
+      "valuesByMode": {
+        "default": "{dimension.6}"
+      }
+    },
+    {
+      "name": "tab/content-gap/sm",
+      "cssVar": "--tab-content-gap-sm",
+      "resolvedType": "FLOAT",
+      "description": "Tab content gap sm.",
+      "valuesByMode": {
+        "default": "{dimension.4}"
+      }
+    },
+    {
+      "name": "tab/indicator-weight",
+      "cssVar": "--tab-indicator-weight",
+      "resolvedType": "FLOAT",
+      "description": "Tab active indicator thickness.",
+      "valuesByMode": {
+        "default": "{border-width.2}"
+      }
+    },
+    {
+      "name": "tab/item-spacing",
+      "cssVar": "--tab-item-spacing",
+      "resolvedType": "FLOAT",
+      "description": "Spacing between tab items.",
+      "valuesByMode": {
+        "default": "{dimension.4}"
+      }
+    },
+    {
+      "name": "tab/radius",
+      "cssVar": "--tab-radius",
+      "resolvedType": "FLOAT",
+      "description": "Individual tab radius.",
+      "valuesByMode": {
+        "default": "{radius.xs}"
+      }
+    },
+    {
+      "name": "tag/radius",
+      "cssVar": "--tag-radius",
+      "resolvedType": "FLOAT",
+      "description": "Tag corner radius.",
+      "valuesByMode": {
+        "default": "{radius.xs}"
+      }
+    },
+    {
+      "name": "toggle/knob-bg",
+      "cssVar": "--toggle-knob-bg",
+      "resolvedType": "COLOR",
+      "description": "Toggle knob fill (light). Contrast: ≥3:1 against track.",
+      "valuesByMode": {
+        "light": "{neutral.0}",
+        "dark": "{neutral.900}"
+      }
+    },
+    {
+      "name": "toggle/knob-size/lg",
+      "cssVar": "--toggle-knob-size-lg",
+      "resolvedType": "FLOAT",
+      "description": "Toggle knob lg.",
+      "valuesByMode": {
+        "default": "{dimension.20}"
+      }
+    },
+    {
+      "name": "toggle/knob-size/md",
+      "cssVar": "--toggle-knob-size-md",
+      "resolvedType": "FLOAT",
+      "description": "Toggle knob md.",
+      "valuesByMode": {
+        "default": "{dimension.16}"
+      }
+    },
+    {
+      "name": "toggle/knob-size/sm",
+      "cssVar": "--toggle-knob-size-sm",
+      "resolvedType": "FLOAT",
+      "description": "Toggle knob sm.",
+      "valuesByMode": {
+        "default": "{dimension.12}"
+      }
+    },
+    {
+      "name": "toggle/radius",
+      "cssVar": "--toggle-radius",
+      "resolvedType": "FLOAT",
+      "description": "Toggle pill radius.",
+      "valuesByMode": {
+        "default": "{radius.full}"
+      }
+    },
+    {
+      "name": "toggle/track-height/lg",
+      "cssVar": "--toggle-track-height-lg",
+      "resolvedType": "FLOAT",
+      "description": "Toggle track height lg.",
+      "valuesByMode": {
+        "default": "{dimension.24}"
+      }
+    },
+    {
+      "name": "toggle/track-height/md",
+      "cssVar": "--toggle-track-height-md",
+      "resolvedType": "FLOAT",
+      "description": "Toggle track height md.",
+      "valuesByMode": {
+        "default": "{dimension.20}"
+      }
+    },
+    {
+      "name": "toggle/track-height/sm",
+      "cssVar": "--toggle-track-height-sm",
+      "resolvedType": "FLOAT",
+      "description": "Toggle track height sm.",
+      "valuesByMode": {
+        "default": "{dimension.16}"
+      }
+    },
+    {
+      "name": "toggle/track-off-bg",
+      "cssVar": "--toggle-track-off-bg",
+      "resolvedType": "COLOR",
+      "description": "Toggle off track — aliases surface/control (≥3:1 filled state chrome per context).",
+      "valuesByMode": {
+        "default": "{surface.control}"
+      }
+    },
+    {
+      "name": "toggle/track-off-bg-hover",
+      "cssVar": "--toggle-track-off-bg-hover",
+      "resolvedType": "COLOR",
+      "description": "Toggle off track hover — surface/control family (≥3:1). Hover may stack opacity in the component.",
+      "valuesByMode": {
+        "default": "{surface.control}"
+      }
+    },
+    {
+      "name": "toggle/track-padding",
+      "cssVar": "--toggle-track-padding",
+      "resolvedType": "FLOAT",
+      "description": "Toggle track inset padding.",
+      "valuesByMode": {
+        "default": "{dimension.2}"
+      }
+    },
+    {
+      "name": "toggle/track-width/lg",
+      "cssVar": "--toggle-track-width-lg",
+      "resolvedType": "FLOAT",
+      "description": "Toggle track width lg.",
+      "valuesByMode": {
+        "default": "44px"
+      }
+    },
+    {
+      "name": "toggle/track-width/md",
+      "cssVar": "--toggle-track-width-md",
+      "resolvedType": "FLOAT",
+      "description": "Toggle track width md.",
+      "valuesByMode": {
+        "default": "36px"
+      }
+    },
+    {
+      "name": "toggle/track-width/sm",
+      "cssVar": "--toggle-track-width-sm",
+      "resolvedType": "FLOAT",
+      "description": "Toggle track width sm.",
+      "valuesByMode": {
+        "default": "28px"
+      }
+    }
+  ]
+}

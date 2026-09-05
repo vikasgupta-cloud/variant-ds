@@ -260,8 +260,11 @@ export function contrastForegroundForBg(tokenName: string): string | null {
 export function contrastVerdict(
   ratio: number | null,
   check: ContrastCheck,
-): "pass" | "fail" | "exempt" | "unknown" {
+): "pass" | "tight" | "fail" | "exempt" | "unknown" {
   if (check.exemptReason) return "exempt";
   if (ratio === null || Number.isNaN(ratio)) return "unknown";
-  return ratio >= check.required ? "pass" : "fail";
+  if (ratio < check.required) return "fail";
+  // Barely clears the threshold — still a pass in WCAG terms, flagged as tight.
+  if (ratio < check.required + 0.5) return "tight";
+  return "pass";
 }

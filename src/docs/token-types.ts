@@ -9,6 +9,14 @@ export type TokenLayer =
   | "overlay"
   | "component";
 
+export type TypographyValue = {
+  fontFamily: string;
+  fontSize: string;
+  fontWeight: number | string;
+  lineHeight: string;
+  letterSpacing: string;
+};
+
 export type CatalogToken = {
   name: string;
   path: string[];
@@ -16,7 +24,7 @@ export type CatalogToken = {
   layer: TokenLayer;
   type: string;
   description: string;
-  value: string | number | null;
+  value: string | number | TypographyValue | number[] | null;
   valueByMode: { light?: string | number; dark?: string | number } | null;
   valueByContext: Record<string, string | number> | null;
   alias: string | null;

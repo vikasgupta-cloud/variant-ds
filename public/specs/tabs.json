@@ -1,0 +1,136 @@
+{
+  "id": "tabs",
+  "name": "Tabs",
+  "storyTitle": "Components/Tabs",
+  "overview": "Section switching with underline or button (segmented) variants.",
+  "whenToUse": [
+    "In-page navigation between related views",
+    "Settings panels"
+  ],
+  "variants": {
+    "variant": [
+      "underline",
+      "button"
+    ],
+    "size": [
+      "sm",
+      "md",
+      "lg"
+    ],
+    "state": [
+      "default",
+      "active",
+      "disabled"
+    ]
+  },
+  "anatomy": [
+    "Tabs",
+    "TabsList",
+    "TabsTrigger",
+    "TabsContent",
+    "Optional icon/badge"
+  ],
+  "tokens": {
+    "role": [
+      {
+        "path": "text/primary",
+        "cssVar": "--text-primary"
+      },
+      {
+        "path": "text/secondary",
+        "cssVar": "--text-secondary"
+      },
+      {
+        "path": "text/disabled",
+        "cssVar": "--text-disabled"
+      },
+      {
+        "path": "border/subtle",
+        "cssVar": "--border-subtle"
+      },
+      {
+        "path": "border/focus",
+        "cssVar": "--border-focus"
+      },
+      {
+        "path": "selected/indicator",
+        "cssVar": "--selected-indicator"
+      },
+      {
+        "path": "bg/surface",
+        "cssVar": "--bg-surface"
+      }
+    ],
+    "surface": [
+      {
+        "path": "surface/level-1",
+        "cssVar": "--surface-level-1"
+      }
+    ],
+    "structure": [
+      {
+        "path": "focus/ring-width",
+        "cssVar": "--focus-ring-width"
+      },
+      {
+        "path": "focus/ring-offset",
+        "cssVar": "--focus-ring-offset"
+      },
+      {
+        "path": "icon/size",
+        "cssVar": "--icon-size"
+      }
+    ],
+    "component": [
+      {
+        "path": "tab/item-spacing",
+        "cssVar": "--tab-item-spacing"
+      },
+      {
+        "path": "tab/content-gap",
+        "cssVar": "--tab-content-gap"
+      },
+      {
+        "path": "tab/indicator-weight",
+        "cssVar": "--tab-indicator-weight"
+      },
+      {
+        "path": "tab/container-radius",
+        "cssVar": "--tab-container-radius"
+      },
+      {
+        "path": "tab/container-padding",
+        "cssVar": "--tab-container-padding"
+      },
+      {
+        "path": "tab/radius",
+        "cssVar": "--tab-radius"
+      }
+    ]
+  },
+  "props": [
+    {
+      "name": "variant",
+      "type": "underline | button",
+      "default": "underline",
+      "description": "Visual style."
+    },
+    {
+      "name": "size",
+      "type": "sm | md | lg",
+      "default": "md",
+      "description": "Trigger size."
+    }
+  ],
+  "accessibility": [
+    "tablist / tab / tabpanel roles",
+    "Arrow keys move between tabs"
+  ],
+  "do": [
+    "Keep tab labels short",
+    "Use Badge for counts, not as the only label"
+  ],
+  "dont": [
+    "Don't nest interactive tabs inside each other"
+  ]
+}

@@ -82,6 +82,7 @@ The rules file loads on every message. The spec is read on demand. Neither needs
 > Build Card, Alert and Modal per section 3. These exist to stress-test the Surface layer, so include stories with a card inside a card, and a modal containing a card.
 >
 > Modal uses the scrim tokens and `z/modal`.
+> every component ships the five standard stories — All variants, States, Content, Layout, Playground.
 
 **Verify:** nested cards render at distinct levels. Contexts resolve correctly at depth three.
 
@@ -90,6 +91,7 @@ The rules file loads on every message. The spec is read on demand. Neither needs
 ## Task 7 — Remaining components
 
 > Build the rest: Dropdown, Badge, Tag, Checkbox, Radio, Toggle, Tabs, ButtonGroup, Progress, Slider. Full variant and state matrix per section 3.
+> every component ships the five standard stories — All variants, States, Content, Layout, Playground.
 
 Split this if it gets unwieldy — three or four components per message is manageable.
 

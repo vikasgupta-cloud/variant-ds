@@ -1,0 +1,130 @@
+{
+  "generated": true,
+  "components": [
+    {
+      "id": "button",
+      "name": "Button",
+      "files": [
+        "button.md",
+        "button.json"
+      ]
+    },
+    {
+      "id": "input",
+      "name": "Input",
+      "files": [
+        "input.md",
+        "input.json"
+      ]
+    },
+    {
+      "id": "badge",
+      "name": "Badge",
+      "files": [
+        "badge.md",
+        "badge.json"
+      ]
+    },
+    {
+      "id": "tag",
+      "name": "Tag",
+      "files": [
+        "tag.md",
+        "tag.json"
+      ]
+    },
+    {
+      "id": "checkbox",
+      "name": "Checkbox",
+      "files": [
+        "checkbox.md",
+        "checkbox.json"
+      ]
+    },
+    {
+      "id": "radio",
+      "name": "Radio",
+      "files": [
+        "radio.md",
+        "radio.json"
+      ]
+    },
+    {
+      "id": "toggle",
+      "name": "Toggle",
+      "files": [
+        "toggle.md",
+        "toggle.json"
+      ]
+    },
+    {
+      "id": "tabs",
+      "name": "Tabs",
+      "files": [
+        "tabs.md",
+        "tabs.json"
+      ]
+    },
+    {
+      "id": "button-group",
+      "name": "ButtonGroup",
+      "files": [
+        "button-group.md",
+        "button-group.json"
+      ]
+    },
+    {
+      "id": "dropdown",
+      "name": "Dropdown",
+      "files": [
+        "dropdown.md",
+        "dropdown.json"
+      ]
+    },
+    {
+      "id": "progress",
+      "name": "Progress",
+      "files": [
+        "progress.md",
+        "progress.json"
+      ]
+    },
+    {
+      "id": "slider",
+      "name": "Slider",
+      "files": [
+        "slider.md",
+        "slider.json"
+      ]
+    },
+    {
+      "id": "card",
+      "name": "Card",
+      "files": [
+        "card.md",
+        "card.json"
+      ]
+    },
+    {
+      "id": "alert",
+      "name": "Alert",
+      "files": [
+        "alert.md",
+        "alert.json"
+      ]
+    },
+    {
+      "id": "modal",
+      "name": "Modal",
+      "files": [
+        "modal.md",
+        "modal.json"
+      ]
+    }
+  ],
+  "tokens": [
+    "tokens.css",
+    "tokens.json",
+    "tokens.figma.json"
+  ]
+}

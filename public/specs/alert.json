@@ -1,0 +1,184 @@
+{
+  "id": "alert",
+  "name": "Alert",
+  "storyTitle": "Components/Alert",
+  "overview": "Inline status message. Optional actions are always ghost Dismiss + secondary primary-action, coloured by the Alert role (danger → destructive).",
+  "whenToUse": [
+    "Inline feedback",
+    "Non-blocking warnings",
+    "AI suggestions"
+  ],
+  "variants": {
+    "role": [
+      "info",
+      "success",
+      "warning",
+      "danger",
+      "ai"
+    ],
+    "emphasis": [
+      "soft",
+      "strong"
+    ],
+    "state": [
+      "default"
+    ]
+  },
+  "anatomy": [
+    "Root",
+    "Title",
+    "Body",
+    "Actions (Dismiss + primary)"
+  ],
+  "tokens": {
+    "role": [
+      {
+        "path": "bg/info/soft",
+        "cssVar": "--bg-info-soft"
+      },
+      {
+        "path": "bg/info/strong",
+        "cssVar": "--bg-info-strong"
+      },
+      {
+        "path": "bg/success/soft",
+        "cssVar": "--bg-success-soft"
+      },
+      {
+        "path": "bg/success/strong",
+        "cssVar": "--bg-success-strong"
+      },
+      {
+        "path": "bg/warning/soft",
+        "cssVar": "--bg-warning-soft"
+      },
+      {
+        "path": "bg/warning/strong",
+        "cssVar": "--bg-warning-strong"
+      },
+      {
+        "path": "bg/danger/soft",
+        "cssVar": "--bg-danger-soft"
+      },
+      {
+        "path": "bg/danger/strong",
+        "cssVar": "--bg-danger-strong"
+      },
+      {
+        "path": "bg/ai/soft",
+        "cssVar": "--bg-ai-soft"
+      },
+      {
+        "path": "bg/ai/strong",
+        "cssVar": "--bg-ai-strong"
+      },
+      {
+        "path": "text/info",
+        "cssVar": "--text-info"
+      },
+      {
+        "path": "text/success",
+        "cssVar": "--text-success"
+      },
+      {
+        "path": "text/warning",
+        "cssVar": "--text-warning"
+      },
+      {
+        "path": "text/danger",
+        "cssVar": "--text-danger"
+      },
+      {
+        "path": "text/ai",
+        "cssVar": "--text-ai"
+      },
+      {
+        "path": "text/on-strong",
+        "cssVar": "--text-on-strong"
+      },
+      {
+        "path": "text/on-strong-warning",
+        "cssVar": "--text-on-strong-warning"
+      },
+      {
+        "path": "border/info",
+        "cssVar": "--border-info"
+      },
+      {
+        "path": "border/success",
+        "cssVar": "--border-success"
+      },
+      {
+        "path": "border/warning",
+        "cssVar": "--border-warning"
+      },
+      {
+        "path": "border/danger",
+        "cssVar": "--border-danger"
+      },
+      {
+        "path": "border/ai",
+        "cssVar": "--border-ai"
+      }
+    ],
+    "structure": [
+      {
+        "path": "layout/stack",
+        "cssVar": "--layout-stack"
+      },
+      {
+        "path": "layout/stack-tight",
+        "cssVar": "--layout-stack-tight"
+      }
+    ],
+    "component": [
+      {
+        "path": "alert/radius",
+        "cssVar": "--alert-radius"
+      },
+      {
+        "path": "alert/padding",
+        "cssVar": "--alert-padding"
+      },
+      {
+        "path": "alert/icon-gap",
+        "cssVar": "--alert-icon-gap"
+      }
+    ]
+  },
+  "props": [
+    {
+      "name": "role",
+      "type": "info | success | warning | danger | ai",
+      "description": "Status colour."
+    },
+    {
+      "name": "emphasis",
+      "type": "soft | strong",
+      "default": "soft",
+      "description": "Fill weight."
+    },
+    {
+      "name": "actions",
+      "type": "{ primaryLabel, onPrimary?, onDismiss? }",
+      "description": "Standard action pair."
+    },
+    {
+      "name": "dismissible",
+      "type": "boolean",
+      "default": "false",
+      "description": "Ghost Dismiss only."
+    }
+  ],
+  "accessibility": [
+    "role=status for live updates",
+    "Actions are real Buttons"
+  ],
+  "do": [
+    "Inherit Alert role onto action Button colours",
+    "Use soft for most inline alerts"
+  ],
+  "dont": [
+    "Never put a primary default button inside a coloured alert"
+  ]
+}

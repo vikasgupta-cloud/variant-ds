@@ -1,0 +1,125 @@
+{
+  "id": "radio",
+  "name": "Radio",
+  "storyTitle": "Components/Radio",
+  "overview": "Exclusive choice within a RadioGroup. Orientation horizontal or vertical.",
+  "whenToUse": [
+    "Pick one option from a short list",
+    "Form settings with mutually exclusive values"
+  ],
+  "variants": {
+    "size": [
+      "sm",
+      "md",
+      "lg"
+    ],
+    "orientation": [
+      "vertical",
+      "horizontal"
+    ],
+    "state": [
+      "default",
+      "unselected",
+      "selected",
+      "disabled",
+      "focused"
+    ]
+  },
+  "anatomy": [
+    "RadioGroup",
+    "RadioItem",
+    "Indicator dot",
+    "Label"
+  ],
+  "tokens": {
+    "role": [
+      {
+        "path": "bg/neutral/strong",
+        "cssVar": "--bg-neutral-strong"
+      },
+      {
+        "path": "text/primary",
+        "cssVar": "--text-primary"
+      },
+      {
+        "path": "text/disabled",
+        "cssVar": "--text-disabled"
+      },
+      {
+        "path": "border/default",
+        "cssVar": "--border-default"
+      },
+      {
+        "path": "border/focus",
+        "cssVar": "--border-focus"
+      }
+    ],
+    "surface": [
+      {
+        "path": "surface/field",
+        "cssVar": "--surface-field"
+      }
+    ],
+    "structure": [
+      {
+        "path": "control/label-gap",
+        "cssVar": "--control-label-gap"
+      },
+      {
+        "path": "control/content-gap",
+        "cssVar": "--control-content-gap"
+      },
+      {
+        "path": "focus/ring-width",
+        "cssVar": "--focus-ring-width"
+      },
+      {
+        "path": "focus/ring-offset",
+        "cssVar": "--focus-ring-offset"
+      }
+    ],
+    "component": [
+      {
+        "path": "radio/size",
+        "cssVar": "--radio-size"
+      },
+      {
+        "path": "radio/dot-size",
+        "cssVar": "--radio-dot-size"
+      },
+      {
+        "path": "radio/radius",
+        "cssVar": "--radio-radius"
+      }
+    ]
+  },
+  "props": [
+    {
+      "name": "orientation",
+      "type": "vertical | horizontal",
+      "default": "vertical",
+      "description": "Group layout."
+    },
+    {
+      "name": "size",
+      "type": "sm | md | lg",
+      "default": "md",
+      "description": "Item size."
+    },
+    {
+      "name": "value",
+      "type": "string",
+      "description": "Selected value (group)."
+    }
+  ],
+  "accessibility": [
+    "Radiogroup + radio roles from Radix",
+    "Arrow keys move selection within the group"
+  ],
+  "do": [
+    "Provide a group legend/label in the surrounding form"
+  ],
+  "dont": [
+    "Don't use a single Radio without a group"
+  ]
+}

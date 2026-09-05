@@ -13,6 +13,7 @@ src/styles/tokens/*
 .env
 .env.*
 !.env.example
+.vercel/
 
 # Editors / OS
 .DS_Store

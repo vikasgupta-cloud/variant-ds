@@ -1,0 +1,151 @@
+{
+  "id": "dropdown",
+  "name": "Dropdown",
+  "storyTitle": "Components/Dropdown",
+  "overview": "Select (form value) and Menu (actions) built on Radix. Menus/select content use surface-raised + dropdown component tokens.",
+  "whenToUse": [
+    "Select for choosing a value in a form",
+    "Menu for action lists, including multi checkbox items"
+  ],
+  "variants": {
+    "kind": [
+      "select",
+      "menu"
+    ],
+    "state": [
+      "default",
+      "closed",
+      "open",
+      "item-hover",
+      "item-selected",
+      "item-disabled"
+    ]
+  },
+  "anatomy": [
+    "Trigger",
+    "Content / viewport",
+    "Item",
+    "Separator / group / label"
+  ],
+  "tokens": {
+    "role": [
+      {
+        "path": "text/primary",
+        "cssVar": "--text-primary"
+      },
+      {
+        "path": "text/secondary",
+        "cssVar": "--text-secondary"
+      },
+      {
+        "path": "text/disabled",
+        "cssVar": "--text-disabled"
+      },
+      {
+        "path": "border/default",
+        "cssVar": "--border-default"
+      },
+      {
+        "path": "border/subtle",
+        "cssVar": "--border-subtle"
+      },
+      {
+        "path": "border/focus",
+        "cssVar": "--border-focus"
+      },
+      {
+        "path": "bg/surface-raised",
+        "cssVar": "--bg-surface-raised"
+      },
+      {
+        "path": "selected/field-hover",
+        "cssVar": "--selected-field-hover"
+      }
+    ],
+    "surface": [
+      {
+        "path": "surface/field",
+        "cssVar": "--surface-field"
+      },
+      {
+        "path": "surface/level-1",
+        "cssVar": "--surface-level-1"
+      },
+      {
+        "path": "surface/level-2",
+        "cssVar": "--surface-level-2"
+      }
+    ],
+    "structure": [
+      {
+        "path": "control/radius",
+        "cssVar": "--control-radius"
+      },
+      {
+        "path": "control/padding-x",
+        "cssVar": "--control-padding-x"
+      },
+      {
+        "path": "control/padding-y",
+        "cssVar": "--control-padding-y"
+      },
+      {
+        "path": "shadow/sm",
+        "cssVar": "--shadow-sm"
+      },
+      {
+        "path": "focus/ring-width",
+        "cssVar": "--focus-ring-width"
+      }
+    ],
+    "component": [
+      {
+        "path": "dropdown/menu-radius",
+        "cssVar": "--dropdown-menu-radius"
+      },
+      {
+        "path": "dropdown/menu-padding-y",
+        "cssVar": "--dropdown-menu-padding-y"
+      },
+      {
+        "path": "dropdown/item-padding-x",
+        "cssVar": "--dropdown-item-padding-x"
+      },
+      {
+        "path": "dropdown/item-padding-y",
+        "cssVar": "--dropdown-item-padding-y"
+      }
+    ],
+    "overlay": [
+      {
+        "path": "overlay/scrim",
+        "cssVar": "--overlay-scrim"
+      }
+    ]
+  },
+  "props": [
+    {
+      "name": "Select.value",
+      "type": "string",
+      "description": "Controlled select value."
+    },
+    {
+      "name": "state",
+      "type": "design-review states",
+      "default": "default",
+      "description": "Design-review only."
+    }
+  ],
+  "accessibility": [
+    "Combobox/listbox patterns from Radix Select",
+    "Menu uses menu/menuitem roles",
+    "Typeahead supported by Radix"
+  ],
+  "do": [
+    "Use Select for values; Menu for commands",
+    "Group long lists"
+  ],
+  "dont": [
+    "Don't put destructive navigation behind an unlabeled icon-only trigger"
+  ]
+}

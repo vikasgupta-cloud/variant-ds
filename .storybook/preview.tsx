@@ -13,6 +13,12 @@ import {
   type TokenOverrides,
 } from "../src/docs/token-editor-shared";
 
+/* DM Sans + DM Mono — manager theme + docs typography */
+const fontLink = document.createElement("link");
+fontLink.rel = "stylesheet";
+fontLink.href =
+  "https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap";
+document.head.appendChild(fontLink);
 type ContextValue = "canvas" | "surface" | "surface-raised";
 
 const contextBackground: Record<ContextValue, string> = {
@@ -168,7 +174,6 @@ const withTokenTheme: Decorator = (Story, context) => {
 };
 
 const preview: Preview = {
-  tags: ["autodocs"],
   parameters: {
     layout: "fullscreen",
     controls: {
@@ -179,6 +184,102 @@ const preview: Preview = {
     },
     backgrounds: {
       disable: true,
+    },
+    options: {
+      storySort: {
+        order: [
+          "Get started",
+          [
+            "Overview",
+            "Installation",
+            "For designers",
+            "For engineers",
+            "Changelog",
+          ],
+          "Foundations",
+          [
+            "Colour",
+            "Typography",
+            "Spacing",
+            "Radius",
+            "Elevation",
+            "Motion",
+            "Iconography",
+            "Tokens",
+            "Contrast",
+          ],
+          "Components",
+          [
+            "Forms and input",
+            [
+              "Button",
+              ["Examples", "Usage", "Code", "Accessibility"],
+              "Button group",
+              ["Examples", "Usage", "Code", "Accessibility"],
+              "Input",
+              ["Examples", "Usage", "Code", "Accessibility"],
+              "Select",
+              ["Examples", "Usage", "Code", "Accessibility"],
+              "Checkbox",
+              ["Examples", "Usage", "Code", "Accessibility"],
+              "Radio",
+              ["Examples", "Usage", "Code", "Accessibility"],
+              "Toggle",
+              ["Examples", "Usage", "Code", "Accessibility"],
+              "Slider",
+              ["Examples", "Usage", "Code", "Accessibility"],
+            ],
+            "Labels",
+            [
+              "Badge",
+              ["Examples", "Usage", "Code", "Accessibility"],
+              "Tag",
+              ["Examples", "Usage", "Code", "Accessibility"],
+            ],
+            "Messaging",
+            [
+              "Alert",
+              ["Examples", "Usage", "Code", "Accessibility"],
+              "Modal",
+              ["Examples", "Usage", "Code", "Accessibility"],
+              "Toast",
+              ["Examples", "Usage", "Code", "Accessibility"],
+              "Tooltip",
+              ["Examples", "Usage", "Code", "Accessibility"],
+            ],
+            "Navigation",
+            [
+              "Tabs",
+              ["Examples", "Usage", "Code", "Accessibility"],
+              "Dropdown menu",
+              ["Examples", "Usage", "Code", "Accessibility"],
+            ],
+            "Loading",
+            [
+              "Progress bar",
+              ["Examples", "Usage", "Code", "Accessibility"],
+              "Skeleton",
+              ["Examples", "Usage", "Code", "Accessibility"],
+            ],
+            "Layout",
+            [
+              "Card",
+              ["Examples", "Usage", "Code", "Accessibility"],
+              "Page header",
+              ["Examples", "Usage", "Code", "Accessibility"],
+            ],
+          ],
+          "Patterns",
+          [
+            "Forms",
+            "Empty states",
+            "Destructive actions",
+            "AI surfaces",
+          ],
+          "Tools",
+          ["Figma library", "Token export", "Contributing"],
+        ],
+      },
     },
   },
   globalTypes: {

@@ -1,0 +1,131 @@
+{
+  "id": "card",
+  "name": "Card",
+  "storyTitle": "Components/Card",
+  "overview": "Surface container that sets data-context so nested cards resolve levels correctly. Default/interactive → surface; raised → surface-raised.",
+  "whenToUse": [
+    "Grouping related content",
+    "Nested panels",
+    "Interactive selectable tiles (interactive variant)"
+  ],
+  "variants": {
+    "variant": [
+      "default",
+      "raised",
+      "interactive"
+    ],
+    "state": [
+      "default",
+      "hover",
+      "active",
+      "focused",
+      "disabled"
+    ]
+  },
+  "anatomy": [
+    "Root",
+    "Optional header",
+    "Body",
+    "Optional footer"
+  ],
+  "tokens": {
+    "role": [
+      {
+        "path": "bg/surface",
+        "cssVar": "--bg-surface"
+      },
+      {
+        "path": "bg/surface-raised",
+        "cssVar": "--bg-surface-raised"
+      },
+      {
+        "path": "text/primary",
+        "cssVar": "--text-primary"
+      },
+      {
+        "path": "text/secondary",
+        "cssVar": "--text-secondary"
+      },
+      {
+        "path": "border/subtle",
+        "cssVar": "--border-subtle"
+      },
+      {
+        "path": "border/focus",
+        "cssVar": "--border-focus"
+      }
+    ],
+    "surface": [
+      {
+        "path": "surface/level-1",
+        "cssVar": "--surface-level-1"
+      },
+      {
+        "path": "surface/level-2",
+        "cssVar": "--surface-level-2"
+      }
+    ],
+    "structure": [
+      {
+        "path": "shadow/sm",
+        "cssVar": "--shadow-sm"
+      },
+      {
+        "path": "layout/stack",
+        "cssVar": "--layout-stack"
+      },
+      {
+        "path": "layout/stack-tight",
+        "cssVar": "--layout-stack-tight"
+      },
+      {
+        "path": "focus/ring-width",
+        "cssVar": "--focus-ring-width"
+      }
+    ],
+    "component": [
+      {
+        "path": "card/radius",
+        "cssVar": "--card-radius"
+      },
+      {
+        "path": "card/padding",
+        "cssVar": "--card-padding"
+      }
+    ]
+  },
+  "props": [
+    {
+      "name": "variant",
+      "type": "default | raised | interactive",
+      "default": "default",
+      "description": "Elevation / interactivity."
+    },
+    {
+      "name": "header",
+      "type": "ReactNode",
+      "description": "Header slot."
+    },
+    {
+      "name": "footer",
+      "type": "ReactNode",
+      "description": "Footer slot."
+    },
+    {
+      "name": "state",
+      "type": "design-review states",
+      "default": "default",
+      "description": "Design-review only (interactive)."
+    }
+  ],
+  "accessibility": [
+    "interactive cards need a clear accessible name and keyboard activation when used as buttons via asChild"
+  ],
+  "do": [
+    "Nest default → raised to climb context",
+    "Verify nested levels in light and dark"
+  ],
+  "dont": [
+    "Don't hard-code context colours — let data-context resolve Surface tokens"
+  ]
+}
