@@ -14,7 +14,7 @@ export function SpecimenRow({
   label: ReactNode;
   meta?: ReactNode;
   sample: ReactNode;
-  /** Apply typography CSS vars — values must be var(--typography-…). */
+  /** Apply typography CSS vars — values must be var(--display-… / --body-… / etc.). */
   sampleStyle?: CSSProperties;
   className?: string;
 }) {

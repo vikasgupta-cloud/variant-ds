@@ -1,12 +1,19 @@
 /**
- * Alert — five-story set. Actions always use ghost + secondary coloured by role.
+ * Alert — story set. Actions always use ghost + secondary coloured by role.
+ * Neutral soft uses text/primary + text/secondary + border/subtle.
  */
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Alert } from "./Alert";
 import type { AlertRole } from "./Alert.variants";
 import { StoryHeading, StorySection } from "../../stories/kit";
 
-const roles: AlertRole[] = ["info", "success", "warning", "danger", "ai"];
+const roles: AlertRole[] = [
+  "neutral",
+  "info",
+  "success",
+  "warning",
+  "danger",
+];
 const emphases = ["soft", "strong"] as const;
 
 const meta = {
@@ -100,6 +107,9 @@ export const Content: Story = {
         <div className="flex max-w-2xl flex-col gap-16">
           <Alert role="info" title="Title only" />
           <Alert role="success">Body only — no title.</Alert>
+          <Alert role="neutral" title="Neutral notice">
+            Title uses text/primary; body uses text/secondary; edge is border/subtle.
+          </Alert>
           <Alert role="warning" title="Title and body">
             Supporting detail goes here.
           </Alert>
@@ -132,8 +142,8 @@ export const Layout: Story = {
       <StorySection title="Full width in a panel">
         <div className="rounded-control border border-border-subtle bg-bg-surface p-16">
           <Alert
-            role="ai"
-            title="AI suggestion"
+            role="info"
+            title="Suggestion ready"
             actions={{ primaryLabel: "Apply" }}
           >
             Nested inside a surface context.

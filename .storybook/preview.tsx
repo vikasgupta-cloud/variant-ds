@@ -12,6 +12,7 @@ import {
   loadOverrides,
   type TokenOverrides,
 } from "../src/docs/token-editor-shared";
+import { TooltipProvider } from "../src/components/Tooltip";
 
 /* DM Sans + DM Mono — manager theme + docs typography */
 const fontLink = document.createElement("link");
@@ -106,7 +107,7 @@ function Frame({
       data-token-root=""
       className={`min-h-screen w-full p-8 ${contextBackground[context]} text-text-primary`}
     >
-      {children}
+      <TooltipProvider>{children}</TooltipProvider>
     </div>
   );
 }
@@ -274,7 +275,6 @@ const preview: Preview = {
             "Forms",
             "Empty states",
             "Destructive actions",
-            "AI surfaces",
           ],
           "Tools",
           ["Figma library", "Token export", "Contributing"],

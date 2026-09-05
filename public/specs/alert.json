@@ -6,15 +6,15 @@
   "whenToUse": [
     "Inline feedback",
     "Non-blocking warnings",
-    "AI suggestions"
+    "Status callouts"
   ],
   "variants": {
     "role": [
+      "neutral",
       "info",
       "success",
       "warning",
-      "danger",
-      "ai"
+      "danger"
     ],
     "emphasis": [
       "soft",
@@ -32,6 +32,14 @@
   ],
   "tokens": {
     "role": [
+      {
+        "path": "bg/neutral/soft",
+        "cssVar": "--bg-neutral-soft"
+      },
+      {
+        "path": "bg/neutral/strong",
+        "cssVar": "--bg-neutral-strong"
+      },
       {
         "path": "bg/info/soft",
         "cssVar": "--bg-info-soft"
@@ -65,12 +73,12 @@
         "cssVar": "--bg-danger-strong"
       },
       {
-        "path": "bg/ai/soft",
-        "cssVar": "--bg-ai-soft"
+        "path": "text/primary",
+        "cssVar": "--text-primary"
       },
       {
-        "path": "bg/ai/strong",
-        "cssVar": "--bg-ai-strong"
+        "path": "text/secondary",
+        "cssVar": "--text-secondary"
       },
       {
         "path": "text/info",
@@ -89,16 +97,20 @@
         "cssVar": "--text-danger"
       },
       {
-        "path": "text/ai",
-        "cssVar": "--text-ai"
-      },
-      {
         "path": "text/on-strong",
         "cssVar": "--text-on-strong"
       },
       {
         "path": "text/on-strong-warning",
         "cssVar": "--text-on-strong-warning"
+      },
+      {
+        "path": "text/on-inverse",
+        "cssVar": "--text-on-inverse"
+      },
+      {
+        "path": "border/subtle",
+        "cssVar": "--border-subtle"
       },
       {
         "path": "border/info",
@@ -115,10 +127,6 @@
       {
         "path": "border/danger",
         "cssVar": "--border-danger"
-      },
-      {
-        "path": "border/ai",
-        "cssVar": "--border-ai"
       }
     ],
     "structure": [
@@ -149,8 +157,8 @@
   "props": [
     {
       "name": "role",
-      "type": "info | success | warning | danger | ai",
-      "description": "Status colour."
+      "type": "neutral | info | success | warning | danger",
+      "description": "Status colour. Neutral soft uses text/primary + text/secondary + border/subtle."
     },
     {
       "name": "emphasis",

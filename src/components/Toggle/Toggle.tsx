@@ -1,6 +1,8 @@
 /**
- * Toggle — Radix Switch. Off = toggle-track-off-bg; On = bg/neutral/strong.
+ * Toggle — Radix Switch. Off = surface/control; On = selected/bg.
+ * Knob: toggle/knob-bg-off | toggle/knob-bg-on (dark mark on yellow).
  * Optional label + description; labelPosition start|end (default end).
+ * Read-only: value stays text/primary on bg/disabled (legible). Disabled uses text/disabled.
  * `state` is a design-review affordance — not for production.
  */
 import * as Switch from "@radix-ui/react-switch";
@@ -30,8 +32,12 @@ export type ToggleProps = Omit<
   /** Label before (start) or after (end) the control. Default end. */
   labelPosition?: ToggleLabelPosition;
   /**
+   * Read-only: value stays legible (text/primary on bg/disabled). Not the same as disabled.
+   */
+  readOnly?: boolean;
+  /**
    * Design-review affordance — forces a visual state to match Figma’s State dropdown.
-   * Production apps leave this at `default` and let CSS / Radix handle interaction.
+   * Production apps leave this at `default`.
    */
   state?: ToggleState;
 };
@@ -44,6 +50,7 @@ export const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
       label,
       description,
       labelPosition = "end",
+      readOnly = false,
       state = "default",
       disabled,
       checked,
@@ -81,8 +88,10 @@ export const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
         {...(resolvedChecked === undefined && defaultChecked !== undefined
           ? { defaultChecked }
           : {})}
-        {...(onCheckedChange ? { onCheckedChange } : {})}
+        {...(onCheckedChange && !readOnly ? { onCheckedChange } : {})}
+        aria-readonly={readOnly || undefined}
         aria-describedby={description ? descriptionId : undefined}
+        data-readonly={readOnly || undefined}
         {...(reviewDataState ? { "data-state": reviewDataState } : {})}
         className={cn(
           toggleTrackVariants({ size }),
@@ -98,8 +107,9 @@ export const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
       >
         <Switch.Thumb
           className={cn(
-            "block shrink-0 rounded-full bg-toggle-knob-bg",
-            "shadow-sm transition-transform motion-reduce:transition-none",
+            "block shrink-0 rounded-full bg-toggle-knob-bg-off",
+            "group-data-[state=checked]:bg-toggle-knob-bg-on",
+            "shadow-sm transition-colors transition-transform motion-reduce:transition-none",
             toggleKnobSize[size],
           )}
         />

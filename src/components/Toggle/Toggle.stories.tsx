@@ -40,7 +40,7 @@ export const AllVariants: Story = {
     <div className="flex flex-col gap-32 p-8">
       <StoryHeading
         title="Toggle — All variants"
-        description="Sizes use toggle-track / knob tokens. On fill is bg/neutral/strong."
+        description="Sizes use toggle-track / knob tokens. On fill is selected/bg; knob flips for contrast."
       />
       <StorySection title="Sizes">
         <div className="flex flex-col gap-16">

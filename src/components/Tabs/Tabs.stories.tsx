@@ -154,7 +154,7 @@ export const Content: Story = {
   render: () => (
     <div className="flex flex-col gap-32 p-8">
       <StoryHeading title="Tabs — Content" />
-      <StorySection title="Icons + badge counts">
+      <StorySection title="Icons + badge counts + disabled">
         <Tabs variant="underline" size="md" defaultValue="all">
           <TabsList>
             <TabsTrigger value="all" icon={<PlaceholderIcon />}>
@@ -173,6 +173,9 @@ export const Content: Story = {
             >
               Draft
             </TabsTrigger>
+            <TabsTrigger value="archived" disabled>
+              Archived
+            </TabsTrigger>
           </TabsList>
           <TabsContent value="all">
             <p className="text-sm text-text-secondary">All items.</p>
@@ -182,6 +185,9 @@ export const Content: Story = {
           </TabsContent>
           <TabsContent value="draft">
             <p className="text-sm text-text-secondary">Draft items.</p>
+          </TabsContent>
+          <TabsContent value="archived">
+            <p className="text-sm text-text-secondary">Archived items.</p>
           </TabsContent>
         </Tabs>
       </StorySection>

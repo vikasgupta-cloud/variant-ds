@@ -1,22 +1,33 @@
 /**
- * Checkbox — Radix Checkbox. Role + Surface field; checked = bg/neutral/strong.
+ * Checkbox — Radix Checkbox. Role + Surface field; checked = selected/bg + selected/edge.
  * Supports label + description. Indeterminate via checked="indeterminate".
- * `state` is a design-review affordance — not for production.
+ * CheckboxGroup provides orientation + shared size. `state` is design-review only.
  */
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 import {
+  createContext,
   forwardRef,
+  useContext,
   useId,
   type ComponentPropsWithoutRef,
+  type HTMLAttributes,
   type ReactNode,
 } from "react";
 import { cn } from "../../lib/cn";
 import {
+  checkboxGroupVariants,
   checkboxIndicatorSize,
   checkboxVariants,
+  type CheckboxGroupOrientation,
   type CheckboxSize,
   type CheckboxState,
 } from "./Checkbox.variants";
+
+const CheckboxSizeContext = createContext<CheckboxSize>("md");
+
+export function useCheckboxGroupSize(): CheckboxSize {
+  return useContext(CheckboxSizeContext);
+}
 
 function CheckIcon({ className }: { className?: string }) {
   return (
@@ -53,6 +64,10 @@ export type CheckboxProps = Omit<
   label?: ReactNode;
   description?: ReactNode;
   /**
+   * Read-only: value stays legible (text/primary on bg/disabled). Not the same as disabled.
+   */
+  readOnly?: boolean;
+  /**
    * Design-review affordance — forces a visual state to match Figma’s State dropdown.
    * Production apps leave this at `default` and let CSS / Radix handle interaction.
    */
@@ -63,9 +78,10 @@ export const Checkbox = forwardRef<HTMLButtonElement, CheckboxProps>(
   function Checkbox(
     {
       className,
-      size = "md",
+      size: sizeProp,
       label,
       description,
+      readOnly = false,
       state = "default",
       disabled,
       checked,
@@ -77,6 +93,8 @@ export const Checkbox = forwardRef<HTMLButtonElement, CheckboxProps>(
     },
     ref,
   ) {
+    const groupSize = useCheckboxGroupSize();
+    const size = sizeProp ?? groupSize;
     const autoId = useId();
     const id = idProp ?? autoId;
     const descriptionId = `${id}-description`;
@@ -93,16 +111,13 @@ export const Checkbox = forwardRef<HTMLButtonElement, CheckboxProps>(
     else if (state === "unchecked") resolvedChecked = false;
     else if (state === "indeterminate") resolvedChecked = "indeterminate";
 
-    // Radix owns data-state for checked/unchecked/indeterminate.
-    // For focused / error / disabled design-review, set data-state when Radix won't.
-    const reviewDataState =
-      forceFocused
-        ? "focused"
-        : forceError
-          ? "error"
-          : forceDisabled
-            ? "disabled"
-            : undefined;
+    const reviewDataState = forceFocused
+      ? "focused"
+      : forceError
+        ? "error"
+        : forceDisabled
+          ? "disabled"
+          : undefined;
 
     const forceIndicator =
       state === "checked" || state === "indeterminate";
@@ -116,9 +131,11 @@ export const Checkbox = forwardRef<HTMLButtonElement, CheckboxProps>(
         {...(resolvedChecked === undefined && defaultChecked !== undefined
           ? { defaultChecked }
           : {})}
-        {...(onCheckedChange ? { onCheckedChange } : {})}
+        {...(onCheckedChange && !readOnly ? { onCheckedChange } : {})}
         aria-invalid={invalid || undefined}
+        aria-readonly={readOnly || undefined}
         aria-describedby={description ? descriptionId : undefined}
+        data-readonly={readOnly || undefined}
         {...(reviewDataState ? { "data-state": reviewDataState } : {})}
         className={cn(
           "group",
@@ -192,3 +209,30 @@ export const Checkbox = forwardRef<HTMLButtonElement, CheckboxProps>(
 );
 
 Checkbox.displayName = "Checkbox";
+
+export type CheckboxGroupProps = HTMLAttributes<HTMLDivElement> & {
+  orientation?: CheckboxGroupOrientation;
+  size?: CheckboxSize;
+};
+
+export const CheckboxGroup = forwardRef<HTMLDivElement, CheckboxGroupProps>(
+  function CheckboxGroup(
+    { className, orientation = "vertical", size = "md", children, ...props },
+    ref,
+  ) {
+    return (
+      <CheckboxSizeContext.Provider value={size}>
+        <div
+          ref={ref}
+          role="group"
+          className={cn(checkboxGroupVariants({ orientation }), className)}
+          {...props}
+        >
+          {children}
+        </div>
+      </CheckboxSizeContext.Provider>
+    );
+  },
+);
+
+CheckboxGroup.displayName = "CheckboxGroup";

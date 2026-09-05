@@ -1,6 +1,7 @@
 /**
- * Radio variant map — Role + Surface field fills. Component tokens: size, radius, dot size.
- * Selected indicator uses bg/neutral/strong. Focus ring matches Button.
+ * Radio variant map — Role + Surface field + selected tokens.
+ * Selected: selected/bg · selected/edge · icon/on-selected on the dot.
+ * Focus ring matches Button.
  */
 import { cva, type VariantProps } from "class-variance-authority";
 
@@ -12,7 +13,8 @@ export type RadioState =
   | "unselected"
   | "selected"
   | "disabled"
-  | "focused";
+  | "focused"
+  | "error";
 
 const focusRing = [
   "focus-visible:outline-solid focus-visible:outline focus-visible:outline-border-focus",
@@ -31,10 +33,16 @@ export const radioItemVariants = cva(
     "transition-colors motion-reduce:transition-none",
     "outline-none",
     focusRing,
-    "data-[state=checked]:border-border-default",
+    "hover:data-[state=unchecked]:border-border-strong",
+    "data-[state=checked]:border-selected-edge data-[state=checked]:bg-selected-bg",
     "disabled:cursor-not-allowed disabled:border-border-subtle disabled:bg-bg-disabled",
     "data-[disabled]:cursor-not-allowed data-[disabled]:border-border-subtle data-[disabled]:bg-bg-disabled",
     "data-[state=disabled]:cursor-not-allowed data-[state=disabled]:border-border-subtle data-[state=disabled]:bg-bg-disabled",
+    // Read-only: control on bg/disabled; selected mark stays visible via primary ink.
+    "data-[readonly]:cursor-default data-[readonly]:pointer-events-none data-[readonly]:border-border-subtle data-[readonly]:bg-bg-disabled",
+    "data-[readonly]:data-[state=checked]:border-border-subtle data-[readonly]:data-[state=checked]:bg-bg-disabled",
+    "aria-[invalid=true]:border-border-danger",
+    "data-[state=error]:border-border-danger",
   ].join(" "),
   {
     variants: {

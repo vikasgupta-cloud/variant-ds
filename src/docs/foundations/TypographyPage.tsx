@@ -26,10 +26,10 @@ export function TypographyPage() {
     (t) => t.layer === "primitive" && t.type === "typography",
   ).sort((a, b) => {
     const fa = FAMILY_ORDER.indexOf(
-      a.path[1] as (typeof FAMILY_ORDER)[number],
+      a.path[0] as (typeof FAMILY_ORDER)[number],
     );
     const fb = FAMILY_ORDER.indexOf(
-      b.path[1] as (typeof FAMILY_ORDER)[number],
+      b.path[0] as (typeof FAMILY_ORDER)[number],
     );
     if (fa !== fb) return fa - fb;
     return a.name.localeCompare(b.name);
@@ -40,7 +40,7 @@ export function TypographyPage() {
       <PageHeader
         eyebrow="Foundations"
         title="Typography"
-        description="Composite typography tokens from tokens.json. Specimens use live CSS variables. Prefer type-* utilities in product UI."
+        description="Composite typography tokens from tokens.json (display/, heading/, body/, numeric/). Specimens use live CSS variables. Prefer type-* utilities in product UI."
       />
 
       <Callout role="info" title="Ergon fallback">
@@ -58,7 +58,7 @@ export function TypographyPage() {
         {styles.map((token) => {
           if (!isTypographyValue(token.value)) return null;
           const v = token.value;
-          const label = token.path.slice(1).join("/");
+          const label = token.path.join("/");
           return (
             <SpecimenRow
               key={token.name}

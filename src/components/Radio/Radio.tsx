@@ -1,6 +1,6 @@
 /**
  * Radio — Radix Radio Group. Export RadioGroup + RadioItem (alias: Radio).
- * Selected indicator: radio-dot-size filled with bg/neutral/strong.
+ * Selected: selected/bg · selected/edge; dot uses icon/on-selected.
  * `state` on items is a design-review affordance — not for production.
  */
 import * as RadioPrimitive from "@radix-ui/react-radio-group";
@@ -58,6 +58,10 @@ export type RadioItemProps = Omit<
   label?: ReactNode;
   description?: ReactNode;
   /**
+   * Read-only: value stays legible (text/primary on bg/disabled). Not the same as disabled.
+   */
+  readOnly?: boolean;
+  /**
    * Design-review affordance — forces a visual state.
    * Production apps leave this at `default`.
    */
@@ -71,10 +75,12 @@ export const RadioItem = forwardRef<HTMLButtonElement, RadioItemProps>(
       size: sizeProp,
       label,
       description,
+      readOnly = false,
       state = "default",
       disabled,
       value,
       id: idProp,
+      "aria-invalid": ariaInvalid,
       ...props
     },
     ref,
@@ -87,19 +93,26 @@ export const RadioItem = forwardRef<HTMLButtonElement, RadioItemProps>(
 
     const forceDisabled = state === "disabled";
     const forceFocused = state === "focused";
+    const forceError = state === "error";
     const forceSelected = state === "selected";
     const forceUnselected = state === "unselected";
     const isDisabled = disabled || forceDisabled;
+    const invalid =
+      forceError ||
+      ariaInvalid === true ||
+      ariaInvalid === "true";
 
     const reviewDataState = forceFocused
       ? "focused"
-      : forceDisabled
-        ? "disabled"
-        : forceSelected
-          ? "checked"
-          : forceUnselected
-            ? "unchecked"
-            : undefined;
+      : forceError
+        ? "error"
+        : forceDisabled
+          ? "disabled"
+          : forceSelected
+            ? "checked"
+            : forceUnselected
+              ? "unchecked"
+              : undefined;
 
     const control = (
       <RadioPrimitive.Item
@@ -107,7 +120,10 @@ export const RadioItem = forwardRef<HTMLButtonElement, RadioItemProps>(
         id={id}
         value={value}
         disabled={isDisabled}
+        aria-invalid={invalid || undefined}
+        aria-readonly={readOnly || undefined}
         aria-describedby={description ? descriptionId : undefined}
+        data-readonly={readOnly || undefined}
         {...(reviewDataState ? { "data-state": reviewDataState } : {})}
         className={cn(
           radioItemVariants({ size }),
@@ -134,7 +150,8 @@ export const RadioItem = forwardRef<HTMLButtonElement, RadioItemProps>(
         >
           <span
             className={cn(
-              "rounded-full bg-bg-neutral-strong",
+              "rounded-full",
+              readOnly ? "bg-text-primary" : "bg-icon-on-selected",
               radioDotSize[size],
             )}
           />

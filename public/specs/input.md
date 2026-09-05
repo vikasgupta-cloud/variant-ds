@@ -11,6 +11,7 @@ Text field with label, helper, and error. Uses Surface field fills so the well s
 ## Variant / state matrix
 
 - **size:** sm | md | lg
+- **type:** default | icon-leading | leading-dropdown | trailing-dropdown | leading-text | trailing-button
 - **state:** default | hover | focused | disabled | read-only | error
 
 > `state` is a design-review affordance — leave at `default` in production.
@@ -18,10 +19,12 @@ Text field with label, helper, and error. Uses Surface field fills so the well s
 ## Anatomy
 
 1. Label
-2. Field
-3. Prefix/suffix icon
-4. Clear control
-5. Helper / error
+2. Help icon
+3. Field
+4. Leading/trailing add-ons
+5. Prefix/suffix icon
+6. Clear control
+7. Helper / error / character count
 
 ## Tokens consumed
 
@@ -63,7 +66,10 @@ Text field with label, helper, and error. Uses Surface field fills so the well s
 | Prop | Type | Default | Description |
 | --- | --- | --- | --- |
 | `size` | sm \| md \| lg | md | Field size. |
+| `type` | default \| icon-leading \| leading-dropdown \| trailing-dropdown \| leading-text \| trailing-button | default | Field composition chrome. |
 | `label` | string | — | Visible label. |
+| `helpIcon` | boolean \| string | — | Question icon + tooltip beside the label. |
+| `characterCount` | number \| { max, current? } | — | Current/max counter; text/danger when over. |
 | `helperText` | string | — | Supporting copy. |
 | `errorMessage` | string | — | Validation message; marks invalid. |
 | `state` | default \| hover \| focused \| disabled \| read-only \| error | default | Design-review only. |

@@ -4,6 +4,8 @@
 import { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Button } from "../Button";
+import { Icon } from "../Icon";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../Tabs";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -122,6 +124,36 @@ export const Content: Story = {
     return (
       <div className="flex flex-col gap-32 p-8">
         <StoryHeading title="Dropdown menu — Content" />
+
+        <StorySection title="Icons · descriptions · headers · dividers">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button hierarchy="secondary">Actions</Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuLabel>Campaign</DropdownMenuLabel>
+              <DropdownMenuGroup>
+                <DropdownMenuItem
+                  icon={<Icon name="pencil-simple" size="sm" />}
+                  description="Rename or edit details"
+                >
+                  Edit
+                </DropdownMenuItem>
+                <DropdownMenuItem icon={<Icon name="copy" size="sm" />}>
+                  Duplicate
+                </DropdownMenuItem>
+              </DropdownMenuGroup>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem
+                icon={<Icon name="trash" size="sm" />}
+                description="Cannot be undone"
+              >
+                Delete
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </StorySection>
+
         <StorySection title="Checkbox multi-select">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -135,6 +167,7 @@ export const Content: Story = {
                   onCheckedChange={(v) =>
                     setChecks((c) => ({ ...c, email: Boolean(v) }))
                   }
+                  icon={<Icon name="info" size="sm" />}
                   description="Digest and alerts"
                 >
                   Email
@@ -158,6 +191,35 @@ export const Content: Story = {
                   SMS
                 </DropdownMenuCheckboxItem>
               </DropdownMenuGroup>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </StorySection>
+
+        <StorySection title="Tabs inside the menu">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button hierarchy="secondary">Browse</Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-72 p-0">
+              <Tabs defaultValue="recent" variant="underline" size="sm">
+                <div className="border-b border-border-subtle px-dropdown-item-padding-x pt-dropdown-menu-padding-y">
+                  <TabsList>
+                    <TabsTrigger value="recent">Recent</TabsTrigger>
+                    <TabsTrigger value="starred">Starred</TabsTrigger>
+                  </TabsList>
+                </div>
+                <TabsContent value="recent" className="py-dropdown-menu-padding-y">
+                  <DropdownMenuItem icon={<Icon name="magnifying-glass" size="sm" />}>
+                    Summer launch
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>Q4 nurture</DropdownMenuItem>
+                </TabsContent>
+                <TabsContent value="starred" className="py-dropdown-menu-padding-y">
+                  <DropdownMenuItem icon={<Icon name="check-circle" size="sm" />}>
+                    Evergreen
+                  </DropdownMenuItem>
+                </TabsContent>
+              </Tabs>
             </DropdownMenuContent>
           </DropdownMenu>
         </StorySection>

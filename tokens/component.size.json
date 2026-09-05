@@ -47,13 +47,13 @@
       },
       "md": {
         "$type": "dimension",
-        "$value": "18px",
-        "$description": "Badge count size md — 18px component deviation."
+        "$value": "{dimension.20}",
+        "$description": "Badge count size md."
       },
       "lg": {
         "$type": "dimension",
-        "$value": "22px",
-        "$description": "Badge count size lg — 22px component deviation."
+        "$value": "{dimension.24}",
+        "$description": "Badge count size lg."
       }
     },
     "count-radius": {
@@ -195,28 +195,6 @@
       "$type": "dimension",
       "$value": "{radius.full}",
       "$description": "Toggle pill radius."
-    },
-    "track-off-bg": {
-      "$type": "color",
-      "$value": "{surface.control}",
-      "$description": "Toggle off track — aliases surface/control (≥3:1 filled state chrome per context)."
-    },
-    "track-off-bg-hover": {
-      "$type": "color",
-      "$value": "{surface.control}",
-      "$description": "Toggle off track hover — surface/control family (≥3:1). Hover may stack opacity in the component."
-    },
-    "knob-bg": {
-      "light": {
-        "$type": "color",
-        "$value": "{neutral.0}",
-        "$description": "Toggle knob fill (light). Contrast: ≥3:1 against track."
-      },
-      "dark": {
-        "$type": "color",
-        "$value": "{neutral.900}",
-        "$description": "Toggle knob fill (dark). Contrast: ≥3:1 against track."
-      }
     }
   },
   "tab": {
@@ -290,11 +268,6 @@
       "$type": "dimension",
       "$value": "{dimension.8}",
       "$description": "Gap between progress and label."
-    },
-    "track-bg": {
-      "$type": "color",
-      "$value": "{surface.control}",
-      "$description": "Progress track fill — aliases surface/control (≥3:1 filled state chrome per context)."
     }
   },
   "slider": {
@@ -302,16 +275,6 @@
       "$type": "dimension",
       "$value": "{dimension.20}",
       "$description": "Slider thumb size."
-    },
-    "thumb-border": {
-      "$type": "color",
-      "$value": "{border.strong}",
-      "$description": "Slider thumb border — aliases role border/strong so it tracks mode."
-    },
-    "track-bg": {
-      "$type": "color",
-      "$value": "{surface.control}",
-      "$description": "Slider track fill — aliases surface/control (≥3:1 filled state chrome per context)."
     }
   },
   "modal": {

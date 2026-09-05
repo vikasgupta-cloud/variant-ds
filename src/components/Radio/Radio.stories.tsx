@@ -14,6 +14,7 @@ const states: RadioState[] = [
   "selected",
   "disabled",
   "focused",
+  "error",
 ];
 
 const meta = {
@@ -54,7 +55,7 @@ export const AllVariants: Story = {
     <div className="flex flex-col gap-32 p-8">
       <StoryHeading
         title="Radio — All variants"
-        description="Sizes use radio-size / radio-dot-size tokens. Selected indicator is bg/neutral/strong."
+        description="Sizes use radio-size / radio-dot-size tokens. Selected fill is selected/bg with selected/edge."
       />
       <StorySection title="Sizes">
         <div className="flex flex-col gap-16">
@@ -125,7 +126,7 @@ export const Content: Story = {
   render: () => (
     <div className="flex flex-col gap-32 p-8">
       <StoryHeading title="Radio — Content" />
-      <StorySection title="Labels and descriptions">
+      <StorySection title="Labels, descriptions, error">
         <RadioGroup defaultValue="standard" className="max-w-sm">
           <RadioItem
             value="standard"
@@ -143,7 +144,26 @@ export const Content: Story = {
             description="Unavailable in your region."
             disabled
           />
+          <RadioItem
+            value="invalid"
+            label="Needs attention"
+            description="Select a valid option."
+            state="error"
+          />
         </RadioGroup>
+      </StorySection>
+      <StorySection title="Group orientations">
+        <div className="flex flex-col gap-24">
+          <RadioGroup orientation="vertical" defaultValue="one">
+            <RadioItem value="one" label="One" />
+            <RadioItem value="two" label="Two" />
+          </RadioGroup>
+          <RadioGroup orientation="horizontal" defaultValue="day">
+            <RadioItem value="day" label="Day" />
+            <RadioItem value="week" label="Week" />
+            <RadioItem value="month" label="Month" />
+          </RadioGroup>
+        </div>
       </StorySection>
     </div>
   ),

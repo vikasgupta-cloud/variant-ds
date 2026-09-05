@@ -31,7 +31,6 @@ function contextBgVar(context: SurfaceContext): string {
 
 /** Status / role families that have matching soft fills and borders. */
 const ROLE_BORDER_FAMILIES = [
-  "ai",
   "danger",
   "info",
   "success",
@@ -50,9 +49,6 @@ const NEUTRAL_STRONG_NOTE =
 const DECORATIVE_SUBTLE_EXEMPT =
   "Decorative trim. The card's fill contrast and shadow carry the container boundary; the outline is not load-bearing.";
 
-const DECORATIVE_BORDER_NOTE =
-  "Decorative hairline (border/neutral) — not state-conveying chrome; threshold 1.5:1 instead of 3:1.";
-
 /**
  * Full contrast check for a token name (CSS path with hyphens, e.g. `text-on-strong`).
  * Returns null when the token has no defined pairing (e.g. selected-*).
@@ -70,7 +66,7 @@ export function contrastCheckForToken(
       fgCssVar: "--text-on-strong",
       bgCssVar: "--bg-info-strong",
       required: 4.5,
-      note: "On chromatic strong fills (info/success/danger/ai); not canvas, not warning, not neutral-strong.",
+      note: "On chromatic strong fills (info/success/danger); not canvas, not warning, not neutral-strong.",
     };
   }
   if (tokenName === "text-on-strong-warning") {
@@ -86,6 +82,14 @@ export function contrastCheckForToken(
       bgCssVar: "--bg-neutral-strong",
       required: 4.5,
       note: "On inverted neutral-strong (and similar inverse fills); not canvas. Neutral strong inverts, so this is the matching ink.",
+    };
+  }
+  if (tokenName === "icon-on-selected") {
+    return {
+      fgCssVar: "--icon-on-selected",
+      bgCssVar: "--selected-bg",
+      required: 4.5,
+      note: "Foreground marks on selected yellow fill — distinct from selected/text (label).",
     };
   }
 
@@ -128,14 +132,6 @@ export function contrastCheckForToken(
       exemptReason: DECORATIVE_SUBTLE_EXEMPT,
     };
   }
-  if (tokenName === "border-neutral") {
-    return {
-      fgCssVar: "--border-neutral",
-      bgCssVar: canvasOrContext,
-      required: 1.5,
-      note: DECORATIVE_BORDER_NOTE,
-    };
-  }
 
   // ——— Token is a background: which foreground sits on it? ———
   if (tokenName.startsWith("bg-")) {
@@ -167,7 +163,9 @@ export function contrastCheckForToken(
       };
     }
     if (tokenName.includes("soft")) {
-      const family = tokenName.match(/^bg-([a-z]+)-soft$/)?.[1];
+      const family = tokenName.match(
+        /^bg-([a-z]+)-soft(?:-hover|-active)?$/,
+      )?.[1];
       if (family && family !== "neutral") {
         return {
           fgCssVar: `--text-${family}`,

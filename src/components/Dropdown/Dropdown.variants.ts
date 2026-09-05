@@ -32,6 +32,8 @@ export const selectTriggerVariants = cva(
     "data-[state=open]:border-border-focus",
     "disabled:cursor-not-allowed disabled:bg-bg-disabled disabled:text-text-disabled disabled:border-border-subtle",
     "data-[disabled]:cursor-not-allowed data-[disabled]:bg-bg-disabled data-[disabled]:text-text-disabled",
+    // Read-only: value stays text/primary on bg/disabled (legible); disabled uses text/disabled.
+    "data-[readonly]:cursor-default data-[readonly]:pointer-events-none data-[readonly]:bg-bg-disabled data-[readonly]:text-text-primary data-[readonly]:border-border-subtle",
   ].join(" "),
 );
 

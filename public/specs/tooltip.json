@@ -1,0 +1,87 @@
+{
+  "id": "tooltip",
+  "name": "Tooltip",
+  "storyTitle": "Components/Tooltip",
+  "overview": "Short contextual label on hover/focus. Uses bg/tooltip with text/on-inverse.",
+  "whenToUse": [
+    "Help icons beside labels",
+    "Icon-only control names",
+    "Brief clarifying copy"
+  ],
+  "variants": {
+    "side": [
+      "top",
+      "right",
+      "bottom",
+      "left"
+    ]
+  },
+  "anatomy": [
+    "Trigger",
+    "Content"
+  ],
+  "tokens": {
+    "role": [
+      {
+        "path": "bg/tooltip",
+        "cssVar": "--bg-tooltip"
+      },
+      {
+        "path": "text/on-inverse",
+        "cssVar": "--text-on-inverse"
+      }
+    ],
+    "structure": [
+      {
+        "path": "control/padding-x",
+        "cssVar": "--control-padding-x"
+      },
+      {
+        "path": "control/padding-y",
+        "cssVar": "--control-padding-y"
+      },
+      {
+        "path": "control/radius",
+        "cssVar": "--control-radius"
+      },
+      {
+        "path": "shadow/sm",
+        "cssVar": "--shadow-sm"
+      },
+      {
+        "path": "z/modal",
+        "cssVar": "--z-modal"
+      }
+    ]
+  },
+  "props": [
+    {
+      "name": "content",
+      "type": "ReactNode",
+      "description": "Tooltip body."
+    },
+    {
+      "name": "side",
+      "type": "top | right | bottom | left",
+      "default": "top",
+      "description": "Placement."
+    },
+    {
+      "name": "delayDuration",
+      "type": "number",
+      "default": "200",
+      "description": "Open delay in ms."
+    }
+  ],
+  "accessibility": [
+    "Opens on focus as well as hover",
+    "Trigger must be focusable",
+    "Prefer concise copy"
+  ],
+  "do": [
+    "Use for supplemental help, not required instructions"
+  ],
+  "dont": [
+    "Don't put interactive controls inside the tooltip"
+  ]
+}

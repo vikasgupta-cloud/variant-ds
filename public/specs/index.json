@@ -120,6 +120,14 @@
         "modal.md",
         "modal.json"
       ]
+    },
+    {
+      "id": "tooltip",
+      "name": "Tooltip",
+      "files": [
+        "tooltip.md",
+        "tooltip.json"
+      ]
     }
   ],
   "tokens": [

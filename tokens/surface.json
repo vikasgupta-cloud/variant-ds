@@ -35,6 +35,11 @@
         "$type": "color",
         "$value": "{neutral.500}",
         "$description": "surface/control on canvas (light). Filled shapes that convey state and need ≥3:1 — toggle off-track, progress track, slider track. Separate from surface/border (lines) so fills can diverge later."
+      },
+      "control-hover": {
+        "$type": "color",
+        "$value": "{neutral.600}",
+        "$description": "surface/control-hover on canvas (light). One step from surface/control for toggle off-track hover. Contrast: ≥3:1 against context bg."
       }
     },
     "surface": {
@@ -72,6 +77,11 @@
         "$type": "color",
         "$value": "{neutral.500}",
         "$description": "surface/control on surface (light). Filled shapes that convey state and need ≥3:1 — toggle off-track, progress track, slider track. Separate from surface/border (lines) so fills can diverge later."
+      },
+      "control-hover": {
+        "$type": "color",
+        "$value": "{neutral.600}",
+        "$description": "surface/control-hover on surface (light). One step from surface/control for toggle off-track hover. Contrast: ≥3:1 against context bg."
       }
     },
     "surface-raised": {
@@ -109,6 +119,11 @@
         "$type": "color",
         "$value": "{neutral.400}",
         "$description": "surface/control on surface-raised (light). Filled shapes that convey state and need ≥3:1 — toggle off-track, progress track, slider track. Separate from surface/border (lines) so fills can diverge later."
+      },
+      "control-hover": {
+        "$type": "color",
+        "$value": "{neutral.500}",
+        "$description": "surface/control-hover on surface-raised (light). One step from surface/control for toggle off-track hover. Contrast: ≥3:1 against context bg."
       }
     }
   },
@@ -148,6 +163,11 @@
         "$type": "color",
         "$value": "{neutral.400}",
         "$description": "surface/control on canvas (dark). Filled shapes that convey state and need ≥3:1 — toggle off-track, progress track, slider track. Separate from surface/border (lines) so fills can diverge later."
+      },
+      "control-hover": {
+        "$type": "color",
+        "$value": "{neutral.300}",
+        "$description": "surface/control-hover on canvas (dark). One step from surface/control for toggle off-track hover. Contrast: ≥3:1 against context bg."
       }
     },
     "surface": {
@@ -185,6 +205,11 @@
         "$type": "color",
         "$value": "{neutral.500}",
         "$description": "surface/control on surface (dark). Filled shapes that convey state and need ≥3:1 — toggle off-track, progress track, slider track. Separate from surface/border (lines) so fills can diverge later."
+      },
+      "control-hover": {
+        "$type": "color",
+        "$value": "{neutral.400}",
+        "$description": "surface/control-hover on surface (dark). One step from surface/control for toggle off-track hover. Contrast: ≥3:1 against context bg."
       }
     },
     "surface-raised": {
@@ -222,6 +247,11 @@
         "$type": "color",
         "$value": "{neutral.400}",
         "$description": "surface/control on surface-raised (dark). Filled shapes that convey state and need ≥3:1 — toggle off-track, progress track, slider track. Separate from surface/border (lines) so fills can diverge later."
+      },
+      "control-hover": {
+        "$type": "color",
+        "$value": "{neutral.300}",
+        "$description": "surface/control-hover on surface-raised (dark). One step from surface/control for toggle off-track hover. Contrast: ≥3:1 against context bg."
       }
     }
   }

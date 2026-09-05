@@ -25,6 +25,7 @@
     ]
   },
   "anatomy": [
+    "CheckboxGroup",
     "Root",
     "Indicator (check / dash)",
     "Label",
@@ -33,16 +34,20 @@
   "tokens": {
     "role": [
       {
-        "path": "bg/neutral/strong",
-        "cssVar": "--bg-neutral-strong"
+        "path": "selected/bg",
+        "cssVar": "--selected-bg"
+      },
+      {
+        "path": "selected/edge",
+        "cssVar": "--selected-edge"
+      },
+      {
+        "path": "icon/on-selected",
+        "cssVar": "--icon-on-selected"
       },
       {
         "path": "bg/disabled",
         "cssVar": "--bg-disabled"
-      },
-      {
-        "path": "text/on-inverse",
-        "cssVar": "--text-on-inverse"
       },
       {
         "path": "text/primary",
@@ -59,6 +64,10 @@
       {
         "path": "border/default",
         "cssVar": "--border-default"
+      },
+      {
+        "path": "border/strong",
+        "cssVar": "--border-strong"
       },
       {
         "path": "border/focus",
@@ -111,6 +120,12 @@
       "name": "checked",
       "type": "boolean | 'indeterminate'",
       "description": "Controlled checked state."
+    },
+    {
+      "name": "orientation",
+      "type": "vertical | horizontal",
+      "default": "vertical",
+      "description": "CheckboxGroup layout."
     },
     {
       "name": "state",

@@ -14,8 +14,7 @@
       "info",
       "success",
       "warning",
-      "danger",
-      "ai"
+      "danger"
     ],
     "emphasis": [
       "soft",
@@ -81,16 +80,12 @@
         "cssVar": "--bg-danger-strong"
       },
       {
-        "path": "bg/ai/soft",
-        "cssVar": "--bg-ai-soft"
+        "path": "text/primary",
+        "cssVar": "--text-primary"
       },
       {
-        "path": "bg/ai/strong",
-        "cssVar": "--bg-ai-strong"
-      },
-      {
-        "path": "text/neutral",
-        "cssVar": "--text-neutral"
+        "path": "text/secondary",
+        "cssVar": "--text-secondary"
       },
       {
         "path": "text/info",
@@ -109,10 +104,6 @@
         "cssVar": "--text-danger"
       },
       {
-        "path": "text/ai",
-        "cssVar": "--text-ai"
-      },
-      {
         "path": "text/on-strong",
         "cssVar": "--text-on-strong"
       },
@@ -125,8 +116,8 @@
         "cssVar": "--text-on-inverse"
       },
       {
-        "path": "border/neutral",
-        "cssVar": "--border-neutral"
+        "path": "border/subtle",
+        "cssVar": "--border-subtle"
       },
       {
         "path": "border/info",
@@ -143,10 +134,6 @@
       {
         "path": "border/danger",
         "cssVar": "--border-danger"
-      },
-      {
-        "path": "border/ai",
-        "cssVar": "--border-ai"
       }
     ],
     "structure": [
@@ -185,7 +172,7 @@
   "props": [
     {
       "name": "role",
-      "type": "neutral | info | success | warning | danger | ai",
+      "type": "neutral | info | success | warning | danger",
       "default": "neutral",
       "description": "Status colour."
     },

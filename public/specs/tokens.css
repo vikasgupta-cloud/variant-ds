@@ -23,7 +23,6 @@
   --cherry-100: #ffe2dc; /** Danger soft fill (light). Contrast: pair with text/danger (≥4.5:1). */
   --cherry-200: #ffcabe; /** Danger border (light). Contrast: non-text ≥3:1. */
   --cherry-300: #fb937d; /** Danger mid. Contrast: large text/icons only unless verified. */
-  --cherry-400: #f4603f; /** Danger bright. Contrast: verify ≥4.5:1 before text use. */
   --cherry-500: #de2d02; /** Danger strong (dark mode). Contrast: with text/on-strong (≥4.5:1). */
   --cherry-600: #b72200; /** Danger strong (light). Contrast: with text/on-strong (≥4.5:1). */
   --cherry-700: #92230d; /** Danger text (light) / strong-hover. Contrast: ≥4.5:1 on soft danger. */
@@ -32,16 +31,13 @@
   --amber-100: #ffe4c8; /** Warning soft fill (light). Contrast: pair with text/warning (≥4.5:1). */
   --amber-200: #f5c896; /** Warning border (light). Contrast: non-text ≥3:1. */
   --amber-300: #e7a04c; /** Warning strong (both modes — deliberate). Contrast: MUST use text/on-strong-warning (neutral-950), not white. */
-  --amber-400: #c78321; /** Warning mid. Contrast: verify before text use. */
   --amber-500: #a76700; /** Warning mid-dark. Contrast: verify ≥4.5:1. */
   --amber-600: #8b5500; /** Warning deep. Contrast: with light text if used as fill. */
   --amber-700: #6f4300; /** Warning text (light). Contrast: ≥4.5:1 on soft warning. */
-  --amber-800: #563400; /** Warning deep dark. Contrast: with light text. */
   --amber-900: #3e2300; /** Warning soft fill (dark). Contrast: pair with text/warning (≥4.5:1). */
   --green-100: #caf2dd; /** Success soft fill (light). Contrast: pair with text/success (≥4.5:1). */
   --green-200: #a4e4c3; /** Success border (light). Contrast: non-text ≥3:1. */
   --green-300: #07c787; /** Success mid. Contrast: large text/icons unless verified. */
-  --green-400: #03a673; /** Success bright. Contrast: verify ≥4.5:1 before text use. */
   --green-500: #00865b; /** Success strong (dark). Contrast: with text/on-strong (≥4.5:1). */
   --green-600: #006f4b; /** Success strong (light). Contrast: with text/on-strong (≥4.5:1). */
   --green-700: #00583a; /** Success text (light). Contrast: ≥4.5:1 on soft success. */
@@ -50,21 +46,19 @@
   --ocean-100: #dee9ff; /** Info soft fill (light). Contrast: pair with text/info (≥4.5:1). */
   --ocean-200: #c4d7ff; /** Info border (light). Contrast: non-text ≥3:1. */
   --ocean-300: #8badff; /** Info / link (dark). Contrast: links ≥4.5:1 on dark canvas. */
-  --ocean-400: #6389f9; /** Info bright. Contrast: verify before small text. */
   --ocean-500: #406bed; /** Info strong (dark). Contrast: with text/on-strong (≥4.5:1). */
   --ocean-600: #2f54cb; /** Info strong (light) / link. Contrast: links ≥4.5:1 on light canvas. */
   --ocean-700: #2846a0; /** Info text (light) / link-hover. Contrast: ≥4.5:1. */
-  --ocean-800: #1d3578; /** Info deep. Contrast: with light text. */
   --ocean-900: #152656; /** Info soft fill (dark). Contrast: pair with text/info (≥4.5:1). */
-  --berry-100: #ffe0f4; /** AI soft fill (light). Contrast: pair with text/ai (≥4.5:1). */
-  --berry-200: #ffc6ea; /** AI border (light). Contrast: non-text ≥3:1. */
-  --berry-300: #f87fd8; /** AI mid. Contrast: large text/icons unless verified. */
-  --berry-400: #e155bd; /** AI bright. Contrast: verify ≥4.5:1 before text use. */
-  --berry-500: #cb37a4; /** AI strong (dark). Contrast: with text/on-strong (≥4.5:1). */
-  --berry-600: #a72686; /** AI strong (light). Contrast: with text/on-strong (≥4.5:1). */
-  --berry-700: #84266c; /** AI text (light) / strong-hover. Contrast: ≥4.5:1 on soft AI. */
-  --berry-800: #661e53; /** AI strong-active (light). Contrast: with text/on-strong. */
-  --berry-900: #48163a; /** AI soft fill (dark). Contrast: pair with text/ai (≥4.5:1). */
+  --berry-100: #ffe0f4; /** Reserved berry/100 primitive (#ffe0f4). Unreferenced — kept for a future role; do not bind from components. */
+  --berry-200: #ffc6ea; /** Reserved berry/200 primitive (#ffc6ea). Unreferenced — kept for a future role; do not bind from components. */
+  --berry-300: #f87fd8; /** Reserved berry/300 primitive (#f87fd8). Unreferenced — kept for a future role; do not bind from components. */
+  --berry-400: #e155bd; /** Reserved berry/400 primitive (#e155bd). Unreferenced — kept for a future role; do not bind from components. */
+  --berry-500: #cb37a4; /** Reserved berry/500 primitive (#cb37a4). Unreferenced — kept for a future role; do not bind from components. */
+  --berry-600: #a72686; /** Reserved berry/600 primitive (#a72686). Unreferenced — kept for a future role; do not bind from components. */
+  --berry-700: #84266c; /** Reserved berry/700 primitive (#84266c). Unreferenced — kept for a future role; do not bind from components. */
+  --berry-800: #661e53; /** Reserved berry/800 primitive (#661e53). Unreferenced — kept for a future role; do not bind from components. */
+  --berry-900: #48163a; /** Reserved berry/900 primitive (#48163a). Unreferenced — kept for a future role; do not bind from components. */
   --yellow-tint: #f1f9c7; /** Selected field hover (light). Contrast: with selected/text (neutral-950) ≥4.5:1. */
   --yellow-accent: #eeff6d; /** Selected / wayfinding fill. Contrast: with selected/text (neutral-950) ≥4.5:1. Not for primary buttons. */
   --yellow-accent-hover: #e5f669; /** Selected hover fill. Contrast: with selected/text (neutral-950) ≥4.5:1. */
@@ -109,6 +103,114 @@
   --duration-slow: 320ms; /** Slow motion — 320ms. Respect prefers-reduced-motion. */
   --easing-standard: cubic-bezier(0.2, 0, 0.2, 1); /** Standard easing curve for UI motion. */
 }
+:root {
+  --display-2xl-font-family: Ergon, "DM Sans", sans-serif;
+  --display-2xl-font-size: 60px;
+  --display-2xl-font-weight: 700;
+  --display-2xl-line-height: 68px;
+  --display-2xl-letter-spacing: -0.02em;
+  --display-xl-font-family: Ergon, "DM Sans", sans-serif;
+  --display-xl-font-size: 48px;
+  --display-xl-font-weight: 700;
+  --display-xl-line-height: 56px;
+  --display-xl-letter-spacing: -0.02em;
+  --display-lg-font-family: Ergon, "DM Sans", sans-serif;
+  --display-lg-font-size: 36px;
+  --display-lg-font-weight: 700;
+  --display-lg-line-height: 44px;
+  --display-lg-letter-spacing: -0.02em;
+  --heading-xl-font-family: Ergon, "DM Sans", sans-serif;
+  --heading-xl-font-size: 30px;
+  --heading-xl-font-weight: 700;
+  --heading-xl-line-height: 40px;
+  --heading-xl-letter-spacing: -0.01em;
+  --heading-lg-font-family: Ergon, "DM Sans", sans-serif;
+  --heading-lg-font-size: 24px;
+  --heading-lg-font-weight: 700;
+  --heading-lg-line-height: 32px;
+  --heading-lg-letter-spacing: -0.01em;
+  --heading-md-font-family: "DM Sans", sans-serif;
+  --heading-md-font-size: 20px;
+  --heading-md-font-weight: 700;
+  --heading-md-line-height: 28px;
+  --heading-md-letter-spacing: -0.01em;
+  --heading-sm-font-family: "DM Sans", sans-serif;
+  --heading-sm-font-size: 18px;
+  --heading-sm-font-weight: 600;
+  --heading-sm-line-height: 24px;
+  --heading-sm-letter-spacing: 0;
+  --body-xs-medium-font-family: "DM Sans", sans-serif;
+  --body-xs-medium-font-size: 11px;
+  --body-xs-medium-font-weight: 500;
+  --body-xs-medium-line-height: 14px;
+  --body-xs-medium-letter-spacing: 0;
+  --body-lg-font-family: "DM Sans", sans-serif;
+  --body-lg-font-size: 16px;
+  --body-lg-font-weight: 400;
+  --body-lg-line-height: 24px;
+  --body-lg-letter-spacing: 0;
+  --body-lg-medium-font-family: "DM Sans", sans-serif;
+  --body-lg-medium-font-size: 16px;
+  --body-lg-medium-font-weight: 500;
+  --body-lg-medium-line-height: 24px;
+  --body-lg-medium-letter-spacing: 0;
+  --body-lg-semibold-font-family: "DM Sans", sans-serif;
+  --body-lg-semibold-font-size: 16px;
+  --body-lg-semibold-font-weight: 600;
+  --body-lg-semibold-line-height: 24px;
+  --body-lg-semibold-letter-spacing: 0;
+  --body-md-font-family: "DM Sans", sans-serif;
+  --body-md-font-size: 14px;
+  --body-md-font-weight: 400;
+  --body-md-line-height: 20px;
+  --body-md-letter-spacing: 0;
+  --body-md-medium-font-family: "DM Sans", sans-serif;
+  --body-md-medium-font-size: 14px;
+  --body-md-medium-font-weight: 500;
+  --body-md-medium-line-height: 20px;
+  --body-md-medium-letter-spacing: 0;
+  --body-md-semibold-font-family: "DM Sans", sans-serif;
+  --body-md-semibold-font-size: 14px;
+  --body-md-semibold-font-weight: 600;
+  --body-md-semibold-line-height: 20px;
+  --body-md-semibold-letter-spacing: 0;
+  --body-sm-font-family: "DM Sans", sans-serif;
+  --body-sm-font-size: 12px;
+  --body-sm-font-weight: 400;
+  --body-sm-line-height: 18px;
+  --body-sm-letter-spacing: 0;
+  --body-sm-medium-font-family: "DM Sans", sans-serif;
+  --body-sm-medium-font-size: 12px;
+  --body-sm-medium-font-weight: 500;
+  --body-sm-medium-line-height: 18px;
+  --body-sm-medium-letter-spacing: 0;
+  --body-sm-semibold-font-family: "DM Sans", sans-serif;
+  --body-sm-semibold-font-size: 12px;
+  --body-sm-semibold-font-weight: 600;
+  --body-sm-semibold-line-height: 18px;
+  --body-sm-semibold-letter-spacing: 0;
+  --body-sm-caps-font-family: "DM Sans", sans-serif;
+  --body-sm-caps-font-size: 12px;
+  --body-sm-caps-font-weight: 500;
+  --body-sm-caps-line-height: 18px;
+  --body-sm-caps-letter-spacing: 0.06em;
+  --numeric-lg-font-family: "DM Mono", ui-monospace, monospace;
+  --numeric-lg-font-size: 20px;
+  --numeric-lg-font-weight: 500;
+  --numeric-lg-line-height: 28px;
+  --numeric-lg-letter-spacing: 0;
+  --numeric-md-font-family: "DM Mono", ui-monospace, monospace;
+  --numeric-md-font-size: 14px;
+  --numeric-md-font-weight: 400;
+  --numeric-md-line-height: 20px;
+  --numeric-md-letter-spacing: 0;
+  --numeric-sm-font-family: "DM Mono", ui-monospace, monospace;
+  --numeric-sm-font-size: 12px;
+  --numeric-sm-font-weight: 400;
+  --numeric-sm-line-height: 16px;
+  --numeric-sm-letter-spacing: 0;
+}
+
 
 /* ===== role.css ===== */
 /**
@@ -124,23 +226,31 @@
   --bg-disabled: var(--neutral-100); /** Disabled control fill (light). Contrast: with text/disabled. */
   --bg-tooltip: var(--neutral-950); /** Tooltip surface (light). Contrast: with text/on-inverse or on-strong (≥4.5:1). */
   --bg-neutral-strong: var(--neutral-950); /** Strong neutral fill (light). Contrast: use text/on-strong (≥4.5:1). */
-  --bg-neutral-soft: var(--neutral-100); /** Soft neutral fill (light). Contrast: with text/neutral (≥4.5:1). */
+  --bg-neutral-soft: var(--neutral-100); /** Soft neutral fill (light). Contrast: with text/primary (≥4.5:1). */
+  --bg-neutral-soft-hover: var(--neutral-200); /** Soft neutral hover (light). Contrast: with text/primary (≥4.5:1). */
+  --bg-neutral-soft-active: var(--neutral-300); /** Soft neutral active (light). Contrast: with text/primary (≥4.5:1). */
   --bg-neutral-strong-hover: var(--neutral-800); /** Strong neutral hover (light). Neutral strong inverts (950), so hover lightens to 800 — not the chromatic 700 step. Contrast: with text/on-strong (≥4.5:1). */
   --bg-neutral-strong-active: var(--neutral-700); /** Strong neutral active (light). Neutral strong inverts (950), so active lightens to 700 — not the chromatic 800 step. Contrast: with text/on-strong (≥4.5:1). */
   --bg-info-strong: var(--ocean-600); /** Strong info fill (light). Contrast: use text/on-strong (≥4.5:1). */
   --bg-info-soft: var(--ocean-100); /** Soft info fill (light). Contrast: with text/info (≥4.5:1). */
+  --bg-info-soft-hover: var(--ocean-200); /** Soft info hover (light). Contrast: with text/info (≥4.5:1). */
+  --bg-info-soft-active: var(--ocean-300); /** Soft info active (light). Contrast: with text/info (≥4.5:1). */
   --bg-success-strong: var(--green-600); /** Strong success fill (light). Contrast: use text/on-strong (≥4.5:1). */
   --bg-success-soft: var(--green-100); /** Soft success fill (light). Contrast: with text/success (≥4.5:1). */
+  --bg-success-soft-hover: var(--green-200); /** Soft success hover (light). Contrast: with text/success (≥4.5:1). */
+  --bg-success-soft-active: var(--green-300); /** Soft success active (light). Contrast: with text/success (≥4.5:1). */
+  --bg-success-strong-hover: var(--green-700); /** Strong success hover (light). Contrast: with text/on-strong (≥4.5:1). */
+  --bg-success-strong-active: var(--green-800); /** Strong success active (light). Contrast: with text/on-strong (≥4.5:1). */
   --bg-warning-strong: var(--amber-300); /** Strong warning fill (light). Contrast: use text/on-strong-warning (≥4.5:1). */
   --bg-warning-soft: var(--amber-100); /** Soft warning fill (light). Contrast: with text/warning (≥4.5:1). */
+  --bg-warning-soft-hover: var(--amber-200); /** Soft warning hover (light). Contrast: with text/warning (≥4.5:1). */
+  --bg-warning-soft-active: var(--amber-300); /** Soft warning active (light). Contrast: with text/warning (≥4.5:1). */
   --bg-danger-strong: var(--cherry-600); /** Strong danger fill (light). Contrast: use text/on-strong (≥4.5:1). */
   --bg-danger-soft: var(--cherry-100); /** Soft danger fill (light). Contrast: with text/danger (≥4.5:1). */
+  --bg-danger-soft-hover: var(--cherry-200); /** Soft danger hover (light). Contrast: with text/danger (≥4.5:1). */
+  --bg-danger-soft-active: var(--cherry-300); /** Soft danger active (light). Contrast: with text/danger (≥4.5:1). */
   --bg-danger-strong-hover: var(--cherry-700); /** Strong danger hover (light). Contrast: with text/on-strong (≥4.5:1). */
   --bg-danger-strong-active: var(--cherry-800); /** Strong danger active (light). Contrast: with text/on-strong (≥4.5:1). */
-  --bg-ai-strong: var(--berry-600); /** Strong ai fill (light). Contrast: use text/on-strong (≥4.5:1). */
-  --bg-ai-soft: var(--berry-100); /** Soft ai fill (light). Contrast: with text/ai (≥4.5:1). */
-  --bg-ai-strong-hover: var(--berry-700); /** Strong ai hover (light). Contrast: with text/on-strong (≥4.5:1). */
-  --bg-ai-strong-active: var(--berry-800); /** Strong ai active (light). Contrast: with text/on-strong (≥4.5:1). */
   --text-primary: var(--neutral-950); /** Primary body text (light). Contrast: ≥4.5:1 on canvas/surface. */
   --text-secondary: var(--neutral-600); /** Secondary text (light). Contrast: ≥4.5:1 on canvas/surface. */
   --text-tertiary: var(--neutral-500); /** Tertiary text (light). Contrast: ~4.33:1 on bg/canvas (neutral-50) — below AA for small text; use for non-essential copy or large type only, not primary readable body. */
@@ -150,33 +260,28 @@
   --text-link-hover: var(--ocean-700); /** Link hover text (light). Contrast: ≥4.5:1 on canvas. */
   --text-on-strong: var(--neutral-0); /** Text/icons on strong fills (light). Contrast: ≥4.5:1 on strong role fills (not warning). */
   --text-on-strong-warning: var(--neutral-950); /** Text on warning strong (light). Contrast: ≥4.5:1 on amber-300 — white fails; this is required. */
-  --text-neutral: var(--neutral-700); /** neutral text and status icons (light). Contrast: ≥4.5:1 on soft neutral / canvas. */
-  --text-neutral-hover: var(--neutral-800); /** Hover state for status-coloured text and link buttons. Contrast: ≥4.5:1 on canvas/surface. */
   --text-info: var(--ocean-700); /** info text and status icons (light). Contrast: ≥4.5:1 on soft info / canvas. */
-  --text-info-hover: var(--ocean-800); /** Hover state for status-coloured text and link buttons. Contrast: ≥4.5:1 on canvas/surface. */
+  --text-info-hover: var(--ocean-900); /** Hover state for status-coloured text and link buttons. Contrast: ≥4.5:1 on canvas/surface. */
   --text-success: var(--green-700); /** success text and status icons (light). Contrast: ≥4.5:1 on soft success / canvas. */
   --text-success-hover: var(--green-800); /** Hover state for status-coloured text and link buttons. Contrast: ≥4.5:1 on canvas/surface. */
   --text-warning: var(--amber-700); /** warning text and status icons (light). Contrast: ≥4.5:1 on soft warning / canvas. */
-  --text-warning-hover: var(--amber-800); /** Hover state for status-coloured text and link buttons. Contrast: ≥4.5:1 on canvas/surface. */
+  --text-warning-hover: var(--amber-900); /** Hover state for status-coloured text and link buttons. Contrast: ≥4.5:1 on canvas/surface. */
   --text-danger: var(--cherry-700); /** danger text and status icons (light). Contrast: ≥4.5:1 on soft danger / canvas. */
   --text-danger-hover: var(--cherry-800); /** Hover state for status-coloured text and link buttons. Contrast: ≥4.5:1 on canvas/surface. */
-  --text-ai: var(--berry-700); /** ai text and status icons (light). Contrast: ≥4.5:1 on soft ai / canvas. */
-  --text-ai-hover: var(--berry-800); /** Hover state for status-coloured text and link buttons. Contrast: ≥4.5:1 on canvas/surface. */
   --icon-primary: var(--neutral-950); /** Primary icon (light). Contrast: ≥4.5:1 (or ≥3:1 if decorative-adjacent). */
   --icon-secondary: var(--neutral-600); /** Secondary icon (light). Contrast: ≥3:1 non-text. */
   --icon-tertiary: var(--neutral-500); /** Tertiary icon (light). Contrast: ≥3:1 non-text. */
   --icon-disabled: var(--neutral-400); /** Disabled icon (light). May be reduced contrast by design. */
   --icon-on-inverse: var(--neutral-0); /** Icon on inverse (light). Contrast: ≥3:1 / ≥4.5:1 if conveying meaning. */
+  --icon-on-selected: var(--neutral-950); /** Foreground marks on the selected yellow fill — checkbox ticks, radio dots, icons on selected chrome. Distinct from selected/text, which is label text. */
   --border-subtle: var(--neutral-200); /** Decorative trim. The card's fill contrast and shadow carry the container boundary; the outline is not load-bearing. Also table dividers and menu separators. Contrast: exempt from 3:1. */
   --border-default: var(--neutral-500); /** Default border (light). Contrast: ≥3:1 against canvas/surface. */
-  --border-strong: var(--neutral-600); /** Strong border (light). Contrast: ≥3:1. */
-  --border-focus: var(--neutral-950); /** Focus ring color (light). Contrast: ≥3:1 against background. */
-  --border-neutral: var(--neutral-200); /** neutral border (light). Contrast: ≥3:1 non-text. */
+  --border-strong: var(--neutral-500); /** Strong border (light). Contrast: ≥3:1. */
+  --border-focus: var(--neutral-900); /** Focus ring color (light). Contrast: ≥3:1 against background. */
   --border-info: var(--ocean-200); /** info border (light). Contrast: ≥3:1 non-text. */
   --border-success: var(--green-200); /** success border (light). Contrast: ≥3:1 non-text. */
   --border-warning: var(--amber-200); /** warning border (light). Contrast: ≥3:1 non-text. */
   --border-danger: var(--cherry-200); /** danger border (light). Contrast: ≥3:1 non-text. */
-  --border-ai: var(--berry-200); /** ai border (light). Contrast: ≥3:1 non-text. */
   --selected-bg: var(--yellow-accent); /** Selected fill (light). Contrast: with selected/text (neutral-950) ≥4.5:1. */
   --selected-bg-hover: var(--yellow-accent-hover); /** Selected hover fill (light). Contrast: with selected/text ≥4.5:1. */
   --selected-text: var(--neutral-950); /** Selected label text (light). Contrast: ≥4.5:1 on selected/bg. */
@@ -192,23 +297,31 @@
   --bg-disabled: var(--neutral-800); /** Disabled control fill (dark). Contrast: with text/disabled. */
   --bg-tooltip: var(--neutral-700); /** Tooltip surface (dark). Contrast: with text/on-inverse or on-strong (≥4.5:1). */
   --bg-neutral-strong: var(--neutral-50); /** Strong neutral fill (dark). Contrast: use text/on-strong (≥4.5:1). */
-  --bg-neutral-soft: var(--neutral-800); /** Soft neutral fill (dark). Uses neutral-800 so it stays distinct from bg/surface (neutral-900). Contrast: with text/neutral (≥4.5:1). */
+  --bg-neutral-soft: var(--neutral-800); /** Soft neutral fill (dark). Uses neutral-800 so it stays distinct from bg/surface (neutral-900). Contrast: with text/primary (≥4.5:1). */
+  --bg-neutral-soft-hover: var(--neutral-700); /** Soft neutral hover (dark). Contrast: with text/primary (≥4.5:1). */
+  --bg-neutral-soft-active: var(--neutral-600); /** Soft neutral active (dark). Contrast: with text/primary (≥4.5:1). */
   --bg-neutral-strong-hover: var(--neutral-200); /** Strong neutral hover (dark). Neutral strong inverts (50), so hover darkens to 200 — not the chromatic 600 step. Contrast: with text/on-strong (≥4.5:1). */
   --bg-neutral-strong-active: var(--neutral-300); /** Strong neutral active (dark). Neutral strong inverts (50), so active darkens to 300 — not the chromatic 700 step. Contrast: with text/on-strong (≥4.5:1). */
   --bg-info-strong: var(--ocean-500); /** Strong info fill (dark). Contrast: use text/on-strong (≥4.5:1). */
   --bg-info-soft: var(--ocean-900); /** Soft info fill (dark). Contrast: with text/info (≥4.5:1). */
+  --bg-info-soft-hover: var(--ocean-700); /** Soft info hover (dark). Contrast: with text/info (≥4.5:1). */
+  --bg-info-soft-active: var(--ocean-600); /** Soft info active (dark). Contrast: with text/info (≥4.5:1). */
   --bg-success-strong: var(--green-500); /** Strong success fill (dark). Contrast: use text/on-strong (≥4.5:1). */
   --bg-success-soft: var(--green-900); /** Soft success fill (dark). Contrast: with text/success (≥4.5:1). */
+  --bg-success-soft-hover: var(--green-700); /** Soft success hover (dark). Contrast: with text/success (≥4.5:1). */
+  --bg-success-soft-active: var(--green-600); /** Soft success active (dark). Contrast: with text/success (≥4.5:1). */
+  --bg-success-strong-hover: var(--green-600); /** Strong success hover (dark). Contrast: with text/on-strong (≥4.5:1). */
+  --bg-success-strong-active: var(--green-700); /** Strong success active (dark). Contrast: with text/on-strong (≥4.5:1). */
   --bg-warning-strong: var(--amber-300); /** Strong warning fill (dark). Contrast: use text/on-strong-warning (≥4.5:1). */
   --bg-warning-soft: var(--amber-900); /** Soft warning fill (dark). Contrast: with text/warning (≥4.5:1). */
+  --bg-warning-soft-hover: var(--amber-700); /** Soft warning hover (dark). Contrast: with text/warning (≥4.5:1). */
+  --bg-warning-soft-active: var(--amber-600); /** Soft warning active (dark). Contrast: with text/warning (≥4.5:1). */
   --bg-danger-strong: var(--cherry-500); /** Strong danger fill (dark). Contrast: use text/on-strong (≥4.5:1). */
   --bg-danger-soft: var(--cherry-900); /** Soft danger fill (dark). Contrast: with text/danger (≥4.5:1). */
+  --bg-danger-soft-hover: var(--cherry-700); /** Soft danger hover (dark). Contrast: with text/danger (≥4.5:1). */
+  --bg-danger-soft-active: var(--cherry-600); /** Soft danger active (dark). Contrast: with text/danger (≥4.5:1). */
   --bg-danger-strong-hover: var(--cherry-600); /** Strong danger hover (dark). Contrast: with text/on-strong (≥4.5:1). */
   --bg-danger-strong-active: var(--cherry-700); /** Strong danger active (dark). Contrast: with text/on-strong (≥4.5:1). */
-  --bg-ai-strong: var(--berry-500); /** Strong ai fill (dark). Contrast: use text/on-strong (≥4.5:1). */
-  --bg-ai-soft: var(--berry-900); /** Soft ai fill (dark). Contrast: with text/ai (≥4.5:1). */
-  --bg-ai-strong-hover: var(--berry-600); /** Strong ai hover (dark). Contrast: with text/on-strong (≥4.5:1). */
-  --bg-ai-strong-active: var(--berry-700); /** Strong ai active (dark). Contrast: with text/on-strong (≥4.5:1). */
   --text-primary: var(--neutral-50); /** Primary body text (dark). Contrast: ≥4.5:1 on canvas/surface. */
   --text-secondary: var(--neutral-300); /** Secondary text (dark). Contrast: ≥4.5:1 on canvas/surface. */
   --text-tertiary: var(--neutral-400); /** Tertiary text (dark). Prefer for supporting copy; verify contrast on the actual background rather than assuming AA for small body text. */
@@ -218,8 +331,6 @@
   --text-link-hover: var(--ocean-200); /** Link hover text (dark). Contrast: ≥4.5:1 on canvas. */
   --text-on-strong: var(--neutral-0); /** Text/icons on strong fills (dark). Contrast: ≥4.5:1 on strong role fills (not warning). */
   --text-on-strong-warning: var(--neutral-950); /** Text on warning strong (dark). Contrast: ≥4.5:1 on amber-300 — white fails; this is required. */
-  --text-neutral: var(--neutral-300); /** neutral text and status icons (dark). Contrast: ≥4.5:1 on soft neutral / canvas. */
-  --text-neutral-hover: var(--neutral-200); /** Hover state for status-coloured text and link buttons. Contrast: ≥4.5:1 on canvas/surface. */
   --text-info: var(--ocean-300); /** info text and status icons (dark). Contrast: ≥4.5:1 on soft info / canvas. */
   --text-info-hover: var(--ocean-200); /** Hover state for status-coloured text and link buttons. Contrast: ≥4.5:1 on canvas/surface. */
   --text-success: var(--green-300); /** success text and status icons (dark). Contrast: ≥4.5:1 on soft success / canvas. */
@@ -228,23 +339,20 @@
   --text-warning-hover: var(--amber-200); /** Hover state for status-coloured text and link buttons. Contrast: ≥4.5:1 on canvas/surface. */
   --text-danger: var(--cherry-300); /** danger text and status icons (dark). Contrast: ≥4.5:1 on soft danger / canvas. */
   --text-danger-hover: var(--cherry-200); /** Hover state for status-coloured text and link buttons. Contrast: ≥4.5:1 on canvas/surface. */
-  --text-ai: var(--berry-300); /** ai text and status icons (dark). Contrast: ≥4.5:1 on soft ai / canvas. */
-  --text-ai-hover: var(--berry-200); /** Hover state for status-coloured text and link buttons. Contrast: ≥4.5:1 on canvas/surface. */
   --icon-primary: var(--neutral-50); /** Primary icon (dark). Contrast: ≥4.5:1 (or ≥3:1 if decorative-adjacent). */
   --icon-secondary: var(--neutral-300); /** Secondary icon (dark). Contrast: ≥3:1 non-text. */
   --icon-tertiary: var(--neutral-400); /** Tertiary icon (dark). Contrast: ≥3:1 non-text. */
   --icon-disabled: var(--neutral-500); /** Disabled icon (dark). May be reduced contrast by design. */
   --icon-on-inverse: var(--neutral-950); /** Icon on inverse (dark). Contrast: ≥3:1 / ≥4.5:1 if conveying meaning. */
+  --icon-on-selected: var(--neutral-950); /** Foreground marks on the selected yellow fill — checkbox ticks, radio dots, icons on selected chrome. Distinct from selected/text, which is label text. */
   --border-subtle: var(--neutral-700); /** Decorative trim. The card's fill contrast and shadow carry the container boundary; the outline is not load-bearing. Also table dividers and menu separators. Contrast: exempt from 3:1. */
   --border-default: var(--neutral-500); /** Default border (dark). Contrast: ≥3:1 against canvas/surface. */
-  --border-strong: var(--neutral-300); /** Strong border (dark). Contrast: ≥3:1. */
+  --border-strong: var(--neutral-400); /** Strong border (dark). Contrast: ≥3:1. */
   --border-focus: var(--neutral-50); /** Focus ring color (dark). Contrast: ≥3:1 against background. */
-  --border-neutral: var(--neutral-700); /** neutral border (dark). Contrast: ≥3:1 non-text. */
   --border-info: var(--ocean-700); /** info border (dark). Contrast: ≥3:1 non-text. */
   --border-success: var(--green-700); /** success border (dark). Contrast: ≥3:1 non-text. */
   --border-warning: var(--amber-700); /** warning border (dark). Contrast: ≥3:1 non-text. */
   --border-danger: var(--cherry-700); /** danger border (dark). Contrast: ≥3:1 non-text. */
-  --border-ai: var(--berry-700); /** ai border (dark). Contrast: ≥3:1 non-text. */
   --selected-bg: var(--yellow-accent); /** Selected fill (dark). Contrast: with selected/text (neutral-950) ≥4.5:1. */
   --selected-bg-hover: var(--yellow-accent-hover); /** Selected hover fill (dark). Contrast: with selected/text ≥4.5:1. */
   --selected-text: var(--neutral-950); /** Selected label text (dark). Contrast: ≥4.5:1 on selected/bg. */
@@ -268,6 +376,7 @@
   --surface-field: var(--neutral-0); /** surface/field on canvas (light). Recessed field fill (brighter/deeper well, opposite of level). Bind Input, unchecked Checkbox, and unchecked Radio. Contrast: with text/primary (≥4.5:1). */
   --surface-field-hover: var(--neutral-50); /** surface/field-hover on canvas (light). Field hover wash. Contrast: with text/primary (≥4.5:1). */
   --surface-control: var(--neutral-500); /** surface/control on canvas (light). Filled shapes that convey state and need ≥3:1 — toggle off-track, progress track, slider track. Separate from surface/border (lines) so fills can diverge later. */
+  --surface-control-hover: var(--neutral-600); /** surface/control-hover on canvas (light). One step from surface/control for toggle off-track hover. Contrast: ≥3:1 against context bg. */
 }
 
 [data-mode="light"] [data-context="surface"], [data-mode="light"][data-context="surface"] {
@@ -278,6 +387,7 @@
   --surface-field: var(--neutral-0); /** surface/field on surface (light). Recessed field fill (brighter/deeper well, opposite of level). Bind Input, unchecked Checkbox, and unchecked Radio. Contrast: with text/primary (≥4.5:1). */
   --surface-field-hover: var(--neutral-50); /** surface/field-hover on surface (light). Field hover wash. Contrast: with text/primary (≥4.5:1). */
   --surface-control: var(--neutral-500); /** surface/control on surface (light). Filled shapes that convey state and need ≥3:1 — toggle off-track, progress track, slider track. Separate from surface/border (lines) so fills can diverge later. */
+  --surface-control-hover: var(--neutral-600); /** surface/control-hover on surface (light). One step from surface/control for toggle off-track hover. Contrast: ≥3:1 against context bg. */
 }
 
 [data-mode="light"] [data-context="surface-raised"], [data-mode="light"][data-context="surface-raised"] {
@@ -288,6 +398,7 @@
   --surface-field: var(--neutral-0); /** surface/field on surface-raised (light). Recessed field fill (brighter/deeper well, opposite of level). Bind Input, unchecked Checkbox, and unchecked Radio. Contrast: with text/primary (≥4.5:1). */
   --surface-field-hover: var(--neutral-50); /** surface/field-hover on surface-raised (light). Field hover wash. Contrast: with text/primary (≥4.5:1). */
   --surface-control: var(--neutral-400); /** surface/control on surface-raised (light). Filled shapes that convey state and need ≥3:1 — toggle off-track, progress track, slider track. Separate from surface/border (lines) so fills can diverge later. */
+  --surface-control-hover: var(--neutral-500); /** surface/control-hover on surface-raised (light). One step from surface/control for toggle off-track hover. Contrast: ≥3:1 against context bg. */
 }
 
 [data-mode="dark"] [data-context="canvas"], [data-mode="dark"][data-context="canvas"] {
@@ -298,6 +409,7 @@
   --surface-field: var(--neutral-900); /** surface/field on canvas (dark). Recessed well that is brighter than canvas (neutral-900 on 950) — same direction as light. Bind Input, unchecked Checkbox/Radio. Contrast: with text/primary (≥4.5:1). */
   --surface-field-hover: var(--neutral-800); /** surface/field-hover on canvas (dark). Brightens further from field (neutral-900 → 800) to increase separation — same direction as light, not toward ambient bg. Contrast: with text/primary (≥4.5:1). */
   --surface-control: var(--neutral-400); /** surface/control on canvas (dark). Filled shapes that convey state and need ≥3:1 — toggle off-track, progress track, slider track. Separate from surface/border (lines) so fills can diverge later. */
+  --surface-control-hover: var(--neutral-300); /** surface/control-hover on canvas (dark). One step from surface/control for toggle off-track hover. Contrast: ≥3:1 against context bg. */
 }
 
 [data-mode="dark"] [data-context="surface"], [data-mode="dark"][data-context="surface"] {
@@ -308,6 +420,7 @@
   --surface-field: var(--neutral-800); /** surface/field on surface (dark). Brighter recessed well than surface (800 on 900). Bind Input, unchecked Checkbox/Radio. Contrast: with text/primary (≥4.5:1). */
   --surface-field-hover: var(--neutral-700); /** surface/field-hover on surface (dark). Brightens further from field (neutral-800 → 700) to increase separation — same direction as light, not toward ambient bg. Contrast: with text/primary (≥4.5:1). */
   --surface-control: var(--neutral-500); /** surface/control on surface (dark). Filled shapes that convey state and need ≥3:1 — toggle off-track, progress track, slider track. Separate from surface/border (lines) so fills can diverge later. */
+  --surface-control-hover: var(--neutral-400); /** surface/control-hover on surface (dark). One step from surface/control for toggle off-track hover. Contrast: ≥3:1 against context bg. */
 }
 
 [data-mode="dark"] [data-context="surface-raised"], [data-mode="dark"][data-context="surface-raised"] {
@@ -318,6 +431,7 @@
   --surface-field: var(--neutral-700); /** surface/field on surface-raised (dark). Brighter recessed well than raised (700 on 800). Bind Input, unchecked Checkbox/Radio. Contrast: with text/primary (≥4.5:1). */
   --surface-field-hover: var(--neutral-600); /** surface/field-hover on surface-raised (dark). Brightens further from field (neutral-700 → 600) to increase separation — same direction as light, not toward ambient bg. Contrast: with text/primary (≥4.5:1). */
   --surface-control: var(--neutral-400); /** surface/control on surface-raised (dark). Filled shapes that convey state and need ≥3:1 — toggle off-track, progress track, slider track. Separate from surface/border (lines) so fills can diverge later. */
+  --surface-control-hover: var(--neutral-300); /** surface/control-hover on surface-raised (dark). One step from surface/control for toggle off-track hover. Contrast: ≥3:1 against context bg. */
 }
 
 /* ===== structure.css ===== */
@@ -330,7 +444,10 @@
 :root {
   --chip-padding-y-sm: 1px; /** chip/padding-y/sm — 1px (structure exception; not on the dimension scale). */
   --chip-padding-y-md: 3px; /** chip/padding-y/md — 3px (structure exception; not on the dimension scale). */
-  --shadow-sm: 0 1px 2px 0 color-mix(in srgb, var(--neutral-950) calc(100% * var(--opacity-8)), transparent); /** Small elevation shadow for cards and light raised surfaces. Mode-locked; pairs with border/subtle on Card so fill + shadow carry the boundary. */
+  --layout-measure-page: 1120px; /** Product reading width for full pages (settings, docs, long forms). Not on the dimension/* scale. */
+  --layout-measure-prose: 72ch; /** Product prose measure (~72 characters) for body copy in pages and modal bodies. Not on the dimension/* scale. */
+  --shadow-sm: 0 1px 2px 0 color-mix(in srgb, var(--neutral-950) calc(100% * var(--opacity-8)), transparent); /** Small elevation shadow for cards and light raised surfaces. Mode-locked; pairs with border/subtle on Card so fill + shadow carry the boundary. In dark mode prefer lighter surfaces over heavier shadows. */
+  --shadow-md: 0 4px 12px 0 color-mix(in srgb, var(--neutral-950) calc(100% * var(--opacity-16)), transparent); /** Medium elevation for raised cards and floating panels. Mode-locked. In dark mode prefer lighter surfaces (surface-raised) over heavier shadows. */
   --z-modal: 50; /** Stacking order for modal dialogs and their scrim. Above page content; tooltips/toasts sit higher if added later. */
   --control-padding-x-xs: var(--dimension-6); /** control/padding-x/xs → dimension/6. Shared control sizing. */
   --control-padding-x-sm: var(--dimension-8); /** control/padding-x/sm → dimension/8. Shared control sizing. */
@@ -366,7 +483,7 @@
   --focus-ring-width: var(--border-width-2); /** Focus ring width. */
   --focus-ring-offset: var(--dimension-2); /** Focus ring offset. */
   --layout-card: var(--dimension-16); /** Default card padding. */
-  --layout-section: var(--dimension-32); /** Section spacing. */
+  --layout-section: var(--dimension-32); /** Section spacing / subsection gap. */
   --layout-stack-tight: var(--dimension-4); /** Tight vertical stack gap. */
   --layout-stack: var(--dimension-8); /** Default vertical stack gap. */
   --layout-stack-loose: var(--dimension-16); /** Loose vertical stack gap. */
@@ -384,16 +501,14 @@
   --overlay-scrim-opacity: var(--opacity-64); /** Modal / drawer scrim opacity. Mode-locked (identical in light and dark). Applied with overlay/scrim. */
 }
 
-/* ===== component.css ===== */
+/* ===== component-size.css ===== */
 /**
  * DO NOT EDIT — generated by Style Dictionary from tokens/*.json
- * Layer: component
+ * Layer: component-size
  * outputReferences: true
  */
 
 :root {
-  --badge-count-size-md: 18px; /** Badge count size md — 18px component deviation. */
-  --badge-count-size-lg: 22px; /** Badge count size lg — 22px component deviation. */
   --toggle-track-width-sm: 28px; /** Toggle track width sm. */
   --toggle-track-width-md: 36px; /** Toggle track width md. */
   --toggle-track-width-lg: 44px; /** Toggle track width lg. */
@@ -408,6 +523,8 @@
   --badge-dot-size-sm: var(--dimension-6); /** Badge dot size sm. */
   --badge-dot-size-md: var(--dimension-8); /** Badge dot size md. */
   --badge-count-size-sm: var(--dimension-16); /** Badge count size sm. */
+  --badge-count-size-md: var(--dimension-20); /** Badge count size md. */
+  --badge-count-size-lg: var(--dimension-24); /** Badge count size lg. */
   --badge-count-radius: var(--radius-xs); /** Badge count corner radius. */
   --tag-radius: var(--radius-xs); /** Tag corner radius. */
   --checkbox-size-sm: var(--dimension-16); /** Checkbox size sm. */
@@ -449,18 +566,28 @@
   --alert-radius: var(--radius-sm); /** Alert corner radius. */
   --alert-padding: var(--dimension-12); /** Alert padding. */
   --alert-icon-gap: var(--dimension-12); /** Gap between alert icon and content. */
-  --toggle-track-off-bg: var(--surface-control); /** Toggle off track — aliases surface/control (≥3:1 filled state chrome per context). */
-  --toggle-track-off-bg-hover: var(--surface-control); /** Toggle off track hover — surface/control family (≥3:1). Hover may stack opacity in the component. */
-  --progress-track-bg: var(--surface-control); /** Progress track fill — aliases surface/control (≥3:1 filled state chrome per context). */
-  --slider-thumb-border: var(--border-strong); /** Slider thumb border — aliases role border/strong so it tracks mode. */
-  --slider-track-bg: var(--surface-control); /** Slider track fill — aliases surface/control (≥3:1 filled state chrome per context). */
   --card-padding: var(--layout-card); /** Card padding — aliases layout/card. */
 }
 
+/* ===== component-color.css ===== */
+/**
+ * DO NOT EDIT — generated by Style Dictionary from tokens/*.json
+ * Layer: component-color
+ * outputReferences: true
+ */
+
 [data-mode="light"] {
-  --toggle-knob-bg: var(--neutral-0); /** Toggle knob fill (light). Contrast: ≥3:1 against track. */
+  --toggle-knob-bg-off: var(--neutral-0); /** Toggle knob when off (light). Contrast: ≥3:1 against surface/control track. */
+  --toggle-knob-bg-on: var(--neutral-950); /** Toggle knob when on (light). Contrast: ≥4.5:1 against selected/bg yellow — white fails (1.35:1). */
+  --progress-track-bg: var(--surface-control); /** Progress track fill — aliases surface/control (≥3:1 filled state chrome per context). */
+  --slider-thumb-border: var(--border-strong); /** Slider thumb border — aliases role border/strong so it tracks mode. */
+  --slider-track-bg: var(--surface-control); /** Slider track fill — aliases surface/control (≥3:1 filled state chrome per context). */
 }
 
 [data-mode="dark"] {
-  --toggle-knob-bg: var(--neutral-900); /** Toggle knob fill (dark). Contrast: ≥3:1 against track. */
+  --toggle-knob-bg-off: var(--neutral-900); /** Toggle knob when off (dark). Contrast: ≥3:1 against surface/control track. */
+  --toggle-knob-bg-on: var(--neutral-950); /** Toggle knob when on (dark). Contrast: ≥4.5:1 against selected/bg yellow — white fails (1.35:1). */
+  --progress-track-bg: var(--surface-control); /** Progress track fill — aliases surface/control (≥3:1 filled state chrome per context). */
+  --slider-thumb-border: var(--border-strong); /** Slider thumb border — aliases role border/strong so it tracks mode. */
+  --slider-track-bg: var(--surface-control); /** Slider track fill — aliases surface/control (≥3:1 filled state chrome per context). */
 }

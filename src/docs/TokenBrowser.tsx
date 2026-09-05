@@ -174,7 +174,7 @@ export function TokenBrowser() {
       <div className="flex flex-wrap items-end gap-8">
         <div className="min-w-64 flex-1">
           <Input
-            type="search"
+            htmlType="search"
             label="Filter tokens"
             placeholder="Filter tokens…"
             value={filter}

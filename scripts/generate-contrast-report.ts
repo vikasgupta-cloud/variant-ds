@@ -129,7 +129,6 @@ lines.push(
 lines.push("- `border-{role}` → `bg-{role}-soft` (banner chrome, not canvas)");
 lines.push(
   "- `border-subtle` → decorative trim; verdict **exempt** (fill + shadow/sm carry the card boundary)",
-  "- `border-neutral` → decorative hairlines at **1.5:1**",
 );
 lines.push(
   "- `text-disabled` / `icon-disabled` / `text-tertiary` / `icon-tertiary` → measured on canvas, verdict **exempt** with reason",

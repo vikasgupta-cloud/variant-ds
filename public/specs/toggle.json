@@ -34,8 +34,12 @@
   "tokens": {
     "role": [
       {
-        "path": "bg/neutral/strong",
-        "cssVar": "--bg-neutral-strong"
+        "path": "selected/bg",
+        "cssVar": "--selected-bg"
+      },
+      {
+        "path": "selected/bg-hover",
+        "cssVar": "--selected-bg-hover"
       },
       {
         "path": "text/primary",
@@ -52,6 +56,16 @@
       {
         "path": "border/focus",
         "cssVar": "--border-focus"
+      }
+    ],
+    "surface": [
+      {
+        "path": "surface/control",
+        "cssVar": "--surface-control"
+      },
+      {
+        "path": "surface/control-hover",
+        "cssVar": "--surface-control-hover"
       }
     ],
     "structure": [
@@ -90,16 +104,12 @@
         "cssVar": "--toggle-radius"
       },
       {
-        "path": "toggle/track-off-bg",
-        "cssVar": "--toggle-track-off-bg"
+        "path": "toggle/knob-bg-off",
+        "cssVar": "--toggle-knob-bg-off"
       },
       {
-        "path": "toggle/track-off-bg-hover",
-        "cssVar": "--toggle-track-off-bg-hover"
-      },
-      {
-        "path": "toggle/knob-bg",
-        "cssVar": "--toggle-knob-bg"
+        "path": "toggle/knob-bg-on",
+        "cssVar": "--toggle-knob-bg-on"
       }
     ]
   },

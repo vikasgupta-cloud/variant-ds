@@ -9,7 +9,6 @@ import type { InputState } from "./Input.variants";
 import { Button } from "../Button";
 import {
   ChevronIcon,
-  PlaceholderIcon,
   SearchIcon,
   StoryHeading,
   StorySection,
@@ -50,7 +49,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-/** Size grid (Input has no visual variants beyond size). */
+/** Size + composition type grid. */
 export const AllVariants: Story = {
   name: "All variants",
   parameters: { layout: "fullscreen", controls: { disable: true } },
@@ -61,7 +60,8 @@ export const AllVariants: Story = {
         description={
           <>
             Field fill uses <code className="text-text-primary">surface/field</code>{" "}
-            (context-aware). Zero component tokens.
+            (context-aware). Composition <code className="text-text-primary">type</code>{" "}
+            covers Figma field chrome. Zero component tokens.
           </>
         }
       />
@@ -75,6 +75,59 @@ export const AllVariants: Story = {
               placeholder="Placeholder"
             />
           ))}
+        </div>
+      </StorySection>
+      <StorySection title="Composition types">
+        <div className="flex max-w-lg flex-col gap-16">
+          <Input type="default" label="default" placeholder="Plain field" />
+          <Input
+            type="icon-leading"
+            label="icon-leading"
+            prefixIcon={<SearchIcon />}
+            placeholder="Search…"
+          />
+          <Input
+            type="leading-text"
+            label="leading-text"
+            leadingText="https://"
+            placeholder="example.com"
+          />
+          <Input
+            type="trailing-button"
+            label="trailing-button"
+            placeholder="Invite email"
+            trailingButton={
+              <Button size="sm" hierarchy="secondary">
+                Send
+              </Button>
+            }
+          />
+          <Input
+            type="leading-dropdown"
+            label="leading-dropdown"
+            placeholder="Amount"
+            leadingDropdown={
+              <button
+                type="button"
+                className="inline-flex items-center gap-control-gap-sm text-text-primary"
+              >
+                USD <ChevronIcon />
+              </button>
+            }
+          />
+          <Input
+            type="trailing-dropdown"
+            label="trailing-dropdown"
+            placeholder="Domain"
+            trailingDropdown={
+              <button
+                type="button"
+                className="inline-flex items-center gap-control-gap-sm text-text-primary"
+              >
+                .com <ChevronIcon />
+              </button>
+            }
+          />
         </div>
       </StorySection>
     </div>
@@ -154,16 +207,50 @@ export const States: Story = {
   ),
 };
 
-/** Content permutations: icons, clearable, helper, error, long label. */
+/** Content permutations: types, helpIcon, characterCount, icons, clearable. */
 export const Content: Story = {
   name: "Content",
   parameters: { layout: "fullscreen", controls: { disable: true } },
   render: function ContentStory() {
     const [clearableValue, setClearableValue] = useState("Clear me");
+    const [counted, setCounted] = useState("Hello");
 
     return (
       <div className="flex flex-col gap-32 p-8">
         <StoryHeading title="Input — Content" />
+
+        <StorySection title="Help icon beside label">
+          <div className="flex max-w-md flex-col gap-16">
+            <Input
+              label="Campaign name"
+              helpIcon="Shown in reports and the campaign list."
+              placeholder="Summer launch"
+            />
+            <Input
+              label="API key"
+              helpIcon
+              helperText="Rotate keys every 90 days."
+              placeholder="sk_…"
+            />
+          </div>
+        </StorySection>
+
+        <StorySection title="Character count">
+          <div className="flex max-w-md flex-col gap-16">
+            <Input
+              label="Headline"
+              value={counted}
+              onChange={(e) => setCounted(e.target.value)}
+              characterCount={20}
+              placeholder="Max 20"
+            />
+            <Input
+              label="Over limit"
+              defaultValue="This string is definitely too long"
+              characterCount={12}
+            />
+          </div>
+        </StorySection>
 
         <StorySection title="Label and helper">
           <div className="flex max-w-md flex-col gap-16">
@@ -178,32 +265,59 @@ export const Content: Story = {
               defaultValue="bad@"
               errorMessage="Enter a valid email."
             />
-            <Input
-              label="A very long label that wraps or truncates depending on layout constraints"
-              placeholder="…"
-            />
           </div>
         </StorySection>
 
-        <StorySection title="Prefix / suffix icons">
-          <div className="flex max-w-md flex-col gap-16">
+        <StorySection title="Composition types">
+          <div className="flex max-w-lg flex-col gap-16">
             <Input
-              label="Leading icon"
+              type="icon-leading"
+              label="Search"
               prefixIcon={<SearchIcon />}
               placeholder="Search…"
             />
             <Input
-              label="Trailing icon"
-              suffixIcon={<ChevronIcon />}
-              placeholder="Select…"
+              type="leading-text"
+              label="Website"
+              leadingText="https://"
+              placeholder="example.com"
             />
             <Input
-              label="Both icons"
-              prefixIcon={<PlaceholderIcon />}
-              suffixIcon={<ChevronIcon />}
-              placeholder="…"
+              type="trailing-button"
+              label="Invite"
+              placeholder="name@company.com"
+              trailingButton={
+                <Button size="sm" hierarchy="secondary">
+                  Invite
+                </Button>
+              }
             />
-            <Input label="Label only" placeholder="No icons" />
+            <Input
+              type="leading-dropdown"
+              label="Price"
+              placeholder="0.00"
+              leadingDropdown={
+                <button
+                  type="button"
+                  className="inline-flex items-center gap-control-gap-sm"
+                >
+                  USD <ChevronIcon />
+                </button>
+              }
+            />
+            <Input
+              type="trailing-dropdown"
+              label="Handle"
+              placeholder="acme"
+              trailingDropdown={
+                <button
+                  type="button"
+                  className="inline-flex items-center gap-control-gap-sm"
+                >
+                  .com <ChevronIcon />
+                </button>
+              }
+            />
           </div>
         </StorySection>
 
@@ -216,62 +330,6 @@ export const Content: Story = {
               clearable
               onClear={() => setClearableValue("")}
             />
-          </div>
-        </StorySection>
-
-        <StorySection title="Icons × sizes">
-          <div className="overflow-x-auto">
-            <table className="border-collapse text-left text-sm">
-              <thead>
-                <tr>
-                  <th className="p-4 text-xs font-medium text-text-tertiary">
-                    Placement
-                  </th>
-                  {sizes.map((s) => (
-                    <th
-                      key={s}
-                      className="p-4 text-xs font-medium text-text-tertiary"
-                    >
-                      {s}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {(
-                  [
-                    ["prefix", { prefixIcon: <SearchIcon /> }],
-                    ["suffix", { suffixIcon: <ChevronIcon /> }],
-                    [
-                      "both",
-                      {
-                        prefixIcon: <SearchIcon />,
-                        suffixIcon: <ChevronIcon />,
-                      },
-                    ],
-                  ] as const
-                ).map(([label, icons]) => (
-                  <tr
-                    key={label}
-                    className="border-t border-border-subtle align-top"
-                  >
-                    <td className="p-4 font-mono text-xs text-text-secondary">
-                      {label}
-                    </td>
-                    {sizes.map((size) => (
-                      <td key={size} className="min-w-40 p-4">
-                        <Input
-                          size={size}
-                          label={label}
-                          placeholder="…"
-                          {...icons}
-                        />
-                      </td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
           </div>
         </StorySection>
       </div>

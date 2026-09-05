@@ -47,6 +47,7 @@ function phaseForSpecId(id: string): ReleasePhase {
     "dropdown-menu": "Dropdown menu",
     progress: "Progress bar",
     card: "Card",
+    tooltip: "Tooltip",
   };
   const key = nameMap[id] ?? id;
   return COMPONENT_RELEASE_PHASE[key] ?? "beta";

@@ -7,6 +7,7 @@ import { forwardRef, type HTMLAttributes, type ReactNode } from "react";
 import { cn } from "../../lib/cn";
 import {
   badgeCountSize,
+  badgeCountType,
   badgeDotSize,
   badgeIconSize,
   badgeVariants,
@@ -86,12 +87,13 @@ export const Badge = forwardRef<HTMLSpanElement, BadgeProps>(function Badge(
       {children != null ? <span className="min-w-0">{children}</span> : null}
       {count != null ? (
         isCountOnly ? (
-          <span>{count}</span>
+          <span className={badgeCountType[size]}>{count}</span>
         ) : (
           <span
             className={cn(
               "inline-flex shrink-0 items-center justify-center rounded-badge-count font-semibold",
               badgeCountSize[size === "lg" ? "md" : "sm"],
+              badgeCountType[size],
             )}
           >
             {count}

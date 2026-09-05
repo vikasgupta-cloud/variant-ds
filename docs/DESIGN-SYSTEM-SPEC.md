@@ -29,7 +29,8 @@ tokens/
   role.dark.json     the colour vocabulary, dark mode
   surface.json       context levels, keyed by canvas / surface / surface-raised
   structure.json     control/*, chip/*, icon/size, focus, layout
-  component.json     genuine per-component deviations only
+  component.size.json   sizes, radii, padding, gaps (Value mode → :root)
+  component.color.json  component colour aliases (Light/Dark → [data-mode])
 ```
 
 ### Layer 0 — Primitive
@@ -53,6 +54,7 @@ ocean     100 #dee9ff · 200 #c4d7ff · 300 #8badff · 400 #6389f9 · 500 #406be
 
 berry     100 #ffe0f4 · 200 #ffc6ea · 300 #f87fd8 · 400 #e155bd · 500 #cb37a4
           600 #a72686 · 700 #84266c · 800 #661e53 · 900 #48163a
+          (reserved — no Role aliases; kept for future use)
 
 yellow    tint #f1f9c7 · accent #eeff6d · accent-hover #e5f669
           deep #727b00 · field-shade #333718
@@ -96,6 +98,7 @@ icon/secondary                neutral-600    neutral-300
 icon/tertiary                 neutral-500    neutral-400
 icon/disabled                 neutral-400    neutral-500
 icon/on-inverse               neutral-0      neutral-950
+icon/on-selected              neutral-950    neutral-950   marks on selected yellow (not selected/text)
 
 border/subtle                 neutral-200    neutral-700
 border/default                neutral-500    neutral-500
@@ -103,28 +106,30 @@ border/strong                 neutral-600    neutral-300
 border/focus                  neutral-950    neutral-50
 ```
 
-Status roles — `neutral`, `info`, `success`, `warning`, `danger`, `ai`:
+Status roles — `neutral`, `info`, `success`, `warning`, `danger`:
 
 ```
 bg/{role}/strong          600 → 500
-bg/{role}/strong-hover    700 → 600     neutral, danger, ai ONLY
-bg/{role}/strong-active   800 → 700     neutral, danger, ai ONLY
+bg/{role}/strong-hover    700 → 600     neutral, danger, success ONLY
+bg/{role}/strong-active   800 → 700     neutral, danger, success ONLY
 bg/{role}/soft            100 → 900
-text/{role}               700 → 300     used for text AND icons
-text/{role}-hover         800 → 200     danger, warning, success, info, ai, neutral
-                                        Hover state for status-coloured text and link buttons
-border/{role}             200 → 700
+bg/{role}/soft-hover      200 → 700     all six status roles
+bg/{role}/soft-active     300 → 600     all six status roles
+text/{role}               700 → 300     chromatic only (info, success, warning, danger) — used for text AND icons
+text/{role}-hover         800 → 200     chromatic only
+border/{role}             200 → 700     chromatic only — neutral uses border/subtle + text/primary / text/secondary
 ```
 
-Family mapping: neutral→neutral, info→ocean, success→green, warning→amber, danger→cherry, ai→berry.
+Family mapping: neutral→neutral, info→ocean, success→green, warning→amber, danger→cherry. Berry primitives are reserved (unreferenced).
 
-Two exceptions, both deliberate:
+Three exceptions, both deliberate:
 - `bg/warning/strong` is **amber-300 in both modes**, paired with `text/on-strong-warning` (neutral-950). White on amber failed contrast.
 - `bg/neutral/strong` is neutral-950 → neutral-50 (a full inversion, not the 600/500 pattern).
+- Neutral has **no** `text/neutral` or `border/neutral` — those duplicated `text/secondary` / `border/subtle`. Soft/strong neutral fills stay; labels use `text/primary` (titles) and `text/secondary` (body), edges use `border/subtle`.
 
-Success, info and warning get **no** hover or active variants. They aren't interactive. Do not add them.
+Warning and info stay non-interactive at the strong level (no strong-hover / strong-active). Soft-hover and soft-active apply to all six status roles.
 
-Status icons get **no** tokens of their own. They bind `text/{role}` and `text/on-strong`.
+Status icons get **no** tokens of their own. They bind `text/{role}` (or `text/primary` on neutral) and `text/on-strong`.
 
 Selected role (yellow):
 ```
@@ -190,15 +195,14 @@ layout/stack-loose     → dimension.16
 Only genuine deviations:
 ```
 dropdown/  menu-radius(sm) menu-padding-y(4) item-padding-x(12) item-padding-y(6)
-badge/     radius(full) dot-size/{sm 6, md 8} count-size/{sm 16, md 18, lg 22} count-radius(xs)
+badge/     radius(full) dot-size/{sm 6, md 8} count-size/{sm 16, md 20, lg 24} count-radius(xs)
 tag/       radius(xs)
 checkbox/  size/{sm 16, md 20, lg 24} radius(xs)
 radio/     size/{sm 16, md 20, lg 24} dot-size/{sm 8, md 10, lg 12} radius(full)
 toggle/    track-width/{sm 28, md 36, lg 44} track-height/{sm 16, md 20, lg 24}
            knob-size/{sm 12, md 16, lg 20} track-padding(2) radius(full)
-           track-off-bg(neutral-300 → neutral-500)
-           track-off-bg-hover(neutral-400 → neutral-400)
-           knob-bg(neutral-0 → neutral-900)
+           knob-bg-off(neutral-0 → neutral-900) knob-bg-on(neutral-950 both)
+           // track binds surface/control (+ control-hover); on binds selected/bg
 tab/       item-spacing(4) content-gap/{sm 4, md 6, lg 8} indicator-weight(2)
            container-radius(sm) container-padding(4) radius(xs)
 segment/   radius-outer(sm) radius-inner(none)
@@ -223,12 +227,13 @@ heading/sm    DM Sans SemiBold 18/24  0      ← was 18/28, corrected
 body/lg       DM Sans Regular 16/24  0
 body/md       DM Sans Regular 14/20  0
 body/sm       DM Sans Regular 12/18  0
+body/xs-medium DM Sans Medium 11/14  0      ← badge count sm
 numeric/lg    DM Mono Medium  20/28  0      ← tracking removed
 numeric/md    DM Mono Regular 14/20  0
 numeric/sm    DM Mono Regular 12/16  0
 ```
 
-Plus weight variants: `body/lg-medium`, `body/lg-semibold`, `body/md-medium`, `body/md-semibold`, `body/sm-medium`, `body/sm-semibold`. Full symmetry — no gaps.
+Plus weight variants: `body/xs-medium` (11/14), `body/lg-medium`, `body/lg-semibold`, `body/md-medium`, `body/md-semibold`, `body/sm-medium`, `body/sm-semibold`, `body/sm-caps`. Token paths have no `typography/` prefix — they read `display/2xl`, `body/md`, `numeric/lg` like colour primitives drop `color/`.
 
 DM Sans and DM Mono from Google Fonts. **Ergon is licensed** — set up `@font-face` pointing at `public/fonts/ergon-bold.woff2` and fall back to DM Sans if absent. Don't fail the build when it's missing.
 
@@ -246,7 +251,8 @@ DM Sans and DM Mono from Google Fonts. **Ergon is licensed** — set up `@font-f
 @import "./tokens/role.css";
 @import "./tokens/surface.css";
 @import "./tokens/structure.css";
-@import "./tokens/component.css";
+@import "./tokens/component-size.css";
+@import "./tokens/component-color.css";
 
 /* map tokens onto Tailwind utilities */
 @theme inline {
@@ -286,11 +292,11 @@ Every component must expose every combination as a Storybook story. Include an "
 ```
 Button      hierarchy: primary | secondary | tertiary | ghost | link
             color:    (allowed pairs only — invalid combinations are a TypeScript error)
-                        primary    default | destructive | ai
-                        secondary  default | destructive | warning | success | info | ai
+                        primary    default | destructive | success
+                        secondary  default | destructive | warning | success | info
                         tertiary   default | destructive
-                        ghost      default | destructive | warning | success | info | ai
-                        link       default | destructive | warning | success | info | ai
+                        ghost      default | destructive | warning | success | info
+                        link       default | destructive | warning | success | info
             size:    xs | sm | md | lg
             icon:    none | leading | trailing | only
             state:   default | hover | active | focused | disabled   ← design-review only
@@ -304,7 +310,7 @@ Dropdown    Select and Menu variants
             state:   closed | open | item-hover | item-selected | item-disabled
             plus:    grouped items, item descriptions, multi-select
 
-Badge       role:    neutral | info | success | warning | danger | ai
+Badge       role:    neutral | info | success | warning | danger
             emphasis: soft | strong
             size:    sm | md | lg
             plus:    dot, count, icon
@@ -341,7 +347,8 @@ Slider      state:   rest | hover | dragging | disabled
 Card        variant: default | raised | interactive
             plus:    with header, footer, nested card
 
-Alert       role:    info | success | warning | danger | ai
+Alert       role:    neutral | info | success | warning | danger
+                     (neutral soft → text/primary title, text/secondary body, border/subtle)
             emphasis: soft | strong
             plus:    with title, with action, dismissible
             actions: optional pair — ghost “Dismiss” + secondary primary-action,

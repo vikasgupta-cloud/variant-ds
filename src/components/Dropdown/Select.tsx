@@ -23,10 +23,12 @@ import {
 
 type SelectReviewContextValue = {
   state: DropdownState;
+  readOnly: boolean;
 };
 
 const SelectReviewContext = createContext<SelectReviewContextValue>({
   state: "default",
+  readOnly: false,
 });
 
 function useSelectReview() {
@@ -82,6 +84,10 @@ export type SelectProps = ComponentPropsWithoutRef<
 > & {
   label?: ReactNode;
   /**
+   * Read-only: value stays legible (text/primary on bg/disabled). Not the same as disabled.
+   */
+  readOnly?: boolean;
+  /**
    * Design-review affordance — forces open/item visuals for Storybook/Figma.
    * Production apps leave this at `default`.
    */
@@ -92,29 +98,32 @@ export type SelectProps = ComponentPropsWithoutRef<
 
 export function Select({
   label,
+  readOnly = false,
   state = "default",
   children,
   className,
   open,
   defaultOpen,
   onOpenChange,
+  disabled,
   ...props
 }: SelectProps) {
-  const forcedOpen = resolveOpen(state, open);
+  const forcedOpen = readOnly ? false : resolveOpen(state, open);
 
   return (
-    <SelectReviewContext.Provider value={{ state }}>
+    <SelectReviewContext.Provider value={{ state, readOnly }}>
       <div className={cn("flex w-full flex-col gap-control-label-gap", className)}>
         {label ? (
           <span className="text-sm font-medium text-text-primary">{label}</span>
         ) : null}
         <SelectPrimitive.Root
           {...props}
+          {...(disabled !== undefined ? { disabled } : {})}
           {...(forcedOpen !== undefined ? { open: forcedOpen } : {})}
           {...(forcedOpen === undefined && defaultOpen !== undefined
             ? { defaultOpen }
             : {})}
-          {...(onOpenChange && state === "default"
+          {...(onOpenChange && state === "default" && !readOnly
             ? { onOpenChange }
             : {})}
         >
@@ -129,9 +138,12 @@ export const SelectTrigger = forwardRef<
   ElementRef<typeof SelectPrimitive.Trigger>,
   ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger>
 >(function SelectTrigger({ className, children, ...props }, ref) {
+  const { readOnly } = useSelectReview();
   return (
     <SelectPrimitive.Trigger
       ref={ref}
+      data-readonly={readOnly || undefined}
+      aria-readonly={readOnly || undefined}
       className={cn(selectTriggerVariants(), className)}
       {...props}
     >
@@ -194,9 +206,10 @@ export const SelectItem = forwardRef<
   ElementRef<typeof SelectPrimitive.Item>,
   ComponentPropsWithoutRef<typeof SelectPrimitive.Item> & {
     description?: ReactNode;
+    icon?: ReactNode;
   }
 >(function SelectItem(
-  { className, children, description, disabled, ...props },
+  { className, children, description, icon, disabled, ...props },
   ref,
 ) {
   const { state } = useSelectReview();
@@ -221,6 +234,11 @@ export const SelectItem = forwardRef<
           <CheckIcon className="size-full text-icon-primary" />
         </SelectPrimitive.ItemIndicator>
       </span>
+      {icon ? (
+        <span className="inline-flex shrink-0 text-icon-secondary size-icon-size-sm" aria-hidden>
+          {icon}
+        </span>
+      ) : null}
       <div className="flex min-w-0 flex-1 flex-col gap-control-gap-sm pr-icon-size-md">
         <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
         {description ? (

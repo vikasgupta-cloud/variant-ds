@@ -147,9 +147,11 @@ export const DropdownMenuItem = forwardRef<
   ElementRef<typeof DropdownMenuPrimitive.Item>,
   ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Item> & {
     description?: ReactNode;
+    /** Optional leading icon. */
+    icon?: ReactNode;
   }
 >(function DropdownMenuItem(
-  { className, children, description, disabled, ...props },
+  { className, children, description, icon, disabled, ...props },
   ref,
 ) {
   const { state } = useMenuReview();
@@ -169,6 +171,11 @@ export const DropdownMenuItem = forwardRef<
       className={cn(dropdownItemVariants(), className)}
       {...props}
     >
+      {icon ? (
+        <span className="inline-flex shrink-0 text-icon-secondary size-icon-size-sm" aria-hidden>
+          {icon}
+        </span>
+      ) : null}
       <div className="flex min-w-0 flex-1 flex-col gap-control-gap-sm">
         <span>{children}</span>
         {description ? (
@@ -184,9 +191,10 @@ export const DropdownMenuCheckboxItem = forwardRef<
   ElementRef<typeof DropdownMenuPrimitive.CheckboxItem>,
   ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.CheckboxItem> & {
     description?: ReactNode;
+    icon?: ReactNode;
   }
 >(function DropdownMenuCheckboxItem(
-  { className, children, description, checked, disabled, ...props },
+  { className, children, description, icon, checked, disabled, ...props },
   ref,
 ) {
   const { state } = useMenuReview();
@@ -214,6 +222,11 @@ export const DropdownMenuCheckboxItem = forwardRef<
           <CheckIcon className="size-full text-icon-primary" />
         </DropdownMenuPrimitive.ItemIndicator>
       </span>
+      {icon ? (
+        <span className="inline-flex shrink-0 text-icon-secondary size-icon-size-sm" aria-hidden>
+          {icon}
+        </span>
+      ) : null}
       <div className="flex min-w-0 flex-1 flex-col gap-control-gap-sm">
         <span>{children}</span>
         {description ? (

@@ -1,6 +1,6 @@
 /**
- * Toggle variant map — track/knob component tokens + Role fills.
- * On = bg/neutral/strong (same decision as Checkbox). Off = toggle-track-off-bg.
+ * Toggle variant map — track binds Surface + selected; knob binds component colour tokens.
+ * On: selected/bg (+ hover selected/bg-hover). Off: surface/control (+ hover control-hover).
  */
 import { cva, type VariantProps } from "class-variance-authority";
 
@@ -22,21 +22,24 @@ const focusRing = [
 
 export const toggleTrackVariants = cva(
   [
-    "shrink-0 appearance-none",
+    "group shrink-0 appearance-none",
     "inline-flex items-center",
     "rounded-toggle p-toggle-track-padding",
-    "bg-toggle-track-off-bg",
+    "bg-surface-control",
     "transition-colors motion-reduce:transition-none",
     "outline-none",
     focusRing,
-    "hover:bg-toggle-track-off-bg-hover",
-    "data-[state=checked]:bg-bg-neutral-strong data-[state=checked]:hover:bg-bg-neutral-strong",
+    "hover:bg-surface-control-hover",
+    "data-[state=checked]:bg-selected-bg data-[state=checked]:hover:bg-selected-bg-hover",
     "data-[state=unchecked]:justify-start data-[state=checked]:justify-end",
     "data-[state=focused]:justify-start",
     "disabled:cursor-not-allowed disabled:opacity-50",
     "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
     "data-[state=disabled]:cursor-not-allowed data-[state=disabled]:opacity-50",
     "data-[state=disabled]:bg-bg-disabled",
+    // Read-only: track on bg/disabled; knob position still shows on/off (legible, not faded).
+    "data-[readonly]:cursor-default data-[readonly]:pointer-events-none data-[readonly]:opacity-100",
+    "data-[readonly]:bg-bg-disabled data-[readonly]:data-[state=checked]:bg-bg-disabled data-[readonly]:hover:bg-bg-disabled",
   ].join(" "),
   {
     variants: {

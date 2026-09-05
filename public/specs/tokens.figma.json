@@ -31,15 +31,6 @@
       }
     },
     {
-      "name": "amber/400",
-      "cssVar": "--amber-400",
-      "resolvedType": "COLOR",
-      "description": "Warning mid. Contrast: verify before text use.",
-      "valuesByMode": {
-        "default": "#c78321"
-      }
-    },
-    {
       "name": "amber/500",
       "cssVar": "--amber-500",
       "resolvedType": "COLOR",
@@ -67,15 +58,6 @@
       }
     },
     {
-      "name": "amber/800",
-      "cssVar": "--amber-800",
-      "resolvedType": "COLOR",
-      "description": "Warning deep dark. Contrast: with light text.",
-      "valuesByMode": {
-        "default": "#563400"
-      }
-    },
-    {
       "name": "amber/900",
       "cssVar": "--amber-900",
       "resolvedType": "COLOR",
@@ -88,7 +70,7 @@
       "name": "berry/100",
       "cssVar": "--berry-100",
       "resolvedType": "COLOR",
-      "description": "AI soft fill (light). Contrast: pair with text/ai (≥4.5:1).",
+      "description": "Reserved berry/100 primitive (#ffe0f4). Unreferenced — kept for a future role; do not bind from components.",
       "valuesByMode": {
         "default": "#ffe0f4"
       }
@@ -97,7 +79,7 @@
       "name": "berry/200",
       "cssVar": "--berry-200",
       "resolvedType": "COLOR",
-      "description": "AI border (light). Contrast: non-text ≥3:1.",
+      "description": "Reserved berry/200 primitive (#ffc6ea). Unreferenced — kept for a future role; do not bind from components.",
       "valuesByMode": {
         "default": "#ffc6ea"
       }
@@ -106,7 +88,7 @@
       "name": "berry/300",
       "cssVar": "--berry-300",
       "resolvedType": "COLOR",
-      "description": "AI mid. Contrast: large text/icons unless verified.",
+      "description": "Reserved berry/300 primitive (#f87fd8). Unreferenced — kept for a future role; do not bind from components.",
       "valuesByMode": {
         "default": "#f87fd8"
       }
@@ -115,7 +97,7 @@
       "name": "berry/400",
       "cssVar": "--berry-400",
       "resolvedType": "COLOR",
-      "description": "AI bright. Contrast: verify ≥4.5:1 before text use.",
+      "description": "Reserved berry/400 primitive (#e155bd). Unreferenced — kept for a future role; do not bind from components.",
       "valuesByMode": {
         "default": "#e155bd"
       }
@@ -124,7 +106,7 @@
       "name": "berry/500",
       "cssVar": "--berry-500",
       "resolvedType": "COLOR",
-      "description": "AI strong (dark). Contrast: with text/on-strong (≥4.5:1).",
+      "description": "Reserved berry/500 primitive (#cb37a4). Unreferenced — kept for a future role; do not bind from components.",
       "valuesByMode": {
         "default": "#cb37a4"
       }
@@ -133,7 +115,7 @@
       "name": "berry/600",
       "cssVar": "--berry-600",
       "resolvedType": "COLOR",
-      "description": "AI strong (light). Contrast: with text/on-strong (≥4.5:1).",
+      "description": "Reserved berry/600 primitive (#a72686). Unreferenced — kept for a future role; do not bind from components.",
       "valuesByMode": {
         "default": "#a72686"
       }
@@ -142,7 +124,7 @@
       "name": "berry/700",
       "cssVar": "--berry-700",
       "resolvedType": "COLOR",
-      "description": "AI text (light) / strong-hover. Contrast: ≥4.5:1 on soft AI.",
+      "description": "Reserved berry/700 primitive (#84266c). Unreferenced — kept for a future role; do not bind from components.",
       "valuesByMode": {
         "default": "#84266c"
       }
@@ -151,7 +133,7 @@
       "name": "berry/800",
       "cssVar": "--berry-800",
       "resolvedType": "COLOR",
-      "description": "AI strong-active (light). Contrast: with text/on-strong.",
+      "description": "Reserved berry/800 primitive (#661e53). Unreferenced — kept for a future role; do not bind from components.",
       "valuesByMode": {
         "default": "#661e53"
       }
@@ -160,9 +142,174 @@
       "name": "berry/900",
       "cssVar": "--berry-900",
       "resolvedType": "COLOR",
-      "description": "AI soft fill (dark). Contrast: pair with text/ai (≥4.5:1).",
+      "description": "Reserved berry/900 primitive (#48163a). Unreferenced — kept for a future role; do not bind from components.",
       "valuesByMode": {
         "default": "#48163a"
+      }
+    },
+    {
+      "name": "body/lg",
+      "cssVar": "--body-lg",
+      "resolvedType": "STRING",
+      "description": "Body lg — DM Sans Regular 16/24.",
+      "valuesByMode": {
+        "default": {
+          "fontFamily": "\"DM Sans\", sans-serif",
+          "fontSize": "16px",
+          "fontWeight": 400,
+          "lineHeight": "24px",
+          "letterSpacing": "0"
+        }
+      }
+    },
+    {
+      "name": "body/lg-medium",
+      "cssVar": "--body-lg-medium",
+      "resolvedType": "STRING",
+      "description": "Body lg medium — DM Sans Medium 16/24.",
+      "valuesByMode": {
+        "default": {
+          "fontFamily": "\"DM Sans\", sans-serif",
+          "fontSize": "16px",
+          "fontWeight": 500,
+          "lineHeight": "24px",
+          "letterSpacing": "0"
+        }
+      }
+    },
+    {
+      "name": "body/lg-semibold",
+      "cssVar": "--body-lg-semibold",
+      "resolvedType": "STRING",
+      "description": "Body lg semibold — DM Sans SemiBold 16/24.",
+      "valuesByMode": {
+        "default": {
+          "fontFamily": "\"DM Sans\", sans-serif",
+          "fontSize": "16px",
+          "fontWeight": 600,
+          "lineHeight": "24px",
+          "letterSpacing": "0"
+        }
+      }
+    },
+    {
+      "name": "body/md",
+      "cssVar": "--body-md",
+      "resolvedType": "STRING",
+      "description": "Body md — DM Sans Regular 14/20.",
+      "valuesByMode": {
+        "default": {
+          "fontFamily": "\"DM Sans\", sans-serif",
+          "fontSize": "14px",
+          "fontWeight": 400,
+          "lineHeight": "20px",
+          "letterSpacing": "0"
+        }
+      }
+    },
+    {
+      "name": "body/md-medium",
+      "cssVar": "--body-md-medium",
+      "resolvedType": "STRING",
+      "description": "Body md medium — DM Sans Medium 14/20.",
+      "valuesByMode": {
+        "default": {
+          "fontFamily": "\"DM Sans\", sans-serif",
+          "fontSize": "14px",
+          "fontWeight": 500,
+          "lineHeight": "20px",
+          "letterSpacing": "0"
+        }
+      }
+    },
+    {
+      "name": "body/md-semibold",
+      "cssVar": "--body-md-semibold",
+      "resolvedType": "STRING",
+      "description": "Body md semibold — DM Sans SemiBold 14/20.",
+      "valuesByMode": {
+        "default": {
+          "fontFamily": "\"DM Sans\", sans-serif",
+          "fontSize": "14px",
+          "fontWeight": 600,
+          "lineHeight": "20px",
+          "letterSpacing": "0"
+        }
+      }
+    },
+    {
+      "name": "body/sm",
+      "cssVar": "--body-sm",
+      "resolvedType": "STRING",
+      "description": "Body sm — DM Sans Regular 12/18.",
+      "valuesByMode": {
+        "default": {
+          "fontFamily": "\"DM Sans\", sans-serif",
+          "fontSize": "12px",
+          "fontWeight": 400,
+          "lineHeight": "18px",
+          "letterSpacing": "0"
+        }
+      }
+    },
+    {
+      "name": "body/sm-caps",
+      "cssVar": "--body-sm-caps",
+      "resolvedType": "STRING",
+      "description": "Body sm caps — DM Sans Medium 12/18, tracking 0.06em, uppercase. Product eyebrow / overline labels (settings sections, docs headers, card kicker).",
+      "valuesByMode": {
+        "default": {
+          "fontFamily": "\"DM Sans\", sans-serif",
+          "fontSize": "12px",
+          "fontWeight": 500,
+          "lineHeight": "18px",
+          "letterSpacing": "0.06em"
+        }
+      }
+    },
+    {
+      "name": "body/sm-medium",
+      "cssVar": "--body-sm-medium",
+      "resolvedType": "STRING",
+      "description": "Body sm medium — DM Sans Medium 12/18.",
+      "valuesByMode": {
+        "default": {
+          "fontFamily": "\"DM Sans\", sans-serif",
+          "fontSize": "12px",
+          "fontWeight": 500,
+          "lineHeight": "18px",
+          "letterSpacing": "0"
+        }
+      }
+    },
+    {
+      "name": "body/sm-semibold",
+      "cssVar": "--body-sm-semibold",
+      "resolvedType": "STRING",
+      "description": "Body sm semibold — DM Sans SemiBold 12/18.",
+      "valuesByMode": {
+        "default": {
+          "fontFamily": "\"DM Sans\", sans-serif",
+          "fontSize": "12px",
+          "fontWeight": 600,
+          "lineHeight": "18px",
+          "letterSpacing": "0"
+        }
+      }
+    },
+    {
+      "name": "body/xs-medium",
+      "cssVar": "--body-xs-medium",
+      "resolvedType": "STRING",
+      "description": "Body xs medium — DM Sans Medium 11/14. Badge count sm and compact numeric labels.",
+      "valuesByMode": {
+        "default": {
+          "fontFamily": "\"DM Sans\", sans-serif",
+          "fontSize": "11px",
+          "fontWeight": 500,
+          "lineHeight": "14px",
+          "letterSpacing": "0"
+        }
       }
     },
     {
@@ -226,15 +373,6 @@
       "description": "Danger mid. Contrast: large text/icons only unless verified.",
       "valuesByMode": {
         "default": "#fb937d"
-      }
-    },
-    {
-      "name": "cherry/400",
-      "cssVar": "--cherry-400",
-      "resolvedType": "COLOR",
-      "description": "Danger bright. Contrast: verify ≥4.5:1 before text use.",
-      "valuesByMode": {
-        "default": "#f4603f"
       }
     },
     {
@@ -454,6 +592,51 @@
       }
     },
     {
+      "name": "display/2xl",
+      "cssVar": "--display-2xl",
+      "resolvedType": "STRING",
+      "description": "Display 2xl — Ergon Bold 60/68, tracking -2%. Falls back to DM Sans when Ergon is unavailable.",
+      "valuesByMode": {
+        "default": {
+          "fontFamily": "Ergon, \"DM Sans\", sans-serif",
+          "fontSize": "60px",
+          "fontWeight": 700,
+          "lineHeight": "68px",
+          "letterSpacing": "-0.02em"
+        }
+      }
+    },
+    {
+      "name": "display/lg",
+      "cssVar": "--display-lg",
+      "resolvedType": "STRING",
+      "description": "Display lg — Ergon Bold 36/44, tracking -2%. Falls back to DM Sans when Ergon is unavailable.",
+      "valuesByMode": {
+        "default": {
+          "fontFamily": "Ergon, \"DM Sans\", sans-serif",
+          "fontSize": "36px",
+          "fontWeight": 700,
+          "lineHeight": "44px",
+          "letterSpacing": "-0.02em"
+        }
+      }
+    },
+    {
+      "name": "display/xl",
+      "cssVar": "--display-xl",
+      "resolvedType": "STRING",
+      "description": "Display xl — Ergon Bold 48/56, tracking -2%. Falls back to DM Sans when Ergon is unavailable.",
+      "valuesByMode": {
+        "default": {
+          "fontFamily": "Ergon, \"DM Sans\", sans-serif",
+          "fontSize": "48px",
+          "fontWeight": 700,
+          "lineHeight": "56px",
+          "letterSpacing": "-0.02em"
+        }
+      }
+    },
+    {
       "name": "duration/fast",
       "cssVar": "--duration-fast",
       "resolvedType": "STRING",
@@ -522,15 +705,6 @@
       }
     },
     {
-      "name": "green/400",
-      "cssVar": "--green-400",
-      "resolvedType": "COLOR",
-      "description": "Success bright. Contrast: verify ≥4.5:1 before text use.",
-      "valuesByMode": {
-        "default": "#03a673"
-      }
-    },
-    {
       "name": "green/500",
       "cssVar": "--green-500",
       "resolvedType": "COLOR",
@@ -573,6 +747,66 @@
       "description": "Success soft fill (dark). Contrast: pair with text/success (≥4.5:1).",
       "valuesByMode": {
         "default": "#00301e"
+      }
+    },
+    {
+      "name": "heading/lg",
+      "cssVar": "--heading-lg",
+      "resolvedType": "STRING",
+      "description": "Heading lg — Ergon Bold 24/32, tracking -1%. Falls back to DM Sans when Ergon is unavailable.",
+      "valuesByMode": {
+        "default": {
+          "fontFamily": "Ergon, \"DM Sans\", sans-serif",
+          "fontSize": "24px",
+          "fontWeight": 700,
+          "lineHeight": "32px",
+          "letterSpacing": "-0.01em"
+        }
+      }
+    },
+    {
+      "name": "heading/md",
+      "cssVar": "--heading-md",
+      "resolvedType": "STRING",
+      "description": "Heading md — DM Sans Bold 20/28, tracking -1%.",
+      "valuesByMode": {
+        "default": {
+          "fontFamily": "\"DM Sans\", sans-serif",
+          "fontSize": "20px",
+          "fontWeight": 700,
+          "lineHeight": "28px",
+          "letterSpacing": "-0.01em"
+        }
+      }
+    },
+    {
+      "name": "heading/sm",
+      "cssVar": "--heading-sm",
+      "resolvedType": "STRING",
+      "description": "Heading sm — DM Sans SemiBold 18/24.",
+      "valuesByMode": {
+        "default": {
+          "fontFamily": "\"DM Sans\", sans-serif",
+          "fontSize": "18px",
+          "fontWeight": 600,
+          "lineHeight": "24px",
+          "letterSpacing": "0"
+        }
+      }
+    },
+    {
+      "name": "heading/xl",
+      "cssVar": "--heading-xl",
+      "resolvedType": "STRING",
+      "description": "Heading xl — Ergon Bold 30/40, tracking -1%. Falls back to DM Sans when Ergon is unavailable.",
+      "valuesByMode": {
+        "default": {
+          "fontFamily": "Ergon, \"DM Sans\", sans-serif",
+          "fontSize": "30px",
+          "fontWeight": 700,
+          "lineHeight": "40px",
+          "letterSpacing": "-0.01em"
+        }
       }
     },
     {
@@ -684,6 +918,51 @@
       }
     },
     {
+      "name": "numeric/lg",
+      "cssVar": "--numeric-lg",
+      "resolvedType": "STRING",
+      "description": "Numeric lg — DM Mono Medium 20/28.",
+      "valuesByMode": {
+        "default": {
+          "fontFamily": "\"DM Mono\", ui-monospace, monospace",
+          "fontSize": "20px",
+          "fontWeight": 500,
+          "lineHeight": "28px",
+          "letterSpacing": "0"
+        }
+      }
+    },
+    {
+      "name": "numeric/md",
+      "cssVar": "--numeric-md",
+      "resolvedType": "STRING",
+      "description": "Numeric md — DM Mono Regular 14/20.",
+      "valuesByMode": {
+        "default": {
+          "fontFamily": "\"DM Mono\", ui-monospace, monospace",
+          "fontSize": "14px",
+          "fontWeight": 400,
+          "lineHeight": "20px",
+          "letterSpacing": "0"
+        }
+      }
+    },
+    {
+      "name": "numeric/sm",
+      "cssVar": "--numeric-sm",
+      "resolvedType": "STRING",
+      "description": "Numeric sm — DM Mono Regular 12/16.",
+      "valuesByMode": {
+        "default": {
+          "fontFamily": "\"DM Mono\", ui-monospace, monospace",
+          "fontSize": "12px",
+          "fontWeight": 400,
+          "lineHeight": "16px",
+          "letterSpacing": "0"
+        }
+      }
+    },
+    {
       "name": "ocean/100",
       "cssVar": "--ocean-100",
       "resolvedType": "COLOR",
@@ -711,15 +990,6 @@
       }
     },
     {
-      "name": "ocean/400",
-      "cssVar": "--ocean-400",
-      "resolvedType": "COLOR",
-      "description": "Info bright. Contrast: verify before small text.",
-      "valuesByMode": {
-        "default": "#6389f9"
-      }
-    },
-    {
       "name": "ocean/500",
       "cssVar": "--ocean-500",
       "resolvedType": "COLOR",
@@ -744,15 +1014,6 @@
       "description": "Info text (light) / link-hover. Contrast: ≥4.5:1.",
       "valuesByMode": {
         "default": "#2846a0"
-      }
-    },
-    {
-      "name": "ocean/800",
-      "cssVar": "--ocean-800",
-      "resolvedType": "COLOR",
-      "description": "Info deep. Contrast: with light text.",
-      "valuesByMode": {
-        "default": "#1d3578"
       }
     },
     {
@@ -909,46 +1170,6 @@
       }
     },
     {
-      "name": "bg/ai/soft",
-      "cssVar": "--bg-ai-soft",
-      "resolvedType": "COLOR",
-      "description": "Soft ai fill (light). Contrast: with text/ai (≥4.5:1).",
-      "valuesByMode": {
-        "light": "{berry.100}",
-        "dark": "{berry.900}"
-      }
-    },
-    {
-      "name": "bg/ai/strong",
-      "cssVar": "--bg-ai-strong",
-      "resolvedType": "COLOR",
-      "description": "Strong ai fill (light). Contrast: use text/on-strong (≥4.5:1).",
-      "valuesByMode": {
-        "light": "{berry.600}",
-        "dark": "{berry.500}"
-      }
-    },
-    {
-      "name": "bg/ai/strong-active",
-      "cssVar": "--bg-ai-strong-active",
-      "resolvedType": "COLOR",
-      "description": "Strong ai active (light). Contrast: with text/on-strong (≥4.5:1).",
-      "valuesByMode": {
-        "light": "{berry.800}",
-        "dark": "{berry.700}"
-      }
-    },
-    {
-      "name": "bg/ai/strong-hover",
-      "cssVar": "--bg-ai-strong-hover",
-      "resolvedType": "COLOR",
-      "description": "Strong ai hover (light). Contrast: with text/on-strong (≥4.5:1).",
-      "valuesByMode": {
-        "light": "{berry.700}",
-        "dark": "{berry.600}"
-      }
-    },
-    {
       "name": "bg/canvas",
       "cssVar": "--bg-canvas",
       "resolvedType": "COLOR",
@@ -966,6 +1187,26 @@
       "valuesByMode": {
         "light": "{cherry.100}",
         "dark": "{cherry.900}"
+      }
+    },
+    {
+      "name": "bg/danger/soft-active",
+      "cssVar": "--bg-danger-soft-active",
+      "resolvedType": "COLOR",
+      "description": "Soft danger active (light). Contrast: with text/danger (≥4.5:1).",
+      "valuesByMode": {
+        "light": "{cherry.300}",
+        "dark": "{cherry.600}"
+      }
+    },
+    {
+      "name": "bg/danger/soft-hover",
+      "cssVar": "--bg-danger-soft-hover",
+      "resolvedType": "COLOR",
+      "description": "Soft danger hover (light). Contrast: with text/danger (≥4.5:1).",
+      "valuesByMode": {
+        "light": "{cherry.200}",
+        "dark": "{cherry.700}"
       }
     },
     {
@@ -1019,6 +1260,26 @@
       }
     },
     {
+      "name": "bg/info/soft-active",
+      "cssVar": "--bg-info-soft-active",
+      "resolvedType": "COLOR",
+      "description": "Soft info active (light). Contrast: with text/info (≥4.5:1).",
+      "valuesByMode": {
+        "light": "{ocean.300}",
+        "dark": "{ocean.600}"
+      }
+    },
+    {
+      "name": "bg/info/soft-hover",
+      "cssVar": "--bg-info-soft-hover",
+      "resolvedType": "COLOR",
+      "description": "Soft info hover (light). Contrast: with text/info (≥4.5:1).",
+      "valuesByMode": {
+        "light": "{ocean.200}",
+        "dark": "{ocean.700}"
+      }
+    },
+    {
       "name": "bg/info/strong",
       "cssVar": "--bg-info-strong",
       "resolvedType": "COLOR",
@@ -1032,10 +1293,30 @@
       "name": "bg/neutral/soft",
       "cssVar": "--bg-neutral-soft",
       "resolvedType": "COLOR",
-      "description": "Soft neutral fill (light). Contrast: with text/neutral (≥4.5:1).",
+      "description": "Soft neutral fill (light). Contrast: with text/primary (≥4.5:1).",
       "valuesByMode": {
         "light": "{neutral.100}",
         "dark": "{neutral.800}"
+      }
+    },
+    {
+      "name": "bg/neutral/soft-active",
+      "cssVar": "--bg-neutral-soft-active",
+      "resolvedType": "COLOR",
+      "description": "Soft neutral active (light). Contrast: with text/primary (≥4.5:1).",
+      "valuesByMode": {
+        "light": "{neutral.300}",
+        "dark": "{neutral.600}"
+      }
+    },
+    {
+      "name": "bg/neutral/soft-hover",
+      "cssVar": "--bg-neutral-soft-hover",
+      "resolvedType": "COLOR",
+      "description": "Soft neutral hover (light). Contrast: with text/primary (≥4.5:1).",
+      "valuesByMode": {
+        "light": "{neutral.200}",
+        "dark": "{neutral.700}"
       }
     },
     {
@@ -1079,6 +1360,26 @@
       }
     },
     {
+      "name": "bg/success/soft-active",
+      "cssVar": "--bg-success-soft-active",
+      "resolvedType": "COLOR",
+      "description": "Soft success active (light). Contrast: with text/success (≥4.5:1).",
+      "valuesByMode": {
+        "light": "{green.300}",
+        "dark": "{green.600}"
+      }
+    },
+    {
+      "name": "bg/success/soft-hover",
+      "cssVar": "--bg-success-soft-hover",
+      "resolvedType": "COLOR",
+      "description": "Soft success hover (light). Contrast: with text/success (≥4.5:1).",
+      "valuesByMode": {
+        "light": "{green.200}",
+        "dark": "{green.700}"
+      }
+    },
+    {
       "name": "bg/success/strong",
       "cssVar": "--bg-success-strong",
       "resolvedType": "COLOR",
@@ -1086,6 +1387,26 @@
       "valuesByMode": {
         "light": "{green.600}",
         "dark": "{green.500}"
+      }
+    },
+    {
+      "name": "bg/success/strong-active",
+      "cssVar": "--bg-success-strong-active",
+      "resolvedType": "COLOR",
+      "description": "Strong success active (light). Contrast: with text/on-strong (≥4.5:1).",
+      "valuesByMode": {
+        "light": "{green.800}",
+        "dark": "{green.700}"
+      }
+    },
+    {
+      "name": "bg/success/strong-hover",
+      "cssVar": "--bg-success-strong-hover",
+      "resolvedType": "COLOR",
+      "description": "Strong success hover (light). Contrast: with text/on-strong (≥4.5:1).",
+      "valuesByMode": {
+        "light": "{green.700}",
+        "dark": "{green.600}"
       }
     },
     {
@@ -1129,6 +1450,26 @@
       }
     },
     {
+      "name": "bg/warning/soft-active",
+      "cssVar": "--bg-warning-soft-active",
+      "resolvedType": "COLOR",
+      "description": "Soft warning active (light). Contrast: with text/warning (≥4.5:1).",
+      "valuesByMode": {
+        "light": "{amber.300}",
+        "dark": "{amber.600}"
+      }
+    },
+    {
+      "name": "bg/warning/soft-hover",
+      "cssVar": "--bg-warning-soft-hover",
+      "resolvedType": "COLOR",
+      "description": "Soft warning hover (light). Contrast: with text/warning (≥4.5:1).",
+      "valuesByMode": {
+        "light": "{amber.200}",
+        "dark": "{amber.700}"
+      }
+    },
+    {
       "name": "bg/warning/strong",
       "cssVar": "--bg-warning-strong",
       "resolvedType": "COLOR",
@@ -1136,16 +1477,6 @@
       "valuesByMode": {
         "light": "{amber.300}",
         "dark": "{amber.300}"
-      }
-    },
-    {
-      "name": "border/ai",
-      "cssVar": "--border-ai",
-      "resolvedType": "COLOR",
-      "description": "ai border (light). Contrast: ≥3:1 non-text.",
-      "valuesByMode": {
-        "light": "{berry.200}",
-        "dark": "{berry.700}"
       }
     },
     {
@@ -1174,7 +1505,7 @@
       "resolvedType": "COLOR",
       "description": "Focus ring color (light). Contrast: ≥3:1 against background.",
       "valuesByMode": {
-        "light": "{neutral.950}",
+        "light": "{neutral.900}",
         "dark": "{neutral.50}"
       }
     },
@@ -1189,23 +1520,13 @@
       }
     },
     {
-      "name": "border/neutral",
-      "cssVar": "--border-neutral",
-      "resolvedType": "COLOR",
-      "description": "neutral border (light). Contrast: ≥3:1 non-text.",
-      "valuesByMode": {
-        "light": "{neutral.200}",
-        "dark": "{neutral.700}"
-      }
-    },
-    {
       "name": "border/strong",
       "cssVar": "--border-strong",
       "resolvedType": "COLOR",
       "description": "Strong border (light). Contrast: ≥3:1.",
       "valuesByMode": {
-        "light": "{neutral.600}",
-        "dark": "{neutral.300}"
+        "light": "{neutral.500}",
+        "dark": "{neutral.400}"
       }
     },
     {
@@ -1255,6 +1576,16 @@
       "description": "Icon on inverse (light). Contrast: ≥3:1 / ≥4.5:1 if conveying meaning.",
       "valuesByMode": {
         "light": "{neutral.0}",
+        "dark": "{neutral.950}"
+      }
+    },
+    {
+      "name": "icon/on-selected",
+      "cssVar": "--icon-on-selected",
+      "resolvedType": "COLOR",
+      "description": "Foreground marks on the selected yellow fill — checkbox ticks, radio dots, icons on selected chrome. Distinct from selected/text, which is label text.",
+      "valuesByMode": {
+        "light": "{neutral.950}",
         "dark": "{neutral.950}"
       }
     },
@@ -1349,26 +1680,6 @@
       }
     },
     {
-      "name": "text/ai",
-      "cssVar": "--text-ai",
-      "resolvedType": "COLOR",
-      "description": "ai text and status icons (light). Contrast: ≥4.5:1 on soft ai / canvas.",
-      "valuesByMode": {
-        "light": "{berry.700}",
-        "dark": "{berry.300}"
-      }
-    },
-    {
-      "name": "text/ai-hover",
-      "cssVar": "--text-ai-hover",
-      "resolvedType": "COLOR",
-      "description": "Hover state for status-coloured text and link buttons. Contrast: ≥4.5:1 on canvas/surface.",
-      "valuesByMode": {
-        "light": "{berry.800}",
-        "dark": "{berry.200}"
-      }
-    },
-    {
       "name": "text/danger",
       "cssVar": "--text-danger",
       "resolvedType": "COLOR",
@@ -1414,7 +1725,7 @@
       "resolvedType": "COLOR",
       "description": "Hover state for status-coloured text and link buttons. Contrast: ≥4.5:1 on canvas/surface.",
       "valuesByMode": {
-        "light": "{ocean.800}",
+        "light": "{ocean.900}",
         "dark": "{ocean.200}"
       }
     },
@@ -1436,26 +1747,6 @@
       "valuesByMode": {
         "light": "{ocean.700}",
         "dark": "{ocean.200}"
-      }
-    },
-    {
-      "name": "text/neutral",
-      "cssVar": "--text-neutral",
-      "resolvedType": "COLOR",
-      "description": "neutral text and status icons (light). Contrast: ≥4.5:1 on soft neutral / canvas.",
-      "valuesByMode": {
-        "light": "{neutral.700}",
-        "dark": "{neutral.300}"
-      }
-    },
-    {
-      "name": "text/neutral-hover",
-      "cssVar": "--text-neutral-hover",
-      "resolvedType": "COLOR",
-      "description": "Hover state for status-coloured text and link buttons. Contrast: ≥4.5:1 on canvas/surface.",
-      "valuesByMode": {
-        "light": "{neutral.800}",
-        "dark": "{neutral.200}"
       }
     },
     {
@@ -1554,7 +1845,7 @@
       "resolvedType": "COLOR",
       "description": "Hover state for status-coloured text and link buttons. Contrast: ≥4.5:1 on canvas/surface.",
       "valuesByMode": {
-        "light": "{amber.800}",
+        "light": "{amber.900}",
         "dark": "{amber.200}"
       }
     },
@@ -1570,6 +1861,13 @@
       "cssVar": "--surface-control",
       "resolvedType": "COLOR",
       "description": "surface/control on canvas (light). Filled shapes that convey state and need ≥3:1 — toggle off-track, progress track, slider track. Separate from surface/border (lines) so fills can diverge later.",
+      "valuesByMode": {}
+    },
+    {
+      "name": "surface/control-hover",
+      "cssVar": "--surface-control-hover",
+      "resolvedType": "COLOR",
+      "description": "surface/control-hover on canvas (light). One step from surface/control for toggle off-track hover. Contrast: ≥3:1 against context bg.",
       "valuesByMode": {}
     },
     {
@@ -1932,10 +2230,28 @@
       }
     },
     {
+      "name": "layout/measure-page",
+      "cssVar": "--layout-measure-page",
+      "resolvedType": "FLOAT",
+      "description": "Product reading width for full pages (settings, docs, long forms). Not on the dimension/* scale.",
+      "valuesByMode": {
+        "default": "1120px"
+      }
+    },
+    {
+      "name": "layout/measure-prose",
+      "cssVar": "--layout-measure-prose",
+      "resolvedType": "FLOAT",
+      "description": "Product prose measure (~72 characters) for body copy in pages and modal bodies. Not on the dimension/* scale.",
+      "valuesByMode": {
+        "default": "72ch"
+      }
+    },
+    {
       "name": "layout/section",
       "cssVar": "--layout-section",
       "resolvedType": "FLOAT",
-      "description": "Section spacing.",
+      "description": "Section spacing / subsection gap.",
       "valuesByMode": {
         "default": "{dimension.32}"
       }
@@ -1968,10 +2284,19 @@
       }
     },
     {
+      "name": "shadow/md",
+      "cssVar": "--shadow-md",
+      "resolvedType": "FLOAT",
+      "description": "Medium elevation for raised cards and floating panels. Mode-locked. In dark mode prefer lighter surfaces (surface-raised) over heavier shadows.",
+      "valuesByMode": {
+        "default": "0 4px 12px 0 color-mix(in srgb, var(--neutral-950) calc(100% * var(--opacity-16)), transparent)"
+      }
+    },
+    {
       "name": "shadow/sm",
       "cssVar": "--shadow-sm",
       "resolvedType": "FLOAT",
-      "description": "Small elevation shadow for cards and light raised surfaces. Mode-locked; pairs with border/subtle on Card so fill + shadow carry the boundary.",
+      "description": "Small elevation shadow for cards and light raised surfaces. Mode-locked; pairs with border/subtle on Card so fill + shadow carry the boundary. In dark mode prefer lighter surfaces over heavier shadows.",
       "valuesByMode": {
         "default": "0 1px 2px 0 color-mix(in srgb, var(--neutral-950) calc(100% * var(--opacity-8)), transparent)"
       }
@@ -2043,18 +2368,18 @@
       "name": "badge/count-size/lg",
       "cssVar": "--badge-count-size-lg",
       "resolvedType": "FLOAT",
-      "description": "Badge count size lg — 22px component deviation.",
+      "description": "Badge count size lg.",
       "valuesByMode": {
-        "default": "22px"
+        "default": "{dimension.24}"
       }
     },
     {
       "name": "badge/count-size/md",
       "cssVar": "--badge-count-size-md",
       "resolvedType": "FLOAT",
-      "description": "Badge count size md — 18px component deviation.",
+      "description": "Badge count size md.",
       "valuesByMode": {
-        "default": "18px"
+        "default": "{dimension.20}"
       }
     },
     {
@@ -2252,7 +2577,8 @@
       "resolvedType": "COLOR",
       "description": "Progress track fill — aliases surface/control (≥3:1 filled state chrome per context).",
       "valuesByMode": {
-        "default": "{surface.control}"
+        "light": "{surface.control}",
+        "dark": "{surface.control}"
       }
     },
     {
@@ -2351,7 +2677,8 @@
       "resolvedType": "COLOR",
       "description": "Slider thumb border — aliases role border/strong so it tracks mode.",
       "valuesByMode": {
-        "default": "{border.strong}"
+        "light": "{border.strong}",
+        "dark": "{border.strong}"
       }
     },
     {
@@ -2369,7 +2696,8 @@
       "resolvedType": "COLOR",
       "description": "Slider track fill — aliases surface/control (≥3:1 filled state chrome per context).",
       "valuesByMode": {
-        "default": "{surface.control}"
+        "light": "{surface.control}",
+        "dark": "{surface.control}"
       }
     },
     {
@@ -2454,13 +2782,23 @@
       }
     },
     {
-      "name": "toggle/knob-bg",
-      "cssVar": "--toggle-knob-bg",
+      "name": "toggle/knob-bg-off",
+      "cssVar": "--toggle-knob-bg-off",
       "resolvedType": "COLOR",
-      "description": "Toggle knob fill (light). Contrast: ≥3:1 against track.",
+      "description": "Toggle knob when off (light). Contrast: ≥3:1 against surface/control track.",
       "valuesByMode": {
         "light": "{neutral.0}",
         "dark": "{neutral.900}"
+      }
+    },
+    {
+      "name": "toggle/knob-bg-on",
+      "cssVar": "--toggle-knob-bg-on",
+      "resolvedType": "COLOR",
+      "description": "Toggle knob when on (light). Contrast: ≥4.5:1 against selected/bg yellow — white fails (1.35:1).",
+      "valuesByMode": {
+        "light": "{neutral.950}",
+        "dark": "{neutral.950}"
       }
     },
     {
@@ -2524,24 +2862,6 @@
       "description": "Toggle track height sm.",
       "valuesByMode": {
         "default": "{dimension.16}"
-      }
-    },
-    {
-      "name": "toggle/track-off-bg",
-      "cssVar": "--toggle-track-off-bg",
-      "resolvedType": "COLOR",
-      "description": "Toggle off track — aliases surface/control (≥3:1 filled state chrome per context).",
-      "valuesByMode": {
-        "default": "{surface.control}"
-      }
-    },
-    {
-      "name": "toggle/track-off-bg-hover",
-      "cssVar": "--toggle-track-off-bg-hover",
-      "resolvedType": "COLOR",
-      "description": "Toggle off track hover — surface/control family (≥3:1). Hover may stack opacity in the component.",
-      "valuesByMode": {
-        "default": "{surface.control}"
       }
     },
     {

@@ -1,6 +1,7 @@
 /**
  * Badge variant map — Role soft/strong fills. Component tokens: radius, chip padding, dot/count sizes.
- * Axes: role × emphasis × size. Neutral strong uses text/on-inverse (matches Button primary).
+ * Axes: role × emphasis × size. Neutral soft uses text/primary + border/subtle
+ * (no text/neutral or border/neutral). Neutral strong uses text/on-inverse.
  */
 import { cva, type VariantProps } from "class-variance-authority";
 
@@ -9,8 +10,7 @@ export type BadgeRole =
   | "info"
   | "success"
   | "warning"
-  | "danger"
-  | "ai";
+  | "danger";
 
 export type BadgeEmphasis = "soft" | "strong";
 export type BadgeSize = "sm" | "md" | "lg";
@@ -33,7 +33,6 @@ export const badgeVariants = cva(
         success: "",
         warning: "",
         danger: "",
-        ai: "",
       },
       emphasis: {
         soft: "",
@@ -49,7 +48,7 @@ export const badgeVariants = cva(
       {
         role: "neutral",
         emphasis: "soft",
-        class: "bg-bg-neutral-soft border-border-neutral text-text-neutral",
+        class: "bg-bg-neutral-soft border-border-subtle text-text-primary",
       },
       {
         role: "neutral",
@@ -96,16 +95,6 @@ export const badgeVariants = cva(
         emphasis: "strong",
         class: "bg-bg-danger-strong text-text-on-strong",
       },
-      {
-        role: "ai",
-        emphasis: "soft",
-        class: "bg-bg-ai-soft border-border-ai text-text-ai",
-      },
-      {
-        role: "ai",
-        emphasis: "strong",
-        class: "bg-bg-ai-strong text-text-on-strong",
-      },
     ],
     defaultVariants: {
       role: "neutral",
@@ -125,6 +114,13 @@ export const badgeCountSize = {
   sm: "size-badge-count-size-sm min-w-badge-count-size-sm",
   md: "size-badge-count-size-md min-w-badge-count-size-md",
   lg: "size-badge-count-size-lg min-w-badge-count-size-lg",
+} as const;
+
+/** Count label type — body/xs-medium · body/sm-medium · body/md-medium. */
+export const badgeCountType = {
+  sm: "type-body-xs-medium",
+  md: "type-body-sm-medium",
+  lg: "type-body-md-medium",
 } as const;
 
 export const badgeIconSize = {

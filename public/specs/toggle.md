@@ -26,11 +26,17 @@ Immediate on/off switch (Radix Switch). Prefer over Checkbox when the change app
 
 ### role
 
-- `bg/neutral/strong` → `--bg-neutral-strong`
+- `selected/bg` → `--selected-bg`
+- `selected/bg-hover` → `--selected-bg-hover`
 - `text/primary` → `--text-primary`
 - `text/secondary` → `--text-secondary`
 - `text/disabled` → `--text-disabled`
 - `border/focus` → `--border-focus`
+
+### surface
+
+- `surface/control` → `--surface-control`
+- `surface/control-hover` → `--surface-control-hover`
 
 ### structure
 
@@ -45,9 +51,8 @@ Immediate on/off switch (Radix Switch). Prefer over Checkbox when the change app
 - `toggle/knob-size` → `--toggle-knob-size`
 - `toggle/track-padding` → `--toggle-track-padding`
 - `toggle/radius` → `--toggle-radius`
-- `toggle/track-off-bg` → `--toggle-track-off-bg`
-- `toggle/track-off-bg-hover` → `--toggle-track-off-bg-hover`
-- `toggle/knob-bg` → `--toggle-knob-bg`
+- `toggle/knob-bg-off` → `--toggle-knob-bg-off`
+- `toggle/knob-bg-on` → `--toggle-knob-bg-on`
 
 ## Props
 

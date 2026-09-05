@@ -10,7 +10,7 @@ Compact status or metadata chip. Soft vs strong emphasis; optional dot, count, o
 
 ## Variant / state matrix
 
-- **role:** neutral | info | success | warning | danger | ai
+- **role:** neutral | info | success | warning | danger
 - **emphasis:** soft | strong
 - **size:** sm | md | lg
 - **state:** default | disabled
@@ -39,23 +39,20 @@ Compact status or metadata chip. Soft vs strong emphasis; optional dot, count, o
 - `bg/warning/strong` → `--bg-warning-strong`
 - `bg/danger/soft` → `--bg-danger-soft`
 - `bg/danger/strong` → `--bg-danger-strong`
-- `bg/ai/soft` → `--bg-ai-soft`
-- `bg/ai/strong` → `--bg-ai-strong`
-- `text/neutral` → `--text-neutral`
+- `text/primary` → `--text-primary`
+- `text/secondary` → `--text-secondary`
 - `text/info` → `--text-info`
 - `text/success` → `--text-success`
 - `text/warning` → `--text-warning`
 - `text/danger` → `--text-danger`
-- `text/ai` → `--text-ai`
 - `text/on-strong` → `--text-on-strong`
 - `text/on-strong-warning` → `--text-on-strong-warning`
 - `text/on-inverse` → `--text-on-inverse`
-- `border/neutral` → `--border-neutral`
+- `border/subtle` → `--border-subtle`
 - `border/info` → `--border-info`
 - `border/success` → `--border-success`
 - `border/warning` → `--border-warning`
 - `border/danger` → `--border-danger`
-- `border/ai` → `--border-ai`
 
 ### structure
 
@@ -74,7 +71,7 @@ Compact status or metadata chip. Soft vs strong emphasis; optional dot, count, o
 
 | Prop | Type | Default | Description |
 | --- | --- | --- | --- |
-| `role` | neutral \| info \| success \| warning \| danger \| ai | neutral | Status colour. |
+| `role` | neutral \| info \| success \| warning \| danger | neutral | Status colour. |
 | `emphasis` | soft \| strong | soft | Fill weight. |
 | `size` | sm \| md \| lg | md | Chip size. |
 | `dot` | boolean | false | Leading status dot. |

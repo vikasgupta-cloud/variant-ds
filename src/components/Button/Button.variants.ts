@@ -1,17 +1,17 @@
 /**
  * Button variant map — design decisions live here (spec §3).
  * Axes: hierarchy × color × size × icon. Zero component tokens.
- * Primary = bg/neutral/strong (not brand yellow). AI is a color, not a hierarchy.
+ * Primary = bg/neutral/strong (not brand yellow). Colour axis: default | destructive | warning | success | info.
  */
 import { cva, type VariantProps } from "class-variance-authority";
 
 /** Allowed color values per hierarchy — source of truth for types + Storybook. */
 export const BUTTON_COLOR_BY_HIERARCHY = {
-  primary: ["default", "destructive", "ai"] as const,
-  secondary: ["default", "destructive", "warning", "success", "info", "ai"] as const,
+  primary: ["default", "destructive", "success"] as const,
+  secondary: ["default", "destructive", "warning", "success", "info"] as const,
   tertiary: ["default", "destructive"] as const,
-  ghost: ["default", "destructive", "warning", "success", "info", "ai"] as const,
-  link: ["default", "destructive", "warning", "success", "info", "ai"] as const,
+  ghost: ["default", "destructive", "warning", "success", "info"] as const,
+  link: ["default", "destructive", "warning", "success", "info"] as const,
 } as const;
 
 export type ButtonHierarchy = keyof typeof BUTTON_COLOR_BY_HIERARCHY;
@@ -44,24 +44,20 @@ const disabledForced = [
 /** Soft fill hover/active — full static class strings so Tailwind can detect them. */
 const softHoverActive = {
   danger: [
-    "hover:bg-bg-danger-soft data-[state=hover]:bg-bg-danger-soft",
-    "active:bg-bg-danger-soft data-[state=active]:bg-bg-danger-soft",
+    "hover:bg-bg-danger-soft-hover data-[state=hover]:bg-bg-danger-soft-hover",
+    "active:bg-bg-danger-soft-active data-[state=active]:bg-bg-danger-soft-active",
   ].join(" "),
   warning: [
-    "hover:bg-bg-warning-soft data-[state=hover]:bg-bg-warning-soft",
-    "active:bg-bg-warning-soft data-[state=active]:bg-bg-warning-soft",
+    "hover:bg-bg-warning-soft-hover data-[state=hover]:bg-bg-warning-soft-hover",
+    "active:bg-bg-warning-soft-active data-[state=active]:bg-bg-warning-soft-active",
   ].join(" "),
   success: [
-    "hover:bg-bg-success-soft data-[state=hover]:bg-bg-success-soft",
-    "active:bg-bg-success-soft data-[state=active]:bg-bg-success-soft",
+    "hover:bg-bg-success-soft-hover data-[state=hover]:bg-bg-success-soft-hover",
+    "active:bg-bg-success-soft-active data-[state=active]:bg-bg-success-soft-active",
   ].join(" "),
   info: [
-    "hover:bg-bg-info-soft data-[state=hover]:bg-bg-info-soft",
-    "active:bg-bg-info-soft data-[state=active]:bg-bg-info-soft",
-  ].join(" "),
-  ai: [
-    "hover:bg-bg-ai-soft data-[state=hover]:bg-bg-ai-soft",
-    "active:bg-bg-ai-soft data-[state=active]:bg-bg-ai-soft",
+    "hover:bg-bg-info-soft-hover data-[state=hover]:bg-bg-info-soft-hover",
+    "active:bg-bg-info-soft-active data-[state=active]:bg-bg-info-soft-active",
   ].join(" "),
 } as const;
 
@@ -98,7 +94,6 @@ export const buttonVariants = cva(
         warning: "",
         success: "",
         info: "",
-        ai: "",
       },
       size: {
         xs: "gap-control-gap-xs type-body-sm-medium",
@@ -139,11 +134,11 @@ export const buttonVariants = cva(
       },
       {
         hierarchy: "primary",
-        color: "ai",
+        color: "success",
         class: [
-          "bg-bg-ai-strong text-text-on-strong",
-          "hover:bg-bg-ai-strong-hover data-[state=hover]:bg-bg-ai-strong-hover",
-          "active:bg-bg-ai-strong-active data-[state=active]:bg-bg-ai-strong-active",
+          "bg-bg-success-strong text-text-on-strong",
+          "hover:bg-bg-success-strong-hover data-[state=hover]:bg-bg-success-strong-hover",
+          "active:bg-bg-success-strong-active data-[state=active]:bg-bg-success-strong-active",
         ].join(" "),
       },
 
@@ -186,11 +181,6 @@ export const buttonVariants = cva(
         class: ["border-border-info text-text-info", softHoverActive.info].join(
           " ",
         ),
-      },
-      {
-        hierarchy: "secondary",
-        color: "ai",
-        class: ["border-border-ai text-text-ai", softHoverActive.ai].join(" "),
       },
 
       // ── tertiary ─────────────────────────────────────────────
@@ -239,11 +229,6 @@ export const buttonVariants = cva(
         color: "info",
         class: ["text-text-info", softHoverActive.info].join(" "),
       },
-      {
-        hierarchy: "ghost",
-        color: "ai",
-        class: ["text-text-ai", softHoverActive.ai].join(" "),
-      },
 
       // ── link ─────────────────────────────────────────────────
       {
@@ -284,14 +269,6 @@ export const buttonVariants = cva(
         class: [
           "text-text-info",
           "hover:text-text-info-hover data-[state=hover]:text-text-info-hover",
-        ].join(" "),
-      },
-      {
-        hierarchy: "link",
-        color: "ai",
-        class: [
-          "text-text-ai",
-          "hover:text-text-ai-hover data-[state=hover]:text-text-ai-hover",
         ].join(" "),
       },
 

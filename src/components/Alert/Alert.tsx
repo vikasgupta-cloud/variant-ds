@@ -1,6 +1,7 @@
 /**
  * Alert — Role fills + Component alert tokens. Actions: ghost Dismiss + secondary primary-action.
  * Both inherit the Alert role as Button color. Never a primary default button inside.
+ * Neutral soft: title text/primary, body text/secondary, edge border/subtle.
  */
 import { forwardRef, type HTMLAttributes, type ReactNode } from "react";
 import { cn } from "../../lib/cn";
@@ -15,11 +16,11 @@ const ROLE_TO_BUTTON_COLOR: Record<
   AlertRole,
   ButtonColorFor<"ghost"> & ButtonColorFor<"secondary">
 > = {
+  neutral: "default",
   info: "info",
   success: "success",
   warning: "warning",
   danger: "destructive",
-  ai: "ai",
 };
 
 export type AlertActions = {
@@ -66,6 +67,7 @@ export const Alert = forwardRef<HTMLDivElement, AlertProps>(function Alert(
 ) {
   const buttonColor = ROLE_TO_BUTTON_COLOR[role];
   const showDismissOnly = dismissible && !actions;
+  const softNeutral = role === "neutral" && emphasis === "soft";
 
   return (
     <div
@@ -77,10 +79,26 @@ export const Alert = forwardRef<HTMLDivElement, AlertProps>(function Alert(
     >
       <div className="flex min-w-0 flex-1 flex-col gap-layout-stack-tight">
         {title ? (
-          <p className="type-body-md-semibold text-inherit">{title}</p>
+          <p
+            className={cn(
+              "type-body-md-semibold",
+              softNeutral ? "text-text-primary" : "text-inherit",
+            )}
+          >
+            {title}
+          </p>
         ) : null}
         {children ? (
-          <div className="type-body-md text-inherit opacity-90">{children}</div>
+          <div
+            className={cn(
+              "type-body-md",
+              softNeutral
+                ? "text-text-secondary"
+                : "text-inherit opacity-90",
+            )}
+          >
+            {children}
+          </div>
         ) : null}
       </div>
 

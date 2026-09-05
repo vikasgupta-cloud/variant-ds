@@ -1,4 +1,4 @@
-/** Foundations / Typography — from typography/* composites in tokens.json. */
+/** Foundations / Typography — from display|heading|body|numeric composites in tokens.json. */
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { TypographyPage } from "./TypographyPage";
 

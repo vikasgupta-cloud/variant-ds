@@ -16,7 +16,6 @@ const roles: BadgeRole[] = [
   "success",
   "warning",
   "danger",
-  "ai",
 ];
 const emphases = ["soft", "strong"] as const;
 const sizes = ["sm", "md", "lg"] as const;
@@ -115,7 +114,7 @@ export const Content: Story = {
           <Badge role="success" dot>
             With dot
           </Badge>
-          <Badge role="ai" icon={<PlaceholderIcon />}>
+          <Badge role="info" icon={<PlaceholderIcon />}>
             With icon
           </Badge>
           <Badge role="danger" count={3} />
@@ -123,6 +122,24 @@ export const Content: Story = {
             Inbox
           </Badge>
           <Badge role="warning" emphasis="strong" count="99+" />
+        </div>
+      </StorySection>
+      <StorySection title="Dot and count sizes">
+        <div className="flex flex-col gap-16">
+          <div className="flex flex-wrap items-center gap-8">
+            {sizes.map((size) => (
+              <Badge key={size} size={size} role="success" dot>
+                {size} dot
+              </Badge>
+            ))}
+          </div>
+          <div className="flex flex-wrap items-center gap-8">
+            {sizes.map((size) => (
+              <Badge key={size} size={size} role="info" count={size === "sm" ? 3 : size === "md" ? 12 : 99}>
+                {size}
+              </Badge>
+            ))}
+          </div>
         </div>
       </StorySection>
     </div>
@@ -141,9 +158,9 @@ export const Layout: Story = {
           <Badge role="success" size="sm">
             Live
           </Badge>{" "}
-          and AI assist{" "}
-          <Badge role="ai" size="sm" emphasis="strong">
-            On
+          and review{" "}
+          <Badge role="warning" size="sm" emphasis="strong">
+            Due
           </Badge>
         </p>
       </StorySection>

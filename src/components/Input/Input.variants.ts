@@ -1,6 +1,7 @@
 /**
  * Input variant map — Role + Structure + Surface field fills. Zero component tokens.
  * `data-state` mirrors pseudo-classes for the design-review state prop.
+ * Composition `type` is handled in Input.tsx (group chrome), not cva colour maps.
  */
 import { cva, type VariantProps } from "class-variance-authority";
 
@@ -12,6 +13,15 @@ export type InputState =
   | "disabled"
   | "read-only"
   | "error";
+
+/** Field composition axis — matches Figma Input type. */
+export type InputType =
+  | "default"
+  | "icon-leading"
+  | "leading-dropdown"
+  | "trailing-dropdown"
+  | "leading-text"
+  | "trailing-button";
 
 export const inputVariants = cva(
   [
@@ -27,8 +37,9 @@ export const inputVariants = cva(
     "data-[state=focused]:outline-[length:var(--focus-ring-width)] data-[state=focused]:outline-offset-[length:var(--focus-ring-offset)]",
     "disabled:cursor-not-allowed disabled:bg-bg-disabled disabled:text-text-disabled disabled:border-border-subtle",
     "data-[state=disabled]:cursor-not-allowed data-[state=disabled]:bg-bg-disabled data-[state=disabled]:text-text-disabled data-[state=disabled]:border-border-subtle",
-    "read-only:bg-surface-level-1 read-only:text-text-secondary",
-    "data-[state=read-only]:bg-surface-level-1 data-[state=read-only]:text-text-secondary",
+    // Read-only: real content on bg/disabled — stay fully legible (not text/disabled).
+    "read-only:cursor-default read-only:bg-bg-disabled read-only:text-text-primary read-only:border-border-subtle",
+    "data-[state=read-only]:cursor-default data-[state=read-only]:bg-bg-disabled data-[state=read-only]:text-text-primary data-[state=read-only]:border-border-subtle",
     "aria-[invalid=true]:border-border-danger",
     "data-[state=error]:border-border-danger",
   ].join(" "),
@@ -43,6 +54,42 @@ export const inputVariants = cva(
     defaultVariants: {
       size: "md",
     },
+  },
+);
+
+/** Shared chrome for leading/trailing composition add-ons. */
+export const inputGroupVariants = cva(
+  [
+    "flex w-full min-w-0 items-stretch overflow-hidden rounded-control",
+    "border border-border-default bg-surface-field",
+    "transition-colors motion-reduce:transition-none",
+    "focus-within:border-border-focus focus-within:outline-solid focus-within:outline focus-within:outline-border-focus",
+    "focus-within:outline-[length:var(--focus-ring-width)] focus-within:outline-offset-[length:var(--focus-ring-offset)]",
+    "hover:bg-surface-field-hover data-[state=hover]:bg-surface-field-hover",
+  ].join(" "),
+  {
+    variants: {
+      size: {
+        sm: "",
+        md: "",
+        lg: "",
+      },
+    },
+    defaultVariants: { size: "md" },
+  },
+);
+
+export const inputAddonVariants = cva(
+  "inline-flex items-center justify-center text-text-secondary",
+  {
+    variants: {
+      size: {
+        sm: "px-control-padding-x-sm py-control-padding-y-sm type-body-md",
+        md: "px-control-padding-x-md py-control-padding-y-md type-body-md",
+        lg: "px-control-padding-x-lg py-control-padding-y-lg type-body-lg",
+      },
+    },
+    defaultVariants: { size: "md" },
   },
 );
 

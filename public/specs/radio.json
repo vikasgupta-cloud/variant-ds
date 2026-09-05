@@ -22,7 +22,8 @@
       "unselected",
       "selected",
       "disabled",
-      "focused"
+      "focused",
+      "error"
     ]
   },
   "anatomy": [
@@ -34,8 +35,16 @@
   "tokens": {
     "role": [
       {
-        "path": "bg/neutral/strong",
-        "cssVar": "--bg-neutral-strong"
+        "path": "selected/bg",
+        "cssVar": "--selected-bg"
+      },
+      {
+        "path": "selected/edge",
+        "cssVar": "--selected-edge"
+      },
+      {
+        "path": "icon/on-selected",
+        "cssVar": "--icon-on-selected"
       },
       {
         "path": "text/primary",
@@ -50,8 +59,16 @@
         "cssVar": "--border-default"
       },
       {
+        "path": "border/strong",
+        "cssVar": "--border-strong"
+      },
+      {
         "path": "border/focus",
         "cssVar": "--border-focus"
+      },
+      {
+        "path": "border/danger",
+        "cssVar": "--border-danger"
       }
     ],
     "surface": [
@@ -110,11 +127,18 @@
       "name": "value",
       "type": "string",
       "description": "Selected value (group)."
+    },
+    {
+      "name": "state",
+      "type": "design-review states incl. error",
+      "default": "default",
+      "description": "Design-review only."
     }
   ],
   "accessibility": [
     "Radiogroup + radio roles from Radix",
-    "Arrow keys move selection within the group"
+    "Arrow keys move selection within the group",
+    "error / aria-invalid expose invalid state"
   ],
   "do": [
     "Provide a group legend/label in the surrounding form"

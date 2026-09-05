@@ -3,7 +3,7 @@
  * States story includes size × states matrix.
  */
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Checkbox } from "./Checkbox";
+import { Checkbox, CheckboxGroup } from "./Checkbox";
 import type { CheckboxState } from "./Checkbox.variants";
 import { StoryHeading, StorySection } from "../../stories/kit";
 
@@ -47,7 +47,7 @@ export const AllVariants: Story = {
     <div className="flex flex-col gap-32 p-8">
       <StoryHeading
         title="Checkbox — All variants"
-        description="Sizes use checkbox-size tokens. Checked fill is bg/neutral/strong."
+        description="Sizes use checkbox-size tokens. Checked fill is selected/bg with selected/edge."
       />
       <StorySection title="Sizes">
         <div className="flex flex-col gap-16">
@@ -112,7 +112,7 @@ export const Content: Story = {
   render: () => (
     <div className="flex flex-col gap-32 p-8">
       <StoryHeading title="Checkbox — Content" />
-      <StorySection title="Control only / label / description">
+      <StorySection title="Control only / label / description / indeterminate / error">
         <div className="flex flex-col gap-16">
           <Checkbox aria-label="Standalone" defaultChecked />
           <Checkbox label="With label" />
@@ -126,6 +126,25 @@ export const Content: Story = {
             checked="indeterminate"
             description="Partial selection in a group."
           />
+          <Checkbox
+            label="Error"
+            state="error"
+            description="Required before continuing."
+          />
+        </div>
+      </StorySection>
+      <StorySection title="CheckboxGroup orientations">
+        <div className="flex flex-col gap-24">
+          <CheckboxGroup orientation="vertical" className="max-w-sm">
+            <Checkbox label="Email" description="Campaign digests" defaultChecked />
+            <Checkbox label="Push" description="Real-time alerts" />
+            <Checkbox label="SMS" disabled />
+          </CheckboxGroup>
+          <CheckboxGroup orientation="horizontal">
+            <Checkbox label="Day" defaultChecked />
+            <Checkbox label="Week" />
+            <Checkbox label="Month" />
+          </CheckboxGroup>
         </div>
       </StorySection>
     </div>
@@ -138,11 +157,13 @@ export const Layout: Story = {
   render: () => (
     <div className="flex flex-col gap-32 p-8">
       <StoryHeading title="Checkbox — Layout" />
-      <StorySection title="Stacked group">
-        <div className="flex max-w-sm flex-col gap-12 rounded-control border border-border-subtle bg-bg-surface p-16">
-          <Checkbox label="Email" description="Campaign digests" defaultChecked />
-          <Checkbox label="Push" description="Real-time alerts" />
-          <Checkbox label="SMS" description="Critical only" disabled />
+      <StorySection title="Grouped in a panel">
+        <div className="max-w-sm rounded-control border border-border-subtle bg-bg-surface p-16">
+          <CheckboxGroup orientation="vertical">
+            <Checkbox label="Email" description="Campaign digests" defaultChecked />
+            <Checkbox label="Push" description="Real-time alerts" />
+            <Checkbox label="SMS" description="Critical only" disabled />
+          </CheckboxGroup>
         </div>
       </StorySection>
     </div>

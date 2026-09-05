@@ -87,8 +87,8 @@ export const AllVariants: Story = {
         description={
           <>
             Hierarchy and colour are independent axes. Primary is restricted to
-            default / destructive / ai — status colours describe states, not
-            actions. Primary fill uses{" "}
+            default / destructive / success — warning and info stay
+            non-interactive at the strong level. Primary fill uses{" "}
             <code className="text-text-primary">bg/neutral/strong</code>, not
             brand yellow.
           </>
@@ -109,7 +109,6 @@ export const AllVariants: Story = {
                     "warning",
                     "success",
                     "info",
-                    "ai",
                   ] as const
                 ).map((c) => (
                   <th
@@ -134,7 +133,6 @@ export const AllVariants: Story = {
                       "warning",
                       "success",
                       "info",
-                      "ai",
                     ] as const
                   ).map((color) => (
                     <td key={color} className="p-4">
@@ -416,8 +414,8 @@ export const Layout: Story = {
           <Button hierarchy="link" color="destructive">
             Destructive link
           </Button>
-          <Button hierarchy="link" color="ai">
-            AI link
+          <Button hierarchy="link" color="info">
+            Info link
           </Button>
         </div>
       </StorySection>

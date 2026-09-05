@@ -6,11 +6,11 @@ Inline status message. Optional actions are always ghost Dismiss + secondary pri
 
 - Inline feedback
 - Non-blocking warnings
-- AI suggestions
+- Status callouts
 
 ## Variant / state matrix
 
-- **role:** info | success | warning | danger | ai
+- **role:** neutral | info | success | warning | danger
 - **emphasis:** soft | strong
 - **state:** default
 
@@ -27,6 +27,8 @@ Inline status message. Optional actions are always ghost Dismiss + secondary pri
 
 ### role
 
+- `bg/neutral/soft` → `--bg-neutral-soft`
+- `bg/neutral/strong` → `--bg-neutral-strong`
 - `bg/info/soft` → `--bg-info-soft`
 - `bg/info/strong` → `--bg-info-strong`
 - `bg/success/soft` → `--bg-success-soft`
@@ -35,20 +37,20 @@ Inline status message. Optional actions are always ghost Dismiss + secondary pri
 - `bg/warning/strong` → `--bg-warning-strong`
 - `bg/danger/soft` → `--bg-danger-soft`
 - `bg/danger/strong` → `--bg-danger-strong`
-- `bg/ai/soft` → `--bg-ai-soft`
-- `bg/ai/strong` → `--bg-ai-strong`
+- `text/primary` → `--text-primary`
+- `text/secondary` → `--text-secondary`
 - `text/info` → `--text-info`
 - `text/success` → `--text-success`
 - `text/warning` → `--text-warning`
 - `text/danger` → `--text-danger`
-- `text/ai` → `--text-ai`
 - `text/on-strong` → `--text-on-strong`
 - `text/on-strong-warning` → `--text-on-strong-warning`
+- `text/on-inverse` → `--text-on-inverse`
+- `border/subtle` → `--border-subtle`
 - `border/info` → `--border-info`
 - `border/success` → `--border-success`
 - `border/warning` → `--border-warning`
 - `border/danger` → `--border-danger`
-- `border/ai` → `--border-ai`
 
 ### structure
 
@@ -65,7 +67,7 @@ Inline status message. Optional actions are always ghost Dismiss + secondary pri
 
 | Prop | Type | Default | Description |
 | --- | --- | --- | --- |
-| `role` | info \| success \| warning \| danger \| ai | — | Status colour. |
+| `role` | neutral \| info \| success \| warning \| danger | — | Status colour. Neutral soft uses text/primary + text/secondary + border/subtle. |
 | `emphasis` | soft \| strong | soft | Fill weight. |
 | `actions` | { primaryLabel, onPrimary?, onDismiss? } | — | Standard action pair. |
 | `dismissible` | boolean | false | Ghost Dismiss only. |

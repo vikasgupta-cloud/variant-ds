@@ -5,13 +5,13 @@ Primary interactive control. Hierarchy and colour are independent axes with type
 ## When to use
 
 - Trigger actions (submit, confirm, navigate)
-- Use hierarchy to express emphasis; colour for semantic meaning (destructive, AI, status on secondary/ghost/link)
+- Use hierarchy to express emphasis; colour for semantic meaning (destructive, warning, success, info on secondary/ghost/link)
 - Prefer link hierarchy for inline textual actions
 
 ## Variant / state matrix
 
 - **hierarchy:** primary | secondary | tertiary | ghost | link
-- **color:** default | destructive | warning | success | info | ai
+- **color:** default | destructive | warning | success | info
 - **size:** xs | sm | md | lg
 - **icon:** none | leading | trailing | only
 - **state:** default | hover | active | focused | disabled
@@ -35,16 +35,12 @@ Primary interactive control. Hierarchy and colour are independent axes with type
 - `bg/danger/strong` → `--bg-danger-strong`
 - `bg/danger/strong-hover` → `--bg-danger-strong-hover`
 - `bg/danger/strong-active` → `--bg-danger-strong-active`
-- `bg/ai/strong` → `--bg-ai-strong`
-- `bg/ai/strong-hover` → `--bg-ai-strong-hover`
-- `bg/ai/strong-active` → `--bg-ai-strong-active`
 - `bg/surface` → `--bg-surface`
 - `bg/disabled` → `--bg-disabled`
 - `bg/danger/soft` → `--bg-danger-soft`
 - `bg/warning/soft` → `--bg-warning-soft`
 - `bg/success/soft` → `--bg-success-soft`
 - `bg/info/soft` → `--bg-info-soft`
-- `bg/ai/soft` → `--bg-ai-soft`
 - `text/primary` → `--text-primary`
 - `text/on-inverse` → `--text-on-inverse`
 - `text/on-strong` → `--text-on-strong`
@@ -59,14 +55,11 @@ Primary interactive control. Hierarchy and colour are independent axes with type
 - `text/success-hover` → `--text-success-hover`
 - `text/info` → `--text-info`
 - `text/info-hover` → `--text-info-hover`
-- `text/ai` → `--text-ai`
-- `text/ai-hover` → `--text-ai-hover`
 - `border/focus` → `--border-focus`
 - `border/danger` → `--border-danger`
 - `border/warning` → `--border-warning`
 - `border/success` → `--border-success`
 - `border/info` → `--border-info`
-- `border/ai` → `--border-ai`
 
 ### surface
 
@@ -91,7 +84,7 @@ Primary interactive control. Hierarchy and colour are independent axes with type
 | Prop | Type | Default | Description |
 | --- | --- | --- | --- |
 | `hierarchy` | primary \| secondary \| tertiary \| ghost \| link | primary | Visual weight / chrome style. |
-| `color` | depends on hierarchy (type-safe) | default | Semantic colour. Primary only allows default | destructive | ai. |
+| `color` | depends on hierarchy (type-safe) | default | Semantic colour. Primary only allows default | destructive | success. |
 | `size` | xs \| sm \| md \| lg | md | Control sizing from Structure. |
 | `icon` | none \| leading \| trailing \| only | none | Icon placement axis. |
 | `state` | default \| hover \| active \| focused \| disabled | default | Design-review only — not for production. |
@@ -113,6 +106,6 @@ Primary interactive control. Hierarchy and colour are independent axes with type
 
 ## Don't
 
-- Don't use primary + warning/success/info (blocked at the type level)
+- Don't use primary + warning/info (blocked at the type level)
 - Don't put a primary default button inside a coloured Alert
 - Don't use brand yellow as a primary button fill

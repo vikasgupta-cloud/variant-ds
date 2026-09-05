@@ -1,0 +1,68 @@
+{
+  "light": {
+    "toggle": {
+      "knob-bg-off": {
+        "$type": "color",
+        "$value": "{neutral.0}",
+        "$description": "Toggle knob when off (light). Contrast: ≥3:1 against surface/control track."
+      },
+      "knob-bg-on": {
+        "$type": "color",
+        "$value": "{neutral.950}",
+        "$description": "Toggle knob when on (light). Contrast: ≥4.5:1 against selected/bg yellow — white fails (1.35:1)."
+      }
+    },
+    "progress": {
+      "track-bg": {
+        "$type": "color",
+        "$value": "{surface.control}",
+        "$description": "Progress track fill — aliases surface/control (≥3:1 filled state chrome per context)."
+      }
+    },
+    "slider": {
+      "thumb-border": {
+        "$type": "color",
+        "$value": "{border.strong}",
+        "$description": "Slider thumb border — aliases role border/strong so it tracks mode."
+      },
+      "track-bg": {
+        "$type": "color",
+        "$value": "{surface.control}",
+        "$description": "Slider track fill — aliases surface/control (≥3:1 filled state chrome per context)."
+      }
+    }
+  },
+  "dark": {
+    "toggle": {
+      "knob-bg-off": {
+        "$type": "color",
+        "$value": "{neutral.900}",
+        "$description": "Toggle knob when off (dark). Contrast: ≥3:1 against surface/control track."
+      },
+      "knob-bg-on": {
+        "$type": "color",
+        "$value": "{neutral.950}",
+        "$description": "Toggle knob when on (dark). Contrast: ≥4.5:1 against selected/bg yellow — white fails (1.35:1)."
+      }
+    },
+    "progress": {
+      "track-bg": {
+        "$type": "color",
+        "$value": "{surface.control}",
+        "$description": "Progress track fill — aliases surface/control (≥3:1 filled state chrome per context)."
+      }
+    },
+    "slider": {
+      "thumb-border": {
+        "$type": "color",
+        "$value": "{border.strong}",
+        "$description": "Slider thumb border — aliases role border/strong so it tracks mode."
+      },
+      "track-bg": {
+        "$type": "color",
+        "$value": "{surface.control}",
+        "$description": "Slider track fill — aliases surface/control (≥3:1 filled state chrome per context)."
+      }
+    }
+  }
+}

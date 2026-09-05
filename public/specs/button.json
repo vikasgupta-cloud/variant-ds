@@ -5,7 +5,7 @@
   "overview": "Primary interactive control. Hierarchy and colour are independent axes with type-safe allowed pairs. Primary uses bg/neutral/strong — not brand yellow (yellow is for wayfinding/selection).",
   "whenToUse": [
     "Trigger actions (submit, confirm, navigate)",
-    "Use hierarchy to express emphasis; colour for semantic meaning (destructive, AI, status on secondary/ghost/link)",
+    "Use hierarchy to express emphasis; colour for semantic meaning (destructive, warning, success, info on secondary/ghost/link)",
     "Prefer link hierarchy for inline textual actions"
   ],
   "variants": {
@@ -21,8 +21,7 @@
       "destructive",
       "warning",
       "success",
-      "info",
-      "ai"
+      "info"
     ],
     "size": [
       "xs",
@@ -77,18 +76,6 @@
         "cssVar": "--bg-danger-strong-active"
       },
       {
-        "path": "bg/ai/strong",
-        "cssVar": "--bg-ai-strong"
-      },
-      {
-        "path": "bg/ai/strong-hover",
-        "cssVar": "--bg-ai-strong-hover"
-      },
-      {
-        "path": "bg/ai/strong-active",
-        "cssVar": "--bg-ai-strong-active"
-      },
-      {
         "path": "bg/surface",
         "cssVar": "--bg-surface"
       },
@@ -111,10 +98,6 @@
       {
         "path": "bg/info/soft",
         "cssVar": "--bg-info-soft"
-      },
-      {
-        "path": "bg/ai/soft",
-        "cssVar": "--bg-ai-soft"
       },
       {
         "path": "text/primary",
@@ -173,14 +156,6 @@
         "cssVar": "--text-info-hover"
       },
       {
-        "path": "text/ai",
-        "cssVar": "--text-ai"
-      },
-      {
-        "path": "text/ai-hover",
-        "cssVar": "--text-ai-hover"
-      },
-      {
         "path": "border/focus",
         "cssVar": "--border-focus"
       },
@@ -199,10 +174,6 @@
       {
         "path": "border/info",
         "cssVar": "--border-info"
-      },
-      {
-        "path": "border/ai",
-        "cssVar": "--border-ai"
       }
     ],
     "surface": [
@@ -269,7 +240,7 @@
       "name": "color",
       "type": "depends on hierarchy (type-safe)",
       "default": "default",
-      "description": "Semantic colour. Primary only allows default | destructive | ai."
+      "description": "Semantic colour. Primary only allows default | destructive | success."
     },
     {
       "name": "size",
@@ -309,7 +280,7 @@
     "Leave state at default in product code"
   ],
   "dont": [
-    "Don't use primary + warning/success/info (blocked at the type level)",
+    "Don't use primary + warning/info (blocked at the type level)",
     "Don't put a primary default button inside a coloured Alert",
     "Don't use brand yellow as a primary button fill"
   ]

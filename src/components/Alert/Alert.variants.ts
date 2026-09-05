@@ -1,9 +1,15 @@
 /**
  * Alert variant map — Role soft/strong fills. Component tokens: radius, padding, icon-gap.
+ * Neutral soft uses text/primary + text/secondary + border/subtle (no text/neutral).
  */
 import { cva, type VariantProps } from "class-variance-authority";
 
-export type AlertRole = "info" | "success" | "warning" | "danger" | "ai";
+export type AlertRole =
+  | "neutral"
+  | "info"
+  | "success"
+  | "warning"
+  | "danger";
 
 /** Design-review affordance — Alert has no interactive chrome of its own. */
 export type AlertState = "default";
@@ -16,11 +22,11 @@ export const alertVariants = cva(
   {
     variants: {
       role: {
+        neutral: "",
         info: "",
         success: "",
         warning: "",
         danger: "",
-        ai: "",
       },
       emphasis: {
         soft: "",
@@ -28,6 +34,16 @@ export const alertVariants = cva(
       },
     },
     compoundVariants: [
+      {
+        role: "neutral",
+        emphasis: "soft",
+        class: "bg-bg-neutral-soft border-border-subtle",
+      },
+      {
+        role: "neutral",
+        emphasis: "strong",
+        class: "bg-bg-neutral-strong border-transparent text-text-on-inverse",
+      },
       {
         role: "info",
         emphasis: "soft",
@@ -68,16 +84,6 @@ export const alertVariants = cva(
         role: "danger",
         emphasis: "strong",
         class: "bg-bg-danger-strong border-transparent text-text-on-strong",
-      },
-      {
-        role: "ai",
-        emphasis: "soft",
-        class: "bg-bg-ai-soft border-border-ai text-text-ai",
-      },
-      {
-        role: "ai",
-        emphasis: "strong",
-        class: "bg-bg-ai-strong border-transparent text-text-on-strong",
       },
     ],
     defaultVariants: {

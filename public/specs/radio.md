@@ -11,7 +11,7 @@ Exclusive choice within a RadioGroup. Orientation horizontal or vertical.
 
 - **size:** sm | md | lg
 - **orientation:** vertical | horizontal
-- **state:** default | unselected | selected | disabled | focused
+- **state:** default | unselected | selected | disabled | focused | error
 
 > `state` is a design-review affordance — leave at `default` in production.
 
@@ -26,11 +26,15 @@ Exclusive choice within a RadioGroup. Orientation horizontal or vertical.
 
 ### role
 
-- `bg/neutral/strong` → `--bg-neutral-strong`
+- `selected/bg` → `--selected-bg`
+- `selected/edge` → `--selected-edge`
+- `icon/on-selected` → `--icon-on-selected`
 - `text/primary` → `--text-primary`
 - `text/disabled` → `--text-disabled`
 - `border/default` → `--border-default`
+- `border/strong` → `--border-strong`
 - `border/focus` → `--border-focus`
+- `border/danger` → `--border-danger`
 
 ### surface
 
@@ -56,11 +60,13 @@ Exclusive choice within a RadioGroup. Orientation horizontal or vertical.
 | `orientation` | vertical \| horizontal | vertical | Group layout. |
 | `size` | sm \| md \| lg | md | Item size. |
 | `value` | string | — | Selected value (group). |
+| `state` | design-review states incl. error | default | Design-review only. |
 
 ## Accessibility
 
 - Radiogroup + radio roles from Radix
 - Arrow keys move selection within the group
+- error / aria-invalid expose invalid state
 
 ## Do
 

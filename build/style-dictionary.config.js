@@ -22,7 +22,8 @@ const FILES = {
   surface: "surface.json",
   structure: "structure.json",
   overlay: "overlay.json",
-  component: "component.json",
+  componentSize: "component.size.json",
+  componentColor: "component.color.json",
 };
 
 const nameTransform = {
@@ -94,8 +95,11 @@ function leafType(value, explicit) {
   return "other";
 }
 
-/** Expand typography composites into per-axis CSS custom properties. */
-function emitTypographyCss(typography) {
+/** Typography families live at the primitive root (display / heading / body / numeric). */
+const TYPOGRAPHY_FAMILIES = ["display", "heading", "body", "numeric"];
+
+/** Expand typography composites into per-axis CSS custom properties (no typography/ prefix). */
+function emitTypographyCss(primitive) {
   const lines = [];
   function walk(node, prefix) {
     if (!node || typeof node !== "object") return;
@@ -114,15 +118,19 @@ function emitTypographyCss(typography) {
       walk(child, [...prefix, key]);
     }
   }
-  walk(typography, ["typography"]);
+  for (const family of TYPOGRAPHY_FAMILIES) {
+    if (primitive[family]) walk(primitive[family], [family]);
+  }
   if (!lines.length) return "";
   return `:root {\n${lines.join("\n")}\n}\n`;
 }
 
-/** Clone primitive without typography — SD cssVariables cannot emit object composites. */
+/** Clone primitive without typography composites — SD cssVariables cannot emit object composites. */
 function primitiveWithoutTypography(primitive) {
   const clone = structuredClone(primitive);
-  delete clone.typography;
+  for (const family of TYPOGRAPHY_FAMILIES) {
+    delete clone[family];
+  }
   return clone;
 }
 
@@ -137,7 +145,8 @@ function buildTokenCatalog({
   surface,
   structure,
   overlay,
-  component,
+  componentSize,
+  componentColor,
 }) {
   const catalog = [];
 
@@ -232,44 +241,45 @@ function buildTokenCatalog({
     });
   }
 
-  // Component: collapse .light/.dark path suffixes into valueByMode on the CSS name.
-  const componentByCss = new Map();
-  for (const leaf of collectLeaves(component, FILES.component)) {
+  // Component size — single Value mode (:root).
+  for (const leaf of collectLeaves(componentSize, FILES.componentSize)) {
+    push({
+      name: leaf.path.replace(/\./g, "-"),
+      path: leaf.path.split("."),
+      layer: "component",
+      type: leaf.type,
+      description: leaf.description,
+      value: leaf.value,
+    });
+  }
+
+  // Component color — Light/Dark modes ([data-mode]).
+  const componentColorByCss = new Map();
+  for (const leaf of collectLeaves(componentColor, FILES.componentColor)) {
     const parts = leaf.path.split(".");
-    let mode = null;
-    if (parts[parts.length - 1] === "light" || parts[parts.length - 1] === "dark") {
-      mode = parts.pop();
-    }
-    const cssPath = parts.join(".");
-    const name = cssPath.replace(/\./g, "-");
-    if (!componentByCss.has(name)) {
-      componentByCss.set(name, {
+    const mode = parts[0]; // light | dark
+    const tokenParts = parts.slice(1);
+    const name = tokenParts.join("-");
+    if (!componentColorByCss.has(name)) {
+      componentColorByCss.set(name, {
         name,
-        path: parts,
+        path: tokenParts,
         type: leaf.type,
         description: leaf.description,
-        value: null,
-        valueByMode: null,
+        valueByMode: {},
       });
     }
-    const entry = componentByCss.get(name);
-    if (mode) {
-      entry.valueByMode = entry.valueByMode ?? {};
-      entry.valueByMode[mode] = leaf.value;
-      if (mode === "light") entry.description = leaf.description;
-    } else {
-      entry.value = leaf.value;
-      entry.description = leaf.description;
-    }
+    const entry = componentColorByCss.get(name);
+    entry.valueByMode[mode] = leaf.value;
+    if (mode === "light") entry.description = leaf.description;
   }
-  for (const entry of componentByCss.values()) {
+  for (const entry of componentColorByCss.values()) {
     push({
       name: entry.name,
       path: entry.path,
       layer: "component",
       type: entry.type,
       description: entry.description,
-      value: entry.value,
       valueByMode: entry.valueByMode,
     });
   }
@@ -377,7 +387,7 @@ function contrastRatio(hexA, hexB) {
 function assertSurfaceLineFillContrast(primitive, roleLight, roleDark, surface) {
   const roleByMode = { light: roleLight, dark: roleDark };
   const contexts = ["canvas", "surface", "surface-raised"];
-  const tokens = ["control", "border"];
+  const tokens = ["control", "control-hover", "border"];
   const errors = [];
   const rows = [];
 
@@ -406,11 +416,11 @@ function assertSurfaceLineFillContrast(primitive, roleLight, roleDark, surface) 
     }
   }
 
-  console.log("\nSurface control/border contrast (≥3:1 vs context bg):");
+  console.log("\nSurface control/control-hover/border contrast (≥3:1 vs context bg):");
   for (const r of rows) {
     const mark = Number(r.ratio) >= 3 ? "✓" : "✗";
     console.log(
-      `  ${mark} ${r.mode.padEnd(5)} ${r.context.padEnd(14)} ${r.name.padEnd(7)} ${r.ratio}:1  (${r.fg} on ${r.bg})`,
+      `  ${mark} ${r.mode.padEnd(5)} ${r.context.padEnd(14)} ${r.name.padEnd(13)} ${r.ratio}:1  (${r.fg} on ${r.bg})`,
     );
   }
 
@@ -483,47 +493,6 @@ async function buildCss({
   return css;
 }
 
-/** Pull mode-paired component colors (*.light / *.dark) into separate trees. */
-function splitComponentModes(component) {
-  const root = structuredClone(component);
-  const light = {};
-  const dark = {};
-
-  function extract(n, p) {
-    if (!n || typeof n !== "object" || Array.isArray(n) || "$value" in n) return;
-    for (const k of Object.keys(n)) {
-      if (k.startsWith("$")) continue;
-      const child = n[k];
-      const keys = child && typeof child === "object" ? Object.keys(child) : [];
-      const isModePair =
-        child &&
-        typeof child === "object" &&
-        child.light?.$value !== undefined &&
-        child.dark?.$value !== undefined &&
-        keys.every((x) => x === "light" || x === "dark" || x.startsWith("$"));
-
-      if (isModePair) {
-        let lp = light;
-        let dp = dark;
-        for (const seg of p) {
-          lp[seg] ??= {};
-          dp[seg] ??= {};
-          lp = lp[seg];
-          dp = dp[seg];
-        }
-        lp[k] = child.light;
-        dp[k] = child.dark;
-        delete n[k];
-        continue;
-      }
-      extract(child, [...p, k]);
-    }
-  }
-
-  extract(root, []);
-  return { root, light, dark };
-}
-
 async function main() {
   mkdirSync(outDir, { recursive: true });
 
@@ -533,21 +502,27 @@ async function main() {
   const surface = await loadJson(FILES.surface);
   const structure = await loadJson(FILES.structure);
   const overlay = await loadJson(FILES.overlay);
-  const component = await loadJson(FILES.component);
+  const componentSize = await loadJson(FILES.componentSize);
+  const componentColor = await loadJson(FILES.componentColor);
 
   // ——— validate descriptions + duplicate CSS paths ———
   const roleLeaves = collectLeaves(roleLight, FILES.roleLight).map((t) => ({
     ...t,
     cssPath: t.path,
   }));
-  const componentLeavesRaw = collectLeaves(component, FILES.component).map((t) => ({
+  const componentSizeLeaves = collectLeaves(componentSize, FILES.componentSize).map((t) => ({
     ...t,
-    cssPath: t.path.replace(/\.light$/, "").replace(/\.dark$/, ""),
+    cssPath: t.path,
   }));
-  const componentCssSeen = new Set();
-  const componentLeaves = componentLeavesRaw.filter((t) => {
-    if (componentCssSeen.has(t.cssPath)) return false;
-    componentCssSeen.add(t.cssPath);
+  // Color leaves are light.* / dark.* — CSS path strips the mode prefix.
+  const componentColorLeavesRaw = collectLeaves(componentColor, FILES.componentColor).map((t) => ({
+    ...t,
+    cssPath: t.path.replace(/^(light|dark)\./, ""),
+  }));
+  const componentColorCssSeen = new Set();
+  const componentColorLeaves = componentColorLeavesRaw.filter((t) => {
+    if (componentColorCssSeen.has(t.cssPath)) return false;
+    componentColorCssSeen.add(t.cssPath);
     return true;
   });
 
@@ -574,7 +549,8 @@ async function main() {
         cssPath: t.path,
       })),
     },
-    { file: FILES.component, leaves: componentLeaves },
+    { file: FILES.componentSize, leaves: componentSizeLeaves },
+    { file: FILES.componentColor, leaves: componentColorLeaves },
   ]);
 
   // Descriptions on role.dark + every surface cell (css names intentionally overlap by mode/context)
@@ -596,9 +572,11 @@ async function main() {
       }
     }
   }
-  for (const leaf of componentLeavesRaw) {
+  for (const leaf of componentColorLeavesRaw) {
     if (!leaf.description?.trim()) {
-      console.error(`\nToken validation failed:\n  • Missing description: ${leaf.path} (${FILES.component})`);
+      console.error(
+        `\nToken validation failed:\n  • Missing description: ${leaf.path} (${FILES.componentColor})`,
+      );
       process.exit(1);
     }
   }
@@ -616,7 +594,7 @@ async function main() {
         selector: ":root",
       })) +
       "\n" +
-      emitTypographyCss(primitive.typography) +
+      emitTypographyCss(primitive) +
       "\n",
   );
 
@@ -693,42 +671,46 @@ async function main() {
     JSON.stringify({ surface: { ...surface.light.canvas } }, null, 2),
   );
 
-  // ——— component.css ———
-  const { root: componentRoot, light: componentLight, dark: componentDark } =
-    splitComponentModes(component);
-  const componentParts = [
-    await buildCss({
-      tokens: componentRoot,
-      includes: [FILES.primitive, FILES.structure, FILES.roleLight, surfaceRefsFile],
-      destination: "_component_root.css",
-      selector: ":root",
-    }),
-  ];
-  if (Object.keys(componentLight).length) {
-    componentParts.push(
-      await buildCss({
-        tokens: componentLight,
-        includes: [FILES.primitive, surfaceRefsFile],
-        destination: "_component_light.css",
-        selector: '[data-mode="light"]',
-      }),
-    );
-  }
-  if (Object.keys(componentDark).length) {
-    componentParts.push(
-      await buildCss({
-        tokens: componentDark,
-        includes: [FILES.primitive, surfaceRefsFile],
-        destination: "_component_dark.css",
-        selector: '[data-mode="dark"]',
-      }),
-    );
-  }
+  // ——— component-size.css (Value mode → :root) ———
   writeFileSync(
-    join(outDir, "component.css"),
-    header("component") + componentParts.join("\n\n") + "\n",
+    join(outDir, "component-size.css"),
+    header("component-size") +
+      (await buildCss({
+        tokens: componentSize,
+        includes: [FILES.primitive, FILES.structure],
+        destination: "component-size.css",
+        selector: ":root",
+      })) +
+      "\n",
   );
+
+  // ——— component-color.css (Light/Dark → [data-mode]) ———
+  // Unwrap top-level light/dark so CSS vars are --toggle-knob-bg-on, not --light-toggle-…
+  const componentColorLightCss = await buildCss({
+    tokens: componentColor.light,
+    includes: [FILES.primitive, FILES.roleLight, surfaceRefsFile],
+    destination: "_component_color_light.css",
+    selector: '[data-mode="light"]',
+  });
+  const componentColorDarkCss = await buildCss({
+    tokens: componentColor.dark,
+    includes: [FILES.primitive, FILES.roleDark, surfaceRefsFile],
+    destination: "_component_color_dark.css",
+    selector: '[data-mode="dark"]',
+  });
+  writeFileSync(
+    join(outDir, "component-color.css"),
+    header("component-color") +
+      componentColorLightCss +
+      "\n\n" +
+      componentColorDarkCss +
+      "\n",
+  );
+  rmSync(join(outDir, "_component_color_light.css"), { force: true });
+  rmSync(join(outDir, "_component_color_dark.css"), { force: true });
   rmSync(join(tokensDir, surfaceRefsFile), { force: true });
+  // Remove legacy single-file output if present.
+  rmSync(join(outDir, "component.css"), { force: true });
 
   // ——— tokens.json (flat catalog for TokenBrowser + runtime editor) ———
   writeFileSync(
@@ -741,7 +723,8 @@ async function main() {
         surface,
         structure,
         overlay,
-        component,
+        componentSize,
+        componentColor,
       }),
       null,
       2,

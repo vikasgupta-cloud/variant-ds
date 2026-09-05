@@ -34,7 +34,17 @@
       "soft": {
         "$type": "color",
         "$value": "{neutral.100}",
-        "$description": "Soft neutral fill (light). Contrast: with text/neutral (≥4.5:1)."
+        "$description": "Soft neutral fill (light). Contrast: with text/primary (≥4.5:1)."
+      },
+      "soft-hover": {
+        "$type": "color",
+        "$value": "{neutral.200}",
+        "$description": "Soft neutral hover (light). Contrast: with text/primary (≥4.5:1)."
+      },
+      "soft-active": {
+        "$type": "color",
+        "$value": "{neutral.300}",
+        "$description": "Soft neutral active (light). Contrast: with text/primary (≥4.5:1)."
       },
       "strong-hover": {
         "$type": "color",
@@ -57,6 +67,16 @@
         "$type": "color",
         "$value": "{ocean.100}",
         "$description": "Soft info fill (light). Contrast: with text/info (≥4.5:1)."
+      },
+      "soft-hover": {
+        "$type": "color",
+        "$value": "{ocean.200}",
+        "$description": "Soft info hover (light). Contrast: with text/info (≥4.5:1)."
+      },
+      "soft-active": {
+        "$type": "color",
+        "$value": "{ocean.300}",
+        "$description": "Soft info active (light). Contrast: with text/info (≥4.5:1)."
       }
     },
     "success": {
@@ -69,6 +89,26 @@
         "$type": "color",
         "$value": "{green.100}",
         "$description": "Soft success fill (light). Contrast: with text/success (≥4.5:1)."
+      },
+      "soft-hover": {
+        "$type": "color",
+        "$value": "{green.200}",
+        "$description": "Soft success hover (light). Contrast: with text/success (≥4.5:1)."
+      },
+      "soft-active": {
+        "$type": "color",
+        "$value": "{green.300}",
+        "$description": "Soft success active (light). Contrast: with text/success (≥4.5:1)."
+      },
+      "strong-hover": {
+        "$type": "color",
+        "$value": "{green.700}",
+        "$description": "Strong success hover (light). Contrast: with text/on-strong (≥4.5:1)."
+      },
+      "strong-active": {
+        "$type": "color",
+        "$value": "{green.800}",
+        "$description": "Strong success active (light). Contrast: with text/on-strong (≥4.5:1)."
       }
     },
     "warning": {
@@ -81,6 +121,16 @@
         "$type": "color",
         "$value": "{amber.100}",
         "$description": "Soft warning fill (light). Contrast: with text/warning (≥4.5:1)."
+      },
+      "soft-hover": {
+        "$type": "color",
+        "$value": "{amber.200}",
+        "$description": "Soft warning hover (light). Contrast: with text/warning (≥4.5:1)."
+      },
+      "soft-active": {
+        "$type": "color",
+        "$value": "{amber.300}",
+        "$description": "Soft warning active (light). Contrast: with text/warning (≥4.5:1)."
       }
     },
     "danger": {
@@ -94,6 +144,16 @@
         "$value": "{cherry.100}",
         "$description": "Soft danger fill (light). Contrast: with text/danger (≥4.5:1)."
       },
+      "soft-hover": {
+        "$type": "color",
+        "$value": "{cherry.200}",
+        "$description": "Soft danger hover (light). Contrast: with text/danger (≥4.5:1)."
+      },
+      "soft-active": {
+        "$type": "color",
+        "$value": "{cherry.300}",
+        "$description": "Soft danger active (light). Contrast: with text/danger (≥4.5:1)."
+      },
       "strong-hover": {
         "$type": "color",
         "$value": "{cherry.700}",
@@ -103,28 +163,6 @@
         "$type": "color",
         "$value": "{cherry.800}",
         "$description": "Strong danger active (light). Contrast: with text/on-strong (≥4.5:1)."
-      }
-    },
-    "ai": {
-      "strong": {
-        "$type": "color",
-        "$value": "{berry.600}",
-        "$description": "Strong ai fill (light). Contrast: use text/on-strong (≥4.5:1)."
-      },
-      "soft": {
-        "$type": "color",
-        "$value": "{berry.100}",
-        "$description": "Soft ai fill (light). Contrast: with text/ai (≥4.5:1)."
-      },
-      "strong-hover": {
-        "$type": "color",
-        "$value": "{berry.700}",
-        "$description": "Strong ai hover (light). Contrast: with text/on-strong (≥4.5:1)."
-      },
-      "strong-active": {
-        "$type": "color",
-        "$value": "{berry.800}",
-        "$description": "Strong ai active (light). Contrast: with text/on-strong (≥4.5:1)."
       }
     }
   },
@@ -174,16 +212,6 @@
       "$value": "{neutral.950}",
       "$description": "Text on warning strong (light). Contrast: ≥4.5:1 on amber-300 — white fails; this is required."
     },
-    "neutral": {
-      "$type": "color",
-      "$value": "{neutral.700}",
-      "$description": "neutral text and status icons (light). Contrast: ≥4.5:1 on soft neutral / canvas."
-    },
-    "neutral-hover": {
-      "$type": "color",
-      "$value": "{neutral.800}",
-      "$description": "Hover state for status-coloured text and link buttons. Contrast: ≥4.5:1 on canvas/surface."
-    },
     "info": {
       "$type": "color",
       "$value": "{ocean.700}",
@@ -191,7 +219,7 @@
     },
     "info-hover": {
       "$type": "color",
-      "$value": "{ocean.800}",
+      "$value": "{ocean.900}",
       "$description": "Hover state for status-coloured text and link buttons. Contrast: ≥4.5:1 on canvas/surface."
     },
     "success": {
@@ -211,7 +239,7 @@
     },
     "warning-hover": {
       "$type": "color",
-      "$value": "{amber.800}",
+      "$value": "{amber.900}",
       "$description": "Hover state for status-coloured text and link buttons. Contrast: ≥4.5:1 on canvas/surface."
     },
     "danger": {
@@ -222,16 +250,6 @@
     "danger-hover": {
       "$type": "color",
       "$value": "{cherry.800}",
-      "$description": "Hover state for status-coloured text and link buttons. Contrast: ≥4.5:1 on canvas/surface."
-    },
-    "ai": {
-      "$type": "color",
-      "$value": "{berry.700}",
-      "$description": "ai text and status icons (light). Contrast: ≥4.5:1 on soft ai / canvas."
-    },
-    "ai-hover": {
-      "$type": "color",
-      "$value": "{berry.800}",
       "$description": "Hover state for status-coloured text and link buttons. Contrast: ≥4.5:1 on canvas/surface."
     }
   },
@@ -260,6 +278,11 @@
       "$type": "color",
       "$value": "{neutral.0}",
       "$description": "Icon on inverse (light). Contrast: ≥3:1 / ≥4.5:1 if conveying meaning."
+    },
+    "on-selected": {
+      "$type": "color",
+      "$value": "{neutral.950}",
+      "$description": "Foreground marks on the selected yellow fill — checkbox ticks, radio dots, icons on selected chrome. Distinct from selected/text, which is label text."
     }
   },
   "border": {
@@ -275,18 +298,13 @@
     },
     "strong": {
       "$type": "color",
-      "$value": "{neutral.600}",
+      "$value": "{neutral.500}",
       "$description": "Strong border (light). Contrast: ≥3:1."
     },
     "focus": {
       "$type": "color",
-      "$value": "{neutral.950}",
+      "$value": "{neutral.900}",
       "$description": "Focus ring color (light). Contrast: ≥3:1 against background."
-    },
-    "neutral": {
-      "$type": "color",
-      "$value": "{neutral.200}",
-      "$description": "neutral border (light). Contrast: ≥3:1 non-text."
     },
     "info": {
       "$type": "color",
@@ -307,11 +325,6 @@
       "$type": "color",
       "$value": "{cherry.200}",
       "$description": "danger border (light). Contrast: ≥3:1 non-text."
-    },
-    "ai": {
-      "$type": "color",
-      "$value": "{berry.200}",
-      "$description": "ai border (light). Contrast: ≥3:1 non-text."
     }
   },
   "selected": {

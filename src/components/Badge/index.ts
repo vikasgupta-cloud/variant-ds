@@ -3,6 +3,7 @@ export {
   badgeVariants,
   badgeDotSize,
   badgeCountSize,
+  badgeCountType,
   badgeIconSize,
   type BadgeVariantProps,
   type BadgeRole,

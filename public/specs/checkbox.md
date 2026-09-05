@@ -17,22 +17,25 @@ Binary or indeterminate multi-select control built on Radix Checkbox.
 
 ## Anatomy
 
-1. Root
-2. Indicator (check / dash)
-3. Label
-4. Description
+1. CheckboxGroup
+2. Root
+3. Indicator (check / dash)
+4. Label
+5. Description
 
 ## Tokens consumed
 
 ### role
 
-- `bg/neutral/strong` → `--bg-neutral-strong`
+- `selected/bg` → `--selected-bg`
+- `selected/edge` → `--selected-edge`
+- `icon/on-selected` → `--icon-on-selected`
 - `bg/disabled` → `--bg-disabled`
-- `text/on-inverse` → `--text-on-inverse`
 - `text/primary` → `--text-primary`
 - `text/secondary` → `--text-secondary`
 - `text/disabled` → `--text-disabled`
 - `border/default` → `--border-default`
+- `border/strong` → `--border-strong`
 - `border/focus` → `--border-focus`
 - `border/danger` → `--border-danger`
 
@@ -57,6 +60,7 @@ Binary or indeterminate multi-select control built on Radix Checkbox.
 | --- | --- | --- | --- |
 | `size` | sm \| md \| lg | md | Box size. |
 | `checked` | boolean \| 'indeterminate' | — | Controlled checked state. |
+| `orientation` | vertical \| horizontal | vertical | CheckboxGroup layout. |
 | `state` | design-review states | default | Design-review only. |
 
 ## Accessibility
