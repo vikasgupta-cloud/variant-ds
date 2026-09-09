@@ -25,3 +25,5 @@ debug-storybook.log
 
 # Test / coverage
 coverage/
+.vercel
+.env*
