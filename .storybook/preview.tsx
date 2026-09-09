@@ -177,6 +177,30 @@ const withTokenTheme: Decorator = (Story, context) => {
 const preview: Preview = {
   parameters: {
     layout: "fullscreen",
+    a11y: {
+      // AC §9.4 — violations fail Vitest / CI (addon-a11y + Vitest addon).
+      test: "error",
+      // Match contrast-pairing exemptions: tertiary + disabled are intentionally
+      // below 4.5:1 and must not fail the axe gate.
+      context: {
+        exclude: [
+          [".text-text-tertiary"],
+          [".text-text-disabled"],
+          [".text-icon-tertiary"],
+          [".text-icon-disabled"],
+          // Disabled controls are intentionally below AA body contrast.
+          ['[data-state="disabled"]'],
+          ["[disabled]"],
+          ['[aria-disabled="true"]'],
+        ],
+      },
+      config: {
+        rules: [
+          // Component stories are not full pages — region rule is noise.
+          { id: "region", enabled: false },
+        ],
+      },
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -189,14 +213,7 @@ const preview: Preview = {
     options: {
       storySort: {
         order: [
-          "Get started",
-          [
-            "Overview",
-            "Installation",
-            "For designers",
-            "For engineers",
-            "Changelog",
-          ],
+          // "Get started" docs deferred until foundations + components are solid.
           "Foundations",
           [
             "Colour",
@@ -240,8 +257,6 @@ const preview: Preview = {
             "Messaging",
             [
               "Alert",
-              ["Examples", "Usage", "Code", "Accessibility"],
-              "Modal",
               ["Examples", "Usage", "Code", "Accessibility"],
               "Toast",
               ["Examples", "Usage", "Code", "Accessibility"],

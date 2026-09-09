@@ -114,14 +114,6 @@
       ]
     },
     {
-      "id": "modal",
-      "name": "Modal",
-      "files": [
-        "modal.md",
-        "modal.json"
-      ]
-    },
-    {
       "id": "tooltip",
       "name": "Tooltip",
       "files": [

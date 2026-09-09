@@ -121,7 +121,6 @@ export const Slider = forwardRef<HTMLSpanElement, SliderProps>(
           max={max}
           step={step}
           disabled={isDisabled}
-          aria-labelledby={label ? labelId : undefined}
           {...(valueArr !== undefined ? { value: valueArr } : {})}
           {...(valueArr === undefined ? { defaultValue: defaultArr } : {})}
           {...(onValueChange
@@ -131,8 +130,14 @@ export const Slider = forwardRef<HTMLSpanElement, SliderProps>(
                 },
               }
             : {})}
-          className={sliderRootVariants()}
           {...props}
+          aria-labelledby={label ? labelId : undefined}
+          aria-label={
+            label
+              ? undefined
+              : ((props as { "aria-label"?: string })["aria-label"] ?? "Slider")
+          }
+          className={sliderRootVariants()}
         >
           <SliderPrimitive.Track className={sliderTrackVariants()}>
             <SliderPrimitive.Range className={sliderRangeVariants()} />
@@ -140,6 +145,11 @@ export const Slider = forwardRef<HTMLSpanElement, SliderProps>(
           {Array.from({ length: thumbCount }, (_, i) => (
             <SliderPrimitive.Thumb
               key={i}
+              aria-label={
+                isRange
+                  ? `${label ?? "Range"} thumb ${i + 1}`
+                  : (label ?? "Slider")
+              }
               {...(thumbReviewState
                 ? { "data-state": thumbReviewState }
                 : {})}

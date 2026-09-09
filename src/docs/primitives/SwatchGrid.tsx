@@ -36,7 +36,7 @@ export function SwatchGrid({
             {item.label}
           </span>
           {item.value != null ? (
-            <span className="shrink-0 font-mono type-numeric-sm text-text-tertiary">
+            <span className="shrink-0 type-body-sm text-text-secondary">
               {item.value}
             </span>
           ) : null}

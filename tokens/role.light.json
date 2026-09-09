@@ -41,11 +41,6 @@
         "$value": "{neutral.200}",
         "$description": "Soft neutral hover (light). Contrast: with text/primary (≥4.5:1)."
       },
-      "soft-active": {
-        "$type": "color",
-        "$value": "{neutral.300}",
-        "$description": "Soft neutral active (light). Contrast: with text/primary (≥4.5:1)."
-      },
       "strong-hover": {
         "$type": "color",
         "$value": "{neutral.800}",
@@ -72,11 +67,6 @@
         "$type": "color",
         "$value": "{ocean.200}",
         "$description": "Soft info hover (light). Contrast: with text/info (≥4.5:1)."
-      },
-      "soft-active": {
-        "$type": "color",
-        "$value": "{ocean.300}",
-        "$description": "Soft info active (light). Contrast: with text/info (≥4.5:1)."
       }
     },
     "success": {
@@ -94,11 +84,6 @@
         "$type": "color",
         "$value": "{green.200}",
         "$description": "Soft success hover (light). Contrast: with text/success (≥4.5:1)."
-      },
-      "soft-active": {
-        "$type": "color",
-        "$value": "{green.300}",
-        "$description": "Soft success active (light). Contrast: with text/success (≥4.5:1)."
       },
       "strong-hover": {
         "$type": "color",
@@ -126,11 +111,6 @@
         "$type": "color",
         "$value": "{amber.200}",
         "$description": "Soft warning hover (light). Contrast: with text/warning (≥4.5:1)."
-      },
-      "soft-active": {
-        "$type": "color",
-        "$value": "{amber.300}",
-        "$description": "Soft warning active (light). Contrast: with text/warning (≥4.5:1)."
       }
     },
     "danger": {
@@ -148,11 +128,6 @@
         "$type": "color",
         "$value": "{cherry.200}",
         "$description": "Soft danger hover (light). Contrast: with text/danger (≥4.5:1)."
-      },
-      "soft-active": {
-        "$type": "color",
-        "$value": "{cherry.300}",
-        "$description": "Soft danger active (light). Contrast: with text/danger (≥4.5:1)."
       },
       "strong-hover": {
         "$type": "color",

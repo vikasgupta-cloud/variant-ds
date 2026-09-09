@@ -10,7 +10,7 @@ import {
   PlaceholderIcon,
   StoryHeading,
   StorySection,
-} from "../../stories/kit";
+  StoryTable, storyThClass, storyTdClass, storyTdLabelClass } from "../../stories/kit";
 
 const sizes = ["sm", "md", "lg"] as const;
 const variants = ["underline", "button"] as const;
@@ -96,15 +96,14 @@ export const States: Story = {
       />
       {variants.map((variant) => (
         <StorySection key={variant} title={variant}>
-          <div className="overflow-x-auto">
-            <table className="border-collapse text-left text-sm">
+          <StoryTable>
               <thead>
                 <tr>
-                  <th className="p-8 text-text-tertiary">Size</th>
+                  <th className={storyThClass}>Size</th>
                   {states.map((state) => (
                     <th
                       key={state}
-                      className="p-8 font-medium text-text-secondary"
+                      className={storyThClass}
                     >
                       {state}
                     </th>
@@ -114,9 +113,9 @@ export const States: Story = {
               <tbody>
                 {sizes.map((size) => (
                   <tr key={size} className="border-t border-border-subtle">
-                    <td className="p-8 text-text-tertiary">{size}</td>
+                    <td className={storyTdLabelClass}>{size}</td>
                     {states.map((state) => (
-                      <td key={state} className="p-8">
+                      <td key={state} className={storyTdClass}>
                         <Tabs
                           variant={variant}
                           size={size}
@@ -134,14 +133,19 @@ export const States: Story = {
                               </TabsTrigger>
                             ) : null}
                           </TabsList>
+                          <TabsContent value="forced" className="sr-only">
+                            Panel
+                          </TabsContent>
+                          <TabsContent value="other" className="sr-only">
+                            Other
+                          </TabsContent>
                         </Tabs>
                       </td>
                     ))}
                   </tr>
                 ))}
               </tbody>
-            </table>
-          </div>
+            </StoryTable>
         </StorySection>
       ))}
     </div>

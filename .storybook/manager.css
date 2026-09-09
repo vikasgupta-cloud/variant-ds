@@ -1,0 +1,56 @@
+/**
+ * Manager contrast overrides.
+ * Storybook hardcodes white (`color.lightest`) on `color.secondary` fills.
+ * Theme secondary is therefore near-black; this file restores brand yellow
+ * selection with selected/text ink. Custom properties are set from
+ * tokens/manager-theme.light.json in manager.tsx (no hex here).
+ */
+.sidebar-item[data-selected="true"] {
+  background: var(--sb-selected-bg) !important;
+  color: var(--sb-selected-text) !important;
+  font-weight: 700;
+}
+
+.sidebar-item[data-selected="true"]:hover,
+.sidebar-item[data-selected="true"]:focus {
+  background: var(--sb-selected-bg) !important;
+}
+
+.sidebar-item[data-selected="true"] a,
+.sidebar-item[data-selected="true"] button,
+.sidebar-item[data-selected="true"] svg {
+  color: var(--sb-selected-text) !important;
+  fill: currentColor;
+}
+
+/* Status chips inside the selected row — drop white-on-accent wash */
+.sidebar-item[data-selected="true"] button {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/*
+ * Mode / Context / Side-by-side toolbar selects (always valued).
+ * Soft yellow + dark ink — matches selected/* Role tokens.
+ * Built-in Storybook listboxes (viewport, etc.) are left alone.
+ */
+#storybook-preview-toolbar button[aria-haspopup="listbox"][aria-label^="Color mode"],
+#storybook-preview-toolbar button[aria-haspopup="listbox"][aria-label^="Surface context"],
+#storybook-preview-toolbar button[aria-haspopup="listbox"][aria-label^="Render light"],
+.sb-bar button[aria-haspopup="listbox"][aria-label^="Color mode"],
+.sb-bar button[aria-haspopup="listbox"][aria-label^="Surface context"],
+.sb-bar button[aria-haspopup="listbox"][aria-label^="Render light"] {
+  background: color-mix(in srgb, var(--sb-selected-bg) 72%, transparent) !important;
+  color: var(--sb-selected-text) !important;
+  box-shadow: none !important;
+}
+
+#storybook-preview-toolbar button[aria-haspopup="listbox"][aria-label^="Color mode"] svg,
+#storybook-preview-toolbar button[aria-haspopup="listbox"][aria-label^="Surface context"] svg,
+#storybook-preview-toolbar button[aria-haspopup="listbox"][aria-label^="Render light"] svg,
+.sb-bar button[aria-haspopup="listbox"][aria-label^="Color mode"] svg,
+.sb-bar button[aria-haspopup="listbox"][aria-label^="Surface context"] svg,
+.sb-bar button[aria-haspopup="listbox"][aria-label^="Render light"] svg {
+  color: var(--sb-selected-text) !important;
+  fill: currentColor;
+}

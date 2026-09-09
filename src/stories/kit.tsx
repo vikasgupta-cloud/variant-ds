@@ -10,6 +10,7 @@ import type { ReactNode } from "react";
 import { Icon } from "../components/Icon";
 import { ReleasePhaseBadge } from "../docs/ReleasePhaseBadge";
 import type { ReleasePhase } from "../docs/release-phase";
+import { cn } from "../lib/cn";
 
 /** Target cells in a States grid so hover/active/focus-visible show side by side. */
 export const pseudoStateParams = {
@@ -17,6 +18,38 @@ export const pseudoStateParams = {
   active: '[data-pseudo="active"]',
   focusVisible: '[data-pseudo="focus-visible"]',
 } as const;
+
+/**
+ * Shared chrome for variant / state matrix tables in stories.
+ * No fill — inherits the preview `data-context` background so Mode/Context
+ * toolbar changes stay visible.
+ */
+export function StoryTable({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <div
+      className={cn(
+        "w-full overflow-x-auto rounded-control border border-border-subtle bg-transparent",
+        className,
+      )}
+      tabIndex={0}
+    >
+      <table className="w-full border-collapse text-left">{children}</table>
+    </div>
+  );
+}
+
+export const storyThClass =
+  "px-16 py-12 text-left type-body-sm-medium text-text-primary";
+export const storyTdClass =
+  "px-16 py-16 align-middle type-body-md text-text-primary";
+export const storyTdLabelClass =
+  "px-16 py-16 align-middle type-body-md text-text-primary whitespace-nowrap";
 
 export function StoryHeading({
   title,
@@ -50,7 +83,7 @@ export function StorySection({
 }) {
   return (
     <section className="flex flex-col gap-8">
-      <h2 className="type-body-sm-semibold uppercase tracking-wide text-text-tertiary">
+      <h2 className="type-body-sm-semibold uppercase tracking-wide text-text-secondary">
         {title}
       </h2>
       {children}

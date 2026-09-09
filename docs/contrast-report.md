@@ -20,24 +20,20 @@ Generated: 2026-09-05
 | --- | --- | --- | ---: | ---: | --- | --- |
 | `bg-canvas` | `#f6f3ed` ({neutral.50}) | fg `text-primary` (#1b1913) on this token | 15.87:1 | 4.5:1 | pass | — |
 | `bg-danger-soft` | `#ffe2dc` ({cherry.100}) | fg `text-danger` (#92230d) on this token | 6.95:1 | 4.5:1 | pass | — |
-| `bg-danger-soft-active` | `#fb937d` ({cherry.300}) | fg `text-danger` (#92230d) on this token | 3.88:1 | 4.5:1 | fail | — |
 | `bg-danger-soft-hover` | `#ffcabe` ({cherry.200}) | fg `text-danger` (#92230d) on this token | 5.85:1 | 4.5:1 | pass | — |
 | `bg-danger-strong` | `#b72200` ({cherry.600}) | fg `text-on-strong` (#ffffff) on this token | 6.48:1 | 4.5:1 | pass | — |
 | `bg-danger-strong-active` | `#6f1c0a` ({cherry.800}) | fg `text-on-strong` (#ffffff) on this token | 11.37:1 | 4.5:1 | pass | — |
 | `bg-danger-strong-hover` | `#92230d` ({cherry.700}) | fg `text-on-strong` (#ffffff) on this token | 8.51:1 | 4.5:1 | pass | — |
 | `bg-disabled` | `#e5e0d6` ({neutral.100}) | fg `text-primary` (#1b1913) on this token | 13.36:1 | 4.5:1 | pass | — |
 | `bg-info-soft` | `#dee9ff` ({ocean.100}) | fg `text-info` (#2846a0) on this token | 6.95:1 | 4.5:1 | pass | — |
-| `bg-info-soft-active` | `#8badff` ({ocean.300}) | fg `text-info` (#2846a0) on this token | 3.85:1 | 4.5:1 | fail | — |
 | `bg-info-soft-hover` | `#c4d7ff` ({ocean.200}) | fg `text-info` (#2846a0) on this token | 5.87:1 | 4.5:1 | pass | — |
 | `bg-info-strong` | `#2f54cb` ({ocean.600}) | fg `text-on-strong` (#ffffff) on this token | 6.46:1 | 4.5:1 | pass | — |
 | `bg-neutral-soft` | `#e5e0d6` ({neutral.100}) | fg `text-primary` (#1b1913) on this token | 13.36:1 | 4.5:1 | pass | — |
-| `bg-neutral-soft-active` | `#b2ada1` ({neutral.300}) | fg `text-primary` (#1b1913) on this token | 7.85:1 | 4.5:1 | pass | — |
 | `bg-neutral-soft-hover` | `#dbd6cb` ({neutral.200}) | fg `text-primary` (#1b1913) on this token | 12.13:1 | 4.5:1 | pass | — |
 | `bg-neutral-strong` | `#1b1913` ({neutral.950}) | fg `text-on-inverse` (#f6f3ed) on this token | 15.87:1 | 4.5:1 | pass | Neutral strong inverts (near-black ↔ near-white) instead of the chromatic strong pattern, so it pairs with text/on-inverse — not text/on-strong. |
 | `bg-neutral-strong-active` | `#4f4d44` ({neutral.700}) | fg `text-on-inverse` (#f6f3ed) on this token | 7.65:1 | 4.5:1 | pass | Neutral strong inverts (near-black ↔ near-white) instead of the chromatic strong pattern, so it pairs with text/on-inverse — not text/on-strong. |
 | `bg-neutral-strong-hover` | `#3c3932` ({neutral.800}) | fg `text-on-inverse` (#f6f3ed) on this token | 10.40:1 | 4.5:1 | pass | Neutral strong inverts (near-black ↔ near-white) instead of the chromatic strong pattern, so it pairs with text/on-inverse — not text/on-strong. |
 | `bg-success-soft` | `#caf2dd` ({green.100}) | fg `text-success` (#00583a) on this token | 7.02:1 | 4.5:1 | pass | — |
-| `bg-success-soft-active` | `#07c787` ({green.300}) | fg `text-success` (#00583a) on this token | 3.88:1 | 4.5:1 | fail | — |
 | `bg-success-soft-hover` | `#a4e4c3` ({green.200}) | fg `text-success` (#00583a) on this token | 5.89:1 | 4.5:1 | pass | — |
 | `bg-success-strong` | `#006f4b` ({green.600}) | fg `text-on-strong` (#ffffff) on this token | 6.22:1 | 4.5:1 | pass | — |
 | `bg-success-strong-active` | `#00442a` ({green.800}) | fg `text-on-strong` (#ffffff) on this token | 11.29:1 | 4.5:1 | pass | — |
@@ -46,7 +42,6 @@ Generated: 2026-09-05
 | `bg-surface-raised` | `#ffffff` ({neutral.0}) | fg `text-primary` (#1b1913) on this token | 17.57:1 | 4.5:1 | pass | — |
 | `bg-tooltip` | `#1b1913` ({neutral.950}) | fg `text-on-strong` (#ffffff) on this token | 17.57:1 | 4.5:1 | pass | — |
 | `bg-warning-soft` | `#ffe4c8` ({amber.100}) | fg `text-warning` (#6f4300) on this token | 6.93:1 | 4.5:1 | pass | — |
-| `bg-warning-soft-active` | `#e7a04c` ({amber.300}) | fg `text-warning` (#6f4300) on this token | 3.84:1 | 4.5:1 | fail | — |
 | `bg-warning-soft-hover` | `#f5c896` ({amber.200}) | fg `text-warning` (#6f4300) on this token | 5.48:1 | 4.5:1 | pass | — |
 | `bg-warning-strong` | `#e7a04c` ({amber.300}) | fg `text-on-strong-warning` (#1b1913) on this token | 7.97:1 | 4.5:1 | pass | — |
 | `border-danger` | `#ffcabe` ({cherry.200}) | `bg-danger-soft` (#ffe2dc) | 1.19:1 | 3:1 | fail | State border on bg/danger/soft (banner / callout), not canvas. |
@@ -93,25 +88,21 @@ Generated: 2026-09-05
 | --- | --- | --- | ---: | ---: | --- | --- |
 | `bg-canvas` | `#1b1913` ({neutral.950}) | fg `text-primary` (#f6f3ed) on this token | 15.87:1 | 4.5:1 | pass | — |
 | `bg-danger-soft` | `#4f150a` ({cherry.900}) | fg `text-danger` (#fb937d) on this token | 6.63:1 | 4.5:1 | pass | — |
-| `bg-danger-soft-active` | `#b72200` ({cherry.600}) | fg `text-danger` (#fb937d) on this token | 2.95:1 | 4.5:1 | fail | — |
-| `bg-danger-soft-hover` | `#92230d` ({cherry.700}) | fg `text-danger` (#fb937d) on this token | 3.88:1 | 4.5:1 | fail | — |
+| `bg-danger-soft-hover` | `#6f1c0a` ({cherry.800}) | fg `text-danger` (#fb937d) on this token | 5.18:1 | 4.5:1 | pass | — |
 | `bg-danger-strong` | `#de2d02` ({cherry.500}) | fg `text-on-strong` (#ffffff) on this token | 4.69:1 | 4.5:1 | tight | — |
 | `bg-danger-strong-active` | `#92230d` ({cherry.700}) | fg `text-on-strong` (#ffffff) on this token | 8.51:1 | 4.5:1 | pass | — |
 | `bg-danger-strong-hover` | `#b72200` ({cherry.600}) | fg `text-on-strong` (#ffffff) on this token | 6.48:1 | 4.5:1 | pass | — |
 | `bg-disabled` | `#3c3932` ({neutral.800}) | fg `text-primary` (#f6f3ed) on this token | 10.40:1 | 4.5:1 | pass | — |
 | `bg-info-soft` | `#152656` ({ocean.900}) | fg `text-info` (#8badff) on this token | 6.59:1 | 4.5:1 | pass | — |
-| `bg-info-soft-active` | `#2f54cb` ({ocean.600}) | fg `text-info` (#8badff) on this token | 2.93:1 | 4.5:1 | fail | — |
-| `bg-info-soft-hover` | `#2846a0` ({ocean.700}) | fg `text-info` (#8badff) on this token | 3.85:1 | 4.5:1 | fail | — |
+| `bg-info-soft-hover` | `#1d3578` ({ocean.800}) | fg `text-info` (#8badff) on this token | 5.19:1 | 4.5:1 | pass | — |
 | `bg-info-strong` | `#406bed` ({ocean.500}) | fg `text-on-strong` (#ffffff) on this token | 4.62:1 | 4.5:1 | tight | — |
 | `bg-neutral-soft` | `#3c3932` ({neutral.800}) | fg `text-primary` (#f6f3ed) on this token | 10.40:1 | 4.5:1 | pass | — |
-| `bg-neutral-soft-active` | `#5f5c53` ({neutral.600}) | fg `text-primary` (#f6f3ed) on this token | 6.03:1 | 4.5:1 | pass | — |
-| `bg-neutral-soft-hover` | `#4f4d44` ({neutral.700}) | fg `text-primary` (#f6f3ed) on this token | 7.65:1 | 4.5:1 | pass | — |
+| `bg-neutral-soft-hover` | `#3c3932` ({neutral.800}) | fg `text-primary` (#f6f3ed) on this token | 10.40:1 | 4.5:1 | pass | — |
 | `bg-neutral-strong` | `#f6f3ed` ({neutral.50}) | fg `text-on-inverse` (#1b1913) on this token | 15.87:1 | 4.5:1 | pass | Neutral strong inverts (near-black ↔ near-white) instead of the chromatic strong pattern, so it pairs with text/on-inverse — not text/on-strong. |
 | `bg-neutral-strong-active` | `#b2ada1` ({neutral.300}) | fg `text-on-inverse` (#1b1913) on this token | 7.85:1 | 4.5:1 | pass | Neutral strong inverts (near-black ↔ near-white) instead of the chromatic strong pattern, so it pairs with text/on-inverse — not text/on-strong. |
 | `bg-neutral-strong-hover` | `#dbd6cb` ({neutral.200}) | fg `text-on-inverse` (#1b1913) on this token | 12.13:1 | 4.5:1 | pass | Neutral strong inverts (near-black ↔ near-white) instead of the chromatic strong pattern, so it pairs with text/on-inverse — not text/on-strong. |
 | `bg-success-soft` | `#00301e` ({green.900}) | fg `text-success` (#07c787) on this token | 6.61:1 | 4.5:1 | pass | — |
-| `bg-success-soft-active` | `#006f4b` ({green.600}) | fg `text-success` (#07c787) on this token | 2.82:1 | 4.5:1 | fail | — |
-| `bg-success-soft-hover` | `#00583a` ({green.700}) | fg `text-success` (#07c787) on this token | 3.88:1 | 4.5:1 | fail | — |
+| `bg-success-soft-hover` | `#00442a` ({green.800}) | fg `text-success` (#07c787) on this token | 5.12:1 | 4.5:1 | pass | — |
 | `bg-success-strong` | `#00865b` ({green.500}) | fg `text-on-strong` (#ffffff) on this token | 4.60:1 | 4.5:1 | tight | — |
 | `bg-success-strong-active` | `#00583a` ({green.700}) | fg `text-on-strong` (#ffffff) on this token | 8.55:1 | 4.5:1 | pass | — |
 | `bg-success-strong-hover` | `#006f4b` ({green.600}) | fg `text-on-strong` (#ffffff) on this token | 6.22:1 | 4.5:1 | pass | — |
@@ -119,8 +110,7 @@ Generated: 2026-09-05
 | `bg-surface-raised` | `#3c3932` ({neutral.800}) | fg `text-primary` (#f6f3ed) on this token | 10.40:1 | 4.5:1 | pass | — |
 | `bg-tooltip` | `#4f4d44` ({neutral.700}) | fg `text-on-strong` (#ffffff) on this token | 8.48:1 | 4.5:1 | pass | — |
 | `bg-warning-soft` | `#3e2300` ({amber.900}) | fg `text-warning` (#e7a04c) on this token | 6.59:1 | 4.5:1 | pass | — |
-| `bg-warning-soft-active` | `#8b5500` ({amber.600}) | fg `text-warning` (#e7a04c) on this token | 2.81:1 | 4.5:1 | fail | — |
-| `bg-warning-soft-hover` | `#6f4300` ({amber.700}) | fg `text-warning` (#e7a04c) on this token | 3.84:1 | 4.5:1 | fail | — |
+| `bg-warning-soft-hover` | `#563400` ({amber.800}) | fg `text-warning` (#e7a04c) on this token | 5.05:1 | 4.5:1 | pass | — |
 | `bg-warning-strong` | `#e7a04c` ({amber.300}) | fg `text-on-strong-warning` (#1b1913) on this token | 7.97:1 | 4.5:1 | pass | — |
 | `border-danger` | `#92230d` ({cherry.700}) | `bg-danger-soft` (#4f150a) | 1.71:1 | 3:1 | fail | State border on bg/danger/soft (banner / callout), not canvas. |
 | `border-default` | `#79756b` ({neutral.500}) | `bg-canvas` (#1b1913) | 3.82:1 | 3:1 | pass | — |
@@ -164,8 +154,8 @@ Generated: 2026-09-05
 
 | Result | Count |
 | --- | ---: |
-| pass | 90 |
-| fail | 20 |
+| pass | 92 |
+| fail | 8 |
 | exempt | 10 |
 | n/a | 16 |
-| total rows | 136 |
+| total rows | 126 |

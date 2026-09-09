@@ -5,7 +5,8 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { RadioGroup, RadioItem } from "./Radio";
 import type { RadioState } from "./Radio.variants";
-import { StoryHeading, StorySection } from "../../stories/kit";
+import { StoryHeading, StorySection,
+  StoryTable, storyThClass, storyTdClass, storyTdLabelClass } from "../../stories/kit";
 
 const sizes = ["sm", "md", "lg"] as const;
 const states: RadioState[] = [
@@ -82,13 +83,12 @@ export const States: Story = {
         description="Size × state matrix. Forced via the item state prop for design review."
       />
       <StorySection title="Size × states">
-        <div className="overflow-x-auto">
-          <table className="border-collapse text-left text-sm">
+        <StoryTable>
             <thead>
               <tr>
-                <th className="p-8 text-text-tertiary">Size</th>
+                <th className={storyThClass}>Size</th>
                 {states.map((state) => (
-                  <th key={state} className="p-8 font-medium text-text-secondary">
+                  <th key={state} className={storyThClass}>
                     {state}
                   </th>
                 ))}
@@ -97,9 +97,9 @@ export const States: Story = {
             <tbody>
               {sizes.map((size) => (
                 <tr key={size} className="border-t border-border-subtle">
-                  <td className="p-8 text-text-tertiary">{size}</td>
+                  <td className={storyTdLabelClass}>{size}</td>
                   {states.map((state) => (
-                    <td key={state} className="p-8">
+                    <td key={state} className={storyTdClass}>
                       <RadioGroup size={size}>
                         <RadioItem
                           value={`${size}-${state}`}
@@ -112,8 +112,7 @@ export const States: Story = {
                 </tr>
               ))}
             </tbody>
-          </table>
-        </div>
+          </StoryTable>
       </StorySection>
     </div>
   ),

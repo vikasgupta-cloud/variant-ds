@@ -1,9 +1,9 @@
 /**
  * Foundations / Motion — duration/* and easing/* demos via docs primitives.
+ * Panel enter demo uses Card chrome (Modal deferred).
  */
 import { useCallback, useEffect, useState, type CSSProperties } from "react";
 import { Button } from "../../components/Button";
-import { Modal } from "../../components/Modal";
 import {
   resolveCssVar,
   tokensWhere,
@@ -21,7 +21,7 @@ export function MotionPage() {
   const { tick, root } = useFoundationsTick();
   void tick;
   const [replayKey, setReplayKey] = useState(0);
-  const [modalOpen, setModalOpen] = useState(false);
+  const [panelVisible, setPanelVisible] = useState(false);
   const [hoverDemo, setHoverDemo] = useState(false);
 
   const durations = tokensWhere(
@@ -44,16 +44,19 @@ export function MotionPage() {
 
   const replay = useCallback(() => {
     setHoverDemo(false);
-    setModalOpen(false);
+    setPanelVisible(false);
     setReplayKey((k) => k + 1);
     requestAnimationFrame(() => {
       setHoverDemo(true);
-      window.setTimeout(() => setModalOpen(true), reduced ? 0 : 80);
+      window.setTimeout(() => setPanelVisible(true), reduced ? 0 : 80);
     });
   }, [reduced]);
 
   useEffect(() => {
-    const id = requestAnimationFrame(() => setHoverDemo(true));
+    const id = requestAnimationFrame(() => {
+      setHoverDemo(true);
+      setPanelVisible(true);
+    });
     return () => cancelAnimationFrame(id);
   }, [replayKey]);
 
@@ -61,8 +64,8 @@ export function MotionPage() {
     transitionProperty: "opacity, transform",
     transitionDuration: reduced ? "0ms" : durationSlow,
     transitionTimingFunction: easing,
-    opacity: modalOpen ? 1 : 0,
-    transform: modalOpen
+    opacity: panelVisible ? 1 : 0,
+    transform: panelVisible
       ? "translateY(0) scale(1)"
       : "translateY(var(--dimension-8)) scale(0.98)",
   };
@@ -135,15 +138,12 @@ export function MotionPage() {
       </Section>
 
       <Section
-        title="Modal open"
-        description="Open animation uses duration/slow. Replay closes and re-opens; the preview panel mirrors enter motion."
+        title="Panel enter"
+        description="Enter animation uses duration/slow on a raised surface panel (Modal deferred)."
       >
-        <Button hierarchy="secondary" onClick={() => setModalOpen(true)}>
-          Open modal
-        </Button>
         <div
-          key={`panel-${replayKey}-${modalOpen}`}
-          className="max-w-md rounded-modal border border-border-subtle bg-bg-surface-raised p-modal-padding shadow-md"
+          key={`panel-${replayKey}-${panelVisible}`}
+          className="w-full max-w-measure-prose rounded-card border border-border-subtle bg-bg-surface-raised p-card-padding shadow-md"
           style={panelStyle}
         >
           <span className="type-body-md-semibold text-text-primary">
@@ -153,17 +153,6 @@ export function MotionPage() {
             Enter uses duration/slow ({durationSlow}) and easing/standard.
           </span>
         </div>
-        <Modal
-          open={modalOpen}
-          onOpenChange={setModalOpen}
-          title="Motion demo"
-          description="Dialog open. Motion tokens also drive the preview panel above."
-        >
-          <span className="type-body-md text-text-secondary">
-            Dark mode still uses the same motion tokens — elevation changes with
-            surfaces, not slower shadows.
-          </span>
-        </Modal>
       </Section>
     </DocsPage>
   );

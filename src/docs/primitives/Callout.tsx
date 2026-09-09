@@ -21,7 +21,11 @@ export function Callout({
       role={role}
       emphasis="soft"
       {...(title ? { title } : {})}
-      className={cn(className)}
+      className={cn(
+        // Prose defaults to text-secondary; on soft role fills that fails AA — inherit Alert ink.
+        "[&_.text-text-secondary]:text-current [&_.text-text-primary]:text-current",
+        className,
+      )}
     >
       {children}
     </Alert>

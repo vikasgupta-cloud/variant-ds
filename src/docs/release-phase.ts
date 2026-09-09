@@ -23,7 +23,6 @@ export const COMPONENT_RELEASE_PHASE: Record<string, ReleasePhase> = {
   Badge: "beta",
   Tag: "beta",
   Alert: "beta",
-  Modal: "beta",
   Toast: "beta",
   Tooltip: "beta",
   Tabs: "beta",

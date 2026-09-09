@@ -1,31 +1,14 @@
 /**
  * Storybook manager theme — mirrors resolved Role + Primitive values (light mode).
- * Manager cannot read preview CSS variables; keep in sync with tokens/*.json.
+ * Hex lives in tokens/manager-theme.light.json (manager cannot read preview CSS vars).
  *
- * Mapping:
- *   appBg          → bg/canvas      (neutral-50)
- *   appContentBg   → bg/surface     (neutral-0)
- *   textColor      → text/primary   (neutral-950)
- *   textMutedColor → text/secondary (neutral-600)
- *   appBorderColor → border/subtle  (neutral-200)
- *   colorSecondary → selected/bg    (yellow-accent) + selected/text (neutral-950)
+ * Important: Storybook paints `color.lightest` (white) on `colorSecondary` fills
+ * (sidebar selection, solid buttons). Yellow accent fails that pattern — secondary
+ * is therefore near-black (selected/text). Brand yellow selection is restored in
+ * manager.css with selected/text ink.
  */
 import { create } from "storybook/theming";
-
-/** Resolved light-mode Role / Primitive values — do not invent new hex here. */
-const role = {
-  bgCanvas: "#f6f3ed", // bg/canvas → neutral.50
-  bgSurface: "#ffffff", // bg/surface → neutral.0
-  textPrimary: "#1b1913", // text/primary → neutral.950
-  textSecondary: "#5f5c53", // text/secondary → neutral.600
-  textTertiary: "#79756b", // text/tertiary → neutral.500
-  borderSubtle: "#dbd6cb", // border/subtle → neutral.200
-  selectedBg: "#eeff6d", // selected/bg → yellow.accent
-  selectedText: "#1b1913", // selected/text → neutral.950
-  surfaceLevel1: "#e5e0d6", // surface/level-1 on canvas → neutral.100
-  radiusMd: 8, // radius/md
-  radiusSm: 4, // radius/sm
-} as const;
+import role from "../tokens/manager-theme.light.json" with { type: "json" };
 
 export const variantTheme = create({
   base: "light",
@@ -37,8 +20,8 @@ export const variantTheme = create({
   fontCode: '"DM Mono", ui-monospace, SFMono-Regular, Menlo, monospace',
 
   colorPrimary: role.textPrimary,
-  /** Active sidebar / selected chrome — selected/bg (yellow) */
-  colorSecondary: role.selectedBg,
+  /** Must work with Storybook’s hardcoded white ink on secondary fills. */
+  colorSecondary: role.selectedText,
 
   appBg: role.bgCanvas,
   appContentBg: role.bgSurface,
@@ -47,10 +30,11 @@ export const variantTheme = create({
   appBorderRadius: role.radiusMd,
 
   textColor: role.textPrimary,
-  textInverseColor: role.selectedText,
+  textInverseColor: role.bgSurface,
   textMutedColor: role.textSecondary,
 
   barTextColor: role.textSecondary,
+  /** Underline / selected toolbar text — dark, not yellow (yellow fails on white). */
   barSelectedColor: role.selectedText,
   barHoverColor: role.textPrimary,
   barBg: role.bgSurface,
@@ -64,5 +48,6 @@ export const variantTheme = create({
   buttonBorder: role.borderSubtle,
 
   booleanBg: role.surfaceLevel1,
+  /** Track fill for boolean; knob contrast handled by Storybook chrome. */
   booleanSelectedBg: role.selectedBg,
 });

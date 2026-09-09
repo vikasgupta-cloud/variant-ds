@@ -31,25 +31,33 @@
   --color-*: initial;
   --spacing-*: initial;
 
-  /* Role + surface colours → bg-*, text-*, border-* utilities */
+  /* Role colours — every leaf in tokens/role.light.json must appear here.
+     tokens:build fails if any Role CSS var lacks a matching --color-* entry. */
   --color-bg-canvas: var(--bg-canvas);
   --color-bg-danger-soft: var(--bg-danger-soft);
+  --color-bg-danger-soft-hover: var(--bg-danger-soft-hover);
   --color-bg-danger-strong: var(--bg-danger-strong);
   --color-bg-danger-strong-active: var(--bg-danger-strong-active);
   --color-bg-danger-strong-hover: var(--bg-danger-strong-hover);
   --color-bg-disabled: var(--bg-disabled);
   --color-bg-info-soft: var(--bg-info-soft);
+  --color-bg-info-soft-hover: var(--bg-info-soft-hover);
   --color-bg-info-strong: var(--bg-info-strong);
   --color-bg-neutral-soft: var(--bg-neutral-soft);
+  --color-bg-neutral-soft-hover: var(--bg-neutral-soft-hover);
   --color-bg-neutral-strong: var(--bg-neutral-strong);
   --color-bg-neutral-strong-active: var(--bg-neutral-strong-active);
   --color-bg-neutral-strong-hover: var(--bg-neutral-strong-hover);
   --color-bg-success-soft: var(--bg-success-soft);
+  --color-bg-success-soft-hover: var(--bg-success-soft-hover);
   --color-bg-success-strong: var(--bg-success-strong);
+  --color-bg-success-strong-active: var(--bg-success-strong-active);
+  --color-bg-success-strong-hover: var(--bg-success-strong-hover);
   --color-bg-surface: var(--bg-surface);
   --color-bg-surface-raised: var(--bg-surface-raised);
   --color-bg-tooltip: var(--bg-tooltip);
   --color-bg-warning-soft: var(--bg-warning-soft);
+  --color-bg-warning-soft-hover: var(--bg-warning-soft-hover);
   --color-bg-warning-strong: var(--bg-warning-strong);
   --color-border-danger: var(--border-danger);
   --color-border-default: var(--border-default);
@@ -88,6 +96,8 @@
   --color-text-tertiary: var(--text-tertiary);
   --color-text-warning: var(--text-warning);
   --color-text-warning-hover: var(--text-warning-hover);
+
+  /* Surface colours → bg-surface-* utilities */
   --color-surface-border: var(--surface-border);
   --color-surface-control: var(--surface-control);
   --color-surface-control-hover: var(--surface-control-hover);
@@ -103,9 +113,8 @@
   --shadow-md: var(--shadow-md);
   --z-index-modal: var(--z-modal);
 
-  /* Component sizing (Card / Modal / Alert / chips / controls) */
+  /* Component sizing (Card / Alert / chips / controls) */
   --radius-card: var(--card-radius);
-  --radius-modal: var(--modal-radius);
   --radius-alert: var(--alert-radius);
   --radius-badge: var(--badge-radius);
   --radius-tag: var(--tag-radius);
@@ -120,7 +129,6 @@
   --radius-dropdown-menu: var(--dropdown-menu-radius);
   --radius-badge-count: var(--badge-count-radius);
   --spacing-card-padding: var(--card-padding);
-  --spacing-modal-padding: var(--modal-padding);
   --spacing-alert-padding: var(--alert-padding);
   --spacing-alert-icon-gap: var(--alert-icon-gap);
   --spacing-chip-padding-x-sm: var(--chip-padding-x-sm);
@@ -168,9 +176,6 @@
   --spacing-dropdown-menu-padding-y: var(--dropdown-menu-padding-y);
   --spacing-dropdown-item-padding-x: var(--dropdown-item-padding-x);
   --spacing-dropdown-item-padding-y: var(--dropdown-item-padding-y);
-  --max-width-modal-sm: var(--modal-max-width-sm);
-  --max-width-modal-md: var(--modal-max-width);
-  --max-width-modal-lg: var(--modal-max-width-lg);
   --color-toggle-knob-bg-off: var(--toggle-knob-bg-off);
   --color-toggle-knob-bg-on: var(--toggle-knob-bg-on);
   --color-progress-track-bg: var(--progress-track-bg);

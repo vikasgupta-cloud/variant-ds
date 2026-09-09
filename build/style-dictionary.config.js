@@ -3,7 +3,8 @@
  *
  * Reads tokens/*.json → src/styles/tokens/*.css (+ tokens.json).
  * outputReferences: true is mandatory — aliases emit var(--name), not flattened hex.
- * Fails the build on missing $description, broken references, or duplicate CSS paths across layers.
+ * Fails the build on missing $description, broken references, duplicate CSS paths
+ * across layers, or a Role token missing its --color-* mapping in theme.css @theme.
  */
 import { mkdirSync, writeFileSync, rmSync, readFileSync } from "node:fs";
 import { basename, join, dirname } from "node:path";
@@ -332,6 +333,49 @@ function validate(layers) {
   }
 }
 
+/**
+ * Every Role leaf must be mapped in src/styles/theme.css @theme inline as:
+ *   --color-{css-name}: var(--{css-name});
+ * Otherwise Tailwind drops utilities (silent no-ops after --color-*: initial).
+ */
+function assertRoleThemeMappings(roleLight) {
+  const themePath = join(root, "src/styles/theme.css");
+  const themeCss = readFileSync(themePath, "utf8");
+  const themeBlock = themeCss.match(/@theme\s+inline\s*\{([\s\S]*?)\n\}/);
+  if (!themeBlock) {
+    console.error("\nRole → @theme check failed:\n  • @theme inline block not found in src/styles/theme.css");
+    process.exit(1);
+  }
+
+  const mapped = new Set();
+  const entryRe = /--color-([a-z0-9-]+)\s*:\s*var\(\s*--([a-z0-9-]+)\s*\)/gi;
+  let match;
+  while ((match = entryRe.exec(themeBlock[1])) !== null) {
+    const [, colorName, varName] = match;
+    if (colorName === varName) mapped.add(colorName);
+  }
+
+  const missing = [];
+  for (const leaf of collectLeaves(roleLight, FILES.roleLight)) {
+    const cssName = leaf.path.replace(/\./g, "-");
+    if (!mapped.has(cssName)) {
+      missing.push(
+        `${leaf.path} → need --color-${cssName}: var(--${cssName}); in @theme inline`,
+      );
+    }
+  }
+
+  if (missing.length) {
+    console.error(
+      "\nRole → @theme check failed (" +
+        missing.length +
+        " unmapped):\n" +
+        missing.map((e) => `  • ${e}`).join("\n"),
+    );
+    process.exit(1);
+  }
+}
+
 /** Resolve `{neutral.500}` → hex using primitive (and nested refs one level). */
 function resolveColorRef(value, primitive) {
   if (typeof value !== "string") return value;
@@ -582,6 +626,7 @@ async function main() {
   }
 
   assertSurfaceLineFillContrast(primitive, roleLight, roleDark, surface);
+  assertRoleThemeMappings(roleLight);
 
   // ——— primitive.css ———
   const primitiveForSd = primitiveWithoutTypography(primitive);

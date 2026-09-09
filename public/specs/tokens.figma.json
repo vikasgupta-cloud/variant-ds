@@ -58,6 +58,15 @@
       }
     },
     {
+      "name": "amber/800",
+      "cssVar": "--amber-800",
+      "resolvedType": "COLOR",
+      "description": "Warning soft-hover (dark). Contrast: ≥4.5:1 with text/warning.",
+      "valuesByMode": {
+        "default": "#563400"
+      }
+    },
+    {
       "name": "amber/900",
       "cssVar": "--amber-900",
       "resolvedType": "COLOR",
@@ -1017,6 +1026,15 @@
       }
     },
     {
+      "name": "ocean/800",
+      "cssVar": "--ocean-800",
+      "resolvedType": "COLOR",
+      "description": "Info soft-hover (dark). Contrast: ≥4.5:1 with text/info.",
+      "valuesByMode": {
+        "default": "#1d3578"
+      }
+    },
+    {
       "name": "ocean/900",
       "cssVar": "--ocean-900",
       "resolvedType": "COLOR",
@@ -1190,23 +1208,13 @@
       }
     },
     {
-      "name": "bg/danger/soft-active",
-      "cssVar": "--bg-danger-soft-active",
-      "resolvedType": "COLOR",
-      "description": "Soft danger active (light). Contrast: with text/danger (≥4.5:1).",
-      "valuesByMode": {
-        "light": "{cherry.300}",
-        "dark": "{cherry.600}"
-      }
-    },
-    {
       "name": "bg/danger/soft-hover",
       "cssVar": "--bg-danger-soft-hover",
       "resolvedType": "COLOR",
       "description": "Soft danger hover (light). Contrast: with text/danger (≥4.5:1).",
       "valuesByMode": {
         "light": "{cherry.200}",
-        "dark": "{cherry.700}"
+        "dark": "{cherry.800}"
       }
     },
     {
@@ -1260,23 +1268,13 @@
       }
     },
     {
-      "name": "bg/info/soft-active",
-      "cssVar": "--bg-info-soft-active",
-      "resolvedType": "COLOR",
-      "description": "Soft info active (light). Contrast: with text/info (≥4.5:1).",
-      "valuesByMode": {
-        "light": "{ocean.300}",
-        "dark": "{ocean.600}"
-      }
-    },
-    {
       "name": "bg/info/soft-hover",
       "cssVar": "--bg-info-soft-hover",
       "resolvedType": "COLOR",
       "description": "Soft info hover (light). Contrast: with text/info (≥4.5:1).",
       "valuesByMode": {
         "light": "{ocean.200}",
-        "dark": "{ocean.700}"
+        "dark": "{ocean.800}"
       }
     },
     {
@@ -1300,23 +1298,13 @@
       }
     },
     {
-      "name": "bg/neutral/soft-active",
-      "cssVar": "--bg-neutral-soft-active",
-      "resolvedType": "COLOR",
-      "description": "Soft neutral active (light). Contrast: with text/primary (≥4.5:1).",
-      "valuesByMode": {
-        "light": "{neutral.300}",
-        "dark": "{neutral.600}"
-      }
-    },
-    {
       "name": "bg/neutral/soft-hover",
       "cssVar": "--bg-neutral-soft-hover",
       "resolvedType": "COLOR",
       "description": "Soft neutral hover (light). Contrast: with text/primary (≥4.5:1).",
       "valuesByMode": {
         "light": "{neutral.200}",
-        "dark": "{neutral.700}"
+        "dark": "{neutral.800}"
       }
     },
     {
@@ -1360,23 +1348,13 @@
       }
     },
     {
-      "name": "bg/success/soft-active",
-      "cssVar": "--bg-success-soft-active",
-      "resolvedType": "COLOR",
-      "description": "Soft success active (light). Contrast: with text/success (≥4.5:1).",
-      "valuesByMode": {
-        "light": "{green.300}",
-        "dark": "{green.600}"
-      }
-    },
-    {
       "name": "bg/success/soft-hover",
       "cssVar": "--bg-success-soft-hover",
       "resolvedType": "COLOR",
       "description": "Soft success hover (light). Contrast: with text/success (≥4.5:1).",
       "valuesByMode": {
         "light": "{green.200}",
-        "dark": "{green.700}"
+        "dark": "{green.800}"
       }
     },
     {
@@ -1450,23 +1428,13 @@
       }
     },
     {
-      "name": "bg/warning/soft-active",
-      "cssVar": "--bg-warning-soft-active",
-      "resolvedType": "COLOR",
-      "description": "Soft warning active (light). Contrast: with text/warning (≥4.5:1).",
-      "valuesByMode": {
-        "light": "{amber.300}",
-        "dark": "{amber.600}"
-      }
-    },
-    {
       "name": "bg/warning/soft-hover",
       "cssVar": "--bg-warning-soft-hover",
       "resolvedType": "COLOR",
       "description": "Soft warning hover (light). Contrast: with text/warning (≥4.5:1).",
       "valuesByMode": {
         "light": "{amber.200}",
-        "dark": "{amber.700}"
+        "dark": "{amber.800}"
       }
     },
     {
@@ -2506,51 +2474,6 @@
       "description": "Dropdown menu corner radius.",
       "valuesByMode": {
         "default": "{radius.sm}"
-      }
-    },
-    {
-      "name": "modal/max-width",
-      "cssVar": "--modal-max-width",
-      "resolvedType": "FLOAT",
-      "description": "Modal max width — md size (560px component deviation).",
-      "valuesByMode": {
-        "default": "560px"
-      }
-    },
-    {
-      "name": "modal/max-width-lg",
-      "cssVar": "--modal-max-width-lg",
-      "resolvedType": "FLOAT",
-      "description": "Modal max width — lg size.",
-      "valuesByMode": {
-        "default": "720px"
-      }
-    },
-    {
-      "name": "modal/max-width-sm",
-      "cssVar": "--modal-max-width-sm",
-      "resolvedType": "FLOAT",
-      "description": "Modal max width — sm size.",
-      "valuesByMode": {
-        "default": "400px"
-      }
-    },
-    {
-      "name": "modal/padding",
-      "cssVar": "--modal-padding",
-      "resolvedType": "FLOAT",
-      "description": "Modal padding.",
-      "valuesByMode": {
-        "default": "{dimension.24}"
-      }
-    },
-    {
-      "name": "modal/radius",
-      "cssVar": "--modal-radius",
-      "resolvedType": "FLOAT",
-      "description": "Modal corner radius.",
-      "valuesByMode": {
-        "default": "{radius.md}"
       }
     },
     {

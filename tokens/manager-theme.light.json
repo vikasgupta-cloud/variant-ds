@@ -1,0 +1,16 @@
+{
+  "$description": "Resolved light Role/Primitive hex for Storybook manager chrome only. Manager cannot read preview CSS vars — keep in sync with primitive.json / role.light.json.",
+  "bgCanvas": "#f6f3ed",
+  "bgSurface": "#ffffff",
+  "textPrimary": "#1b1913",
+  "textSecondary": "#5f5c53",
+  "textTertiary": "#79756b",
+  "borderSubtle": "#dbd6cb",
+  "selectedBg": "#eeff6d",
+  "selectedText": "#1b1913",
+  "surfaceLevel1": "#e5e0d6",
+  "dangerStrong": "#de2d02",
+  "colorInputFallback": "#000000",
+  "radiusMd": 8,
+  "radiusSm": 4
+}

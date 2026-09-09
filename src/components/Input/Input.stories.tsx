@@ -12,6 +12,10 @@ import {
   SearchIcon,
   StoryHeading,
   StorySection,
+  StoryTable,
+  storyThClass,
+  storyTdClass,
+  storyTdLabelClass,
 } from "../../stories/kit";
 
 const sizes = ["sm", "md", "lg"] as const;
@@ -152,17 +156,16 @@ export const States: Story = {
         }
       />
       <StorySection title="Sizes × states">
-        <div className="overflow-x-auto">
-          <table className="border-collapse text-left text-sm">
+        <StoryTable>
             <thead>
               <tr>
-                <th className="p-4 text-xs font-medium text-text-tertiary">
+                <th className={storyThClass}>
                   Size
                 </th>
                 {states.map((s) => (
                   <th
                     key={s}
-                    className="p-4 text-xs font-medium text-text-tertiary"
+                    className={storyThClass}
                   >
                     {s}
                   </th>
@@ -175,11 +178,11 @@ export const States: Story = {
                   key={size}
                   className="border-t border-border-subtle align-top"
                 >
-                  <td className="p-4 font-mono text-xs text-text-secondary">
+                  <td className={storyTdLabelClass}>
                     {size}
                   </td>
                   {states.map((state) => (
-                    <td key={state} className="min-w-40 p-4">
+                    <td key={state} className={`min-w-40 ${storyTdClass}`}>
                       <Input
                         size={size}
                         label={state}
@@ -200,8 +203,7 @@ export const States: Story = {
                 </tr>
               ))}
             </tbody>
-          </table>
-        </div>
+          </StoryTable>
       </StorySection>
     </div>
   ),

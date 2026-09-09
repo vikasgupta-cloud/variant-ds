@@ -47,7 +47,6 @@ export function IconographyPage() {
     }
     return map;
     // tick forces re-read when mode / overrides change
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- intentional
   }, [root, tick]);
 
   const filtered = useMemo(() => {

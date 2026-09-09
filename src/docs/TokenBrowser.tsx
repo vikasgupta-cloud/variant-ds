@@ -14,6 +14,8 @@ import { contrastRatio, resolveCssColorVar } from "./contrast";
 import type { CatalogToken, TokenCatalog, TokenLayer } from "./token-types";
 import {
   DataTable,
+  DataTableEmpty,
+  DataTableStack,
   Section,
 } from "./primitives";
 
@@ -199,7 +201,7 @@ export function TokenBrowser() {
             ))}
           </select>
         </label>
-        <span className="type-body-sm text-text-tertiary">
+        <span className="type-body-sm text-text-secondary">
           {filtered.length} tokens · mode={mode} · context={context}
         </span>
       </div>
@@ -211,19 +213,18 @@ export function TokenBrowser() {
               {
                 key: "name",
                 header: "Name",
-                mono: true,
+                width: "md",
                 cell: (r) => (
-                  <span>
-                    <span className="block">{r.token.name}</span>
-                    <span className="block text-text-tertiary">
-                      {r.token.cssVar}
-                    </span>
-                  </span>
+                  <DataTableStack
+                    primary={r.token.name}
+                    secondary={r.token.cssVar}
+                  />
                 ),
               },
               {
                 key: "swatch",
                 header: "Swatch",
+                width: "sm",
                 cell: (r) =>
                   r.token.type === "color" && r.resolved ? (
                     <span
@@ -231,27 +232,25 @@ export function TokenBrowser() {
                       style={{ backgroundColor: r.resolved }}
                     />
                   ) : (
-                    <span className="text-text-tertiary">—</span>
+                    <DataTableEmpty />
                   ),
               },
               {
                 key: "resolved",
                 header: "Resolved",
-                mono: true,
-                cell: (r) => r.resolved ?? "—",
+                width: "sm",
+                cell: (r) => r.resolved ?? <DataTableEmpty />,
               },
               {
                 key: "alias",
                 header: "Alias / source",
-                mono: true,
+                width: "md",
                 cell: (r) =>
                   r.token.alias ? (
-                    <span>
-                      → {r.token.alias}
-                      <span className="mt-8 block text-text-tertiary">
-                        {r.source}
-                      </span>
-                    </span>
+                    <DataTableStack
+                      primary={`→ ${r.token.alias}`}
+                      secondary={r.source}
+                    />
                   ) : (
                     r.source
                   ),
@@ -259,6 +258,7 @@ export function TokenBrowser() {
               {
                 key: "contrast",
                 header: "Contrast",
+                width: "sm",
                 cell: (r) =>
                   r.token.type === "color" ? (
                     <ContrastBadge
@@ -269,14 +269,15 @@ export function TokenBrowser() {
                         : {})}
                     />
                   ) : (
-                    <span className="text-text-tertiary">—</span>
+                    <DataTableEmpty />
                   ),
               },
               {
                 key: "desc",
                 header: "Description",
+                width: "xl",
                 cell: (r) => (
-                  <span className="type-body-sm text-text-secondary">
+                  <span className="type-body-md text-text-secondary">
                     {r.token.description}
                   </span>
                 ),

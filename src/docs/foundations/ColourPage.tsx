@@ -13,6 +13,7 @@ import {
 import {
   Callout,
   DataTable,
+  DataTableEmpty,
   DocsPage,
   PageHeader,
   Prose,
@@ -98,11 +99,7 @@ export function ColourPage() {
                   return {
                     key: token.name,
                     color: `var(${token.cssVar})`,
-                    label: (
-                      <span className="font-mono type-numeric-sm">
-                        {token.path[1]} · {token.name}
-                      </span>
-                    ),
+                    label: `${token.path[1]} · ${token.name}`,
                     value: hex,
                   };
                 })}
@@ -127,13 +124,14 @@ export function ColourPage() {
                   {
                     key: "token",
                     header: "Token",
+                    width: "md",
                     cell: (token) => (
                       <span className="inline-flex items-center gap-8">
                         <span
                           className="inline-block size-16 shrink-0 rounded-sm border border-border-subtle"
                           style={{ background: `var(${token.cssVar})` }}
                         />
-                        <span className="font-mono type-numeric-sm">
+                        <span className="type-body-md text-text-primary">
                           {token.name}
                         </span>
                       </span>
@@ -142,22 +140,28 @@ export function ColourPage() {
                   {
                     key: "resolved",
                     header: "Resolved",
-                    mono: true,
+                    width: "sm",
                     cell: (token) =>
-                      toHex(resolveColor(token.cssVar, root)) ?? "—",
+                      toHex(resolveColor(token.cssVar, root)) ?? (
+                        <DataTableEmpty />
+                      ),
                   },
                   {
                     key: "alias",
                     header: "Alias chain",
-                    mono: true,
-                    cell: (token) =>
-                      aliasChain(token, mode, byName).join(" → "),
+                    width: "lg",
+                    cell: (token) => (
+                      <span className="type-body-md text-text-primary break-words">
+                        {aliasChain(token, mode, byName).join(" → ")}
+                      </span>
+                    ),
                   },
                   {
                     key: "desc",
                     header: "Description",
+                    width: "xl",
                     cell: (token) => (
-                      <span className="type-body-sm text-text-secondary">
+                      <span className="type-body-md text-text-secondary">
                         {token.description}
                       </span>
                     ),
@@ -189,12 +193,13 @@ export function ColourPage() {
             {
               key: "family",
               header: "Family",
-              mono: true,
+              width: "sm",
               cell: (r) => r.family,
             },
             ...CONTEXTS.map((context) => ({
               key: context,
               header: context,
+              width: "md" as const,
               cell: (r: {
                 family: string;
                 cells: Record<string, { alias: string; cssVar: string }>;
@@ -209,7 +214,7 @@ export function ColourPage() {
                       className="block h-48 rounded-sm border border-border-subtle"
                       style={{ background: `var(${cell?.cssVar})` }}
                     />
-                    <span className="font-mono type-numeric-sm text-text-tertiary">
+                    <span className="type-body-sm text-text-secondary">
                       {cell?.alias ?? "—"}
                     </span>
                   </div>

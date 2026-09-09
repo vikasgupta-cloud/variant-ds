@@ -13,6 +13,9 @@ import {
   saveOverrides,
   type TokenOverrides,
 } from "../../../src/docs/token-editor-shared.ts";
+import managerTheme from "../../../tokens/manager-theme.light.json" with { type: "json" };
+
+const HEX6 = /^#[0-9a-fA-F]{6}$/;
 
 const data = catalog as TokenCatalog;
 const LAYERS: TokenLayer[] = [
@@ -70,10 +73,10 @@ function TokenRow({
     <div
       style={{
         display: "grid",
-        gridTemplateColumns: "16px 1fr",
+        gridTemplateColumns: "1rem 1fr",
         gap: 8,
-        padding: "8px 0",
-        borderBottom: "1px solid rgba(128,128,128,0.2)",
+        padding: "0.5rem 0",
+        borderBottom: "thin solid rgba(128,128,128,0.2)",
         alignItems: "start",
       }}
     >
@@ -84,7 +87,7 @@ function TokenRow({
           height: 8,
           marginTop: 8,
           borderRadius: "50%",
-          background: modified ? "#de2d02" : "transparent",
+          background: modified ? managerTheme.dangerStrong : "transparent",
         }}
       />
       <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
@@ -109,7 +112,7 @@ function TokenRow({
             <>
               <input
                 type="color"
-                value={/^#[0-9a-fA-F]{6}$/.test(current) ? current : "#000000"}
+                value={HEX6.test(current) ? current : managerTheme.colorInputFallback}
                 onChange={(e) => onChange(token.cssVar, e.target.value)}
                 style={{ width: 28, height: 28, padding: 0, border: "none" }}
               />
@@ -117,7 +120,7 @@ function TokenRow({
                 type="text"
                 value={current}
                 onChange={(e) => onChange(token.cssVar, e.target.value)}
-                style={{ flex: 1, fontFamily: "monospace", fontSize: 12, padding: "4px 6px" }}
+                style={{ flex: 1, fontFamily: "monospace", fontSize: 12, padding: "0.25rem 0.375rem" }}
               />
             </>
           ) : (
@@ -125,7 +128,7 @@ function TokenRow({
               type="text"
               value={current}
               onChange={(e) => onChange(token.cssVar, e.target.value)}
-              style={{ flex: 1, fontFamily: "monospace", fontSize: 12, padding: "4px 6px" }}
+              style={{ flex: 1, fontFamily: "monospace", fontSize: 12, padding: "0.25rem 0.375rem" }}
             />
           )}
         </div>
@@ -283,7 +286,7 @@ export function TokenEditorPanel({ active }: { active: boolean }) {
           placeholder="Search tokens…"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          style={{ padding: "6px 8px", fontSize: 12 }}
+          style={{ padding: "0.375rem 0.5rem", fontSize: 12 }}
         />
 
         {warnings.length > 0 ? (
@@ -323,7 +326,7 @@ export function TokenEditorPanel({ active }: { active: boolean }) {
                     fontWeight: 600,
                     textTransform: "uppercase",
                     letterSpacing: "0.04em",
-                    padding: "6px 0",
+                    padding: "0.375rem 0",
                     background: "transparent",
                     border: "none",
                     cursor: "pointer",

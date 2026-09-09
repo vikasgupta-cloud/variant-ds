@@ -35,20 +35,29 @@ jobs:
       - name: Install
         run: pnpm install --frozen-lockfile
 
+      - name: Install Playwright Chromium
+        run: pnpm exec playwright install chromium --with-deps
+
       - name: Build tokens
         run: pnpm tokens:build
 
       - name: Build specs
         run: pnpm specs:build
 
+      - name: Lint
+        run: pnpm lint
+
       - name: Typecheck
         run: pnpm exec tsc --noEmit
 
-      - name: Test
+      - name: Unit tests
         run: pnpm test
 
+      - name: Accessibility (axe via Storybook Vitest)
+        run: pnpm test:a11y
+
       - name: Build Storybook
-        run: pnpm build
+        run: pnpm exec storybook build
 
       - name: Upload Storybook artifact
         uses: actions/upload-artifact@v4

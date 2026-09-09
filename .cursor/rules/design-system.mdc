@@ -28,11 +28,15 @@ Component → Structure → Surface → Role → Primitive
 - No raw `px` values in component files. Use `dimension/*` or a Structure token.
 - Tailwind's default colour and spacing scales are purged with `--color-*: initial` and `--spacing-*: initial`. Do not re-enable them. If `bg-blue-500` works, someone will use it.
 
-## Three deliberate exceptions — do not "fix" these
+## Deliberate exceptions — do not "fix" these
 
 1. `bg/warning/strong` is amber-300 in BOTH modes, paired with `text/on-strong-warning` (neutral-950). White on amber fails contrast. This is intentional.
 2. `bg/neutral/strong` inverts fully (neutral-950 → neutral-50) instead of following the 600→500 pattern used by other roles.
-3. `success`, `info` and `warning` have NO `-hover` or `-active` variants. They are not interactive. Do not add them.
+3. Status interaction at strong vs soft:
+   - All six status roles have `soft-hover`.
+   - Only `neutral`, `danger`, and `success` have `strong-hover` and `strong-active`.
+   - `info` and `warning` remain non-interactive at the strong level — no `strong-hover` / `strong-active`. Do not add them.
+4. `soft-active` does not exist. Active on soft surfaces is marked by adding `border/{role}`, not by changing the fill. Do not introduce `bg/{role}/soft-active` tokens.
 
 ## Design decisions that live in code
 

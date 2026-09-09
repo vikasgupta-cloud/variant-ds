@@ -23,7 +23,7 @@ export function DestructiveActionsPatternPage() {
         <DocsList
           items={[
             "Use Button colour destructive on secondary or ghost hierarchies for in-page actions",
-            "Confirm in a Modal with a clear consequence sentence",
+            "Confirm destructive actions with a clear consequence sentence before committing",
             "Dismiss / Cancel stays ghost; the confirming action is secondary + destructive (never primary black)",
           ]}
         />

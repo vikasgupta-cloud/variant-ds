@@ -38,13 +38,8 @@
       },
       "soft-hover": {
         "$type": "color",
-        "$value": "{neutral.700}",
-        "$description": "Soft neutral hover (dark). Contrast: with text/primary (≥4.5:1)."
-      },
-      "soft-active": {
-        "$type": "color",
-        "$value": "{neutral.600}",
-        "$description": "Soft neutral active (dark). Contrast: with text/primary (≥4.5:1)."
+        "$value": "{neutral.800}",
+        "$description": "Soft neutral hover (dark). Step 800 for ≥4.5:1 with text/primary. Contrast: ≥4.5:1."
       },
       "strong-hover": {
         "$type": "color",
@@ -70,13 +65,8 @@
       },
       "soft-hover": {
         "$type": "color",
-        "$value": "{ocean.700}",
-        "$description": "Soft info hover (dark). Contrast: with text/info (≥4.5:1)."
-      },
-      "soft-active": {
-        "$type": "color",
-        "$value": "{ocean.600}",
-        "$description": "Soft info active (dark). Contrast: with text/info (≥4.5:1)."
+        "$value": "{ocean.800}",
+        "$description": "Soft info hover (dark). Step 800 for ≥4.5:1 with text/info. Contrast: ≥4.5:1."
       }
     },
     "success": {
@@ -92,13 +82,8 @@
       },
       "soft-hover": {
         "$type": "color",
-        "$value": "{green.700}",
-        "$description": "Soft success hover (dark). Contrast: with text/success (≥4.5:1)."
-      },
-      "soft-active": {
-        "$type": "color",
-        "$value": "{green.600}",
-        "$description": "Soft success active (dark). Contrast: with text/success (≥4.5:1)."
+        "$value": "{green.800}",
+        "$description": "Soft success hover (dark). Step 800 for ≥4.5:1 with text/success. Contrast: ≥4.5:1."
       },
       "strong-hover": {
         "$type": "color",
@@ -124,13 +109,8 @@
       },
       "soft-hover": {
         "$type": "color",
-        "$value": "{amber.700}",
-        "$description": "Soft warning hover (dark). Contrast: with text/warning (≥4.5:1)."
-      },
-      "soft-active": {
-        "$type": "color",
-        "$value": "{amber.600}",
-        "$description": "Soft warning active (dark). Contrast: with text/warning (≥4.5:1)."
+        "$value": "{amber.800}",
+        "$description": "Soft warning hover (dark). Step 800 for ≥4.5:1 with text/warning. Contrast: ≥4.5:1."
       }
     },
     "danger": {
@@ -146,13 +126,8 @@
       },
       "soft-hover": {
         "$type": "color",
-        "$value": "{cherry.700}",
-        "$description": "Soft danger hover (dark). Contrast: with text/danger (≥4.5:1)."
-      },
-      "soft-active": {
-        "$type": "color",
-        "$value": "{cherry.600}",
-        "$description": "Soft danger active (dark). Contrast: with text/danger (≥4.5:1)."
+        "$value": "{cherry.800}",
+        "$description": "Soft danger hover (dark). Step 800 for ≥4.5:1 with text/danger. Contrast: ≥4.5:1."
       },
       "strong-hover": {
         "$type": "color",

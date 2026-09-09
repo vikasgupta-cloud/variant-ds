@@ -34,6 +34,7 @@
   --amber-500: #a76700; /** Warning mid-dark. Contrast: verify ≥4.5:1. */
   --amber-600: #8b5500; /** Warning deep. Contrast: with light text if used as fill. */
   --amber-700: #6f4300; /** Warning text (light). Contrast: ≥4.5:1 on soft warning. */
+  --amber-800: #563400; /** Warning soft-hover (dark). Contrast: ≥4.5:1 with text/warning. */
   --amber-900: #3e2300; /** Warning soft fill (dark). Contrast: pair with text/warning (≥4.5:1). */
   --green-100: #caf2dd; /** Success soft fill (light). Contrast: pair with text/success (≥4.5:1). */
   --green-200: #a4e4c3; /** Success border (light). Contrast: non-text ≥3:1. */
@@ -49,6 +50,7 @@
   --ocean-500: #406bed; /** Info strong (dark). Contrast: with text/on-strong (≥4.5:1). */
   --ocean-600: #2f54cb; /** Info strong (light) / link. Contrast: links ≥4.5:1 on light canvas. */
   --ocean-700: #2846a0; /** Info text (light) / link-hover. Contrast: ≥4.5:1. */
+  --ocean-800: #1d3578; /** Info soft-hover (dark). Contrast: ≥4.5:1 with text/info. */
   --ocean-900: #152656; /** Info soft fill (dark). Contrast: pair with text/info (≥4.5:1). */
   --berry-100: #ffe0f4; /** Reserved berry/100 primitive (#ffe0f4). Unreferenced — kept for a future role; do not bind from components. */
   --berry-200: #ffc6ea; /** Reserved berry/200 primitive (#ffc6ea). Unreferenced — kept for a future role; do not bind from components. */
@@ -228,27 +230,22 @@
   --bg-neutral-strong: var(--neutral-950); /** Strong neutral fill (light). Contrast: use text/on-strong (≥4.5:1). */
   --bg-neutral-soft: var(--neutral-100); /** Soft neutral fill (light). Contrast: with text/primary (≥4.5:1). */
   --bg-neutral-soft-hover: var(--neutral-200); /** Soft neutral hover (light). Contrast: with text/primary (≥4.5:1). */
-  --bg-neutral-soft-active: var(--neutral-300); /** Soft neutral active (light). Contrast: with text/primary (≥4.5:1). */
   --bg-neutral-strong-hover: var(--neutral-800); /** Strong neutral hover (light). Neutral strong inverts (950), so hover lightens to 800 — not the chromatic 700 step. Contrast: with text/on-strong (≥4.5:1). */
   --bg-neutral-strong-active: var(--neutral-700); /** Strong neutral active (light). Neutral strong inverts (950), so active lightens to 700 — not the chromatic 800 step. Contrast: with text/on-strong (≥4.5:1). */
   --bg-info-strong: var(--ocean-600); /** Strong info fill (light). Contrast: use text/on-strong (≥4.5:1). */
   --bg-info-soft: var(--ocean-100); /** Soft info fill (light). Contrast: with text/info (≥4.5:1). */
   --bg-info-soft-hover: var(--ocean-200); /** Soft info hover (light). Contrast: with text/info (≥4.5:1). */
-  --bg-info-soft-active: var(--ocean-300); /** Soft info active (light). Contrast: with text/info (≥4.5:1). */
   --bg-success-strong: var(--green-600); /** Strong success fill (light). Contrast: use text/on-strong (≥4.5:1). */
   --bg-success-soft: var(--green-100); /** Soft success fill (light). Contrast: with text/success (≥4.5:1). */
   --bg-success-soft-hover: var(--green-200); /** Soft success hover (light). Contrast: with text/success (≥4.5:1). */
-  --bg-success-soft-active: var(--green-300); /** Soft success active (light). Contrast: with text/success (≥4.5:1). */
   --bg-success-strong-hover: var(--green-700); /** Strong success hover (light). Contrast: with text/on-strong (≥4.5:1). */
   --bg-success-strong-active: var(--green-800); /** Strong success active (light). Contrast: with text/on-strong (≥4.5:1). */
   --bg-warning-strong: var(--amber-300); /** Strong warning fill (light). Contrast: use text/on-strong-warning (≥4.5:1). */
   --bg-warning-soft: var(--amber-100); /** Soft warning fill (light). Contrast: with text/warning (≥4.5:1). */
   --bg-warning-soft-hover: var(--amber-200); /** Soft warning hover (light). Contrast: with text/warning (≥4.5:1). */
-  --bg-warning-soft-active: var(--amber-300); /** Soft warning active (light). Contrast: with text/warning (≥4.5:1). */
   --bg-danger-strong: var(--cherry-600); /** Strong danger fill (light). Contrast: use text/on-strong (≥4.5:1). */
   --bg-danger-soft: var(--cherry-100); /** Soft danger fill (light). Contrast: with text/danger (≥4.5:1). */
   --bg-danger-soft-hover: var(--cherry-200); /** Soft danger hover (light). Contrast: with text/danger (≥4.5:1). */
-  --bg-danger-soft-active: var(--cherry-300); /** Soft danger active (light). Contrast: with text/danger (≥4.5:1). */
   --bg-danger-strong-hover: var(--cherry-700); /** Strong danger hover (light). Contrast: with text/on-strong (≥4.5:1). */
   --bg-danger-strong-active: var(--cherry-800); /** Strong danger active (light). Contrast: with text/on-strong (≥4.5:1). */
   --text-primary: var(--neutral-950); /** Primary body text (light). Contrast: ≥4.5:1 on canvas/surface. */
@@ -298,28 +295,23 @@
   --bg-tooltip: var(--neutral-700); /** Tooltip surface (dark). Contrast: with text/on-inverse or on-strong (≥4.5:1). */
   --bg-neutral-strong: var(--neutral-50); /** Strong neutral fill (dark). Contrast: use text/on-strong (≥4.5:1). */
   --bg-neutral-soft: var(--neutral-800); /** Soft neutral fill (dark). Uses neutral-800 so it stays distinct from bg/surface (neutral-900). Contrast: with text/primary (≥4.5:1). */
-  --bg-neutral-soft-hover: var(--neutral-700); /** Soft neutral hover (dark). Contrast: with text/primary (≥4.5:1). */
-  --bg-neutral-soft-active: var(--neutral-600); /** Soft neutral active (dark). Contrast: with text/primary (≥4.5:1). */
+  --bg-neutral-soft-hover: var(--neutral-800); /** Soft neutral hover (dark). Step 800 for ≥4.5:1 with text/primary. Contrast: ≥4.5:1. */
   --bg-neutral-strong-hover: var(--neutral-200); /** Strong neutral hover (dark). Neutral strong inverts (50), so hover darkens to 200 — not the chromatic 600 step. Contrast: with text/on-strong (≥4.5:1). */
   --bg-neutral-strong-active: var(--neutral-300); /** Strong neutral active (dark). Neutral strong inverts (50), so active darkens to 300 — not the chromatic 700 step. Contrast: with text/on-strong (≥4.5:1). */
   --bg-info-strong: var(--ocean-500); /** Strong info fill (dark). Contrast: use text/on-strong (≥4.5:1). */
   --bg-info-soft: var(--ocean-900); /** Soft info fill (dark). Contrast: with text/info (≥4.5:1). */
-  --bg-info-soft-hover: var(--ocean-700); /** Soft info hover (dark). Contrast: with text/info (≥4.5:1). */
-  --bg-info-soft-active: var(--ocean-600); /** Soft info active (dark). Contrast: with text/info (≥4.5:1). */
+  --bg-info-soft-hover: var(--ocean-800); /** Soft info hover (dark). Step 800 for ≥4.5:1 with text/info. Contrast: ≥4.5:1. */
   --bg-success-strong: var(--green-500); /** Strong success fill (dark). Contrast: use text/on-strong (≥4.5:1). */
   --bg-success-soft: var(--green-900); /** Soft success fill (dark). Contrast: with text/success (≥4.5:1). */
-  --bg-success-soft-hover: var(--green-700); /** Soft success hover (dark). Contrast: with text/success (≥4.5:1). */
-  --bg-success-soft-active: var(--green-600); /** Soft success active (dark). Contrast: with text/success (≥4.5:1). */
+  --bg-success-soft-hover: var(--green-800); /** Soft success hover (dark). Step 800 for ≥4.5:1 with text/success. Contrast: ≥4.5:1. */
   --bg-success-strong-hover: var(--green-600); /** Strong success hover (dark). Contrast: with text/on-strong (≥4.5:1). */
   --bg-success-strong-active: var(--green-700); /** Strong success active (dark). Contrast: with text/on-strong (≥4.5:1). */
   --bg-warning-strong: var(--amber-300); /** Strong warning fill (dark). Contrast: use text/on-strong-warning (≥4.5:1). */
   --bg-warning-soft: var(--amber-900); /** Soft warning fill (dark). Contrast: with text/warning (≥4.5:1). */
-  --bg-warning-soft-hover: var(--amber-700); /** Soft warning hover (dark). Contrast: with text/warning (≥4.5:1). */
-  --bg-warning-soft-active: var(--amber-600); /** Soft warning active (dark). Contrast: with text/warning (≥4.5:1). */
+  --bg-warning-soft-hover: var(--amber-800); /** Soft warning hover (dark). Step 800 for ≥4.5:1 with text/warning. Contrast: ≥4.5:1. */
   --bg-danger-strong: var(--cherry-500); /** Strong danger fill (dark). Contrast: use text/on-strong (≥4.5:1). */
   --bg-danger-soft: var(--cherry-900); /** Soft danger fill (dark). Contrast: with text/danger (≥4.5:1). */
-  --bg-danger-soft-hover: var(--cherry-700); /** Soft danger hover (dark). Contrast: with text/danger (≥4.5:1). */
-  --bg-danger-soft-active: var(--cherry-600); /** Soft danger active (dark). Contrast: with text/danger (≥4.5:1). */
+  --bg-danger-soft-hover: var(--cherry-800); /** Soft danger hover (dark). Step 800 for ≥4.5:1 with text/danger. Contrast: ≥4.5:1. */
   --bg-danger-strong-hover: var(--cherry-600); /** Strong danger hover (dark). Contrast: with text/on-strong (≥4.5:1). */
   --bg-danger-strong-active: var(--cherry-700); /** Strong danger active (dark). Contrast: with text/on-strong (≥4.5:1). */
   --text-primary: var(--neutral-50); /** Primary body text (dark). Contrast: ≥4.5:1 on canvas/surface. */
@@ -512,9 +504,6 @@
   --toggle-track-width-sm: 28px; /** Toggle track width sm. */
   --toggle-track-width-md: 36px; /** Toggle track width md. */
   --toggle-track-width-lg: 44px; /** Toggle track width lg. */
-  --modal-max-width-sm: 400px; /** Modal max width — sm size. */
-  --modal-max-width: 560px; /** Modal max width — md size (560px component deviation). */
-  --modal-max-width-lg: 720px; /** Modal max width — lg size. */
   --dropdown-menu-radius: var(--radius-sm); /** Dropdown menu corner radius. */
   --dropdown-menu-padding-y: var(--dimension-4); /** Dropdown menu vertical padding. */
   --dropdown-item-padding-x: var(--dimension-12); /** Dropdown item horizontal padding. */
@@ -560,8 +549,6 @@
   --progress-radius: var(--radius-full); /** Progress track/radius. */
   --progress-label-gap: var(--dimension-8); /** Gap between progress and label. */
   --slider-thumb-size: var(--dimension-20); /** Slider thumb size. */
-  --modal-radius: var(--radius-md); /** Modal corner radius. */
-  --modal-padding: var(--dimension-24); /** Modal padding. */
   --card-radius: var(--radius-md); /** Card corner radius. */
   --alert-radius: var(--radius-sm); /** Alert corner radius. */
   --alert-padding: var(--dimension-12); /** Alert padding. */

@@ -9,7 +9,7 @@ import {
   PlaceholderIcon,
   StoryHeading,
   StorySection,
-} from "../../stories/kit";
+  StoryTable, storyThClass, storyTdClass, storyTdLabelClass } from "../../stories/kit";
 
 const sizes = ["sm", "md", "lg"] as const;
 const itemStates: ButtonGroupItemState[] = ["default", "hover", "disabled"];
@@ -73,25 +73,24 @@ export const States: Story = {
         description="Item design-review states. Selected uses Radix data-state=on."
       />
       <StorySection title="Size × item state">
-        <div className="overflow-x-auto">
-          <table className="border-collapse text-left text-sm">
+        <StoryTable>
             <thead>
               <tr>
-                <th className="p-8 text-text-tertiary">Size</th>
+                <th className={storyThClass}>Size</th>
                 {itemStates.map((state) => (
-                  <th key={state} className="p-8 font-medium text-text-secondary">
+                  <th key={state} className={storyThClass}>
                     {state}
                   </th>
                 ))}
-                <th className="p-8 font-medium text-text-secondary">selected</th>
+                <th className={storyThClass}>selected</th>
               </tr>
             </thead>
             <tbody>
               {sizes.map((size) => (
                 <tr key={size} className="border-t border-border-subtle">
-                  <td className="p-8 text-text-tertiary">{size}</td>
+                  <td className={storyTdLabelClass}>{size}</td>
                   {itemStates.map((state) => (
-                    <td key={state} className="p-8">
+                    <td key={state} className={storyTdClass}>
                       <ButtonGroup size={size} type="single" defaultValue="">
                         <ButtonGroupItem value="x" state={state}>
                           Item
@@ -100,7 +99,7 @@ export const States: Story = {
                       </ButtonGroup>
                     </td>
                   ))}
-                  <td className="p-8">
+                  <td className={storyTdClass}>
                     <ButtonGroup size={size} type="single" defaultValue="x">
                       <ButtonGroupItem value="x">On</ButtonGroupItem>
                       <ButtonGroupItem value="y">Off</ButtonGroupItem>
@@ -109,8 +108,7 @@ export const States: Story = {
                 </tr>
               ))}
             </tbody>
-          </table>
-        </div>
+          </StoryTable>
       </StorySection>
     </div>
   ),

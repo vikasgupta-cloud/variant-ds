@@ -6,7 +6,12 @@ import { mergeConfig } from "vite";
 
 const config: StorybookConfig = {
   stories: [
-    "../src/docs/**/*.mdx",
+    // Get started IA deferred — omit `ia/get-started/**` until the system is ready.
+    "../src/docs/foundations/**/*.mdx",
+    "../src/docs/foundations/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    "../src/docs/ia/tools/**/*.mdx",
+    "../src/docs/ia/patterns/**/*.mdx",
+    "../src/docs/ia/components/**/*.mdx",
     "../src/docs/**/*.stories.@(js|jsx|mjs|ts|tsx)",
     "../src/components/**/*.mdx",
     "../src/components/**/*.stories.@(js|jsx|mjs|ts|tsx)",

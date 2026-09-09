@@ -41,23 +41,32 @@ const disabledForced = [
   "data-[state=disabled]:text-text-disabled data-[state=disabled]:border-transparent",
 ].join(" ");
 
-/** Soft fill hover/active — full static class strings so Tailwind can detect them. */
-const softHoverActive = {
+/** Soft fill hover; active keeps soft-hover fill and adds border/{role} (via base `border` + border-width token). */
+const softHoverBorderActive = {
+  neutral: [
+    "hover:bg-bg-neutral-soft-hover data-[state=hover]:bg-bg-neutral-soft-hover",
+    "active:bg-bg-neutral-soft-hover data-[state=active]:bg-bg-neutral-soft-hover",
+    "active:border-border-subtle data-[state=active]:border-border-subtle",
+  ].join(" "),
   danger: [
     "hover:bg-bg-danger-soft-hover data-[state=hover]:bg-bg-danger-soft-hover",
-    "active:bg-bg-danger-soft-active data-[state=active]:bg-bg-danger-soft-active",
+    "active:bg-bg-danger-soft-hover data-[state=active]:bg-bg-danger-soft-hover",
+    "active:border-border-danger data-[state=active]:border-border-danger",
   ].join(" "),
   warning: [
     "hover:bg-bg-warning-soft-hover data-[state=hover]:bg-bg-warning-soft-hover",
-    "active:bg-bg-warning-soft-active data-[state=active]:bg-bg-warning-soft-active",
+    "active:bg-bg-warning-soft-hover data-[state=active]:bg-bg-warning-soft-hover",
+    "active:border-border-warning data-[state=active]:border-border-warning",
   ].join(" "),
   success: [
     "hover:bg-bg-success-soft-hover data-[state=hover]:bg-bg-success-soft-hover",
-    "active:bg-bg-success-soft-active data-[state=active]:bg-bg-success-soft-active",
+    "active:bg-bg-success-soft-hover data-[state=active]:bg-bg-success-soft-hover",
+    "active:border-border-success data-[state=active]:border-border-success",
   ].join(" "),
   info: [
     "hover:bg-bg-info-soft-hover data-[state=hover]:bg-bg-info-soft-hover",
-    "active:bg-bg-info-soft-active data-[state=active]:bg-bg-info-soft-active",
+    "active:bg-bg-info-soft-hover data-[state=active]:bg-bg-info-soft-hover",
+    "active:border-border-info data-[state=active]:border-border-info",
   ].join(" "),
 } as const;
 
@@ -147,15 +156,14 @@ export const buttonVariants = cva(
         hierarchy: "secondary",
         color: "default",
         class: [
-          "border-surface-border text-text-primary",
-          "hover:bg-surface-level-1 data-[state=hover]:bg-surface-level-1",
-          "active:bg-surface-level-2 data-[state=active]:bg-surface-level-2",
+          "border-border-subtle text-text-primary",
+          softHoverBorderActive.neutral,
         ].join(" "),
       },
       {
         hierarchy: "secondary",
         color: "destructive",
-        class: ["border-border-danger text-text-danger", softHoverActive.danger].join(
+        class: ["border-border-danger text-text-danger", softHoverBorderActive.danger].join(
           " ",
         ),
       },
@@ -164,7 +172,7 @@ export const buttonVariants = cva(
         color: "warning",
         class: [
           "border-border-warning text-text-warning",
-          softHoverActive.warning,
+          softHoverBorderActive.warning,
         ].join(" "),
       },
       {
@@ -172,13 +180,13 @@ export const buttonVariants = cva(
         color: "success",
         class: [
           "border-border-success text-text-success",
-          softHoverActive.success,
+          softHoverBorderActive.success,
         ].join(" "),
       },
       {
         hierarchy: "secondary",
         color: "info",
-        class: ["border-border-info text-text-info", softHoverActive.info].join(
+        class: ["border-border-info text-text-info", softHoverBorderActive.info].join(
           " ",
         ),
       },
@@ -196,38 +204,34 @@ export const buttonVariants = cva(
       {
         hierarchy: "tertiary",
         color: "destructive",
-        class: ["text-text-danger", softHoverActive.danger].join(" "),
+        class: ["text-text-danger", softHoverBorderActive.danger].join(" "),
       },
 
       // ── ghost ────────────────────────────────────────────────
       {
         hierarchy: "ghost",
         color: "default",
-        class: [
-          "text-text-primary",
-          "hover:bg-surface-level-1 data-[state=hover]:bg-surface-level-1",
-          "active:bg-surface-level-2 data-[state=active]:bg-surface-level-2",
-        ].join(" "),
+        class: ["text-text-primary", softHoverBorderActive.neutral].join(" "),
       },
       {
         hierarchy: "ghost",
         color: "destructive",
-        class: ["text-text-danger", softHoverActive.danger].join(" "),
+        class: ["text-text-danger", softHoverBorderActive.danger].join(" "),
       },
       {
         hierarchy: "ghost",
         color: "warning",
-        class: ["text-text-warning", softHoverActive.warning].join(" "),
+        class: ["text-text-warning", softHoverBorderActive.warning].join(" "),
       },
       {
         hierarchy: "ghost",
         color: "success",
-        class: ["text-text-success", softHoverActive.success].join(" "),
+        class: ["text-text-success", softHoverBorderActive.success].join(" "),
       },
       {
         hierarchy: "ghost",
         color: "info",
-        class: ["text-text-info", softHoverActive.info].join(" "),
+        class: ["text-text-info", softHoverBorderActive.info].join(" "),
       },
 
       // ── link ─────────────────────────────────────────────────

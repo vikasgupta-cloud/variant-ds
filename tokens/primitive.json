@@ -134,6 +134,11 @@
       "$value": "#6f4300",
       "$description": "Warning text (light). Contrast: ≥4.5:1 on soft warning."
     },
+    "800": {
+      "$type": "color",
+      "$value": "#563400",
+      "$description": "Warning soft-hover (dark). Contrast: ≥4.5:1 with text/warning."
+    },
     "900": {
       "$type": "color",
       "$value": "#3e2300",
@@ -212,6 +217,11 @@
       "$type": "color",
       "$value": "#2846a0",
       "$description": "Info text (light) / link-hover. Contrast: ≥4.5:1."
+    },
+    "800": {
+      "$type": "color",
+      "$value": "#1d3578",
+      "$description": "Info soft-hover (dark). Contrast: ≥4.5:1 with text/info."
     },
     "900": {
       "$type": "color",

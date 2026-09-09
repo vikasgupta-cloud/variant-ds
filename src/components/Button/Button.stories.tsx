@@ -19,6 +19,10 @@ import {
   PlaceholderIcon,
   StoryHeading,
   StorySection,
+  StoryTable,
+  storyThClass,
+  storyTdClass,
+  storyTdLabelClass,
 } from "../../stories/kit";
 
 const hierarchies = Object.keys(
@@ -95,11 +99,10 @@ export const AllVariants: Story = {
         }
       />
       <StorySection title="Hierarchy × colour">
-        <div className="overflow-x-auto">
-          <table className="border-collapse text-left text-sm">
+        <StoryTable>
             <thead>
               <tr>
-                <th className="p-4 text-xs font-medium text-text-tertiary">
+                <th className={storyThClass}>
                   Hierarchy
                 </th>
                 {(
@@ -113,7 +116,7 @@ export const AllVariants: Story = {
                 ).map((c) => (
                   <th
                     key={c}
-                    className="p-4 text-xs font-medium text-text-tertiary"
+                    className={storyThClass}
                   >
                     {c}
                   </th>
@@ -123,7 +126,7 @@ export const AllVariants: Story = {
             <tbody>
               {hierarchies.map((hierarchy) => (
                 <tr key={hierarchy} className="border-t border-border-subtle">
-                  <td className="p-4 font-mono text-xs text-text-secondary">
+                  <td className={storyTdLabelClass}>
                     {hierarchy}
                   </td>
                   {(
@@ -135,7 +138,7 @@ export const AllVariants: Story = {
                       "info",
                     ] as const
                   ).map((color) => (
-                    <td key={color} className="p-4">
+                    <td key={color} className={storyTdClass}>
                       {isColorAllowedForHierarchy(hierarchy, color) ? (
                         <Button
                           // eslint-disable-next-line @typescript-eslint/no-explicit-any -- matrix cell is runtime-validated
@@ -152,8 +155,7 @@ export const AllVariants: Story = {
                 </tr>
               ))}
             </tbody>
-          </table>
-        </div>
+          </StoryTable>
       </StorySection>
 
       <StorySection title="Sizes (primary / default)">
@@ -188,22 +190,21 @@ export const States: Story = {
         }
       />
       <StorySection title="Pairs × states (md)">
-        <div className="overflow-x-auto">
-          <table className="border-collapse text-left text-sm">
+        <StoryTable>
             <thead>
               <tr>
-                <th className="p-4 text-xs font-medium text-text-tertiary">
+                <th className={storyThClass}>
                   Pair
                 </th>
                 {states.map((s) => (
                   <th
                     key={s}
-                    className="p-4 text-xs font-medium text-text-tertiary"
+                    className={storyThClass}
                   >
                     {s}
                   </th>
                 ))}
-                <th className="p-4 text-xs font-medium text-text-tertiary">
+                <th className={storyThClass}>
                   loading
                 </th>
               </tr>
@@ -211,11 +212,11 @@ export const States: Story = {
             <tbody>
               {allowedPairs.map(({ hierarchy, color, label }) => (
                 <tr key={label} className="border-t border-border-subtle">
-                  <td className="p-4 font-mono text-xs text-text-secondary">
+                  <td className={storyTdLabelClass}>
                     {label}
                   </td>
                   {states.map((state) => (
-                    <td key={state} className="p-4">
+                    <td key={state} className={storyTdClass}>
                       <Button
                         // eslint-disable-next-line @typescript-eslint/no-explicit-any
                         {...({ hierarchy, color } as any)}
@@ -226,7 +227,7 @@ export const States: Story = {
                       </Button>
                     </td>
                   ))}
-                  <td className="p-4">
+                  <td className={storyTdClass}>
                     <Button
                       // eslint-disable-next-line @typescript-eslint/no-explicit-any
                       {...({ hierarchy, color } as any)}
@@ -239,8 +240,7 @@ export const States: Story = {
                 </tr>
               ))}
             </tbody>
-          </table>
-        </div>
+          </StoryTable>
       </StorySection>
     </div>
   ),
@@ -289,17 +289,16 @@ export const Content: Story = {
       </StorySection>
 
       <StorySection title="Icon axis × sizes">
-        <div className="overflow-x-auto">
-          <table className="border-collapse text-left text-sm">
+        <StoryTable>
             <thead>
               <tr>
-                <th className="p-4 text-xs font-medium text-text-tertiary">
+                <th className={storyThClass}>
                   Icon
                 </th>
                 {sizes.map((s) => (
                   <th
                     key={s}
-                    className="p-4 text-xs font-medium text-text-tertiary"
+                    className={storyThClass}
                   >
                     {s}
                   </th>
@@ -315,11 +314,11 @@ export const Content: Story = {
                 ] as const
               ).map(([icon, node]) => (
                 <tr key={icon} className="border-t border-border-subtle">
-                  <td className="p-4 font-mono text-xs text-text-secondary">
+                  <td className={storyTdLabelClass}>
                     {icon}
                   </td>
                   {sizes.map((size) => (
-                    <td key={size} className="p-4">
+                    <td key={size} className={storyTdClass}>
                       <Button
                         size={size}
                         icon={icon}
@@ -335,8 +334,7 @@ export const Content: Story = {
                 </tr>
               ))}
             </tbody>
-          </table>
-        </div>
+          </StoryTable>
       </StorySection>
 
       <StorySection title="Loading — with and without label">

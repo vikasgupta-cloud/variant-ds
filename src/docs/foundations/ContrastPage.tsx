@@ -12,6 +12,7 @@ import {
 import { toHex, useFoundationsTick } from "./catalog";
 import {
   DataTable,
+  DataTableEmpty,
   DocsPage,
   PageHeader,
   Section,
@@ -122,7 +123,7 @@ export function ContrastPage() {
               <div className="type-heading-md tabular-nums text-text-primary">
                 {count}
               </div>
-              <div className="type-body-sm-caps text-text-tertiary">
+              <div className="type-body-sm-caps text-text-secondary">
                 {label}
                 {label === "total" ? ` · ${mode}` : ""}
               </div>
@@ -137,58 +138,60 @@ export function ContrastPage() {
             {
               key: "token",
               header: "Token",
-              mono: true,
+              width: "md",
               cell: (r) => r.token,
             },
             {
               key: "fg",
               header: "Foreground",
+              width: "md",
               cell: (r) =>
                 r.check ? (
-                  <span className="inline-flex items-center gap-8 font-mono type-numeric-sm">
+                  <span className="inline-flex items-center gap-8 type-body-md text-text-primary">
                     <span
-                      className="inline-block size-16 rounded-sm border border-border-subtle"
+                      className="inline-block size-16 shrink-0 rounded-sm border border-border-subtle"
                       style={{ background: `var(${r.check.fgCssVar})` }}
                     />
                     {r.fg ?? r.check.fgCssVar}
                   </span>
                 ) : (
-                  "—"
+                  <DataTableEmpty />
                 ),
             },
             {
               key: "bg",
               header: "Background",
+              width: "md",
               cell: (r) =>
                 r.check ? (
-                  <span className="inline-flex items-center gap-8 font-mono type-numeric-sm">
+                  <span className="inline-flex items-center gap-8 type-body-md text-text-primary">
                     <span
-                      className="inline-block size-16 rounded-sm border border-border-subtle"
+                      className="inline-block size-16 shrink-0 rounded-sm border border-border-subtle"
                       style={{ background: `var(${r.check.bgCssVar})` }}
                     />
                     {r.bg ?? r.check.bgCssVar}
                   </span>
                 ) : (
-                  "—"
+                  <DataTableEmpty />
                 ),
             },
             {
               key: "verdict",
               header: "Verdict",
+              width: "sm",
               cell: (r) =>
                 r.check ? (
                   <ContrastBadge ratio={r.ratio} check={r.check} />
                 ) : (
-                  <span className="type-body-sm-caps text-text-tertiary">
-                    n/a
-                  </span>
+                  <span className="type-body-sm text-text-secondary">n/a</span>
                 ),
             },
             {
               key: "notes",
               header: "Notes",
+              width: "xl",
               cell: (r) => (
-                <span className="type-body-sm text-text-secondary">
+                <span className="type-body-md text-text-secondary">
                   {r.check?.exemptReason ??
                     r.check?.note ??
                     (r.notes === "—" ? "" : r.notes)}

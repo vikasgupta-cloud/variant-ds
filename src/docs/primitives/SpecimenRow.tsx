@@ -26,13 +26,11 @@ export function SpecimenRow({
       )}
     >
       <div className="flex flex-wrap items-baseline gap-layout-stack">
-        <span className="font-mono type-body-sm-semibold text-text-primary">
+        <span className="type-body-sm-semibold text-text-primary">
           {label}
         </span>
         {meta ? (
-          <span className="font-mono type-numeric-sm text-text-tertiary">
-            {meta}
-          </span>
+          <span className="type-body-sm text-text-secondary">{meta}</span>
         ) : null}
       </div>
       <div className="text-text-primary" style={sampleStyle}>

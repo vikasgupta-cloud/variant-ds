@@ -7,6 +7,7 @@ import { DownloadSpec } from "./DownloadSpec";
 import {
   CodeBlock,
   DataTable,
+  DataTableEmpty,
   DocsList,
   DocsPage,
   PageHeader,
@@ -42,7 +43,6 @@ function phaseForSpecId(id: string): ReleasePhase {
     badge: "Badge",
     tag: "Tag",
     alert: "Alert",
-    modal: "Modal",
     tabs: "Tabs",
     "dropdown-menu": "Dropdown menu",
     progress: "Progress bar",
@@ -145,18 +145,33 @@ export function ComponentCode({ id, name }: DocProps) {
       <Section title="Props">
         <DataTable
           columns={[
-            { key: "name", header: "Prop", mono: true, cell: (r) => r.name },
-            { key: "type", header: "Type", mono: true, cell: (r) => r.type },
+            {
+              key: "name",
+              header: "Prop",
+              width: "md",
+              cell: (r) => r.name,
+            },
+            {
+              key: "type",
+              header: "Type",
+              width: "lg",
+              cell: (r) => r.type,
+            },
             {
               key: "default",
               header: "Default",
-              mono: true,
-              cell: (r) => r.default ?? "—",
+              width: "sm",
+              cell: (r) => r.default ?? <DataTableEmpty />,
             },
             {
               key: "notes",
               header: "Notes",
-              cell: (r) => r.description,
+              width: "xl",
+              cell: (r) => (
+                <span className="type-body-md text-text-secondary">
+                  {r.description}
+                </span>
+              ),
             },
           ]}
           rows={spec.props}
@@ -174,7 +189,7 @@ export function ComponentCode({ id, name }: DocProps) {
                 {list.map((token) => (
                   <span
                     key={token}
-                    className="rounded-control bg-surface-level-1 px-control-padding-x-sm py-control-padding-y-xs font-mono type-numeric-sm text-text-secondary"
+                    className="rounded-control bg-surface-level-1 px-control-padding-x-sm py-control-padding-y-xs type-body-sm text-text-primary"
                   >
                     {token}
                   </span>
@@ -188,8 +203,18 @@ export function ComponentCode({ id, name }: DocProps) {
       <Section title="Variant matrix">
         <DataTable
           columns={[
-            { key: "axis", header: "Axis", mono: true, cell: (r) => r.axis },
-            { key: "values", header: "Values", cell: (r) => r.values },
+            {
+              key: "axis",
+              header: "Axis",
+              width: "sm",
+              cell: (r) => r.axis,
+            },
+            {
+              key: "values",
+              header: "Values",
+              width: "xl",
+              cell: (r) => r.values,
+            },
           ]}
           rows={Object.entries(spec.variants).map(([axis, values]) => ({
             axis,

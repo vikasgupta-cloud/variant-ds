@@ -7,6 +7,7 @@ import {
   createContext,
   forwardRef,
   useContext,
+  useId,
   type ComponentPropsWithoutRef,
   type ElementRef,
   type ReactNode,
@@ -24,11 +25,13 @@ import {
 type SelectReviewContextValue = {
   state: DropdownState;
   readOnly: boolean;
+  labelId: string | undefined;
 };
 
 const SelectReviewContext = createContext<SelectReviewContextValue>({
   state: "default",
   readOnly: false,
+  labelId: undefined,
 });
 
 function useSelectReview() {
@@ -109,12 +112,17 @@ export function Select({
   ...props
 }: SelectProps) {
   const forcedOpen = readOnly ? false : resolveOpen(state, open);
+  const labelId = useId();
 
   return (
-    <SelectReviewContext.Provider value={{ state, readOnly }}>
+    <SelectReviewContext.Provider
+      value={{ state, readOnly, labelId: label ? labelId : undefined }}
+    >
       <div className={cn("flex w-full flex-col gap-control-label-gap", className)}>
         {label ? (
-          <span className="text-sm font-medium text-text-primary">{label}</span>
+          <span id={labelId} className="text-sm font-medium text-text-primary">
+            {label}
+          </span>
         ) : null}
         <SelectPrimitive.Root
           {...props}
@@ -138,14 +146,20 @@ export const SelectTrigger = forwardRef<
   ElementRef<typeof SelectPrimitive.Trigger>,
   ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger>
 >(function SelectTrigger({ className, children, ...props }, ref) {
-  const { readOnly } = useSelectReview();
+  const { readOnly, labelId } = useSelectReview();
   return (
     <SelectPrimitive.Trigger
       ref={ref}
+      {...props}
       data-readonly={readOnly || undefined}
       aria-readonly={readOnly || undefined}
+      {...(labelId
+        ? { "aria-labelledby": labelId }
+        : {
+            "aria-label":
+              (props as { "aria-label"?: string })["aria-label"] ?? "Select",
+          })}
       className={cn(selectTriggerVariants(), className)}
-      {...props}
     >
       {children}
       <SelectPrimitive.Icon asChild>

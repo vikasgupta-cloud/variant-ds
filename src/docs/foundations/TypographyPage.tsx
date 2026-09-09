@@ -1,5 +1,7 @@
 /**
  * Foundations / Typography — specimens via docs primitives.
+ * Styles sort by family, then font-size descending (not A–Z — that put
+ * heading/xl after sm because "xl" > "sm" alphabetically).
  */
 import {
   isTypographyValue,
@@ -18,6 +20,16 @@ import {
 const SAMPLE = "The quick brown fox jumps over the lazy dog 0123456789";
 const FAMILY_ORDER = ["display", "heading", "body", "numeric"] as const;
 
+/** Parse composite fontSize ("30px" | "1.5rem") for size ordering. */
+function fontSizePx(value: unknown): number {
+  if (!isTypographyValue(value)) return 0;
+  const raw = String(value.fontSize);
+  const n = parseFloat(raw);
+  if (Number.isNaN(n)) return 0;
+  if (raw.endsWith("rem")) return n * 16;
+  return n;
+}
+
 export function TypographyPage() {
   const { tick } = useFoundationsTick();
   void tick;
@@ -32,6 +44,8 @@ export function TypographyPage() {
       b.path[0] as (typeof FAMILY_ORDER)[number],
     );
     if (fa !== fb) return fa - fb;
+    const sizeDiff = fontSizePx(b.value) - fontSizePx(a.value);
+    if (sizeDiff !== 0) return sizeDiff;
     return a.name.localeCompare(b.name);
   });
 

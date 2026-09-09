@@ -75,9 +75,15 @@ export const Progress = forwardRef<HTMLDivElement, ProgressProps>(
           id={id}
           value={indeterminate ? null : clamped}
           max={100}
-          aria-labelledby={label ? labelId : undefined}
-          className={progressTrackVariants()}
           {...props}
+          aria-labelledby={label ? labelId : undefined}
+          aria-label={
+            label
+              ? undefined
+              : ((props as { "aria-label"?: string })["aria-label"] ??
+                "Progress")
+          }
+          className={progressTrackVariants()}
         >
           <ProgressPrimitive.Indicator
             className={progressIndicatorVariants({

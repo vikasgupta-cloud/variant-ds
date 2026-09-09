@@ -77,11 +77,11 @@ The rules file loads on every message. The spec is read on demand. Neither needs
 
 ---
 
-## Task 6 — Card, Alert, Modal
+## Task 6 — Card, Alert
 
-> Build Card, Alert and Modal per section 3. These exist to stress-test the Surface layer, so include stories with a card inside a card, and a modal containing a card.
+> Build Card and Alert per section 3. These exist to stress-test the Surface layer, so include stories with a card inside a card.
 >
-> Modal uses the scrim tokens and `z/modal`.
+> Modal is deferred — rebuild later with scrim tokens and `z/modal`.
 > every component ships the five standard stories — All variants, States, Content, Layout, Playground.
 
 **Verify:** nested cards render at distinct levels. Contexts resolve correctly at depth three.

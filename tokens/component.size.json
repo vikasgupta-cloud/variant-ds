@@ -277,33 +277,6 @@
       "$description": "Slider thumb size."
     }
   },
-  "modal": {
-    "radius": {
-      "$type": "dimension",
-      "$value": "{radius.md}",
-      "$description": "Modal corner radius."
-    },
-    "padding": {
-      "$type": "dimension",
-      "$value": "{dimension.24}",
-      "$description": "Modal padding."
-    },
-    "max-width-sm": {
-      "$type": "dimension",
-      "$value": "400px",
-      "$description": "Modal max width — sm size."
-    },
-    "max-width": {
-      "$type": "dimension",
-      "$value": "560px",
-      "$description": "Modal max width — md size (560px component deviation)."
-    },
-    "max-width-lg": {
-      "$type": "dimension",
-      "$value": "720px",
-      "$description": "Modal max width — lg size."
-    }
-  },
   "card": {
     "radius": {
       "$type": "dimension",

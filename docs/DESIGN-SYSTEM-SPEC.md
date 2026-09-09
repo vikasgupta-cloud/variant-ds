@@ -113,8 +113,7 @@ bg/{role}/strong          600 → 500
 bg/{role}/strong-hover    700 → 600     neutral, danger, success ONLY
 bg/{role}/strong-active   800 → 700     neutral, danger, success ONLY
 bg/{role}/soft            100 → 900
-bg/{role}/soft-hover      200 → 700     all six status roles
-bg/{role}/soft-active     300 → 600     all six status roles
+bg/{role}/soft-hover      200 → 800     all status roles (soft-active does not exist — active uses border/{role})
 text/{role}               700 → 300     chromatic only (info, success, warning, danger) — used for text AND icons
 text/{role}-hover         800 → 200     chromatic only
 border/{role}             200 → 700     chromatic only — neutral uses border/subtle + text/primary / text/secondary
@@ -127,7 +126,7 @@ Three exceptions, both deliberate:
 - `bg/neutral/strong` is neutral-950 → neutral-50 (a full inversion, not the 600/500 pattern).
 - Neutral has **no** `text/neutral` or `border/neutral` — those duplicated `text/secondary` / `border/subtle`. Soft/strong neutral fills stay; labels use `text/primary` (titles) and `text/secondary` (body), edges use `border/subtle`.
 
-Warning and info stay non-interactive at the strong level (no strong-hover / strong-active). Soft-hover and soft-active apply to all six status roles.
+Warning and info stay non-interactive at the strong level (no strong-hover / strong-active). Soft-hover applies to all status roles; there is no soft-active — pressed state keeps the soft-hover fill and adds `border/{role}`.
 
 Status icons get **no** tokens of their own. They bind `text/{role}` (or `text/primary` on neutral) and `text/on-strong`.
 
@@ -208,11 +207,11 @@ tab/       item-spacing(4) content-gap/{sm 4, md 6, lg 8} indicator-weight(2)
 segment/   radius-outer(sm) radius-inner(none)
 progress/  track-height(8) radius(full) label-gap(8)
 slider/    thumb-size(20) thumb-border(→ border/strong)
-modal/     radius(md) padding(24) max-width(560)
-           scrim-bg(neutral-950) scrim-opacity(→ opacity.64)
 card/      radius(md) padding(→ layout/card)
 alert/     radius(sm) padding(12) icon-gap(12)
 ```
+
+Modal component tokens are deferred (rebuild Modal later). Keep `z/modal` and `overlay/scrim*` as foundations for stacking/scrim.
 
 ### Typography
 
@@ -283,7 +282,7 @@ Fifteen. Each is a real, accessible, production-quality React component — not 
 
 **The twelve specced:** Button, Input, Dropdown (Select + Menu), Badge, Tag, Checkbox, Radio, Toggle, Tabs, Border (docs page only, not a component), ButtonGroup, Progress + Slider.
 
-**Three added to stress-test the Surface layer:** Card, Alert, Modal. These are the only components that exercise nesting and the scrim — Modal especially, because it's where a missed context mode would show up.
+**Two added to stress-test the Surface layer:** Card and Alert. These exercise nesting and context. Modal (and scrim usage in a dialog) is deferred.
 
 ### Variant and state matrix
 
@@ -354,9 +353,6 @@ Alert       role:    neutral | info | success | warning | danger
             actions: optional pair — ghost “Dismiss” + secondary primary-action,
                      both inherit the Alert role as Button color (danger → destructive).
                      Never a primary default button inside a coloured alert.
-
-Modal       size:    sm | md | lg
-            plus:    with footer actions, scrolling body, nested content, destructive confirm
 ```
 
 **`state` prop (design-review affordance):** Button, Input, and every subsequent component expose a `state` prop that mirrors Figma’s State dropdown. The default value is `default`, which uses real CSS `:hover` / `:active` / `:focus-visible` — normal runtime behaviour. Any other value forces that state’s styling by applying the same classes the pseudo-selector would, so designers can pick “hover” in Storybook without hovering. **Not for production use** — real applications leave `state` at `default` and let CSS handle interaction.
@@ -530,7 +526,7 @@ Do not consider this done until all of these hold:
 2. Storybook with the three global toolbar controls working.
 3. Token browser with live contrast, and the runtime token editor panel. **Check the numbers before building components** — if a role token is wrong, better to find out now, and the editor makes fixing it a ten-second experiment rather than a rebuild.
 4. Button and Input. These have zero component tokens, so they prove the Role and Structure layers work.
-5. Card, Alert, Modal. These prove the Surface layer works.
+5. Card and Alert. These prove the Surface layer works. (Modal deferred.)
 6. Everything else.
 7. Docs, downloads, spec generation.
 8. CI and deployment.
