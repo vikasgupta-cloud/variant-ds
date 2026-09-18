@@ -12,7 +12,7 @@ import role from "../tokens/manager-theme.light.json" with { type: "json" };
 
 export const variantTheme = create({
   base: "light",
-  brandTitle: "VWO Variant",
+  brandTitle: "Wingify Variant DS",
   brandUrl: "./",
   brandTarget: "_self",
 

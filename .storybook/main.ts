@@ -1,5 +1,6 @@
 // Purpose: Storybook 10 main config — React + Vite, ESM. Addons from spec §4.
 // Tailwind v4 via @tailwindcss/vite (no tailwind.config.js).
+// Usage / Code / Accessibility MDX is kept on disk but excluded until docs land.
 import type { StorybookConfig } from "@storybook/react-vite";
 import tailwindcss from "@tailwindcss/vite";
 import { mergeConfig } from "vite";
@@ -11,9 +12,12 @@ const config: StorybookConfig = {
     "../src/docs/foundations/**/*.stories.@(js|jsx|mjs|ts|tsx)",
     "../src/docs/ia/tools/**/*.mdx",
     "../src/docs/ia/patterns/**/*.mdx",
-    "../src/docs/ia/components/**/*.mdx",
+    // Placeholder components: Examples only. Restore Usage/Code/Accessibility later:
+    // "../src/docs/ia/components/**/*.mdx",
+    "../src/docs/ia/components/**/*-Examples.mdx",
     "../src/docs/**/*.stories.@(js|jsx|mjs|ts|tsx)",
-    "../src/components/**/*.mdx",
+    // Built components: stories (Examples) only. Restore later:
+    // "../src/components/**/*.mdx",
     "../src/components/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
   addons: [
@@ -32,7 +36,7 @@ const config: StorybookConfig = {
     menuOnboardingChecklist: false,
   },
   managerHead: (head) =>
-    `${head}<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" />`,
+    `${head}<title>Wingify Variant DS</title><meta name="description" content="Wingify Variant design system" /><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" />`,
   async viteFinal(config) {
     return mergeConfig(config, {
       plugins: [tailwindcss()],
